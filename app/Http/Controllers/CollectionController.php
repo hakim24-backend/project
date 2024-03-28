@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Category;
+use App\Models\Collection;
 
-class CategoryController extends Controller
+class CollectionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $category = Category::all();
-        return view('category.index', compact('category'));
+        $collection = Collection::all();
+        return view('collection.index', compact('collection'));
     }
 
     /**
@@ -30,14 +30,14 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $validateData = $this->validate($request, [
-            'name' => 'required||string'
-        ], [
-            'name.required' => 'Form name cannot blank',
+            'id_category' => 'required|integer',
+            'name' => 'required|string',
+            'filename' => 'required|image|max:2048'
         ]);
 
-        $category = Category::create($validateData);
-        if ($category) {
-            return redirect()->route('category.index');
+        $collection = Collection::create($validateData);
+        if ($collection) {
+            return redirect()->route('collection.index');
         }
     }
 

@@ -4,6 +4,17 @@
     <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+
+    <style>
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            color: #444;
+            line-height: 17px;
+        }
+    </style>
 @endpush
 
 @section('content')
@@ -13,7 +24,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Category</h1>
+          <h1 class="m-0">Collection</h1>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -27,7 +38,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <button type="button" class="btn bg-gradient-success" data-toggle="modal" data-target="#create-category">
+                        <button type="button" class="btn bg-gradient-success" data-toggle="modal" data-target="#create-collection">
                             <span><i class="fa fa-plus"></i></span> Create
                         </button>
                     </div>
@@ -38,13 +49,15 @@
                         <tr>
                             <th>No</th>
                             <th>Name</th>
+                            <th>Image</th>
                         </tr>
                         </thead>
                         <tbody>
-                            @forelse ($category as $item)
+                            @forelse ($collection as $item)
                                 <tr>
                                     <td style="text-align: center">{{ $loop->iteration }}</td>
                                     <td>{{ $item->name }}</td>
+                                    <td>{{ $item->filename }}</td>
                                 </tr>
                             @empty
                             <tr>
@@ -62,11 +75,11 @@
         </div>
   </div>
 
-  <div class="modal fade" id="create-category">
-    <div class="modal-dialog">
+  <div class="modal fade" id="create-collection">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Create Cateagory</h4>
+          <h4 class="modal-title">Create Collection</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -79,15 +92,39 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="{{ route('category.store') }}" method="POST">
+                <form action="{{ route('collection.store') }}" method="POST">
                 @csrf
                     <div class="card-body">
-                        <div class="form-group">
-                            <label>Name Category</label>
-                            <input name="name" type="input" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Name" value="{{ old('name') }}" required>
-                            @error('name')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                <label>Category</label>
+                                <select required id="select_category" name="id_category" class="form-control select2 select2-success  @error('id_category') is-invalid @enderror" data-dropdown-css-class="select2-success">
+                                {{-- <select required id="select_category" name="category" class="form-control select2bs4" style="width: 100%;"> --}}
+                                    
+                                </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Name Collection</label>
+                                    <input name="name" type="input" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Name" value="{{ old('name') }}" required>
+                                    @error('name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Upload Image</label>
+                                        <input required style="padding: 3px" name="filename" type="file" class="form-control @error('filename') is-invalid @enderror" placeholder="Enter Name" value="{{ old('filename') }}" required>
+                                        @error('filename')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                            </div>
                         </div>
                     </div>
                     <!-- /.card-body -->
@@ -127,6 +164,10 @@
     <script src="{{ asset('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+    <!-- Select2 -->
+    <script src="{{ asset('plugins/select2/js/select2.full.min.js') }}"></script>
+    <!-- bs-custom-file-input -->
+    <script src=" {{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }} "></script>
 
     {{-- Page level custom scripts --}}
     <script>
@@ -135,6 +176,40 @@
             "responsive": true, "lengthChange": false, "autoWidth": false,
             "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+            //Initialize Select2 Elements
+            $('.select2').select2()
+
+            //Initialize Select2 Elements
+            $('.select2bs4').select2({
+                theme: 'bootstrap4'
+            })
         });
+
+        $(document).ready(function () {
+
+            // Select2 Single  with Placeholder
+            $('#select_category').select2({
+                allowClear: true,
+                ajax: {
+                    url: "{{ route('ajax-category') }}",
+                    dataType: 'json',
+                    delay: 250,
+                    processResults: function(data) {
+                        return {
+                            results: $.map(data, function(item) {
+                                return {
+                                text: item.name,
+                                id: item.id
+                                }
+                            })
+                        };
+                    },
+                    cache: true
+                }
+            });
+
+        });
+
     </script>
 @endpush

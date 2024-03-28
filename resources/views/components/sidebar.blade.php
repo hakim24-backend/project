@@ -33,7 +33,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="{{ route('collection.index') }}" class="nav-link {{ request()->is('collection') ? ' active' : ''}}">
                 <i class="nav-icon fa fa-folder-open"></i>
                 <p>
                   Collection
