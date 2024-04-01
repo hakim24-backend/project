@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CollectionController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AjaxController;
 
 /*
@@ -29,7 +30,9 @@ Route::middleware('auth')->group(function(){
     //resource master
     Route::resource('category', CategoryController::class);
     Route::resource('collection', CollectionController::class);
+    Route::resource('product', ProductController::class);
 
     //ajax select2
     Route::get('/ajax-category', [AjaxController::class, 'selectCategory'])->name('ajax-category');
+    Route::get('/ajax-collection', [AjaxController::class, 'selectCollection'])->name('ajax-collection');
 });

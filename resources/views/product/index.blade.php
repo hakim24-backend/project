@@ -24,7 +24,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Collection</h1>
+          <h1 class="m-0">Product</h1>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -38,7 +38,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <button type="button" class="btn bg-gradient-success" data-toggle="modal" data-target="#create-collection">
+                        <button type="button" class="btn bg-gradient-success" data-toggle="modal" data-target="#create-product">
                             <span><i class="fa fa-plus"></i></span> Create
                         </button>
                     </div>
@@ -50,28 +50,30 @@
                             <th>No</th>
                             <th>Name</th>
                             <th>Category</th>
+                            <th>Collection</th>
                             <th>Image</th>
                         </tr>
                         </thead>
                         <tbody>
-                            @forelse ($collection as $item)
+                            @forelse ($product as $item)
                                 <tr>
                                     <td style="text-align: center" width="5%">{{ $loop->iteration }}</td>
                                     <td width="20%">{{ $item->name }}</td>
-                                    <td width="30%">{{ $item->category->name }}</td>
+                                    <td width="30%">{{ $item->collection->category->name }}</td>
+                                    <td width="30%">{{ $item->collection->name }}</td>
                                     <td style="text-align: center">
                                         @if ($item->filename == null)
                                             -
                                         @else
-                                            <a href="{{ asset('upload/collection/'.$item->filename) }}" target="_blank">
-                                                <img width="20%" src="{{ asset('upload/collection/'.$item->filename) }}">
+                                            <a href="{{ asset('upload/product/'.$item->filename) }}" target="_blank">
+                                                <img width="20%" src="{{ asset('upload/product/'.$item->filename) }}">
                                             </a>
                                         @endif
                                     </td>
                                 </tr>
                             @empty
                             <tr>
-                                <td class="text-center text-mute" colspan="6"><b>Data collection is empty</b></td>
+                                <td class="text-center text-mute" colspan="6"><b>Data product is empty</b></td>
                             </tr>
                             @endforelse
                         </tbody>
@@ -85,11 +87,11 @@
         </div>
   </div>
 
-  <div class="modal fade" id="create-collection">
+  <div class="modal fade" id="create-product">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Create Collection</h4>
+          <h4 class="modal-title">Create Product</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -102,14 +104,14 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="{{ route('collection.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group">
-                                <label>Category</label>
-                                <select required id="select_category" name="id_category" class="form-control select2 select2-success  @error('id_category') is-invalid @enderror" data-dropdown-css-class="select2-success">
+                            <div class="form-group">
+                                <label>Collection</label>
+                                <select required id="select_collection" name="id_collection" class="form-control select2 select2-success  @error('id_selection') is-invalid @enderror" data-dropdown-css-class="select2-success">
                                 {{-- <select required id="select_category" name="category" class="form-control select2bs4" style="width: 100%;"> --}}
                                     
                                 </select>
@@ -117,7 +119,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Name Collection</label>
+                                    <label>Name Product</label>
                                     <input name="name" type="input" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Name" value="{{ old('name') }}" required>
                                     @error('name')
                                         <span class="text-danger">{{ $message }}</span>
@@ -134,6 +136,21 @@
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                         <p style="font-size: 14px;"><i>*JPG/JPEG/PNG</i></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <table class="table table-bordered" id="table">
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Value</th>
+                                                <th>Action</th>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" name="inputs[0][name]" placeholder="Enter description" class="form-control"></td>
+                                                <td><input type="text" name="inputs[0][value]" placeholder="Enter value" class="form-control"></td>
+                                                <td><button type="button" name="add" id="add" class="btn btn-success">Add Description</button></td>
+                                            </tr>
+                                        </table>
                                     </div>
                             </div>
                         </div>
@@ -200,10 +217,10 @@
         $(document).ready(function () {
 
             // Select2 Single  with Placeholder
-            $('#select_category').select2({
+            $('#select_collection').select2({
                 allowClear: true,
                 ajax: {
-                    url: "{{ route('ajax-category') }}",
+                    url: "{{ route('ajax-collection') }}",
                     dataType: 'json',
                     delay: 250,
                     processResults: function(data) {
@@ -220,6 +237,27 @@
                 }
             });
 
+        });
+
+        var i = 0;
+        $('#add').click(function(){
+            ++i;
+            $('#table').append(
+                `<tr>
+                    <td>
+                        <input type="text" name="inputs[`+i+`][name]" placeholder="Enter description" class="form-control">
+                    </td>
+                    <td>
+                        <input type="text" name="inputs[`+i+`][name]" placeholder="Enter description" class="form-control">
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger remove-table-row">Remove</button>
+                    </td>
+            `);
+        });
+
+        $(document).on('click','.remove-table-row', function(){
+            $(this).parents('tr').remove();
         });
 
     </script>

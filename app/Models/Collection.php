@@ -17,4 +17,9 @@ class Collection extends Model
         'updated_at',
         'updated_at'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'id_category');
+    }
 }

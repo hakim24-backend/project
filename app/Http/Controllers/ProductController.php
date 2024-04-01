@@ -1,19 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Product;
 
 use Illuminate\Http\Request;
-use App\Models\Collection;
 
-class CollectionController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $collection = Collection::all();
-        return view('collection.index', compact('collection'));
+        $product = Product::all();
+        return view('product.index', compact('product'));
     }
 
     /**
@@ -29,24 +29,7 @@ class CollectionController extends Controller
      */
     public function store(Request $request)
     {
-        $validateCollection = $this->validate($request, [
-            'id_category' => 'required|integer',
-            'name' => 'required|string',
-            'filename' => 'required|image|max:2048'
-        ]);
-        
-        $nameFile = $request->filename->getClientOriginalName();
-        $folderGambar = 'upload/collection';
-        $request->filename->move($folderGambar, $nameFile);
-
-        $validateCollection = Collection::create([
-            'id_category' => $request->id_category,
-            'name' => $request->name,
-            'filename' => $nameFile
-        ]);
-        if ($validateCollection) {
-            return redirect()->route('collection.index');
-        }
+        //
     }
 
     /**
