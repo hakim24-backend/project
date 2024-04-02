@@ -14,7 +14,7 @@ class Collection extends Model
         'name',
         'filename',
         'id_category',
-        'updated_at',
+        'created_at',
         'updated_at'
     ];
 

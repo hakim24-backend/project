@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('descriptions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('value');
             $table->unsignedBigInteger('id_product');
             $table->foreign('id_product')->references('id')->on('products')->onDelete('cascade')->onUpdate('restrict');
             $table->timestamps();

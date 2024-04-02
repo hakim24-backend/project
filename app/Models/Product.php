@@ -14,12 +14,17 @@ class Product extends Model
         'name',
         'filename',
         'id_collection',
-        'updated_at',
+        'created_at',
         'updated_at'
     ];
 
     public function collection()
     {
-        return $this->belongsTo(collection::class, 'id_collection');
+        return $this->belongsTo(Collection::class, 'id_collection');
+    }
+
+    public function description()
+    {
+        return $this->hasMany(Description::class, 'id_product');
     }
 }

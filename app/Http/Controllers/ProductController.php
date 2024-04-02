@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Product;
+use App\Models\Description;
 
 use Illuminate\Http\Request;
 
@@ -29,7 +30,30 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'id_collection' => 'required|integer',
+            'filename' => 'required|image'
+        ]);
+
+        $nameFile = $request->filename->getClientOriginalName();
+        $folderGambar = 'upload/product';
+        $request->filename->move($folderGambar, $nameFile);
+
+        $product = Product::create([
+            'id_collection' => $request->id_collection,
+            'name' => $request->name,
+            'filename' => $nameFile
+        ]);
+
+        foreach ($request->inputs as $key => $value) {
+            Description::create([
+                'name' => $value['name'],
+                'value' => $value['value'],
+                'id_product' => $product->id
+            ]);
+        }
+
+        return redirect()->route('product.index');
     }
 
     /**

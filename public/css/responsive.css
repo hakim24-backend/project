@@ -1,0 +1,365 @@
+@media screen  and (max-width: 1366px) {
+ 
+    /****** hero *******/
+       .hero h1 {
+       font-size: 36px;
+   
+    }
+    .hero p {
+       font-size: 14px;
+       
+    }
+
+/* gallerys responsive */
+
+    .gallerys  span {
+        font-size: 36px;
+    
+     }
+    .gallerys span p {
+        font-size: 14px;
+        
+     }
+
+/* End of gallerys responsive */
+   }
+   @media screen  and (max-width: 1530px){
+         /* header responsive */
+   nav ul li {
+    padding: 0 9px;
+ }
+   nav ul li a {
+    font-size: 11.5px;
+ }
+   nav  .socials a  {
+    width: 15px;
+    height: 15px;
+    font-size: 12px;
+ }
+
+   nav .socials a i {
+    line-height: 10px;
+
+ }
+/* gallerys responsive */
+ .gallerys  span {
+    font-size: 25px;
+
+ }
+ .gallerys span p {
+    font-size: 15px;
+    
+ }
+/* End of gallerys responsive */
+   }
+
+/* ---------------------------------------- */
+
+   @media screen  and (max-width: 1199px) {
+   
+       /* header responsive */
+   nav ul li {
+       padding: 0 5px;
+    }
+   nav ul li a {
+       font-size: 9.5px;
+    }
+   nav  .socials a  {
+       width: 8px;
+       height: 8px;
+       font-size: 8px;
+    }
+   
+   nav .socials a i {
+       line-height: 4px;
+   
+    }
+   
+    /****** hero *******/
+    .hero .slide-left {
+       text-align: center;
+    }
+    .hero .slide-left h1,
+    .hero .slide-left p {
+       width: 90%;
+       margin-left: auto;
+       margin-right: auto;
+    }
+    .hero .carousel-indicators {
+       margin: 0 auto !important;
+    }
+
+/* gallerys responsive */
+    
+    .gallerys  span {
+        font-size: 25px;
+    
+     }
+     .gallerys span p {
+        font-size: 15px;
+        
+     }
+
+     .gallery img {
+        width: 100%;
+        height: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        
+     }
+     /* End of gallerys responsive */
+   
+   }
+/* --------------------------------------- */
+   
+   @media screen  and (max-width: 991px) {
+     /* ----- footer ----     */
+       footer div.socials {
+           margin-left: 5px;
+         }
+   
+         footer p.socials {
+           font-size: 12px;
+         }
+         /* gallerys responsive */
+         .gallerys  span {
+            font-size: 25px;
+        
+         }
+         .gallerys span p {
+            font-size: 15px;
+            position: absolute;
+            margin-left: -25%;
+         }
+
+         .gallery img {
+            width: 100%;
+            height: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            
+         }
+         /*End of gallerys responsive */
+   }
+   /* --------------------------------------------- */
+   @media screen  and (max-width: 767px) {
+       
+       /* -----footer colums----  */
+       
+       .footer-columns {
+           padding-top: 70px;
+           padding-bottom: 70px;
+       } 
+   
+       .column {
+           border-bottom: 1px solid #000000;
+           margin-bottom: 25px;
+           padding-bottom: 15px;
+       }
+       .column:last-child {
+           border: none;
+           margin-bottom: 0;
+           padding-bottom: 0;
+       }
+   
+
+/* gallerys responsive */
+         .gallerys {
+            text-align: center;
+            width: 100%;
+
+         }
+         .gallerys  span {
+            font-size: 25px;
+            /* margin-left: -5%; */
+        
+         }
+         .gallerys span p {
+            font-size: 15px;
+            position: absolute;
+            margin-left: -35%;
+            text-align: center;
+         }
+         .gallery a {
+            text-align: center;
+
+         }
+         .gallery img {
+            width: 100%;
+            height: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            
+         }
+    
+
+         /* End of gallerys responsive */
+   
+   }
+   /* ---------------------------- */
+   @media screen  and (max-width: 575px) {
+        /* hero */ 
+        .cta .button-primary {
+           margin-bottom: 10px;
+          
+        }
+       
+        .copyright p,
+   .copyright a {
+       font-size: 10px;
+       height: 100px;
+   }
+/* gallerys responsive */
+   .gallerys{
+    text-align: center;
+    width: 100%;
+    
+    
+   }
+ .gallerys  span {
+    font-size: 25px;
+  
+    margin-bottom: -200px;
+   
+
+ }
+ .gallerys span p {
+    font-size: 10px;
+   position: absolute;
+   text-align: center;
+ }
+
+ .gallery img {
+    width: 100%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    
+ }
+
+ /* End of gallerys responsive */
+
+   }
+
+   /* ----------------- */
+   @media screen  and (max-width: 574px) {
+      .copyright p,
+      .copyright a {
+          font-size: 5px;
+          height: 0px;
+          
+  }
+
+
+  /* gallerys responsive */
+   .gallerys{
+       text-align: center;
+       margin-bottom: -70px;
+      
+       padding: 100px;
+   }
+   .gallerys  span {
+   font-size: 25px;
+   text-align: center;
+   margin-left: -10px;
+   
+   
+   /* margin-left: -100px; */
+
+}
+   .gallerys span p {
+      font-size: 10px;
+      position: absolute;
+      text-align: center;
+      
+}
+
+.gallery img {
+   width: 100%;
+   height: 80%;
+   margin-left: auto;
+   margin-right: auto;
+   
+}
+
+
+
+
+   /* --------- */
+   @media screen  and (max-width: 340px) {
+       .copyright p,
+       .copyright a {
+           font-size: 5px;
+           height: 0px;
+           
+   }
+
+
+   /* gallerys responsive */
+    .gallerys{
+        text-align: center;
+    }
+    .gallerys  span {
+    font-size: 25px;
+    text-align: center;
+    
+
+ }
+    .gallerys span p {
+    font-size: 0;
+    position: absolute;
+ }
+
+ .gallery img {
+    width: 100%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    
+ }
+
+   /* end  of gallerys responsive */
+}
+
+/* -------------- */
+@media screen  and (max-width: 240px) {
+   .copyright p,
+   .copyright a {
+       font-size: 5px;
+       height: 0px;
+}
+
+
+/* gallerys responsive */
+
+}
+.gallerys  span {
+font-size: 25px;
+text-align: center;
+
+
+}
+.gallerys span p {
+font-size: 0;
+position: absolute;
+
+}
+
+.gallery img {
+width: 100%;
+height: 80%;
+margin-left: auto;
+margin-right: auto;
+
+}
+
+/* end  of gallerys responsive */
+}
+@media screen  and (max-width: 140px) {
+   .gallery img {
+      width: 100%;
+      height: 80%;
+      margin-left: auto;
+      margin-right: auto;
+}
+}

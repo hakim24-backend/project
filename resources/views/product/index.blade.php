@@ -44,13 +44,14 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table id="example1" class="table table-bordered table-striped">
+                        <table id="example1" class="table table-bordered">
                         <thead style="text-align: center">
                         <tr>
                             <th>No</th>
                             <th>Name</th>
                             <th>Category</th>
                             <th>Collection</th>
+                            <th>Description</th>
                             <th>Image</th>
                         </tr>
                         </thead>
@@ -58,15 +59,27 @@
                             @forelse ($product as $item)
                                 <tr>
                                     <td style="text-align: center" width="5%">{{ $loop->iteration }}</td>
-                                    <td width="20%">{{ $item->name }}</td>
-                                    <td width="30%">{{ $item->collection->category->name }}</td>
-                                    <td width="30%">{{ $item->collection->name }}</td>
+                                    <td width="10%">{{ $item->name }}</td>
+                                    <td width="10%">{{ $item->collection->category->name }}</td>
+                                    <td width="10%">{{ $item->collection->name }}</td>
+                                    <td width="20%">
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                                @foreach ($item->description()->get() as $desc)
+                                                <tr>
+                                                    <td> {{$desc->name}} </td>
+                                                    <td> {{$desc->value}} </td>
+                                                </tr>
+                                               @endforeach
+                                            </tbody>
+                                        </table>
+                                    </td>
                                     <td style="text-align: center">
                                         @if ($item->filename == null)
                                             -
                                         @else
                                             <a href="{{ asset('upload/product/'.$item->filename) }}" target="_blank">
-                                                <img width="20%" src="{{ asset('upload/product/'.$item->filename) }}">
+                                                <img width="40%" src="{{ asset('upload/product/'.$item->filename) }}">
                                             </a>
                                         @endif
                                     </td>
@@ -146,8 +159,8 @@
                                                 <th>Action</th>
                                             </tr>
                                             <tr>
-                                                <td><input type="text" name="inputs[0][name]" placeholder="Enter description" class="form-control"></td>
-                                                <td><input type="text" name="inputs[0][value]" placeholder="Enter value" class="form-control"></td>
+                                                <td><input required type="text" name="inputs[0][name]" placeholder="Enter description" class="form-control"></td>
+                                                <td><input required type="text" name="inputs[0][value]" placeholder="Enter value" class="form-control"></td>
                                                 <td><button type="button" name="add" id="add" class="btn btn-success">Add Description</button></td>
                                             </tr>
                                         </table>
@@ -245,10 +258,10 @@
             $('#table').append(
                 `<tr>
                     <td>
-                        <input type="text" name="inputs[`+i+`][name]" placeholder="Enter description" class="form-control">
+                        <input required type="text" name="inputs[`+i+`][name]" placeholder="Enter description" class="form-control">
                     </td>
                     <td>
-                        <input type="text" name="inputs[`+i+`][name]" placeholder="Enter description" class="form-control">
+                        <input required type="text" name="inputs[`+i+`][value]" placeholder="Enter value" class="form-control">
                     </td>
                     <td>
                         <button type="button" class="btn btn-danger remove-table-row">Remove</button>

@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    font-size: 19px;
+   
+}
+.checkbox-container {
+  display: flex;
+  border: 0px solid rgb(255, 255, 255);
+  justify-content:space-evenly;
+  background: black;
+  color: aliceblue;
+  padding: 100px;
+}
+
+.checkbox-container label {
+    cursor: pointer;
+    display: inline-block ;
+}
+
+.checkbox-container input[type='checkbox'] {
+    cursor: pointer;
+    opacity: 1;
+    position: relative;
+   
+    
+}
