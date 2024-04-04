@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AjaxController;
+use App\Http\Controllers\FrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,12 @@ use App\Http\Controllers\AjaxController;
 Route::get('/', function () {
     return view('index');
 });
+
+//frontend
+Route::get('/', [FrontendController::class, 'index'])->name('frontend.index');
+Route::get('/stoleshnitsy', [FrontendController::class, 'category'])->name('frontend.category');
+Route::get('/stoleshnitsy/{id}', [FrontendController::class, 'collection'])->name('frontend.collection');
+Route::get('/product/{id}', [FrontendController::class, 'product'])->name('frontend.product');
 
 Auth::routes();
 

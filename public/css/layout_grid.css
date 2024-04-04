@@ -317,23 +317,6 @@ body .gallery {
   margin-top: -120px;
 }
 
-.gallerys {
-  
-  padding: 250px;
-  
-  text-align: center;
-  color: #ffffff;
-  background: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(rgba(0, 0, 0, 0)),
-      color-stop(12%, rgba(0, 0, 0, 0.432)),
-      to(rgba(0, 0, 0, 0.144))
-    ),
-    url(../img/image1/design-fond-moderne-3d-bois/design1.jpg);
-}
-
 .gallerys span{
   font-weight: lighter;
   font-size: 70px;
@@ -352,8 +335,8 @@ body .gallery {
 .gallery {
 
   display:flex;
-  justify-content:space-between;
   flex-wrap: wrap;
+  gap: 81px;
   /* margin: 15px 0; */
  
 

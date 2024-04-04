@@ -136,7 +136,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="logo col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
-          <a href="index.html"><img src="{{asset('/upload/img/SGlogo1.png')}}" alt="logo"></a>
+          <a href="{{route('frontend.index')}}"><img src="{{asset('/upload/img/SGlogo1.png')}}" alt="logo"></a>
         </div>
         <div class="desktop-nav col-6 col-sm-8 col-md-9 col-lg-10 col-xl-11 d-none d-lg-block">
           <nav class="nav">
@@ -152,7 +152,7 @@
             -->
               <li class="nav-item"><a href="#" class="nav-link" >Мебельные комплектующие</a>
                 <ul class="dropdown" >
-                  <li><a href="/stoleshnitsy.html">Столешницы</a></li>  
+                  <li><a href="{{route('frontend.category')}}">Столешницы</a></li>  
                   <li><a href="#">Мебельные детали</a></li>  
                   <li><a href="/meubleni complektyshie/ldcp/ldcp.html">ЛДСП</a></li>
                   <li><a href="#">ДСП</a></li>
@@ -245,7 +245,7 @@
 
               <li class="nav-item"><a href="#" class="nav-link" onclick="setTimeout(mobile_nav_toggle, 800)">Мебельные комплектующие</a>
                 <ul class="dropdown">
-                  <li><a href="/stoleshnitsy.html" onclick="setTimeout(mobile_nav_toggle, 800)">Столешницы</a></li>
+                  <li><a href="{{route('frontend.category')}}" onclick="setTimeout(mobile_nav_toggle, 800)">Столешницы</a></li>
                   <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">МЕБЕЛЬНЫЕ ДЕТАЛИ</a></li>
                   <li><a href="/meubleni complektyshie/ldcp/ldcp.html" onclick="setTimeout(mobile_nav_toggle, 800)">ЛДСП</a></li>
                   <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">ДСП</a></li>
@@ -439,7 +439,7 @@
         </div>
 
         <div class="logo col-md-2 col-sm-3 column">
-          <a href="index.html"><img src="{{asset('/upload/img/SGlogo12.png')}}" alt="logo"></a>
+          <a href="{{route('frontend.index')}}"><img src="{{asset('/upload/img/SGlogo12.png')}}" alt="logo"></a>
 
         </div>
 
