@@ -23,11 +23,20 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/en', function () {
+    return view('index_en');
+})->name('frontend.en');
+
 //frontend
 Route::get('/', [FrontendController::class, 'index'])->name('frontend.index');
-Route::get('/stoleshnitsy', [FrontendController::class, 'category'])->name('frontend.category');
-Route::get('/stoleshnitsy/{id}', [FrontendController::class, 'collection'])->name('frontend.collection');
+Route::get('/category/{name}', [FrontendController::class, 'category'])->name('frontend.category');
+Route::get('/category/{name}/en', [FrontendController::class, 'categoryEn'])->name('frontend.categoryEn');
+Route::get('/collection/{id}', [FrontendController::class, 'collection'])->name('frontend.collection');
+Route::get('/collection/{id}/en', [FrontendController::class, 'collectionEn'])->name('frontend.collectionEn');
 Route::get('/product/{id}', [FrontendController::class, 'product'])->name('frontend.product');
+Route::get('/product/{id}/en', [FrontendController::class, 'productEn'])->name('frontend.productEn');
+Route::post('/search', [FrontendController::class, 'search'])->name('frontend.search');
+Route::post('/search/en', [FrontendController::class, 'searchEn'])->name('frontend.searchEn');
 
 Auth::routes();
 
@@ -42,4 +51,7 @@ Route::middleware('auth')->group(function(){
     //ajax select2
     Route::get('/ajax-category', [AjaxController::class, 'selectCategory'])->name('ajax-category');
     Route::get('/ajax-collection', [AjaxController::class, 'selectCollection'])->name('ajax-collection');
+
+    //product
+    Route::put('/product/add-detail/{id}', [ProductController::class, 'storeDetail'])->name('product.storeDetail');
 });

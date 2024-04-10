@@ -24,3 +24,43 @@
    
     
 }
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+}
+
+.btn-success{
+    background: linear-gradient(
+    120deg,
+    #9adee7 0%,
+    #9adee7 50%,
+    #7ec6cf 50%,
+    #7ec6cf 53%,
+    #63bac5 53%
+  );
+  background-size: 220%;
+  background-position: 0;
+  border-color: #9adee7;
+  color: black;
+}
+
+.btn-info {
+    background: #E5E4E2;
+    background-color: #E5E4E2;
+    border-color: gray;
+    color: black;
+}

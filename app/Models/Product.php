@@ -13,6 +13,7 @@ class Product extends Model
         'id',
         'name',
         'filename',
+        'detail_filename',
         'id_collection',
         'created_at',
         'updated_at'

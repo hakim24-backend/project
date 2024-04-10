@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : local_project
+ Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 100427 (10.4.27-MariaDB)
+ Source Server Version : 100427
  Source Host           : localhost:3306
  Source Schema         : project
 
  Target Server Type    : MySQL
- Target Server Version : 100427 (10.4.27-MariaDB)
+ Target Server Version : 100427
  File Encoding         : 65001
 
- Date: 04/04/2024 20:38:49
+ Date: 10/04/2024 07:06:32
 */
 
 SET NAMES utf8mb4;
@@ -28,14 +28,15 @@ CREATE TABLE `categories`  (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of categories
 -- ----------------------------
-INSERT INTO `categories` VALUES (1, 'Столешницы', NULL, '2024-04-02 11:19:49', '2024-04-02 11:19:49');
-INSERT INTO `categories` VALUES (2, 'ЛДСП', NULL, '2024-04-02 11:19:57', '2024-04-02 11:19:57');
-INSERT INTO `categories` VALUES (3, 'Стеновые Панели Мдф', NULL, '2024-04-02 11:20:06', '2024-04-02 11:20:06');
+INSERT INTO `categories` VALUES (2, 'Столешницы', NULL, '2024-04-08 17:39:12', '2024-04-08 17:39:12');
+INSERT INTO `categories` VALUES (3, 'ЛДСП', NULL, '2024-04-09 03:43:33', '2024-04-09 03:43:33');
+INSERT INTO `categories` VALUES (4, 'СТЕНОВЫЕ ПАНЕЛИ', NULL, '2024-04-09 03:43:48', '2024-04-09 03:43:48');
+INSERT INTO `categories` VALUES (5, 'МЕЖКОМНАТНЫЕ ДВЕРИ', NULL, '2024-04-09 03:44:02', '2024-04-09 03:44:02');
 
 -- ----------------------------
 -- Table structure for collections
@@ -51,16 +52,23 @@ CREATE TABLE `collections`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `collections_id_category_foreign`(`id_category` ASC) USING BTREE,
   CONSTRAINT `collections_id_category_foreign` FOREIGN KEY (`id_category`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of collections
 -- ----------------------------
-INSERT INTO `collections` VALUES (1, 'Коллекция Color', 'Серия Color.jpg', 1, '2024-04-02 11:21:40', '2024-04-02 11:21:40');
-INSERT INTO `collections` VALUES (2, 'Коллекция Concept', 'Серия Concept.jpg', 1, '2024-04-02 12:25:35', '2024-04-02 12:25:35');
-INSERT INTO `collections` VALUES (3, 'Коллекция Fashion Sense', 'Серия Fashion Sense.jpg', 1, '2024-04-04 06:18:46', '2024-04-04 06:18:46');
-INSERT INTO `collections` VALUES (4, 'Test Collection', 'Серия Gloss.jpg', 1, '2024-04-04 12:17:03', '2024-04-04 12:17:03');
-INSERT INTO `collections` VALUES (5, 'Test Collection 2', 'Серия Wood.jpg', 1, '2024-04-04 12:17:23', '2024-04-04 12:17:23');
+INSERT INTO `collections` VALUES (1, 'Коллекция Color', 'Серия Color.jpg', 2, '2024-04-08 17:40:35', '2024-04-08 17:40:35');
+INSERT INTO `collections` VALUES (2, 'Коллекция Concept', 'Серия Concept.jpg', 2, '2024-04-08 17:55:24', '2024-04-08 17:55:24');
+INSERT INTO `collections` VALUES (3, 'Коллекция Fashion Sense', 'Серия Fashion Sense.jpg', 2, '2024-04-08 17:55:45', '2024-04-08 17:55:45');
+INSERT INTO `collections` VALUES (4, 'WOOD', 'WOOD.jpg', 3, '2024-04-09 03:45:21', '2024-04-09 03:45:21');
+INSERT INTO `collections` VALUES (5, 'Перфект', 'перфект.jpg', 4, '2024-04-09 04:12:27', '2024-04-09 04:12:27');
+INSERT INTO `collections` VALUES (6, 'Классик', 'классик КИРПИЧ СВЕТЛЫЙ.jpg', 4, '2024-04-09 04:46:14', '2024-04-09 04:46:14');
+INSERT INTO `collections` VALUES (7, 'Медиум', 'медиум БАТИСТА.jpg', 4, '2024-04-09 04:46:37', '2024-04-09 04:46:37');
+INSERT INTO `collections` VALUES (8, 'Super Mat+', 'super mat+.jpg', 4, '2024-04-09 04:47:00', '2024-04-09 04:47:00');
+INSERT INTO `collections` VALUES (9, 'Модерн', 'модерн.jpg', 4, '2024-04-09 04:47:29', '2024-04-09 04:47:29');
+INSERT INTO `collections` VALUES (10, 'ARCTICA', 'ARCTICA_1_Дверной блок ЛСР_1.jpg', 5, '2024-04-09 07:43:24', '2024-04-09 07:43:24');
+INSERT INTO `collections` VALUES (11, 'MONTE BIANCO', 'Monte bianco.jpg', 5, '2024-04-09 07:43:47', '2024-04-09 07:43:47');
+INSERT INTO `collections` VALUES (12, 'MONTE BIANCO стекло', 'MONTE BIANCO_стекло1.jpg', 5, '2024-04-09 07:44:14', '2024-04-09 07:44:14');
 
 -- ----------------------------
 -- Table structure for descriptions
@@ -76,24 +84,34 @@ CREATE TABLE `descriptions`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `descriptions_id_product_foreign`(`id_product` ASC) USING BTREE,
   CONSTRAINT `descriptions_id_product_foreign` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of descriptions
 -- ----------------------------
-INSERT INTO `descriptions` VALUES (3, 'Столешницы', '2440 / 3050 / 4200', 2, '2024-04-02 12:00:53', '2024-04-02 12:00:53');
-INSERT INTO `descriptions` VALUES (4, 'Мебельные щиты', '3050х600(1200)*4мм; 4200 х 600*6мм', 2, '2024-04-02 12:00:53', '2024-04-02 12:00:53');
-INSERT INTO `descriptions` VALUES (5, 'Серия', 'Universal', 2, '2024-04-02 12:00:53', '2024-04-02 12:00:53');
-INSERT INTO `descriptions` VALUES (6, 'Коллекция', 'color', 2, '2024-04-02 12:00:53', '2024-04-02 12:00:53');
-INSERT INTO `descriptions` VALUES (7, 'Профиль', 'R26, U26, U38, R38', 2, '2024-04-02 12:00:53', '2024-04-02 12:00:53');
-INSERT INTO `descriptions` VALUES (8, 'Столешницы', '3050', 3, '2024-04-02 12:28:45', '2024-04-02 12:28:45');
-INSERT INTO `descriptions` VALUES (9, 'Серия', 'Classic', 3, '2024-04-02 12:28:45', '2024-04-02 12:28:45');
-INSERT INTO `descriptions` VALUES (10, 'Коллекция', 'color', 3, '2024-04-02 12:28:45', '2024-04-02 12:28:45');
-INSERT INTO `descriptions` VALUES (11, 'Профиль', 'U26, U38, V26', 3, '2024-04-02 12:28:45', '2024-04-02 12:28:45');
-INSERT INTO `descriptions` VALUES (12, 'test description 1', 'test 1', 4, '2024-04-04 12:19:07', '2024-04-04 12:19:07');
-INSERT INTO `descriptions` VALUES (13, 'test description 2', 'test 2', 4, '2024-04-04 12:19:07', '2024-04-04 12:19:07');
-INSERT INTO `descriptions` VALUES (14, 'test description 3', 'test 3', 4, '2024-04-04 12:19:08', '2024-04-04 12:19:08');
-INSERT INTO `descriptions` VALUES (15, 'Серия', 'Premium+', 4, '2024-04-04 12:19:08', '2024-04-04 12:19:08');
+INSERT INTO `descriptions` VALUES (1, 'Столешницы', '2440 / 3050 / 4200', 1, '2024-04-08 18:09:42', '2024-04-08 18:09:42');
+INSERT INTO `descriptions` VALUES (2, 'Мебельные щиты', '3050х600(1200)*4мм\r\n4200 х 600*6мм\r\n\r\n', 1, '2024-04-08 18:09:42', '2024-04-08 18:09:42');
+INSERT INTO `descriptions` VALUES (3, 'Серия', 'Universal', 1, '2024-04-08 18:09:42', '2024-04-08 18:09:42');
+INSERT INTO `descriptions` VALUES (4, 'Коллекция', 'color', 1, '2024-04-08 18:09:42', '2024-04-08 18:09:42');
+INSERT INTO `descriptions` VALUES (5, 'Профиль', 'R26, U26, U38, R38', 1, '2024-04-08 18:09:42', '2024-04-08 18:09:42');
+INSERT INTO `descriptions` VALUES (6, 'Столешницы', '3050', 2, '2024-04-08 18:14:19', '2024-04-08 18:14:19');
+INSERT INTO `descriptions` VALUES (7, 'Мебельные щиты', '3050х600(1200)*4мм', 2, '2024-04-08 18:14:19', '2024-04-08 18:14:19');
+INSERT INTO `descriptions` VALUES (8, 'Серия', 'Standard PRO', 2, '2024-04-08 18:14:19', '2024-04-08 18:14:19');
+INSERT INTO `descriptions` VALUES (9, 'Код', '1110', 3, '2024-04-09 04:18:31', '2024-04-09 04:18:31');
+INSERT INTO `descriptions` VALUES (10, 'Тексеура', 'FO', 3, '2024-04-09 04:18:31', '2024-04-09 04:18:31');
+INSERT INTO `descriptions` VALUES (11, 'Коллекция', 'Wood', 3, '2024-04-09 04:18:31', '2024-04-09 04:18:31');
+INSERT INTO `descriptions` VALUES (12, 'Формат', '1830*2750мм', 3, '2024-04-09 04:18:31', '2024-04-09 04:18:31');
+INSERT INTO `descriptions` VALUES (13, 'Серия', 'Перфект', 4, '2024-04-09 04:28:32', '2024-04-09 04:28:32');
+INSERT INTO `descriptions` VALUES (14, 'Панель', '2600 х 238 х 6 мм S=0,6188 кв.м', 4, '2024-04-09 04:28:32', '2024-04-09 04:28:32');
+INSERT INTO `descriptions` VALUES (15, 'Упаковка панелей', '8 шт = 4, 9504 м2 ≈ 23,5 кг 1 паллета = 48 упак. = 237, 6192 м2 ≈ 1200 кг', 4, '2024-04-09 04:28:32', '2024-04-09 04:28:32');
+INSERT INTO `descriptions` VALUES (16, 'Складные углы', '2600 х 56 х 3 мм', 4, '2024-04-09 04:28:32', '2024-04-09 04:28:32');
+INSERT INTO `descriptions` VALUES (17, 'Упаковка складные углы', '1 упаковка = 40шт; 1 паллета = 2560шт', 4, '2024-04-09 04:28:32', '2024-04-09 04:28:32');
+INSERT INTO `descriptions` VALUES (18, 'декор', 'белый', 5, '2024-04-09 07:46:35', '2024-04-09 07:46:35');
+INSERT INTO `descriptions` VALUES (19, 'ширина, мм', '700/800', 5, '2024-04-09 07:46:35', '2024-04-09 07:46:35');
+INSERT INTO `descriptions` VALUES (20, 'высота, мм', '2000', 5, '2024-04-09 07:46:35', '2024-04-09 07:46:35');
+INSERT INTO `descriptions` VALUES (21, 'толщина, мм', '38', 5, '2024-04-09 07:46:35', '2024-04-09 07:46:35');
+INSERT INTO `descriptions` VALUES (22, 'тип декоративного покрытия', 'polypropylene', 5, '2024-04-09 07:46:35', '2024-04-09 07:46:35');
+INSERT INTO `descriptions` VALUES (23, 'конструкция полотна', 'царговые полотна', 5, '2024-04-09 07:46:35', '2024-04-09 07:46:35');
 
 -- ----------------------------
 -- Table structure for failed_jobs
@@ -124,20 +142,21 @@ CREATE TABLE `migrations`  (
   `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 37 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of migrations
 -- ----------------------------
-INSERT INTO `migrations` VALUES (28, '2014_10_12_000000_create_users_table', 1);
-INSERT INTO `migrations` VALUES (29, '2014_10_12_100000_create_password_reset_tokens_table', 1);
-INSERT INTO `migrations` VALUES (30, '2014_10_12_100000_create_password_resets_table', 1);
-INSERT INTO `migrations` VALUES (31, '2019_08_19_000000_create_failed_jobs_table', 1);
-INSERT INTO `migrations` VALUES (32, '2019_12_14_000001_create_personal_access_tokens_table', 1);
-INSERT INTO `migrations` VALUES (33, '2024_03_27_154222_create_categories_table', 1);
-INSERT INTO `migrations` VALUES (34, '2024_03_27_154350_create_collections_table', 1);
-INSERT INTO `migrations` VALUES (35, '2024_03_27_154507_create_products_table', 1);
-INSERT INTO `migrations` VALUES (36, '2024_03_27_154602_create_descriptions_table', 1);
+INSERT INTO `migrations` VALUES (1, '2014_10_12_000000_create_users_table', 1);
+INSERT INTO `migrations` VALUES (2, '2014_10_12_100000_create_password_reset_tokens_table', 1);
+INSERT INTO `migrations` VALUES (3, '2019_08_19_000000_create_failed_jobs_table', 1);
+INSERT INTO `migrations` VALUES (4, '2019_12_14_000001_create_personal_access_tokens_table', 1);
+INSERT INTO `migrations` VALUES (22, '2014_10_12_100000_create_password_resets_table', 2);
+INSERT INTO `migrations` VALUES (23, '2024_03_27_154222_create_categories_table', 2);
+INSERT INTO `migrations` VALUES (24, '2024_03_27_154350_create_collections_table', 2);
+INSERT INTO `migrations` VALUES (25, '2024_03_27_154507_create_products_table', 2);
+INSERT INTO `migrations` VALUES (26, '2024_03_27_154602_create_descriptions_table', 2);
+INSERT INTO `migrations` VALUES (27, '2024_04_09_104735_add_detail_filename_to_products', 3);
 
 -- ----------------------------
 -- Table structure for password_reset_tokens
@@ -204,17 +223,20 @@ CREATE TABLE `products`  (
   `id_collection` bigint UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `detail_filename` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `products_id_collection_foreign`(`id_collection` ASC) USING BTREE,
   CONSTRAINT `products_id_collection_foreign` FOREIGN KEY (`id_collection`) REFERENCES `collections` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of products
 -- ----------------------------
-INSERT INTO `products` VALUES (2, 'Белый 10м', '10м.jpg', 1, '2024-04-02 12:00:53', '2024-04-02 12:00:53');
-INSERT INTO `products` VALUES (3, 'Белый 0010г', '0010г.jpg', 1, '2024-04-02 12:28:45', '2024-04-02 12:28:45');
-INSERT INTO `products` VALUES (4, 'Test Product 1', '148г_2.jpg', 1, '2024-04-04 12:19:07', '2024-04-04 12:19:07');
+INSERT INTO `products` VALUES (1, 'Белый 10м', '10м.jpg', 1, '2024-04-08 18:09:42', '2024-04-08 18:09:42', '');
+INSERT INTO `products` VALUES (2, 'Спектра 965м\r\n', '965м_2.jpg', 2, '2024-04-08 18:14:19', '2024-04-09 12:31:10', 'интерьере_716г.jpg');
+INSERT INTO `products` VALUES (3, 'INTERIOR PINE', '1110_INTERION_PINE — копия.jpg', 4, '2024-04-09 04:18:31', '2024-04-09 04:18:31', '');
+INSERT INTO `products` VALUES (4, 'СОСНА ВАЛЕНСИЯ', 'СОСНА ВАЛЕНСИЯ_2 (2).jpg', 5, '2024-04-09 04:28:32', '2024-04-09 04:28:32', '');
+INSERT INTO `products` VALUES (5, 'ARCTICA', 'ARCTICA_1_Дверной блок ЛСР_1.jpg', 10, '2024-04-09 07:46:35', '2024-04-09 07:46:35', '');
 
 -- ----------------------------
 -- Table structure for users
@@ -236,6 +258,6 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'superadmin', 'admin@gmail.com', NULL, '$2y$12$A18VfJXz7S4G9bhAB79MK.NBqpfuzrVjcubeS4BSvtFH6MWevSk/u', NULL, '2024-04-02 11:19:27', '2024-04-02 11:19:27');
+INSERT INTO `users` VALUES (1, 'superadmin', 'admin@gmail.com', NULL, '$2y$12$0PSuiBHjRuOh8BBNHCpmwuEWaeF.lMVB/7/BsAovlet4PUL6QGwei', NULL, '2024-03-22 18:34:54', '2024-03-22 18:34:54');
 
 SET FOREIGN_KEY_CHECKS = 1;

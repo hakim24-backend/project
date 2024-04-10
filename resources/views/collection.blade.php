@@ -5,22 +5,30 @@
 <html lang="ru" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" type="x-icon" href="img/SG_верт_оригин.png">
+    <link rel="shortcut icon" type="x-icon" href="{{asset('/upload/img/SG_верт_оригин.png')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Столешницы Коллекция Color</title>
+    <title>
+      @if ($collection->category->name == 'Столешницы')
+        Столешницы {{$collection->name}}
+      @elseif($collection->category->name == 'ЛДСП')
+        ЛДСП {{$collection->name}} COLLECTION
+      @else
+        {{$collection->name}}
+      @endif
+    </title>
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="{{asset('/css/normalize.css')}}"
+      href="{{asset('css/normalize.css')}}"
     />
 
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="{{asset('/css/bootstrap.min.css')}}"
+      href="{{asset('css/bootstrap.min.css')}}"
     />
     <link
       rel="stylesheet"
@@ -43,85 +51,71 @@
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="{{asset('/css/slick.css')}}"
+      href="{{asset('css/slick.css')}}"
     />
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="{{asset('/css/slick-theme.css')}}"
+      href="{{asset('css/slick-theme.css')}}"
     />
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="{{asset('/css/layout_grid.css')}}"
+      href="{{asset('css/layout_grid.css')}}"
     />
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="{{asset('/css/responsive.css')}}"
+      href="{{asset('css/responsive.css')}}"
     />
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="{{asset('/css/search.css')}}"
+      href="{{asset('css/search.css')}}"
     />
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="{{asset('/css/checkbox.css')}}"
+      href="{{asset('css/checkbox.css')}}"
     />
   </head>
-  <style>
-    .gallerys {
-  
-    padding: 250px;
-    
-    text-align: center;
-    color: #ffffff;
-    background: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        from(rgba(0, 0, 0, 0)),
-        color-stop(12%, rgba(0, 0, 0, 0.432)),
-        to(rgba(0, 0, 0, 0.144))
-        ),
-        url('{{asset('/upload/img/image1/design-fond-moderne-3d-bois/design1.jpg')}}');
-    }
-  </style>
 
   <body data-spay="scroll" data-target=".nav" data-offset="100">
     <header>
       <div class="container-fluid">
         <div class="row">
           <div class="logo col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
-            <a href="{{route('frontend.index')}}"><img src="{{asset('/upload/img/SGlogo1.png')}}" alt="logo" /></a>
+            <a href="{{route('frontend.index')}}"><img src="{{asset('/upload/img/SGlogo1.png')}}" alt="logo"></a>
           </div>
-          <div
-            class="desktop-nav col-6 col-sm-8 col-md-9 col-lg-10 col-xl-11 d-none d-lg-block"
-          >
+          <div class="desktop-nav col-6 col-sm-8 col-md-9 col-lg-10 col-xl-11 d-none d-lg-block">
             <nav class="nav">
               <ul class="menu">
                 <!-- Столешницы=stoleshnitsy
-              Мебельные детали=mebelnye-detali
-              ЛДСП=ldcp
-              ДСП=dcp
-              ЛМДФ=lmdf
-              МДФ=mlf
-              ДВПО=dvpo
-              ДВП =dvp
-            -->
-                <li class="nav-item">
-                  <a href="#" class="nav-link">Мебельные комплектующие</a>
+                Мебельные детали=mebelnye-detali
+                ЛДСП=ldcp
+                ДСП=dcp
+                ЛМДФ=lmdf
+                МДФ=mlf
+                ДВПО=dvpo
+                ДВП =dvp
+              -->
+                <li class="nav-item"><a href="#" class="nav-link">Мебельные комплектующие</a>
                   <ul class="dropdown">
-                    <li><a href="stoleshnitsy.html">Столешницы</a></li>
+                    <li><a href="{{route('frontend.category', 'Столешницы')}}">Столешницы</a></li>
                     <li><a href="#">Мебельные детали</a></li>
-                    <li><a href="/meubleni complektyshie/ldcp/ldcp.html">ЛДСП</a></li>
+                   
+  
+                  </ul>
+                </li>
+  
+                <li class="nav-item"><a href="#" class="nav-link">Плитные материалы</a>
+                  <ul class="dropdown">
+                    <li><a href="{{route('frontend.category', 'ЛДСП')}}">ЛДСП</a></li>
                     <li><a href="#">ДСП</a></li>
                     <li><a href="#">ЛМДФ</a></li>
                     <li><a href="#">МДФ</a></li>
@@ -129,22 +123,22 @@
                     <li><a href="#">ДВП</a></li>
                   </ul>
                 </li>
-
-                <li class="nav-item">
-                  <a href="#" class="nav-link">Строительные материалы</a>
+  
+                <li class="nav-item"><a href="#" class="nav-link">Строительные материалы</a>
                   <ul class="dropdown">
-                    <li><a href="/straitelni_materiali/стеновые_панели_мдф/стеновые_панели_мдф.html">Стеновые панели</a></li>
+                    <li><a href="{{route('frontend.category', 'Стеновые панели')}}">Стеновые панели</a>
+                    </li>
                     <li><a href="#">Пиломатериалы</a></li>
                     <li><a href="#">Строганные изделия</a></li>
                     <li><a href="#">Огнестойкие панели</a></li>
                     <li><a href="#">Шпунтованная ДСП</a></li>
                     <li><a href="#">Шпунтованная МДФ</a></li>
-                    
+  
+  
                   </ul>
                 </li>
-
-                <li class="nav-item">
-                  <a href="#" class="nav-link">Изделия из древесины</a>
+  
+                <li class="nav-item"><a href="#" class="nav-link">Изделия из древесины</a>
                   <ul class="dropdown">
                     <li><a href="#">Пеллеты</a></li>
                     <li><a href="#">Мульча</a></li>
@@ -156,37 +150,61 @@
                     <li><a href="#">Комплекты изделий из древесины</a></li>
                   </ul>
                 </li>
-
-                <li class="nav-item">
-                  <a href="#" class="nav-link">Межкомнатные двери</a>
-                  <ul class="dropdown"></ul>
+  
+                <li class="nav-item"><a href="{{route('frontend.category', 'Межкомнатные двери')}}" class="nav-link">Межкомнатные двери</a>
+                  <ul class="dropdown">
+  
+                  </ul>
                 </li>
-
-                <li class="nav-item">
-                  <a href="#" class="nav-link">КОМПАНИЯ</a>
+  
+  
+  
+                <li class="nav-item"><a href="#" class="nav-link">КОМПАНИЯ</a>
                   <ul class="dropdown">
                     <li><a href="#">ИСТОРИЯ ПРОФИЛЯ</a></li>
                     <li><a href="#">РАБОТАТЬ С НАМИ</a></li>
                     <li><a href="#">КОЛЛЕКЦИИ</a></li>
-                    <li><a href="#">Задать вопрос</a></li>
+                    <li><a href="contact.html">Задать вопрос</a></li>
+  
                   </ul>
+  
                 </li>
                 <span>|</span>
                 <li>
                   <form action="/search.php" method="post">
                     <div class="search-box">
-                      <input name="search" type="text" placeholder="Поиск "/><span></span>
+                      <input name="search" type="text" placeholder="Поиск " /><span></span>
                     </div>
                   </form>
+  
+  
                 </li>
+  
+  
+                <!-- ------------------------ langage section bar  -->
+                <span>|</span>
+                <li class="current">
+                  <a href="{{route('frontend.index')}}" style="color: white; text-decoration: none" rel="alternate" hreflang="ru-RU">RU</a>
+                  <a href="{{route('frontend.en')}}" style="color: white; text-decoration: none" rel="alternate" hreflang="en-US">EN</a>
+                </li>
+  
+                <!-- <li class="link">
+                  <a href="/en_US/" style="color: white; text-decoration: none" rel="alternate" hreflang="en-US">EN</a>
+                </li> -->
+  
+                <!-- end langage section  bar-->
+  
+  
               </ul>
             </nav>
           </div>
-
+  
+  
           <!-- mobile responsive -->
           <div class="mobile-nav d-lg-none">
+  
             <div class="nav-bg"></div>
-
+  
             <div class="nav-icon">
               <div class="bars">
                 <i class="bar"></i>
@@ -194,202 +212,103 @@
                 <i class="bar"></i>
               </div>
             </div>
-
+  
             <div class="nav">
+  
               <ul>
-                <li class="nav-item">
-                  <a
-                    href="#"
-                    class="nav-link"
-                    onclick="setTimeout(mobile_nav_toggle, 800)"
-                    >Мебельные комплектующие</a
-                  >
+  
+                <li class="nav-item"><a href="#" class="nav-link" onclick="setTimeout(mobile_nav_toggle, 800)">Мебельные
+                    комплектующие</a>
                   <ul class="dropdown">
-                    <li>
-                      <a href="/stoleshnitsy.html" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >Столешницы</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >МЕБЕЛЬНЫЕ ДЕТАЛИ</a
-                      >
-                    </li>
-                    <li>
-                      <a href="/meubleni complektyshie/ldcp/ldcp.html" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >ЛДСП</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >ДСП</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >ЛМДФ</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >МДФ</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >ДВПО</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >ДВП</a
-                      >
-                    </li>
+                    <li><a href="{{route('frontend.category', 'Столешницы')}}" onclick="setTimeout(mobile_nav_toggle, 800)">Столешницы</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">МЕБЕЛЬНЫЕ ДЕТАЛИ</a></li>
+                    <li><a href="{{route('frontend.category', 'ЛДСП')}}"
+                        onclick="setTimeout(mobile_nav_toggle, 800)">ЛДСП</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">ДСП</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">ЛМДФ</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">МДФ</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">ДВПО</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">ДВП</a></li>
                   </ul>
                 </li>
-
-                <li class="nav-item">
-                  <a
-                    href="#"
-                    class="nav-link"
-                    onclick="setTimeout(mobile_nav_toggle, 800)"
-                    >Строительные материалы</a
-                  >
+  
+                <li class="nav-item"><a href="#" class="nav-link"
+                    onclick="setTimeout(mobile_nav_toggle, 800)">Строительные материалы</a>
                   <ul class="dropdown">
-                    <li>
-                      <a href="/straitelni_materiali/стеновые_панели_мдф/стеновые_панели_мдф.html" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >Стеновые панели</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >Пиломатериалы</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >Строганные изделия</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >Огнестойкие панели</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >Шпунтованная ДСП</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >Шпунтованная МДФ</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >Шпунтованная МДФ</a
-                      >
-                    </li>
-                    
+                    <li><a href="{{route('frontend.category', 'Стеновые панели')}}"
+                        onclick="setTimeout(mobile_nav_toggle, 800)">Стеновые панели</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Пиломатериалы</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Строганные изделия</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Огнестойкие панели</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Шпунтованная ДСП</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Шпунтованная МДФ</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Шпунтованная МДФ</a></li>
+  
                   </ul>
                 </li>
-
-                <li class="nav-item">
-                  <a
-                    href="#"
-                    class="nav-link"
-                    onclick="setTimeout(mobile_nav_toggle, 800)"
-                    >Изделия из древесины</a
-                  >
+  
+                <li class="nav-item"><a href="#" class="nav-link" onclick="setTimeout(mobile_nav_toggle, 800)">Изделия из
+                    древесины</a>
                   <ul class="dropdown">
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >Пеллеты</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >Мульча</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >Тара</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >Палеты</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >Поддоны</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >Прокладочные листы</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >Прокладочные бруски</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >Комплекты изделий из древесины</a
-                      >
-                    </li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Пеллеты</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Мульча</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Тара</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Палеты</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Поддоны</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Прокладочные листы</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Прокладочные бруски</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Комплекты изделий из древесины</a></li>
                   </ul>
                 </li>
-
-                <li class="nav-item">
-                  <a
-                    href="#"
-                    class="nav-link"
-                    onclick="setTimeout(mobile_nav_toggle, 800)"
-                    >Межкомнатные двери</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a
-                    href="#"
-                    class="nav-link"
-                    onclick="setTimeout(mobile_nav_toggle, 800)"
-                    >КОМПАНИЯ</a
-                  >
+  
+                <li class="nav-item"><a href="#" class="nav-link"
+                    onclick="setTimeout(mobile_nav_toggle, 800)">Межкомнатные двери</a></li>
+                <li class="nav-item"><a href="#" class="nav-link"
+                    onclick="setTimeout(mobile_nav_toggle, 800)">КОМПАНИЯ</a>
                   <ul class="dropdown">
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >ИСТОРИЯ ПРОФИЛЯ</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >РАБОТАТЬ С НАМИ</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" onclick="setTimeout(mobile_nav_toggle, 800)"
-                        >Задать вопрос</a
-                      >
-                    </li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">ИСТОРИЯ ПРОФИЛЯ</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">РАБОТАТЬ С НАМИ</a></li>
+                    <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Задать вопрос</a></li>
+  
                   </ul>
+  
                 </li>
               </ul>
+  
             </div>
+  
+  
           </div>
         </div>
       </div>
     </header>
     <!-- Layout grid -->
     <div class="gallerys">
-
-      <span> Столешницы Коллекция Color</span>
-      <span> <p> Более 20 лет мы производим и поставляем столешницы из ДСП, соответствующие европейским и российским стандартам качества. Столешницы «Союз» – это огромный ассортимент, эксклюзивные разработки, высочайшие эксплуатационные характеристики и демократичная цена.</p> </span>
+      
+      <span> 
+        @if ($collection->category->name == 'Столешницы')
+          Столешницы {{$collection->name}}
+        @elseif($collection->category->name == 'ЛДСП')
+          ЛДСП {{$collection->name}} COLLECTION
+        @else
+          {{$collection->name}}
+        @endif
+      </span>
+      <span> <p>
+        @if ($collection->category->name == 'СТЕНОВЫЕ ПАНЕЛИ')
+          @if ($collection->name == 'Перфект')
+          ГРЕЙКАСЛ
+          @elseif ($collection->name == 'Классик' || $collection->name == 'Медиум')
+          МДФ-панели
+          @elseif ($collection->name == 'Модерн')
+          БЕЛЫЙ ГЛЯНЕЦ
+          @endif
+        @else
+          Более 20 лет мы производим и поставляем столешницы из ДСП, соответствующие европейским и российским стандартам качества. 
+          Столешницы «Союз» – это огромный ассортимент, эксклюзивные разработки, высочайшие эксплуатационные 
+          характеристики и демократичная цена.
+        @endif
+      </p> </span>
     </div>
     <form action="/stoleshnitsy_color.php" method="post">
         <div class="checkbox-container">
@@ -414,17 +333,28 @@
         </div>
       </form>
         <div class="gallery">
+          @foreach ($product as $item)
+              <a href="{{route('frontend.product', $item->id)}}"><img src="{{asset('/upload/product/'.$item->filename)}}">
+                  <h3>{{$item->name}}</h3>
 
-            @foreach ($product as $item)
-                <a href="{{route('frontend.product', $item->id)}}"><img src="{{asset('/upload/product/'.$item->filename)}}">
-                    <h3>{{$item->name}}</h3>
+                  @if ($item->collection->category->name == 'Столешницы')
                     @php
                         $series = Description::where('id_product', $item->id)->where('name', 'Серия')->first();
                     @endphp
                     <p>{{$series->value}}</p>
-                </a>
-            @endforeach
+                  @elseif($item->collection->category->name == 'ЛДСП')
+                    @php
+                        $code = Description::where('id_product', $item->id)->where('name', 'Код')->first();
+                        $texture = Description::where('id_product', $item->id)->where('name', 'Тексеура')->first();
+                    @endphp
+                    <p>{{$code->value}}</p>
+                    <p>{{$texture->value}}</p>
+                  @else
+                    <p>{{$item->collection->name}}</p>
+                  @endif
 
+              </a>
+          @endforeach
         </div>
     <!-- End of Layout grid -->
     <footer>
@@ -453,7 +383,7 @@
             </div>
     
             <div class="logo col-md-2 col-sm-3 column">
-              <a href="#"><img src="img/SGlogo12.png" alt="logo"></a>
+              <a href="{{route('frontend.index')}}"><img src="{{asset('/upload/img/SGlogo12.png')}}" alt="logo"></a>
     
             </div>
     

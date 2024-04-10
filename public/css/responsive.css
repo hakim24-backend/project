@@ -21,6 +21,7 @@
         
      }
 
+
 /* End of gallerys responsive */
    }
    @media screen  and (max-width: 1530px){
@@ -113,6 +114,10 @@
 /* --------------------------------------- */
    
    @media screen  and (max-width: 991px) {
+      span .current{
+         font-size: 5px;
+         height: 0px;
+      } 
      /* ----- footer ----     */
        footer div.socials {
            margin-left: 5px;
@@ -139,7 +144,12 @@
             margin-right: auto;
             
          }
+         .current{
+            height: 0px;
+            font-size: 0;
+          }
          /*End of gallerys responsive */
+         
    }
    /* --------------------------------------------- */
    @media screen  and (max-width: 767px) {
@@ -191,7 +201,7 @@
             margin-right: auto;
             
          }
-    
+        
 
          /* End of gallerys responsive */
    
@@ -235,7 +245,8 @@
     margin-left: auto;
     margin-right: auto;
     
- }
+ } 
+
 
  /* End of gallerys responsive */
 
@@ -250,7 +261,7 @@
           
   }
 
-
+ 
   /* gallerys responsive */
    .gallerys{
        text-align: center;

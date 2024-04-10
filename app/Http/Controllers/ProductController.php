@@ -80,6 +80,21 @@ class ProductController extends Controller
         //
     }
 
+    function storeDetail(Request $request, $id)
+    {
+        $product = Product::findOrFail($id);
+        $request->validate([
+            'detail_filename' => 'required|image'
+        ]);
+        $nameFile = $request->detail_filename->getClientOriginalName();
+        $folderGambar = 'upload/detail_product';
+        $request->detail_filename->move($folderGambar, $nameFile);
+
+        $product->update([
+            'detail_filename' => $nameFile
+        ]);
+    }
+
     /**
      * Remove the specified resource from storage.
      */
