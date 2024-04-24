@@ -38,6 +38,7 @@
                         <tr>
                             <th>No</th>
                             <th>Name</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -45,6 +46,15 @@
                                 <tr>
                                     <td style="text-align: center">{{ $loop->iteration }}</td>
                                     <td>{{ $item->name }}</td>
+                                    <td style="text-align: center">
+                                        <form action="{{route('category.destroy', $item->id)}}" method="POST">
+                                            @csrf
+                                            <a title="Update Category" data-toggle="modal" data-target="#update-category{{ $item->id }}" class="btn btn-info" href=""><span class="fa fa-edit"></span></a>
+                                            <input name="_method" type="hidden" value="DELETE">
+                                            <button type="submit" class="btn btn-danger show_confirm" data-toggle="tooltip" title='Delete Category'><span class="fa fa-trash"></span></button>
+                                        </form>
+                                    </td>
+                                    @include('category.edit')
                                 </tr>
                             @empty
                             <tr>
@@ -127,6 +137,8 @@
     <script src="{{ asset('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+    {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 
     {{-- Page level custom scripts --}}
     <script>
@@ -136,5 +148,26 @@
             "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         });
+
+        $('.show_confirm').click(function(event) {
+            var form =  $(this).closest("form");
+            var name = $(this).data("name");
+            event.preventDefault();
+            swal({
+                title: `Are you sure you want to delete this record?`,
+                text: "If you delete this, it will be gone forever.",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                form.submit();
+                } else {
+                    return false;
+                }
+            });
+        });
+
     </script>
 @endpush

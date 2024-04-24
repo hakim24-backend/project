@@ -13,7 +13,16 @@ class CollectionController extends Controller
     public function index()
     {
         $collection = Collection::all();
-        return view('collection.index', compact('collection'));
+        $dataId = Collection::select('id')->get()->toArray();
+        // dd($dataId);
+        
+        $dataSelect2 = [];
+        foreach ($dataId as $key => $value) {
+            $dataSelect2[$key] = $value['id'];
+        }
+        $dataSelect2 = implode(", ", $dataSelect2);
+
+        return view('collection.index', compact('collection', 'dataSelect2'));
     }
 
     /**
@@ -70,7 +79,33 @@ class CollectionController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $collection = Collection::findOrFail($id);
+
+        //cek image
+        $filename = $request->filename;
+        if ($filename == null) {
+
+            $collection->update([
+                'id_category' => $request->id_category_update,
+                'name' => $request->name
+            ]);
+            return redirect()->route('collection.index');
+
+        } else {
+
+            $nameFile = $request->filename->getClientOriginalName();
+            $folderGambar = 'upload/collection';
+            $request->filename->move($folderGambar, $nameFile);
+
+            $collection->update([
+                'id_category' => $request->id_category_update,
+                'name' => $request->name,
+                'filename' => $nameFile
+            ]);
+            return redirect()->route('collection.index');
+
+        }
+        
     }
 
     /**
@@ -78,6 +113,8 @@ class CollectionController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $collection = Collection::findOrFail($id);
+        $collection->delete();
+        return redirect()->route('collection.index');
     }
 }

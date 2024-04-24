@@ -37,6 +37,8 @@ Route::get('/product/{id}', [FrontendController::class, 'product'])->name('front
 Route::get('/product/{id}/en', [FrontendController::class, 'productEn'])->name('frontend.productEn');
 Route::post('/search', [FrontendController::class, 'search'])->name('frontend.search');
 Route::post('/search/en', [FrontendController::class, 'searchEn'])->name('frontend.searchEn');
+Route::post('/filter/{id}', [FrontendController::class, 'filter'])->name('frontend.filter');
+Route::post('/filter/{id}/en', [FrontendController::class, 'filterEn'])->name('frontend.filterEn');
 
 Auth::routes();
 
@@ -54,4 +56,5 @@ Route::middleware('auth')->group(function(){
 
     //product
     Route::put('/product/add-detail/{id}', [ProductController::class, 'storeDetail'])->name('product.storeDetail');
+    Route::put('/product/update-description/{id}', [ProductController::class, 'storeDescription'])->name('product.storeDescription');
 });

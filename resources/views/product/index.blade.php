@@ -51,8 +51,9 @@
                             <th>Name</th>
                             <th>Category</th>
                             <th>Collection</th>
-                            <th>Description</th>
                             <th>Image</th>
+                            <th>Description</th>
+                            <th>Image Viewer</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -60,10 +61,19 @@
                             @forelse ($product as $item)
                                 <tr>
                                     <td style="text-align: center" width="5%">{{ $loop->iteration }}</td>
-                                    <td width="10%">{{ $item->name }}</td>
-                                    <td width="10%">{{ $item->collection->category->name }}</td>
+                                    <td width="5%">{{ $item->name }}</td>
+                                    <td width="5%">{{ $item->collection->category->name }}</td>
                                     <td width="10%">{{ $item->collection->name }}</td>
-                                    <td width="20%">
+                                    <td width="24%" style="text-align: center; vertical-align: middle;">
+                                        @if ($item->filename == null)
+                                            -
+                                        @else
+                                            <a href="{{ asset('upload/product/'.$item->filename) }}" target="_blank">
+                                                <img width="25%" src="{{ asset('upload/product/'.$item->filename) }}">
+                                            </a>
+                                        @endif
+                                    </td>
+                                    <td width="15%" style="text-align: center">
                                         <table class="table table-bordered">
                                             <tbody>
                                                 @foreach ($item->description()->get() as $desc)
@@ -73,20 +83,31 @@
                                                 </tr>
                                                @endforeach
                                             </tbody>
-                                        </table>
+                                        </table><br>
+                                        <a title="Update Image Viewer" class="btn btn-success" href="{{route('product.edit', $item->id)}}"><span class="fa fa-edit"></span> Update Description</a>
                                     </td>
-                                    <td style="text-align: center">
-                                        @if ($item->filename == null)
-                                            -
+                                    <td width="20%" style="text-align: center; vertical-align: middle">
+                                        @if ($item->detail_filename == null)
+                                            <a title="Add Image Viewer" data-toggle="modal" data-target="#add-image{{ $item->id }}" class="btn btn-warning" href=""><span class="fa fa-plus"></span> Add Image</a>
                                         @else
-                                            <a href="{{ asset('upload/product/'.$item->filename) }}" target="_blank">
-                                                <img width="40%" src="{{ asset('upload/product/'.$item->filename) }}">
-                                            </a>
+                                            <a href="{{ asset('upload/detail_product/'.$item->detail_filename) }}" target="_blank">
+                                                <img width="40%" src="{{ asset('upload/detail_product/'.$item->detail_filename) }}">
+                                            </a><br><br>
+                                            <a title="Update Image Viewer" data-toggle="modal" data-target="#update-image{{ $item->id }}" class="btn btn-success" href=""><span class="fa fa-edit"></span> Update Image</a>
                                         @endif
                                     </td>
-                                    <td>
-                                        <a data-toggle="modal" data-target="#add-image{{ $item->id }}" class="btn btn-info" href=""><span class="fa fa-plus"></span> Add Image Viewer</a><br><br>
+                                    <td style="text-align: center; vertical-align: middle">
+                                            <form action="{{route('product.destroy', $item->id)}}" method="POST">
+                                                @csrf
+                                                <a title="Update Product" data-toggle="modal" data-target="#update-product{{ $item->id }}" class="btn btn-info" href=""><span class="fa fa-edit"></span></a>
+                                                <input name="_method" type="hidden" value="DELETE">
+                                                <button type="submit" class="btn btn-danger show_confirm" data-toggle="tooltip" title='Delete Product'><span class="fa fa-trash"></span></button>
+                                            </form>
                                     </td>
+                                    @include('product.edit')
+                                    @include('product.add_image_viewer')
+                                    @include('product.edit_image_viewer')
+                                    {{-- @include('product.edit_description') --}}
                                 </tr>
                             @empty
                             <tr>
@@ -188,54 +209,6 @@
     <!-- /.modal-dialog -->
   </div>
 
-  @foreach ($product as $v)
-  <div class="modal fade" id="add-image{{$v->id}}">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Upload File Image Viewer</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <!-- general form elements -->
-            <div class="card card-info">
-                <div class="card-header">
-                    {{-- <h3 class="card-title">Quick Example</h3> --}}
-                </div>
-                <!-- /.card-header -->
-                <!-- form start -->
-                <form action="{{ route('product.storeDetail', $v->id) }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                @method('PUT')
-                
-                    <div class="card-body">
-                        <label>Upload Image</label>
-                        <input required style="padding: 3px" name="detail_filename" type="file" class="form-control @error('detail_filename') is-invalid @enderror" placeholder="Enter Name" value="{{ old('detail_filename') }}" required>
-                        @error('detail_filename')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
-                        <p style="font-size: 14px;"><i>*JPG/JPEG/PNG</i></p>
-                    </div>
-                    <!-- /.card-body -->
-
-                    <div class="card-footer">
-                    <button type="submit" class="btn btn-success">Save</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    </div>
-                </form>
-                </div>
-                <!-- /.card -->
-        </div>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
-  @endforeach
-  <!-- /.modal -->
-
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
@@ -260,6 +233,7 @@
     <script src="{{ asset('plugins/select2/js/select2.full.min.js') }}"></script>
     <!-- bs-custom-file-input -->
     <script src=" {{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }} "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 
     {{-- Page level custom scripts --}}
     <script>
@@ -301,6 +275,30 @@
                 }
             });
 
+            const numbers = [<?= $dataSelect2 ?>];
+            numbers.forEach(myFunction);
+            function myFunction(item) {
+                $('#select_collection_update'+item).select2({
+                allowClear: true,
+                ajax: {
+                    url: "{{ route('ajax-collection') }}",
+                    dataType: 'json',
+                    delay: 250,
+                    processResults: function(data) {
+                        return {
+                            results: $.map(data, function(item) {
+                                return {
+                                text: item.name,
+                                id: item.id
+                                }
+                            })
+                        };
+                    },
+                    cache: true
+                }
+            });
+            }
+
         });
 
         var i = 0;
@@ -322,6 +320,26 @@
 
         $(document).on('click','.remove-table-row', function(){
             $(this).parents('tr').remove();
+        });
+
+        $('.show_confirm').click(function(event) {
+            var form =  $(this).closest("form");
+            var name = $(this).data("name");
+            event.preventDefault();
+            swal({
+                title: `Are you sure you want to delete this record?`,
+                text: "If you delete this, it will be gone forever.",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                form.submit();
+                } else {
+                    return false;
+                }
+            });
         });
 
     </script>

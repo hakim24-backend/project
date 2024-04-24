@@ -51,6 +51,7 @@
                             <th>Name</th>
                             <th>Category</th>
                             <th>Image</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -58,8 +59,8 @@
                                 <tr>
                                     <td style="text-align: center" width="5%">{{ $loop->iteration }}</td>
                                     <td width="20%">{{ $item->name }}</td>
-                                    <td width="30%">{{ $item->category->name }}</td>
-                                    <td style="text-align: center">
+                                    <td width="10%">{{ $item->category->name }}</td>
+                                    <td style="text-align: center" width="50%">
                                         @if ($item->filename == null)
                                             -
                                         @else
@@ -68,6 +69,15 @@
                                             </a>
                                         @endif
                                     </td>
+                                    <td style="text-align: center">
+                                        <form action="{{route('collection.destroy', $item->id)}}" method="POST">
+                                            @csrf
+                                            <a title="Update Collection" data-toggle="modal" data-target="#update-collection{{ $item->id }}" class="btn btn-info" href=""><span class="fa fa-edit"></span></a>
+                                            <input name="_method" type="hidden" value="DELETE">
+                                            <button type="submit" class="btn btn-danger show_confirm" data-toggle="tooltip" title='Delete Collection'><span class="fa fa-trash"></span></button>
+                                        </form>
+                                    </td>
+                                    @include('collection.edit')
                                 </tr>
                             @empty
                             <tr>
@@ -179,6 +189,7 @@
     <script src="{{ asset('plugins/select2/js/select2.full.min.js') }}"></script>
     <!-- bs-custom-file-input -->
     <script src=" {{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }} "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 
     {{-- Page level custom scripts --}}
     <script>
@@ -219,7 +230,51 @@
                     cache: true
                 }
             });
+            
+            const numbers = [<?= $dataSelect2 ?>];
+            numbers.forEach(myFunction);
+            function myFunction(item) {
+                $('#select_category_update'+item).select2({
+                    allowClear: true,
+                    ajax: {
+                        url: "{{ route('ajax-category') }}",
+                        dataType: 'json',
+                        delay: 250,
+                        processResults: function(data) {
+                            return {
+                                results: $.map(data, function(item) {
+                                    return {
+                                    text: item.name,
+                                    id: item.id
+                                    }
+                                })
+                            };
+                        },
+                        cache: true
+                    }
+                });
+            }
 
+        });
+
+        $('.show_confirm').click(function(event) {
+            var form =  $(this).closest("form");
+            var name = $(this).data("name");
+            event.preventDefault();
+            swal({
+                title: `Are you sure you want to delete this record?`,
+                text: "If you delete this, it will be gone forever.",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                form.submit();
+                } else {
+                    return false;
+                }
+            });
         });
 
     </script>
