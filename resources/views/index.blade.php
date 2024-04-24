@@ -157,7 +157,7 @@
           <div class="col-10 m-auto">
             <div class="row h100 align-items-center">
               <div class="col col-xl-6 slide-left">
-                <h1>СТОЛЕШНИЦЫ<span class="primary-color">|</span>TESTING ONE</h1>
+                <h1>СТОЛЕШНИЦЫ<span class="primary-color">|</span></h1>
                 <p>известность среди производителей, устойчивый спрос потребителей
                   , многообразие декоров классические и современные дизайны, глянцевые декоры,
                    эксклюзивные трендовые декоры, 4 новые структуры, премиальное качество по
