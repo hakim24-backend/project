@@ -79,12 +79,12 @@
     <style>
 
       .secondImageNew .simg {
-        width: 500%;
+        width: 415px;
         height: 300px;
-        margin-bottom:80px ;
+        margin-bottom: 80px;
         margin-top: -95px;
-        zoom:100%;
-        margin-left: 10px;
+        zoom: 100%;
+        margin-left: 40px;
         padding-top: 15%;
       } 
 
