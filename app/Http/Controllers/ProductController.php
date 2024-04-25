@@ -151,6 +151,16 @@ class ProductController extends Controller
         return redirect()->route('product.index');
     }
 
+    public function deleteImageView($id)
+    {
+        $product = Product::findOrFail($id);
+        $product->update([
+            'detail_filename' => null
+        ]);
+        
+        return redirect()->route('product.index');
+    }
+
     /**
      * Remove the specified resource from storage.
      */

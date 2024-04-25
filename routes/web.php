@@ -57,4 +57,5 @@ Route::middleware('auth')->group(function(){
     //product
     Route::put('/product/add-detail/{id}', [ProductController::class, 'storeDetail'])->name('product.storeDetail');
     Route::put('/product/update-description/{id}', [ProductController::class, 'storeDescription'])->name('product.storeDescription');
+    Route::put('/product/deleteImageView/{id}', [ProductController::class, 'deleteImageView'])->name('product.deleteImageView');
 });
