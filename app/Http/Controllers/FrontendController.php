@@ -145,7 +145,21 @@ class FrontendController extends Controller
             return view('not_found');
         } else {
             $description = Description::where('id_product', $product->id)->get();
-            return view('product', compact('product'), compact('description'));
+            $getValue = Description::where('id_product', $product->id)->count();
+
+            //get name by lenght
+            $checkName = substr_count($product->name, ' ');
+            if ($checkName == 1 && $getValue <= 4) {
+                $imageView = 1;
+            } elseif ($checkName == 2 && $getValue <= 3) {
+                $imageView = 1;
+            } elseif ($checkName >= 3 && $getValue <= 2) {
+                $imageView = 1;
+            } else {
+                $imageView = 0;
+            }
+
+            return view('product', compact('product', 'description', 'checkName', 'imageView'));
         }
     }
 
@@ -168,7 +182,20 @@ class FrontendController extends Controller
             return view('not_found_en');
         } else {
             $description = Description::where('id_product', $product->id)->get();
-            return view('product_en', compact('product'), compact('description'));
+            $getValue = Description::where('id_product', $product->id)->count();
+
+            //get name by lenght
+            $checkName = substr_count($product->name, ' ');
+            if ($checkName == 1 && $getValue <= 4) {
+                $imageView = 1;
+            } elseif ($checkName == 2 && $getValue <= 3) {
+                $imageView = 1;
+            } elseif ($checkName >= 3 && $getValue <= 2) {
+                $imageView = 1;
+            } else {
+                $imageView = 0;
+            }
+            return view('product_en', compact('product', 'description', 'checkName', 'imageView'));
         }
     }
 
@@ -261,6 +288,14 @@ class FrontendController extends Controller
             'collection' => $collection,
             'product' => $product,
             'description' => $description
+        ]);
+    }
+
+    public function visualizer()
+    {
+        $product = Product::all();
+        return view('visualizer', [
+            'product' => $product
         ]);
     }
 }
