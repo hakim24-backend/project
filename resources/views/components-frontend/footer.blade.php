@@ -10,7 +10,7 @@
               <ul>
                 <li><a href="#" class="nav-link">ПРОДУКТЫ</a></li>
                 <li><a href="#" class="nav-link">КОЛЛЕКЦИИ</a></li>
-                <li><a href="#" class="nav-link">ВИЗУАЛИЗАТОР</a></li>
+                <li><a href="{{route('frontend.visualizer')}}" class="nav-link">ВИЗУАЛИЗАТОР</a></li>
                 <li><a href="#" class="nav-link">КОМПАНИЯ</a></li>
 
               </ul>

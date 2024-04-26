@@ -35,6 +35,7 @@ Route::get('/collection/{id}', [FrontendController::class, 'collection'])->name(
 Route::get('/collection/{id}/en', [FrontendController::class, 'collectionEn'])->name('frontend.collectionEn');
 Route::get('/product/{id}', [FrontendController::class, 'product'])->name('frontend.product');
 Route::get('/product/{id}/en', [FrontendController::class, 'productEn'])->name('frontend.productEn');
+Route::get('/visualizer', [FrontendController::class, 'visualizer'])->name('frontend.visualizer');
 Route::post('/search', [FrontendController::class, 'search'])->name('frontend.search');
 Route::post('/search/en', [FrontendController::class, 'searchEn'])->name('frontend.searchEn');
 Route::post('/filter/{id}', [FrontendController::class, 'filter'])->name('frontend.filter');
