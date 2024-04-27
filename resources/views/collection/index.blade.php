@@ -50,6 +50,7 @@
                             <th>No</th>
                             <th>Name</th>
                             <th>Category</th>
+                            <th>Description</th>
                             <th>Image</th>
                             <th>Action</th>
                         </tr>
@@ -60,6 +61,7 @@
                                     <td style="text-align: center" width="5%">{{ $loop->iteration }}</td>
                                     <td width="20%">{{ $item->name }}</td>
                                     <td width="10%">{{ $item->category->name }}</td>
+                                    <td width="20%">{{ $item->description }}</td>
                                     <td style="text-align: center" width="50%">
                                         @if ($item->filename == null)
                                             -
