@@ -40,6 +40,13 @@
                             <div class="row">
                                 <div class="col-md-12">
                                         <div class="form-group">
+                                            <label>Description Collection</label>
+                                            <textarea name="description" rows="5" class="form-control @error('description') is-invalid @enderror" placeholder="Enter Description" required>{{ old('description', $item->description) }}</textarea>
+                                            @error('description')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
                                             <label>Upload Image</label>
                                             <input style="padding: 3px" name="filename" type="file" class="form-control @error('filename') is-invalid @enderror" placeholder="Enter Name" value="{{ old('filename') }}">
                                             @error('filename')

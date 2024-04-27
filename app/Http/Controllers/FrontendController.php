@@ -23,7 +23,17 @@ class FrontendController extends Controller
         } else {
             $collection = Collection::where('id_category', $category->id)->get();
         }
-        return view('category', compact('collection'), compact('category'));
+
+        if ($name == 'Межкомнатные двери') {
+            $product = Product::select('products.*')
+            ->join('collections', 'collections.id', '=', 'products.id_collection')
+            ->join('categories', 'categories.id', '=', 'collections.id_category')
+            ->where('categories.name', 'Межкомнатные двери')
+            ->get();
+            return view('category_door', compact('product', 'category'));
+        } else {
+            return view('category', compact('collection'), compact('category'));
+        }
     }
 
     public function categoryEn($name) {
@@ -34,7 +44,17 @@ class FrontendController extends Controller
         } else {
             $collection = Collection::where('id_category', $category->id)->get();
         }
-        return view('category_en', compact('collection'), compact('category'));
+
+        if ($name == 'Межкомнатные двери') {
+            $product = Product::select('products.*')
+            ->join('collections', 'collections.id', '=', 'products.id_collection')
+            ->join('categories', 'categories.id', '=', 'collections.id_category')
+            ->where('categories.name', 'Межкомнатные двери')
+            ->get();
+            return view('category_door_en', compact('product', 'category'));
+        } else {
+            return view('category_en', compact('collection'), compact('category'));
+        }
     }
 
     public function collection($id) {
@@ -102,40 +122,47 @@ class FrontendController extends Controller
         $product = Product::where('id', $id)->first();
         $description = Description::where('id_product', $product->id)->get();
         $getValue = Description::where('id_product', $product->id)->count();
-
-        //get name by lenght
-        $checkName = substr_count($product->name, ' ');
-        if ($checkName == 1 && $getValue <= 4) {
-            $imageView = 1;
-        } elseif ($checkName == 2 && $getValue <= 3) {
-            $imageView = 1;
-        } elseif ($checkName >= 3 && $getValue <= 2) {
-            $imageView = 1;
+        // dd($product->collection->category->name);
+        if ($product->collection->category->name == 'МЕЖКОМНАТНЫЕ ДВЕРИ') {
+            return view('product_door', compact('product', 'description'));
         } else {
-            $imageView = 0;
+            //get name by lenght
+            $checkName = substr_count($product->name, ' ');
+            if ($checkName == 1 && $getValue <= 4) {
+                $imageView = 1;
+            } elseif ($checkName == 2 && $getValue <= 3) {
+                $imageView = 1;
+            } elseif ($checkName >= 3 && $getValue <= 2) {
+                $imageView = 1;
+            } else {
+                $imageView = 0;
+            }
+            
+            return view('product', compact('product', 'description', 'checkName', 'imageView'));
         }
-        
-        return view('product', compact('product', 'description', 'checkName', 'imageView'));
     }
 
     public function productEn($id) {
         $product = Product::where('id', $id)->first();
         $description = Description::where('id_product', $product->id)->get();
         $getValue = Description::where('id_product', $product->id)->count();
-
-        //get name by lenght
-        $checkName = substr_count($product->name, ' ');
-        if ($checkName == 1 && $getValue <= 4) {
-            $imageView = 1;
-        } elseif ($checkName == 2 && $getValue <= 3) {
-            $imageView = 1;
-        } elseif ($checkName >= 3 && $getValue <= 2) {
-            $imageView = 1;
+        if ($product->collection->category->name == 'МЕЖКОМНАТНЫЕ ДВЕРИ') {
+            return view('product_door_en', compact('product', 'description'));
         } else {
-            $imageView = 0;
-        }
+            //get name by lenght
+            $checkName = substr_count($product->name, ' ');
+            if ($checkName == 1 && $getValue <= 4) {
+                $imageView = 1;
+            } elseif ($checkName == 2 && $getValue <= 3) {
+                $imageView = 1;
+            } elseif ($checkName >= 3 && $getValue <= 2) {
+                $imageView = 1;
+            } else {
+                $imageView = 0;
+            }
 
-        return view('product_en', compact('product', 'description', 'checkName', 'imageView'));
+            return view('product_en', compact('product', 'description', 'checkName', 'imageView'));
+        }
     }
 
     public function search(Request $request)

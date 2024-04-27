@@ -63,7 +63,7 @@
               </ul>
             </li>
 
-            <li class="nav-item"><a href="{{route('frontend.categoryEn', 'Стеновые панели')}}" class="nav-link">Interior Doors</a>
+            <li class="nav-item"><a href="{{route('frontend.categoryEn', 'Межкомнатные двери')}}" class="nav-link">Interior Doors</a>
               <ul class="dropdown">
 
               </ul>

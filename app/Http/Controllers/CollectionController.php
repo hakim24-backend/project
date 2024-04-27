@@ -41,6 +41,7 @@ class CollectionController extends Controller
         $validateCollection = $this->validate($request, [
             'id_category' => 'required|integer',
             'name' => 'required|string',
+            'description' => 'required|string',
             'filename' => 'required|image|max:2048'
         ]);
         
@@ -51,6 +52,7 @@ class CollectionController extends Controller
         $validateCollection = Collection::create([
             'id_category' => $request->id_category,
             'name' => $request->name,
+            'description' => $request->description,
             'filename' => $nameFile
         ]);
         if ($validateCollection) {
@@ -87,7 +89,8 @@ class CollectionController extends Controller
 
             $collection->update([
                 'id_category' => $request->id_category_update,
-                'name' => $request->name
+                'name' => $request->name,
+                'description' => $request->description
             ]);
             return redirect()->route('collection.index');
 
@@ -100,6 +103,7 @@ class CollectionController extends Controller
             $collection->update([
                 'id_category' => $request->id_category_update,
                 'name' => $request->name,
+                'description' => $request->description,
                 'filename' => $nameFile
             ]);
             return redirect()->route('collection.index');

@@ -212,7 +212,7 @@
                 <p>Мы создаем удобную, безопасную и эстетически привлекательную среду
                   обитания для дома, а также социальных и коммерческих объектов.</p>
                 <div class="cta">
-                  <a href="#" class="button button-primary">ПОДРОБНЕЕ</a>
+                  <a href="{{route('frontend.category', 'МЕЖКОМНАТНЫЕ ДВЕРИ')}}" class="button button-primary">ПОДРОБНЕЕ</a>
                 </div>
               </div>
             </div>
@@ -227,7 +227,7 @@
                 <p>Мы создаем удобную, безопасную и эстетически привлекательную среду
                   обитания для дома, а также социальных и коммерческих объектов </p>
                 <div class="cta">
-                  <a href="#" class="button button-primary">ПОДРОБНЕЕ</a>
+                  <a href="{{route('frontend.category', 'МЕЖКОМНАТНЫЕ ДВЕРИ')}}" class="button button-primary">ПОДРОБНЕЕ</a>
                 </div>
               </div>
             </div>

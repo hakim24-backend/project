@@ -113,10 +113,15 @@
           GLOSSY WHITE
           @endif
         @else
-          For over 20 years, we have been manufacturing and supplying particleboard countertops 
-          that comply with European and Russian quality standards. 
-          "Soyuz" countertops offer a vast assortment, exclusive designs, 
-          top-notch performance characteristics, and affordable prices.
+          @php
+              $source1 = 'ru';
+              $target1 = 'en';
+              $text1 = $collection->description;
+
+              $trans1 = new GoogleTranslate();
+              $result1 = $trans1->translate($source1, $target1, $text1);
+          @endphp
+          {{$result1}}
         @endif
       </p> </span>
     </div>

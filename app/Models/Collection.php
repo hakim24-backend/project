@@ -13,6 +13,7 @@ class Collection extends Model
         'id',
         'name',
         'filename',
+        'description',
         'id_category',
         'created_at',
         'updated_at'

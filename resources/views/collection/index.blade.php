@@ -137,6 +137,11 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
+                                    <label>Description Collection</label>
+                                    <textarea name="description" rows="5" class="form-control @error('description') is-invalid @enderror" placeholder="Enter Description" required>{{ old('description') }}</textarea>
+                                    @error('description')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                     <div class="form-group">
                                         <label>Upload Image</label>
                                         <input required style="padding: 3px" name="filename" type="file" class="form-control @error('filename') is-invalid @enderror" placeholder="Enter Name" value="{{ old('filename') }}" required>
