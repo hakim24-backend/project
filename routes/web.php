@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\SliderController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\ProductController;
@@ -47,6 +48,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('admin');
 
     //resource master
+    Route::resource('slider', SliderController::class);
     Route::resource('category', CategoryController::class);
     Route::resource('collection', CollectionController::class);
     Route::resource('product', ProductController::class);

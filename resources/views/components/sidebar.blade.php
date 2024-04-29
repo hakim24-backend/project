@@ -18,9 +18,17 @@
         
             <li class="nav-item">
               <a href="{{ route('admin') }}" class="nav-link {{ request()->is('admin') ? ' active' : ''}}">
-                <i class="nav-icon far fa-image"></i>
+                <i class="nav-icon fa fa-home"></i>
                 <p>
                   Dashboard
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('slider.index') }}" class="nav-link {{ request()->is('slider') ? ' active' : ''}}">
+                <i class="nav-icon fa fa-image"></i>
+                <p>
+                  Slider
                 </p>
               </a>
             </li>

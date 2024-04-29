@@ -5,6 +5,7 @@ use App\Models\Category;
 use App\Models\Collection;
 use App\Models\Product;
 use App\Models\Description;
+use App\Models\Slider;
 
 use \Statickidz\GoogleTranslate;
 use Illuminate\Http\Request;
@@ -12,7 +13,8 @@ use Illuminate\Http\Request;
 class FrontendController extends Controller
 {
     public function index(){
-        return view('index');
+        $slider = Slider::all();
+        return view('index', compact('slider'));
     }
 
     public function category($name) {

@@ -28,8 +28,12 @@
   <link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/responsive.css')}}">
   <link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/search.css')}}">
 </head>
+@foreach ($slider as $item)
+@php
+    $link = asset('/upload/slider/'.$item->filename);
+@endphp
 <style>
-  #hero-slider .slide1 {
+  #hero-slider .{{$item->name_css}} {
     background: -webkit-gradient(
         linear,
         left top,
@@ -38,98 +42,19 @@
         color-stop(12%, rgba(0, 0, 0, 0.8)),
         to(rgba(0, 0, 0, 0.5))
       ),
-      url('{{asset('/upload/img/image1/design-fond-moderne-3d-bois/столешницы_1_уровень.jpg')}}');
+      url('{{$link}}');
     background: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0.95) 0%,
         rgba(0, 0, 0, 0) 12%,
         rgba(0, 0, 0, 0) 100%
       ),
-      url('{{asset('/upload/img/image1/design-fond-moderne-3d-bois/столешницы_1_уровень.jpg')}}');
-    background-size: cover;
-    background-position: center;
-  }
-  #hero-slider .slide2 {
-    background: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        from(rgba(0, 0, 0, 0.95)),
-        color-stop(12%, rgba(0, 0, 0, 0.8)),
-        to(rgba(0, 0, 0, 0.5))
-      ),
-      url('{{asset('/upload/img/image1/design-fond-moderne-3d-bois/лдсп.jpg')}}');
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.95) 0%,
-        rgba(0, 0, 0, 0) 12%,
-        rgba(0, 0, 0, 0) 100%
-      ),
-      url('{{asset('/upload/img/image1/design-fond-moderne-3d-bois/лдсп.jpg')}}');
-    background-size: cover;
-    background-position: center;
-  }
-  #hero-slider .slide3 {
-    background: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        from(rgba(0, 0, 0, 0.95)),
-        color-stop(12%, rgba(0, 0, 0, 0.8)),
-        to(rgba(0, 0, 0, 0.5))
-      ),
-      url('{{asset('/upload/img/image1/design-fond-moderne-3d-bois/мдф_коллаж1.jpg')}}');
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.95) 0%,
-        rgba(0, 0, 0, 0) 12%,
-        rgba(0, 0, 0, 0) 100%
-      ),
-      url('{{asset('/upload/img/image1/design-fond-moderne-3d-bois/мдф_коллаж1.jpg')}}');
-    background-size: cover;
-    background-position: center;
-  }
-  #hero-slider .slide4 {
-    background: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        from(rgba(0, 0, 0, 0.95)),
-        color-stop(12%, rgba(0, 0, 0, 0.8)),
-        to(rgba(0, 0, 0, 0.5))
-      ),
-      url('{{asset('/upload/img/image1/design-fond-moderne-3d-bois/door1.jpg')}}');
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.95) 0%,
-        rgba(0, 0, 0, 0) 12%,
-        rgba(0, 0, 0, 0) 100%
-      ),
-      url('{{asset('/upload/img/image1/design-fond-moderne-3d-bois/door1.jpg')}}');
-    background-size: cover;
-    background-position: center;
-  }
-  #hero-slider .slide5 {
-    background: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        from(rgba(0, 0, 0, 0.95)),
-        color-stop(12%, rgba(0, 0, 0, 0.8)),
-        to(rgba(0, 0, 0, 0.5))
-      ),
-      url('{{asset('/upload/img/image1/design-fond-moderne-3d-bois/door1.jpg')}}');
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.95) 0%,
-        rgba(0, 0, 0, 0) 12%,
-        rgba(0, 0, 0, 0.5) 100%
-      ),
-      url('{{asset('/upload/img/image1/design-fond-moderne-3d-bois/door1.jpg')}}');
+      url('{{$link}}');
     background-size: cover;
     background-position: center;
   }
 </style>
+@endforeach
 <body data-spay="scroll" data-target=".nav" data-offset="100">
 
   {{-- Header --}}
@@ -142,97 +67,41 @@
       <!-- Indicators -->
       <div class="col-10 m-auto">
         <ul class="carousel-indicators">
-          <li data-target="#hero-slider" data-slide-to="0" class="active"></li>
-          <li data-target="#hero-slider" data-slide-to="1"></li>
-          <li data-target="#hero-slider" data-slide-to="2"></li>
-          <li data-target="#hero-slider" data-slide-to="3"></li>
-          <li data-target="#hero-slider" data-slide-to="4"></li>
+
+          @foreach ($slider as $key => $value)
+            @if ($key == 0)
+              <li data-target="#hero-slider" data-slide-to="{{$key}}" class="active"></li>
+            @else
+              <li data-target="#hero-slider" data-slide-to="{{$key}}"></li>
+            @endif
+          @endforeach
         </ul>
       </div>
 
       <!-- The slideshow -->
       <div class="carousel-inner">
 
-        <div class="carousel-item slide1 active">
-          <div class="col-10 m-auto">
-            <div class="row h100 align-items-center">
-              <div class="col col-xl-6 slide-left">
-                <h1>СТОЛЕШНИЦЫ<span class="primary-color">|</span></h1>
-                <p>известность среди производителей, устойчивый спрос потребителей
-                  , многообразие декоров классические и современные дизайны, глянцевые декоры,
-                   эксклюзивные трендовые декоры, 4 новые структуры, премиальное качество по
-                    доступной цене, дерево и камень, авторские декоры в коллекциях, имитация 
-                    фактуры природных материалов, мировые дизайнерские тенденции, достоверное 
-                    воспроизведение природных материалов – полноформатный рисунок камня и древесины,
-                     фольгированные декоры, пластики с цифровой печатью</p>
-                <div class="cta">
-                  <a href="{{route('frontend.category', 'Столешницы')}}" class="button button-primary">ПОДРОБНЕЕ</a>
+        @foreach ($slider as $k => $v)
+            @if ($k == 0)
+              <div class="carousel-item {{$v->name_css}} active">
+            @else
+              <div class="carousel-item {{$v->name_css}}">
+            @endif
+            
+              <div class="col-10 m-auto">
+                <div class="row h100 align-items-center">
+                  <div class="col col-xl-6 slide-left">
+                    <h1>{{$v->name}}<span class="primary-color">|</span></h1>
+                    <p>{{$v->description}}</p>
+                    <div class="cta">
+                      <a href="{{route('frontend.category', $v->name)}}" class="button button-primary">ПОДРОБНЕЕ</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        <div class="carousel-item slide2">
-          <div class="col-10 m-auto">
-            <div class="row h100 align-items-center">
-              <div class="col col-xl-6 slide-left">
-                <h1>ЛДСП<span class="primary-color">|</span></h1>
-                <p>Уникальная для российского рынка гибкая высокотехнологичная
-                  система производства и поставки мебельных фасадов и
-                  аксессуаров.</p>
-                <div class="cta">
-                  <a href="{{route('frontend.category', 'ЛДСП')}}" class="button button-primary">ПОДРОБНЕЕ</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item slide3">
-          <div class="col-10 m-auto">
-            <div class="row h100 align-items-center">
-              <div class="col col-xl-6 slide-left">
-                <h1>СТЕНОВЫЕ ПАНЕЛИ<span class="primary-color">|</span></h1>
-                <p>Огромный ассортимент мебельных профилей на основе МДФ,
-                  обладающих исключительными эксплуатационными качествами.</p>
-                <div class="cta">
-                  <a href="{{route('frontend.category', 'СТЕНОВЫЕ ПАНЕЛИ')}}" class="button button-primary">ПОДРОБНЕЕ</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item slide4">
-          <div class="col-10 m-auto">
-            <div class="row h100 align-items-center">
-              <div class="col col-xl-6 slide-left">
-                <h1>МЕЖКОМНАТНЫЕ ДВЕРИ<span class="primary-color">|</span></h1>
-                <p>Мы создаем удобную, безопасную и эстетически привлекательную среду
-                  обитания для дома, а также социальных и коммерческих объектов.</p>
-                <div class="cta">
-                  <a href="{{route('frontend.category', 'МЕЖКОМНАТНЫЕ ДВЕРИ')}}" class="button button-primary">ПОДРОБНЕЕ</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item slide5">
-          <div class="col-10 m-auto">
-            <div class="row h100 align-items-center">
-              <div class="col col-xl-6 slide-left">
-                <h1>МЕЖКОМНАТНЫЕ ДВЕРИ<span class="primary-color">|</span></h1>
-                <p>Мы создаем удобную, безопасную и эстетически привлекательную среду
-                  обитания для дома, а также социальных и коммерческих объектов </p>
-                <div class="cta">
-                  <a href="{{route('frontend.category', 'МЕЖКОМНАТНЫЕ ДВЕРИ')}}" class="button button-primary">ПОДРОБНЕЕ</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        @endforeach
 
       </div>
 
