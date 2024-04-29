@@ -17,6 +17,11 @@ class FrontendController extends Controller
         return view('index', compact('slider'));
     }
 
+    public function indexEn(){
+        $slider = Slider::all();
+        return view('index_en', compact('slider'));
+    }
+
     public function category($name) {
         $category = Category::where('name', $name)->first();
 

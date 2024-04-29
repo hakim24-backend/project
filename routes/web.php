@@ -24,12 +24,13 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/en', function () {
-    return view('index_en');
-})->name('frontend.en');
+// Route::get('/en', function () {
+//     return view('index_en');
+// })->name('frontend.en');
 
 //frontend
 Route::get('/', [FrontendController::class, 'index'])->name('frontend.index');
+Route::get('/en', [FrontendController::class, 'indexEn'])->name('frontend.en');
 Route::get('/category/{name}', [FrontendController::class, 'category'])->name('frontend.category');
 Route::get('/category/{name}/en', [FrontendController::class, 'categoryEn'])->name('frontend.categoryEn');
 Route::get('/collection/{id}', [FrontendController::class, 'collection'])->name('frontend.collection');
