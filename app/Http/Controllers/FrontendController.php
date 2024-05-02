@@ -6,6 +6,7 @@ use App\Models\Collection;
 use App\Models\Product;
 use App\Models\Description;
 use App\Models\Slider;
+use App\Models\Contact;
 
 use \Statickidz\GoogleTranslate;
 use Illuminate\Http\Request;
@@ -331,5 +332,34 @@ class FrontendController extends Controller
         return view('visualizer', [
             'product' => $product
         ]);
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
+
+    public function contactEn()
+    {
+        return view('contact_en');
+    }
+
+    public function contactStore(Request $request, $id)
+    {
+        $validateData = $this->validate($request, [
+            'name' => 'required||string',
+            'email' => 'required||string',
+            'phone' => 'required||string',
+            'message' => 'required||string'
+        ]);
+
+        $contact = Contact::create($validateData);
+        if ($contact) {
+            if ($id == 1) {
+                return redirect()->route('frontend.contact');
+            } else {
+                return redirect()->route('frontend.contactEn');
+            }
+        }
     }
 }

@@ -76,7 +76,7 @@
                 <li><a href="#">PROFILE HISTORY</a></li>
                 <li><a href="#">WORK WITH US</a></li>
                 <li><a href="#">COLLECTIONS</a></li>
-                <li><a href="contact.html">Ask a Question</a></li>
+                <li><a href="{{route('frontend.contactEn')}}">ASK A QUESTION</a></li>
 
               </ul>
 

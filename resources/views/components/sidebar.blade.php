@@ -57,6 +57,14 @@
               </a>
             </li>
             <li class="nav-item">
+              <a href="{{ route('contact.index') }}" class="nav-link {{ request()->is('contact') ? ' active' : ''}}">
+                <i class="nav-icon fa fa-phone"></i>
+                <p>
+                  Contact
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
               <a href="{{route('frontend.index')}}" class="nav-link">
                 <i class="nav-icon fa fa-globe"></i>
                 <p>

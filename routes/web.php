@@ -6,6 +6,7 @@ use App\Http\Controllers\SliderController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\FrontendController;
 
@@ -38,6 +39,9 @@ Route::get('/collection/{id}/en', [FrontendController::class, 'collectionEn'])->
 Route::get('/product/{id}', [FrontendController::class, 'product'])->name('frontend.product');
 Route::get('/product/{id}/en', [FrontendController::class, 'productEn'])->name('frontend.productEn');
 Route::get('/visualizer', [FrontendController::class, 'visualizer'])->name('frontend.visualizer');
+Route::get('/contacts', [FrontendController::class, 'contact'])->name('frontend.contact');
+Route::get('/contacts/en', [FrontendController::class, 'contactEn'])->name('frontend.contactEn');
+Route::post('/contacts-store/{id}', [FrontendController::class, 'contactStore'])->name('frontend.contactStore');
 Route::post('/search', [FrontendController::class, 'search'])->name('frontend.search');
 Route::post('/search/en', [FrontendController::class, 'searchEn'])->name('frontend.searchEn');
 Route::post('/filter/{id}', [FrontendController::class, 'filter'])->name('frontend.filter');
@@ -53,6 +57,7 @@ Route::middleware('auth')->group(function(){
     Route::resource('category', CategoryController::class);
     Route::resource('collection', CollectionController::class);
     Route::resource('product', ProductController::class);
+    Route::resource('contact', ContactController::class);
 
     //ajax select2
     Route::get('/ajax-category', [AjaxController::class, 'selectCategory'])->name('ajax-category');

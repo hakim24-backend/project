@@ -76,7 +76,7 @@
                   <li><a href="#">ИСТОРИЯ ПРОФИЛЯ</a></li>
                   <li><a href="#">РАБОТАТЬ С НАМИ</a></li>
                   <li><a href="#">КОЛЛЕКЦИИ</a></li>
-                  <li><a href="contact.html">Задать вопрос</a></li>
+                  <li><a href="{{route('frontend.contact')}}">Задать вопрос</a></li>
 
                 </ul>
 

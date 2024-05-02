@@ -9,7 +9,7 @@
                 <li><a href="#" class="nav-link">PRODUCTS</a></li>
                 <li><a href="#" class="nav-link">COLLECTIONS</a></li>
                 <li><a href="#" class="nav-link">VISUALIZER</a></li>
-                <li><a href="#" class="nav-link">COMPANY</a></li>
+                <li><a href="{{route('frontend.contactEn')}}" class="nav-link">ASK A QUESTION</a></li>
               </ul>
             </div>
           </div>
