@@ -38,6 +38,7 @@
                         <tr>
                             <th>No</th>
                             <th>Name</th>
+                            <th>Description</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -46,6 +47,7 @@
                                 <tr>
                                     <td style="text-align: center">{{ $loop->iteration }}</td>
                                     <td>{{ $item->name }}</td>
+                                    <td width="40%">{{ $item->description }}</td>
                                     <td style="text-align: center">
                                         <form action="{{route('category.destroy', $item->id)}}" method="POST">
                                             @csrf
@@ -96,6 +98,13 @@
                             <label>Name Category</label>
                             <input name="name" type="input" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Name" value="{{ old('name') }}" required>
                             @error('name')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>Description Category</label>
+                            <textarea name="description" rows="5" class="form-control @error('description') is-invalid @enderror" placeholder="Enter Description">{{ old('description') }}</textarea>
+                            @error('description')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>

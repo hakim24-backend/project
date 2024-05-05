@@ -30,7 +30,8 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $validateData = $this->validate($request, [
-            'name' => 'required||string'
+            'name' => 'required||string',
+            'description' => 'string'
         ], [
             'name.required' => 'Form name cannot blank',
         ]);
@@ -64,7 +65,8 @@ class CategoryController extends Controller
     {
         $category = Category::findOrFail($id);
         $category->update([
-            'name' => $request->name
+            'name' => $request->name,
+            'description' => $request->description
         ]);
         if ($category) {
             return redirect()->route('category.index');

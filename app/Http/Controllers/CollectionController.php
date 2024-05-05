@@ -41,7 +41,6 @@ class CollectionController extends Controller
         $validateCollection = $this->validate($request, [
             'id_category' => 'required|integer',
             'name' => 'required|string',
-            'description' => 'required|string',
             'filename' => 'required|image|max:2048'
         ]);
         
@@ -49,10 +48,17 @@ class CollectionController extends Controller
         $folderGambar = 'upload/collection';
         $request->filename->move($folderGambar, $nameFile);
 
+        ///cek description
+        if ($request->description == null) {
+            $description = "-";
+        } else {
+            $description = $request->description;
+        }
+
         $validateCollection = Collection::create([
             'id_category' => $request->id_category,
             'name' => $request->name,
-            'description' => $request->description,
+            'description' => $description,
             'filename' => $nameFile
         ]);
         if ($validateCollection) {
@@ -85,12 +91,24 @@ class CollectionController extends Controller
 
         //cek image
         $filename = $request->filename;
+
+        // dd($request->description);
+        //cek description
+        if ($request->description !== $collection->description) {
+            if ($request->description == null) {
+                $description = "-";
+            } else {
+                $description = $request->description;
+            }
+        } else {
+            $description = $collection->description;
+        }
         if ($filename == null) {
 
             $collection->update([
                 'id_category' => $request->id_category_update,
                 'name' => $request->name,
-                'description' => $request->description
+                'description' => $description
             ]);
             return redirect()->route('collection.index');
 
@@ -103,7 +121,7 @@ class CollectionController extends Controller
             $collection->update([
                 'id_category' => $request->id_category_update,
                 'name' => $request->name,
-                'description' => $request->description,
+                'description' => $description,
                 'filename' => $nameFile
             ]);
             return redirect()->route('collection.index');

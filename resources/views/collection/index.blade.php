@@ -61,7 +61,13 @@
                                     <td style="text-align: center" width="5%">{{ $loop->iteration }}</td>
                                     <td width="20%">{{ $item->name }}</td>
                                     <td width="10%">{{ $item->category->name }}</td>
-                                    <td width="20%">{{ $item->description }}</td>
+                                    <td width="20%">
+                                        @if ($item->description == "" || $item->description == null || $item->description == "-")
+                                            {{-- no action --}}
+                                        @else
+                                            {{ $item->description }}
+                                        @endif
+                                    </td>
                                     <td style="text-align: center" width="50%">
                                         @if ($item->filename == null)
                                             -
@@ -139,11 +145,13 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                    <label>Description Collection</label>
-                                    <textarea name="description" rows="5" class="form-control @error('description') is-invalid @enderror" placeholder="Enter Description" required>{{ old('description') }}</textarea>
-                                    @error('description')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                    <div class="form-group">
+                                        <label>Description Collection</label>
+                                        <textarea name="description" rows="5" class="form-control @error('description') is-invalid @enderror" placeholder="Enter Description">{{ old('description') }}</textarea>
+                                        @error('description')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
                                     <div class="form-group">
                                         <label>Upload Image</label>
                                         <input required style="padding: 3px" name="filename" type="file" class="form-control @error('filename') is-invalid @enderror" placeholder="Enter Name" value="{{ old('filename') }}" required>
