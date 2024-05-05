@@ -121,7 +121,11 @@
               $trans1 = new GoogleTranslate();
               $result1 = $trans1->translate($source1, $target1, $text1);
           @endphp
-          {{$result1}}
+          @if ($result1 == "-")
+            {{-- no action --}}
+          @else
+            {{$result1}}
+          @endif
         @endif
       </p> </span>
     </div>

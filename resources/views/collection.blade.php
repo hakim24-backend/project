@@ -112,7 +112,11 @@
           БЕЛЫЙ ГЛЯНЕЦ
           @endif
         @else
-          {{$collection->description}}
+          @if ($collection->description == "-")
+            {{-- no action --}}
+          @else
+            {{$collection->description}}
+          @endif
         @endif
       </p> </span>
     </div>
