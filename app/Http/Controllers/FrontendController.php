@@ -32,7 +32,7 @@ class FrontendController extends Controller
             $collection = Collection::where('id_category', $category->id)->get();
         }
 
-        if ($name == 'Межкомнатные двери') {
+        if ($name == 'Межкомнатные двери' || 'МЕЖКОМНАТНЫЕ ДВЕРИ') {
             $product = Product::select('products.*')
             ->join('collections', 'collections.id', '=', 'products.id_collection')
             ->join('categories', 'categories.id', '=', 'collections.id_category')
@@ -53,7 +53,7 @@ class FrontendController extends Controller
             $collection = Collection::where('id_category', $category->id)->get();
         }
 
-        if ($name == 'Межкомнатные двери') {
+        if ($name == 'Межкомнатные двери' || $name == 'МЕЖКОМНАТНЫЕ ДВЕРИ') {
             $product = Product::select('products.*')
             ->join('collections', 'collections.id', '=', 'products.id_collection')
             ->join('categories', 'categories.id', '=', 'collections.id_category')
