@@ -362,4 +362,14 @@ class FrontendController extends Controller
             }
         }
     }
+
+    public function career()
+    {
+        return view('career');
+    }
+
+    public function detailCareer()
+    {
+        return view('detail_career');
+    }
 }

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{{asset('career/assets/images/favicon.ico')}}">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title> ***************  </title>
+
+    <link href="{{asset('career/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('career/assets/css/fontawesome.css')}}">
+    <link rel="stylesheet" href="{{asset('career/assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('career/assets/css/owl.css')}}">
+
+  </head>
+
+  <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Page Content -->
+    
+
+    <div class="products">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 col-sm-8">
+              <p class="lead">
+                   <i class="fa fa-map-marker"></i> Приозерск, Заводская 7 &nbsp;&nbsp;
+                   <i class="fa fa-calendar"></i> 20-06-2024 &nbsp;&nbsp;
+                   <i class="fa fa-file"></i> С контрактом
+              </p>
+
+              <br>
+              <br>
+              
+              <div class="form-group">
+                <h5>Слесарь по ремонту оборудования.</h5>
+              </div>
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, delectus totam non est excepturi expedita, illum vitae vel dolore exercitationem nobis quasi dicta illo id  quas. Error commodi, modi minus. <br><br>
+                Perferendis, quidem, facilis. Aspernatur alias numquam saepe deleniti dolorem quos repudiandae eaque ad eligendi quam, ratione, error minima culpa suscipit nostrum magni omnis est. Suscipit dolor sint aut maiores eius, id nemo, optio, quos tempora cum est quas. At recusandae obcaecati consequatur ipsa dignissimos, eius commodi qui quae exercitationem fugiat, voluptatem, nesciunt!
+              </p>   
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem voluptatem vero culpa rerum similique labore, nisi minus voluptatum numquam fugiat. <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat fugit sint reiciendis quas temporibus quam maxime nulla vitae consectetur perferendis, fugiat assumenda ex dicta molestias soluta est quo totam cum?</p> 
+
+              <br>
+              <br>
+          </div>
+
+          <div class="col-md-3 col-sm-4">
+            <div class="contact-form">
+              <div class="form-group">
+                <button type="submit" class="filled-button btn-block">Применить эту вакансию</button>
+              </div>
+            </div>
+
+            <div>
+              <img src="{{asset('career/assets/images/product-1-370x270.jpg')}}" alt="" class="img-fluid wc-image">
+            </div>
+
+            <br>
+
+         
+
+            <br>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="section-heading">
+              <h2>Информация о компании</h2>
+            </div>
+
+            <p class="lead">
+                   <i class="fa fa-map-marker"></i> Приозерск, Заводская 7 
+              </p>
+
+            <p>Looking to improve the security at your place of business? If so, we will provide you with the trained security officers and professionally licensed personnel needed for any business. From a security guard for construction site security to private event security, you can be sure to get the very best from our staff. Alternatively we provide tailor-made security guard training for your existing security staff.</p>
+            <br>
+            <p>Looking to improve the security at your place of business? If so, we will provide you with the trained security officers and professionally licensed personnel needed for any business. From a security guard for construction site security to private event security, you can be sure to get the very best from our staff. Alternatively we provide tailor-made security guard training for your existing security staff.</p>
+          </div>
+
+          <div class="col-md-3">
+            <div class="section-heading">
+              <h2>Контактная информация</h2>
+            </div>
+            
+            <div class="left-content">
+              <p>
+                <span>Имя</span>
+
+                <br>
+
+                <strong>John Smith</strong>
+              </p>
+
+              <p>
+                <span>Телефон</span>
+
+                <br>
+                
+                <strong>
+                  <a href="tel:123-456-789">123-456-789</a>
+                </strong>
+              </p>
+
+    
+              <p>
+                <span>Почта</span>
+
+                <br>
+                
+                <strong>
+                  <a href="mailto:john@carsales.com">john@carsales.com</a>
+                </strong>
+              </p>
+
+              <p>
+                <span>Веб-сайт</span>
+
+                <br>
+                
+                <strong>
+                  <a href="https://www.pgsouz.ru/">https://www.pgsouz.ru/</a>
+                </strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{asset('/career/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('/career/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('/career/assets/js/custom.js')}}"></script>
+    <script src="{{asset('/career/assets/js/owl.js')}}"></script>
+  </body>
+
+</html>
