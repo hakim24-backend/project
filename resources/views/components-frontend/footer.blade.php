@@ -3,7 +3,7 @@
     <div class="footer-columns container-fluid fixed-content">
       <div class="container section-padding">
         <div class="row">
-          <div class="col-md-4 column">
+          <div class="col-md-4 column" style="text-align: left">
             <h6>НАВИГАТОР</h6>
             <div class="footer-nav">
 
@@ -16,7 +16,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-4 column">
+          <div class="col-md-4 column" style="text-align: left">
             <h6>КОНТАКТЫ</h6>
             <p>195279, Санкт-Петербург, Шпалерная ул., 51 </p>
             <p>бизнес-центр "Таврический"</p>
