@@ -368,8 +368,8 @@ class FrontendController extends Controller
         return view('career');
     }
 
-    public function detailCareer()
+    public function careerDetail()
     {
-        return view('detail_career');
+        return view('career_detail');
     }
 }

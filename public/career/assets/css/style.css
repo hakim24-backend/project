@@ -82,11 +82,12 @@ a.filled-button:hover {
 }
 
 .page-heading {
-	padding: 210px 0px 130px 0px;
+	padding: 0px 0px 130px 0px;
 	text-align: center;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	background: #000000;
 }
 
 .page-heading .text-content h4 {
@@ -205,7 +206,7 @@ header .navbar {
 .background-header {
 	top: 0;
 	position: fixed;
-	background-color: #fff!important;
+	/* background-color: #fff!important; */
 	box-shadow: 0px 1px 10px rgba(0,0,0,0.1);
 }
 .background-header .navbar-brand h2 {
@@ -400,6 +401,7 @@ header .navbar {
 .product-item {
 	border: 1px solid #eee;
 	margin-bottom: 30px;
+	color: white;
 }
 
 .product-item .down-content {
@@ -414,14 +416,14 @@ header .navbar {
 
 .product-item .down-content h4 {
 	font-size: 17px;
-	color: #1a6692;
+	color: white;
 	margin-bottom: 20px;
 }
 
 .product-item .down-content h6 {
 	font-size: 18px;
 	margin-bottom: 15px;
-	color: #121212;
+	color: white;
 }
 
 .product-item .down-content h6 small{
@@ -600,7 +602,16 @@ footer .inner-content p a {
 /* Product Page */
 
 .products {
-	margin-top: 100px;
+	/* margin-top: 100px; */
+	background: #000000;
+}
+
+.products p{
+	color: white;
+}
+
+.products h5{
+	color: white;
 }
 
 .products .filters {
@@ -638,7 +649,7 @@ footer .inner-content p a {
 	position:relative;
 }
 .page-heading:before {
-	content:'';
+	/* content:''; */
 	position:absolute;
 	top:0;
 	left:0;
@@ -978,10 +989,16 @@ footer .inner-content p a {
 
 .section {
 	padding: 30px 0;
+	background: #000000;
 }
 
 .section p {
 	margin-bottom: 15px;
+	color: white;
+}
+
+.section h2{
+	color: white;
 }
 
 .section .section-heading {

@@ -1,4 +1,4 @@
-<header>
+<header class="header-bg">
     <div class="container-fluid">
       <div class="row">
         <div class="logo col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">

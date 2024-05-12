@@ -4,23 +4,39 @@
   <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="{{asset('career/assets/images/favicon.ico')}}">
+    <link rel="shortcut icon" type="x-icon" href="{{asset('/upload/img/SG_верт_оригин.png')}}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <title> ***************  </title>
+    <title> Подробности карьеры </title>
 
     <link href="{{asset('career/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('career/assets/css/fontawesome.css')}}">
     <link rel="stylesheet" href="{{asset('career/assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('career/assets/css/owl.css')}}">
 
+    <link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/slick.css')}}">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/slick-theme.css')}}">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/main.css')}}">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/responsive.css')}}">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/search.css')}}">
+
   </head>
 
   <body>
+
+    {{-- Header --}}
+    @include('components-frontend.header')
 
     <!-- ***** Preloader Start ***** -->
     <div id="preloader">
@@ -33,13 +49,19 @@
     <!-- ***** Preloader End ***** -->
 
     <!-- Page Content -->
+    <div class="page-heading about-heading header-text" style="background-image: url('{{asset('assets/images/heading-6-1920x500.jpg')}}');">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Page Content -->
     
 
     <div class="products">
       <div class="container">
         <div class="row">
           <div class="col-md-9 col-sm-8">
-              <p class="lead">
+              <p class="lead" style="color: white">
                    <i class="fa fa-map-marker"></i> Приозерск, Заводская 7 &nbsp;&nbsp;
                    <i class="fa fa-calendar"></i> 20-06-2024 &nbsp;&nbsp;
                    <i class="fa fa-file"></i> С контрактом
@@ -150,6 +172,9 @@
         </div>
       </div>
     </div>
+
+    {{-- Footer --}}
+    @include('components-frontend.footer')
 
     <script src="{{asset('/career/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('/career/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
