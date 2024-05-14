@@ -168,119 +168,29 @@
 
           <div class="col-md-9">
             <div class="row">
-              <div class="col-md-6">
-                <div class="product-item">
-                  <a href="{{route('frontend.careerDetail')}}"><img src="{{asset('/career/assets/images/product-1-370x270.jpg')}}" alt=""></a>
-                  <div class="down-content">
-                    <a href="{{route('frontend.careerDetail')}}"><h4><strong>Менеджер</strong></h4></a>
 
-                    <h6>₽ 90 000</h6>
+               @foreach ($career as $item)
+                    <div class="col-md-6">
+                         <div class="product-item">
+                              <a href="#"><img src="{{asset('/upload/career/'.$item->filename)}}" alt=""></a>
+                              {{-- <a href="{{route('frontend.careerDetail')}}"><img src="{{asset('/career/assets/images/product-1-370x270.jpg')}}" alt=""></a> --}}
+                              <div class="down-content">
+                              <a href="#"><h4><strong>{{$item->job}}</strong></h4></a>
+                              {{-- <a href="{{route('frontend.careerDetail')}}"><h4><strong>Менеджер</strong></h4></a> --}}
 
-                    <h4><small><i class="fa fa-briefcase"></i> Опыт / 2 года <br> <strong><i class="fa fa-building"></i> СБК</strong></small></h4>
+                              <h6>₽ {{$item->salary}}</h6>
 
-                    <small>
-                         <strong title="Posted on"><i class="fa fa-calendar"></i> 15-06-2024</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                         <strong title="Type"><i class="fa fa-file"></i> С контрактом</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                         <strong title="Location"><i class="fa fa-map-marker"></i> Приозерск, Заводская 7</strong>
-                    </small>
-                  </div>
-                </div>
-              </div>
+                              <h4><small><i class="fa fa-briefcase"></i> Опыт / {{$item->experience}} года <br> <strong><i class="fa fa-building"></i> СБК</strong></small></h4>
 
-              <div class="col-md-6">
-                <div class="product-item">
-                  <a href="{{route('frontend.careerDetail')}}"><img src="{{asset('/career/assets/images/product-2-370x270.jpg')}}" alt=""></a>
-                  <div class="down-content">
-                    <a href="{{route('frontend.careerDetail')}}"><h4><strong>Маркетолог</strong></h4></a>
-
-                    <h6>₽ 100 000</h6>
-
-                    <h4><small><i class="fa fa-briefcase"></i> Опыт / 2 года <br> <strong><i class="fa fa-building"></i> ПГ-СОЮЗ</strong></small></h4>
-
-                    <small>
-                         <strong title="Posted on"><i class="fa fa-calendar"></i> 15-05-2024</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                         <strong title="Type"><i class="fa fa-file"></i> С контрактом</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                         <strong title="Location"><i class="fa fa-map-marker"></i> ПЕТЕРБУРГ</strong>
-                    </small>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="product-item">
-                  <a href="{{route('frontend.careerDetail')}}"><img src="{{asset('/career/assets/images/product-3-370x270.jpg')}}" alt=""></a>
-                  <div class="down-content">
-                    <a href="{{route('frontend.careerDetail')}}"><h4><strong>Юрист</strong></h4></a>
-
-                    <h6>₽ 100 000</h6>
-
-                    <h4><small><i class="fa fa-briefcase"></i> Опыт / 2 года <br> <strong><i class="fa fa-building"></i> ПГ-СОЮ</strong></small></h4>
-
-                    <small>
-                         <strong title="Posted on"><i class="fa fa-calendar"></i> 15-06-2024</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                         <strong title="Type"><i class="fa fa-file"></i> С контрактом</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                         <strong title="Location"><i class="fa fa-map-marker"></i> ПЕТЕРБУРГ</strong>
-                    </small>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="product-item">
-                  <a href="{{route('frontend.careerDetail')}}"><img src="{{asset('/career/assets/images/product-4-370x270.jpg')}}" alt=""></a>
-                  <div class="down-content">
-                    <a href="{{route('frontend.careerDetail')}}"><h4><strong>Слесарь по ремонту оборудования</strong></h4></a>
-
-                    <h6>₽ 50 000</h6>
-
-                    <h4><small><i class="fa fa-briefcase"></i> Опыт / 2 года <br> <strong><i class="fa fa-building"></i> ЛПИ</strong></small></h4>
-
-                    <small>
-                         <strong title="Posted on"><i class="fa fa-calendar"></i> 15-06-2024</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                         <strong title="Type"><i class="fa fa-file"></i> С контрактом</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                         <strong title="Location"><i class="fa fa-map-marker"></i> Приозерск, Заводская 7</strong>
-                    </small>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="product-item">
-                  <a href="{{route('frontend.careerDetail')}}"><img src="{{asset('/career/assets/images/product-5-370x270.jpg')}}" alt=""></a>
-                  <div class="down-content">
-                    <a href="{{route('frontend.careerDetail')}}"><h4><strong>Программист</strong></h4></a>
-
-                    <h6>₽ 100 000</h6>
-
-                    <h4><small><i class="fa fa-briefcase"></i> Опыт / 2 года <br> <strong><i class="fa fa-building"></i> СБК</strong></small></h4>
-
-                    <small>
-                         <strong title="Posted on"><i class="fa fa-calendar"></i> 15-06-2024</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                         <strong title="Type"><i class="fa fa-file"></i> С контрактом</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                         <strong title="Location"><i class="fa fa-map-marker"></i> Приозерск, Заводская 7</strong>
-                    </small>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="product-item">
-                  <a href="{{route('frontend.careerDetail')}}"><img src="{{asset('/career/assets/images/product-6-370x270.jpg')}}" alt=""></a>
-                  <div class="down-content">
-                    <a href="{{route('frontend.careerDetail')}}"><h4><strong>Системный администратор</strong></h4></a>
-
-                    <h6>₽ 70 000</h6>
-
-                    <h4><small><i class="fa fa-briefcase"></i> Опыт / 2 года <br> <strong><i class="fa fa-building"></i> ПГ-СОЮЗ</strong></small></h4>
-
-                    <small>
-                         <strong title="Posted on"><i class="fa fa-calendar"></i> 15-06-2024</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                         <strong title="Type"><i class="fa fa-file"></i> С контрактом</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                         <strong title="Location"><i class="fa fa-map-marker"></i> ПЕТЕРБУРГ</strong>
-                    </small>
-                  </div>
-                </div>
-              </div>
+                              <small>
+                                   <strong title="Posted on"><i class="fa fa-calendar"></i> {{$item->date}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                                   <strong title="Type"><i class="fa fa-file"></i> {{$item->type}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                                   <strong title="Location"><i class="fa fa-map-marker"></i> {{$item->location}}</strong>
+                              </small>
+                              </div>
+                         </div>
+                    </div>
+               @endforeach
 
               {{-- <div class="col-md-12">
                 <ul class="pages">

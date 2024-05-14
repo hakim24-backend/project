@@ -65,6 +65,14 @@
               </a>
             </li>
             <li class="nav-item">
+              <a href="{{ route('careerier.index') }}" class="nav-link {{ request()->is('careerier') ? ' active' : ''}}">
+                <i class="nav-icon fa fa-suitcase"></i>
+                <p>
+                  Career
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
               <a href="{{route('frontend.index')}}" class="nav-link">
                 <i class="nav-icon fa fa-globe"></i>
                 <p>

@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Description;
 use App\Models\Slider;
 use App\Models\Contact;
+use App\Models\Career;
 
 use \Statickidz\GoogleTranslate;
 use Illuminate\Http\Request;
@@ -365,7 +366,10 @@ class FrontendController extends Controller
 
     public function career()
     {
-        return view('career');
+        $career = Career::all();
+        return view('career', [
+            'career' => $career
+        ]);
     }
 
     public function careerDetail()

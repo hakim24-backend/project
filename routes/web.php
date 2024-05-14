@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CareerController;
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\FrontendController;
 
@@ -60,6 +61,7 @@ Route::middleware('auth')->group(function(){
     Route::resource('collection', CollectionController::class);
     Route::resource('product', ProductController::class);
     Route::resource('contact', ContactController::class);
+    Route::resource('careerier', CareerController::class);
 
     //ajax select2
     Route::get('/ajax-category', [AjaxController::class, 'selectCategory'])->name('ajax-category');

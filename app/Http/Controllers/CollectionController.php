@@ -41,7 +41,7 @@ class CollectionController extends Controller
         $validateCollection = $this->validate($request, [
             'id_category' => 'required|integer',
             'name' => 'required|string',
-            'filename' => 'required|image|max:2048'
+            'filename' => 'required|image'
         ]);
         
         $nameFile = $request->filename->getClientOriginalName();
