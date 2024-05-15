@@ -8,6 +8,7 @@ use App\Models\Description;
 use App\Models\Slider;
 use App\Models\Contact;
 use App\Models\Career;
+use App\Models\CareerDetail;
 
 use \Statickidz\GoogleTranslate;
 use Illuminate\Http\Request;
@@ -372,8 +373,11 @@ class FrontendController extends Controller
         ]);
     }
 
-    public function careerDetail()
-    {
-        return view('career_detail');
+    public function careerDetail($id)
+    {   
+        $careerDetail = CareerDetail::where('id_career', $id)->first();
+        return view('career_detail', [
+            'careerDetail' => $careerDetail
+        ]);
     }
 }

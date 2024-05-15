@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Career;
+use App\Models\CareerDetail;
 
 class CareerController extends Controller
 {
@@ -125,5 +126,59 @@ class CareerController extends Controller
         $career = Career::findOrFail($id);
         $career->delete();
         return redirect()->route('careerier.index');
+    }
+    
+    public function addDetail($id)
+    {
+        $career = Career::findOrFail($id);
+        return view('career.add_detail', compact('career'));
+    }
+
+    public function storeDetail(Request $request, $id)
+    {
+        $career = Career::findOrFail($id);
+        $validateCareerDetail = $this->validate($request, [
+            'desc_job' => 'required|string',
+            'desc_location' => 'required|string',
+            'name_contact' => 'required|string',
+            'phone_contact' => 'required|string',
+            'email_contact' => 'required|string',
+            'website_contact' => 'required|string'
+        ]);
+
+        $validateCareerDetail = CareerDetail::create([
+            'desc_job' => $request->desc_job,
+            'desc_location' => $request->desc_location,
+            'name_contact' => $request->name_contact,
+            'phone_contact' => $request->phone_contact,
+            'email_contact' => $request->email_contact,
+            'website_contact' => $request->website_contact,
+            'id_career' => $career->id
+        ]);
+        if ($validateCareerDetail) {
+            return redirect()->route('careerier.index');
+        }
+    }
+
+    function editDetail($id)
+    {
+        $careerDetail = CareerDetail::findOrFail($id);
+        return view('career.edit_detail', compact('careerDetail'));
+    }
+
+    public function updateDetail(Request $request, $id)
+    {
+        $careerDetail = CareerDetail::findOrFail($id);
+        $careerDetail->update([
+            'desc_job' => $request->desc_job,
+            'desc_location' => $request->desc_location,
+            'name_contact' => $request->name_contact,
+            'phone_contact' => $request->phone_contact,
+            'email_contact' => $request->email_contact,
+            'website_contact' => $request->website_contact
+        ]);
+        if ($careerDetail) {
+            return redirect()->route('careerier.index');
+        }
     }
 }

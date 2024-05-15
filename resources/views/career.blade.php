@@ -1,3 +1,6 @@
+<?php 
+    use App\Models\CareerDetail;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -172,11 +175,23 @@
                @foreach ($career as $item)
                     <div class="col-md-6">
                          <div class="product-item">
-                              <a href="#"><img src="{{asset('/upload/career/'.$item->filename)}}" alt=""></a>
-                              {{-- <a href="{{route('frontend.careerDetail')}}"><img src="{{asset('/career/assets/images/product-1-370x270.jpg')}}" alt=""></a> --}}
-                              <div class="down-content">
-                              <a href="#"><h4><strong>{{$item->job}}</strong></h4></a>
-                              {{-- <a href="{{route('frontend.careerDetail')}}"><h4><strong>Менеджер</strong></h4></a> --}}
+
+                              @php
+                                  $cekDetail = CareerDetail::where('id_career', $item->id)->first();
+                              @endphp
+                              @if ($cekDetail == null)
+                                   <a href="#"><img src="{{asset('/upload/career/'.$item->filename)}}" alt=""></a>
+                                   {{-- <a href="{{route('frontend.careerDetail')}}"><img src="{{asset('/career/assets/images/product-1-370x270.jpg')}}" alt=""></a> --}}
+                                   <div class="down-content">
+                                   <a href="#"><h4><strong>{{$item->job}}</strong></h4></a>
+                                   {{-- <a href="{{route('frontend.careerDetail')}}"><h4><strong>Менеджер</strong></h4></a> --}}
+                              @else
+                                   <a href="{{route('frontend.careerDetail', $item->id)}}"><img src="{{asset('/upload/career/'.$item->filename)}}" alt=""></a>
+                                   {{-- <a href="{{route('frontend.careerDetail')}}"><img src="{{asset('/career/assets/images/product-1-370x270.jpg')}}" alt=""></a> --}}
+                                   <div class="down-content">
+                                   <a href="{{route('frontend.careerDetail', $item->id)}}"><h4><strong>{{$item->job}}</strong></h4></a>
+                                   {{-- <a href="{{route('frontend.careerDetail')}}"><h4><strong>Менеджер</strong></h4></a> --}}
+                              @endif
 
                               <h6>₽ {{$item->salary}}</h6>
 

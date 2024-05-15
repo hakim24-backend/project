@@ -48,6 +48,9 @@
     </div>  
     <!-- ***** Preloader End ***** -->
 
+    @php
+        $link = asset('/upload/career/'.$careerDetail->career->filename);
+    @endphp
     <!-- Page Content -->
     <div class="page-heading about-heading header-text" style="background-image: url('{{asset('assets/images/heading-6-1920x500.jpg')}}');">
       <div class="container">
@@ -62,23 +65,19 @@
         <div class="row">
           <div class="col-md-9 col-sm-8">
               <p class="lead" style="color: white">
-                   <i class="fa fa-map-marker"></i> Приозерск, Заводская 7 &nbsp;&nbsp;
-                   <i class="fa fa-calendar"></i> 20-06-2024 &nbsp;&nbsp;
-                   <i class="fa fa-file"></i> С контрактом
+                   <i class="fa fa-map-marker"></i> {{$careerDetail->career->location}} &nbsp;&nbsp;
+                   <i class="fa fa-calendar"></i> {{$careerDetail->career->date}} &nbsp;&nbsp;
+                   <i class="fa fa-file"></i> {{$careerDetail->career->type}}
               </p>
 
               <br>
               <br>
               
               <div class="form-group">
-                <h5>Слесарь по ремонту оборудования.</h5>
+                <h5>{{$careerDetail->career->job}}</h5>
               </div>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, delectus totam non est excepturi expedita, illum vitae vel dolore exercitationem nobis quasi dicta illo id  quas. Error commodi, modi minus. <br><br>
-                Perferendis, quidem, facilis. Aspernatur alias numquam saepe deleniti dolorem quos repudiandae eaque ad eligendi quam, ratione, error minima culpa suscipit nostrum magni omnis est. Suscipit dolor sint aut maiores eius, id nemo, optio, quos tempora cum est quas. At recusandae obcaecati consequatur ipsa dignissimos, eius commodi qui quae exercitationem fugiat, voluptatem, nesciunt!
-              </p>   
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem voluptatem vero culpa rerum similique labore, nisi minus voluptatum numquam fugiat. <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat fugit sint reiciendis quas temporibus quam maxime nulla vitae consectetur perferendis, fugiat assumenda ex dicta molestias soluta est quo totam cum?</p> 
+              {!! $careerDetail->desc_job !!}
 
               <br>
               <br>
@@ -92,7 +91,7 @@
             </div>
 
             <div>
-              <img src="{{asset('career/assets/images/product-1-370x270.jpg')}}" alt="" class="img-fluid wc-image">
+              <img src="{{asset('/upload/career/'.$careerDetail->career->filename)}}" alt="" class="img-fluid wc-image">
             </div>
 
             <br>
@@ -115,12 +114,10 @@
             </div>
 
             <p class="lead">
-                   <i class="fa fa-map-marker"></i> Приозерск, Заводская 7 
-              </p>
+                  <i class="fa fa-map-marker"></i> {{$careerDetail->career->location}} 
+            </p>
 
-            <p>Looking to improve the security at your place of business? If so, we will provide you with the trained security officers and professionally licensed personnel needed for any business. From a security guard for construction site security to private event security, you can be sure to get the very best from our staff. Alternatively we provide tailor-made security guard training for your existing security staff.</p>
-            <br>
-            <p>Looking to improve the security at your place of business? If so, we will provide you with the trained security officers and professionally licensed personnel needed for any business. From a security guard for construction site security to private event security, you can be sure to get the very best from our staff. Alternatively we provide tailor-made security guard training for your existing security staff.</p>
+            {!! $careerDetail->desc_location !!}
           </div>
 
           <div class="col-md-3">
@@ -134,7 +131,7 @@
 
                 <br>
 
-                <strong>John Smith</strong>
+                <strong>{{$careerDetail->name_contact}}</strong>
               </p>
 
               <p>
@@ -143,7 +140,7 @@
                 <br>
                 
                 <strong>
-                  <a href="tel:123-456-789">123-456-789</a>
+                  <a href="tel:{{$careerDetail->phone_contact}}">{{$careerDetail->phone_contact}}</a>
                 </strong>
               </p>
 
@@ -154,7 +151,7 @@
                 <br>
                 
                 <strong>
-                  <a href="mailto:john@carsales.com">john@carsales.com</a>
+                  <a href="mailto:{{$careerDetail->email_contact}}">{{$careerDetail->email_contact}}</a>
                 </strong>
               </p>
 
@@ -164,7 +161,7 @@
                 <br>
                 
                 <strong>
-                  <a href="https://www.pgsouz.ru/">https://www.pgsouz.ru/</a>
+                  <a href="https://{{$careerDetail->website_contact}}/">{{$careerDetail->website_contact}}</a>
                 </strong>
               </p>
             </div>

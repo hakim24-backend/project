@@ -48,7 +48,7 @@ Route::post('/search/en', [FrontendController::class, 'searchEn'])->name('fronte
 Route::post('/filter/{id}', [FrontendController::class, 'filter'])->name('frontend.filter');
 Route::post('/filter/{id}/en', [FrontendController::class, 'filterEn'])->name('frontend.filterEn');
 Route::get('/careers', [FrontendController::class, 'career'])->name('frontend.career');
-Route::get('/careerDetail', [FrontendController::class, 'careerDetail'])->name('frontend.careerDetail');
+Route::get('/careerDetail/{id}', [FrontendController::class, 'careerDetail'])->name('frontend.careerDetail');
 
 Auth::routes();
 
@@ -71,4 +71,10 @@ Route::middleware('auth')->group(function(){
     Route::put('/product/add-detail/{id}', [ProductController::class, 'storeDetail'])->name('product.storeDetail');
     Route::put('/product/update-description/{id}', [ProductController::class, 'storeDescription'])->name('product.storeDescription');
     Route::put('/product/deleteImageView/{id}', [ProductController::class, 'deleteImageView'])->name('product.deleteImageView');
+
+    //career
+    Route::get('/careerier/add-detail/{id}', [CareerController::class, 'addDetail'])->name('career.addDetail');
+    Route::post('/careerier/store-detail/{id}', [CareerController::class, 'storeDetail'])->name('career.storeDetail');
+    Route::get('/careerier/edit-detail/{id}', [CareerController::class, 'editDetail'])->name('career.editDetail');
+    Route::put('/careerier/update-detail/{id}', [CareerController::class, 'updateDetail'])->name('career.updateDetail');
 });

@@ -1,3 +1,7 @@
+<?php 
+    use App\Models\CareerDetail;
+?>
+
 @extends('layouts.app')
 
 @push('css')
@@ -96,7 +100,18 @@
                                             </tbody>
                                         </table>
                                     </td>
-                                    <td style="text-align: center">-</td>
+                                    <td style="text-align: center; vertical-align: middle;">
+
+                                        @php
+                                            $cekDetail = CareerDetail::where('id_career', $item->id)->first();
+                                        @endphp
+
+                                        @if ($cekDetail == null)
+                                            <a href="{{route('career.addDetail', $item->id)}}" class="btn btn-success"><span><i class="fa fa-plus"></i></span> Add Detail</a>
+                                        @else
+                                            <a href="{{route('career.editDetail', $cekDetail->id)}}" class="btn btn-info"><span><i class="fa fa-edit"></i></span> Update Detail</a>
+                                        @endif
+                                    </td>
                                     <td style="text-align: center; vertical-align: middle;">
                                         @if ($item->filename == null)
                                             -
