@@ -48,7 +48,9 @@ Route::post('/search/en', [FrontendController::class, 'searchEn'])->name('fronte
 Route::post('/filter/{id}', [FrontendController::class, 'filter'])->name('frontend.filter');
 Route::post('/filter/{id}/en', [FrontendController::class, 'filterEn'])->name('frontend.filterEn');
 Route::get('/careers', [FrontendController::class, 'career'])->name('frontend.career');
+Route::get('/careers/en', [FrontendController::class, 'careerEn'])->name('frontend.careerEn');
 Route::get('/careerDetail/{id}', [FrontendController::class, 'careerDetail'])->name('frontend.careerDetail');
+Route::get('/careerDetail/{id}/en', [FrontendController::class, 'careerDetailEn'])->name('frontend.careerDetailEn');
 
 Auth::routes();
 

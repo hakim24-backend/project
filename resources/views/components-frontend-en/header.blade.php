@@ -74,7 +74,7 @@
             <li class="nav-item"><a href="#" class="nav-link">COMPANY</a>
               <ul class="dropdown">
                 <li><a href="#">PROFILE HISTORY</a></li>
-                <li><a href="#">WORK WITH US</a></li>
+                <li><a href="{{route('frontend.careerEn')}}">CAREER</a></li>
                 <li><a href="#">COLLECTIONS</a></li>
                 <li><a href="{{route('frontend.contactEn')}}">ASK A QUESTION</a></li>
 

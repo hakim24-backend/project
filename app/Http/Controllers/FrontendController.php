@@ -373,10 +373,26 @@ class FrontendController extends Controller
         ]);
     }
 
+    public function careerEn()
+    {
+        $career = Career::all();
+        return view('career_en', [
+            'career' => $career
+        ]);
+    }
+
     public function careerDetail($id)
     {   
         $careerDetail = CareerDetail::where('id_career', $id)->first();
         return view('career_detail', [
+            'careerDetail' => $careerDetail
+        ]);
+    }
+
+    public function careerDetailEn($id)
+    {   
+        $careerDetail = CareerDetail::where('id_career', $id)->first();
+        return view('career_detail_en', [
             'careerDetail' => $careerDetail
         ]);
     }
