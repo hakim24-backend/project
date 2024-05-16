@@ -170,4 +170,31 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('product.index');
     }
+
+    function storeFile(Request $request, $id)
+    {
+        $product = Product::findOrFail($id);
+        $request->validate([
+            'filename1' => 'required|mimes:pdf'
+        ]);
+        $nameFile = $request->filename1->getClientOriginalName();
+        $folderGambar = 'upload/product_file';
+        $request->filename1->move($folderGambar, $nameFile);
+
+        $product->update([
+            'filename1' => $nameFile
+        ]);
+
+        return redirect()->route('product.index');
+    }
+
+    public function deleteFile($id)
+    {
+        $product = Product::findOrFail($id);
+        $product->update([
+            'filename1' => null
+        ]);
+        
+        return redirect()->route('product.index');
+    }
 }

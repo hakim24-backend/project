@@ -146,3 +146,26 @@ h5 {
   box-shadow: none;
  
 }
+
+.pdfdoc{
+  text-align: left;
+  color: #ffffff;
+  padding-bottom: 5%;
+  padding-left: 50px;
+
+}
+
+.pdf-link {
+  display: inline-block;
+  padding: 10px;
+  background-color: #34404d; /* Link background color */
+  color: #FFFFFF; /* Link text color */
+  text-decoration: none;
+  
+ 
+}
+
+.pdf-link i {
+  margin-right: 5px; 
+  /* Space to the right of the icon */
+}

@@ -218,6 +218,16 @@
                 </div>
               @endif
             @endif
+              
+            @if ($product->filename1 !== null)
+            <div class="pdfdoc" >
+                <a href="{{ asset('upload/product_file/'.$product->filename1) }}" target="_blank" class="pdf-link" >
+                  <i class="fa fa-file-pdf" style="font-size: 24px;"></i> <!-- Icône PDF -->
+                  Нормы загрузки транспорта
+              </a>
+            </div>
+            @endif
+
         </div>
           
 

@@ -73,6 +73,8 @@ Route::middleware('auth')->group(function(){
     Route::put('/product/add-detail/{id}', [ProductController::class, 'storeDetail'])->name('product.storeDetail');
     Route::put('/product/update-description/{id}', [ProductController::class, 'storeDescription'])->name('product.storeDescription');
     Route::put('/product/deleteImageView/{id}', [ProductController::class, 'deleteImageView'])->name('product.deleteImageView');
+    Route::put('/product/addFile/{id}', [ProductController::class, 'storeFile'])->name('product.storeFile');
+    Route::put('/product/deleteFile/{id}', [ProductController::class, 'deleteFile'])->name('product.deleteFile');
 
     //career
     Route::get('/careerier/add-detail/{id}', [CareerController::class, 'addDetail'])->name('career.addDetail');

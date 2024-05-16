@@ -65,12 +65,23 @@
                                     <td width="5%">{{ $item->collection->category->name }}</td>
                                     <td width="10%">{{ $item->collection->name }}</td>
                                     <td width="24%" style="text-align: center; vertical-align: middle;">
-                                        @if ($item->filename == null)
+                                        @if ($item->filename == null && $item->filename1 == null)
                                             -
                                         @else
                                             <a href="{{ asset('upload/product/'.$item->filename) }}" target="_blank">
                                                 <img width="25%" src="{{ asset('upload/product/'.$item->filename) }}">
                                             </a>
+                                            <br><br><br>
+                                            @if ($item->filename1 == null)
+                                                <a title="Add File" data-toggle="modal" data-target="#add-file{{ $item->id }}" class="btn btn-warning" href=""><span class="fa fa-plus"></span> Add File</a>
+                                            @else
+                                                <a title="Update File" data-toggle="modal" data-target="#update-file{{ $item->id }}" class="btn btn-success" href=""><span class="fa fa-edit"></span> Update File</a>
+                                                <form action="{{route('product.deleteFile', $item->id)}}" method="POST">
+                                                    @csrf
+                                                    @method('PUT')
+                                                    <button type="submit" class="btn btn-danger show_confirm" data-toggle="tooltip" title='Delete File'><span class="fa fa-trash"></span> Delete File</button>
+                                                </form>
+                                            @endif
                                         @endif
                                     </td>
                                     <td width="15%" style="text-align: center">
@@ -94,7 +105,7 @@
                                                 <img width="40%" src="{{ asset('upload/detail_product/'.$item->detail_filename) }}">
                                             </a><br><br>
                                             <a title="Update Image Viewer" data-toggle="modal" data-target="#update-image{{ $item->id }}" class="btn btn-success" href=""><span class="fa fa-edit"></span> Update Image</a>
-                                            <form action="{{route('product.deleteImageView', $item->id)}}" method="POST">
+                                            <form action="{{route('product.deleteFile', $item->id)}}" method="POST">
                                                 @csrf
                                                 @method('PUT')
                                                 <button type="submit" class="btn btn-danger show_confirm" data-toggle="tooltip" title='Delete Image Viewer'><span class="fa fa-trash"></span> Delete Image</button>
@@ -111,7 +122,9 @@
                                     </td>
                                     @include('product.edit')
                                     @include('product.add_image_viewer')
+                                    @include('product.add_file')
                                     @include('product.edit_image_viewer')
+                                    @include('product.edit_file')
                                     {{-- @include('product.edit_description') --}}
                                 </tr>
                             @empty
