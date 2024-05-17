@@ -37,7 +37,8 @@
                         <thead style="text-align: center">
                         <tr>
                             <th>No</th>
-                            <th>Name</th>
+                            <th>Menu</th>
+                            <th>Sub Menu</th>
                             <th>Description</th>
                             <th>Action</th>
                         </tr>
@@ -46,6 +47,13 @@
                             @forelse ($category as $item)
                                 <tr>
                                     <td style="text-align: center">{{ $loop->iteration }}</td>
+                                    <td>
+                                        @if ($item->name1 != null)
+                                            {{$item->name1}}
+                                        @else
+                                            -
+                                        @endif
+                                    </td>
                                     <td>{{ $item->name }}</td>
                                     <td width="40%">{{ $item->description }}</td>
                                     <td style="text-align: center">
@@ -95,7 +103,21 @@
                 @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label>Name Category</label>
+                            <label>Name Menu Category</label>
+                            <select name="name1" class="form-control @error('name1') is-invalid @enderror" required>
+                              <option value="" disabled selected>Select Menu Category</option>
+                              <option value="МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ">МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ</option>
+                              <option value="ПЛИТНЫЕ МАТЕРИАЛЫ">ПЛИТНЫЕ МАТЕРИАЛЫ</option>
+                              <option value="СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ">СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ</option>
+                              <option value="ИЗДЕЛИЯ ИЗ ДРЕВЕСИНЫ">ИЗДЕЛИЯ ИЗ ДРЕВЕСИНЫ</option>
+                              <option value="КОМПАНИЯ">КОМПАНИЯ</option>
+                            </select>
+                            @error('name1')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>Name Submenu Category</label>
                             <input name="name" type="input" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Name" value="{{ old('name') }}" required>
                             @error('name')
                                 <span class="text-danger">{{ $message }}</span>

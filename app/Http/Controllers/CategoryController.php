@@ -31,7 +31,7 @@ class CategoryController extends Controller
     {
         $validateData = $this->validate($request, [
             'name' => 'required||string',
-            'description' => 'string'
+            'name1' => 'required||string'
         ], [
             'name.required' => 'Form name cannot blank',
         ]);
@@ -66,6 +66,7 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         $category->update([
             'name' => $request->name,
+            'name1' => $request->name1,
             'description' => $request->description
         ]);
         if ($category) {

@@ -1,3 +1,13 @@
+<?php 
+    use \Statickidz\GoogleTranslate;
+    use App\Models\Category;
+
+    $menu1 = Category::where('name1', 'МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ')->get();
+    $menu2 = Category::where('name1', 'ПЛИТНЫЕ МАТЕРИАЛЫ')->get();
+    $menu3 = Category::where('name1', 'СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ')->get();
+    $menu4 = Category::where('name1', 'ИЗДЕЛИЯ ИЗ ДРЕВЕСИНЫ')->get();
+    $menu5 = Category::where('name1', 'КОМПАНИЯ')->get();
+?>
 <header>
     <div class="container-fluid">
       <div class="row">
@@ -18,8 +28,19 @@
             -->
             <li class="nav-item"><a href="#" class="nav-link">Furniture Accessories</a>
               <ul class="dropdown">
-                <li><a href="{{route('frontend.categoryEn', 'Столешницы')}}">Countertops</a></li>
-                <li><a href="#">Furniture Details</a></li>
+                @foreach ($menu1 as $item1)
+                  <li><a href="{{route('frontend.categoryEn', $item1->name)}}">
+                    @php
+                          $source = 'ru';
+                          $target = 'en';
+                          $text = $item1->name;
+
+                          $trans = new GoogleTranslate();
+                          $result = $trans->translate($source, $target, $text);
+                    @endphp
+                    {{$result}}
+                  </a></li>
+                @endforeach
                
 
               </ul>
@@ -27,24 +48,37 @@
 
             <li class="nav-item"><a href="#" class="nav-link">Panel Materials</a>
               <ul class="dropdown">
-                <li><a href="{{route('frontend.categoryEn', 'ЛДСП')}}">Particleboards</a></li>
-                <li><a href="#">Fiberboard (MDF)</a></li>
-                <li><a href="#">Laminated Medium-Density Fiberboard (LMDP)</a></li>
-                <li><a href="#">Medium-Density Fiberboard (MDF)</a></li>
-                <li><a href="#">Oriented Strand Board (OSB)</a></li>
-                <li><a href="#">Plywood</a></li>
+                @foreach ($menu2 as $item2)
+                  <li><a href="{{route('frontend.categoryEn', $item2->name)}}">
+                    @php
+                          $source1 = 'ru';
+                          $target1 = 'en';
+                          $text1 = $item2->name;
+
+                          $trans1 = new GoogleTranslate();
+                          $result1 = $trans1->translate($source1, $target1, $text1);
+                    @endphp
+                    {{$result1}}
+                  </a></li>
+                @endforeach
               </ul>
             </li>
 
             <li class="nav-item"><a href="#" class="nav-link">Building Materials</a>
               <ul class="dropdown">
-                <li><a href="{{route('frontend.categoryEn', 'Стеновые панели')}}">Wall Panels</a>
-                </li>
-                <li><a href="#">Timber</a></li>
-                <li><a href="#">Planed Products</a></li>
-                <li><a href="#">Fireproof Panels</a></li>
-                <li><a href="#">Tongue-and-Groove Particleboard</a></li>
-                <li><a href="#">Tongue-and-Groove Medium-Density Fiberboard</a></li>
+                @foreach ($menu3 as $item3)
+                  <li><a href="{{route('frontend.categoryEn', $item3->name)}}">
+                    @php
+                          $source2 = 'ru';
+                          $target2 = 'en';
+                          $text2 = $item3->name;
+
+                          $trans2 = new GoogleTranslate();
+                          $result2 = $trans2->translate($source2, $target2, $text2);
+                    @endphp
+                    {{$result2}}
+                  </a></li>
+                @endforeach
 
 
               </ul>
@@ -52,14 +86,19 @@
 
             <li class="nav-item"><a href="#" class="nav-link">Wooden Products</a>
               <ul class="dropdown">
-                <li><a href="#">Pellets</a></li>
-                <li><a href="#">Mulch</a></li>
-                <li><a href="#">Containers</a></li>
-                <li><a href="#">Pallets</a></li>
-                <li><a href="#">Pallets</a></li>
-                <li><a href="#">Gasket Sheets</a></li>
-                <li><a href="#">Gasket Blocks</a></li>
-                <li><a href="#">Wooden Product Sets</a></li>
+                @foreach ($menu4 as $item4)
+                  <li><a href="{{route('frontend.categoryEn', $item4->name)}}">
+                    @php
+                          $source3 = 'ru';
+                          $target3 = 'en';
+                          $text3 = $item4->name;
+
+                          $trans3 = new GoogleTranslate();
+                          $result3 = $trans3->translate($source3, $target3, $text3);
+                    @endphp
+                    {{$result3}}
+                  </a></li>
+                @endforeach
               </ul>
             </li>
 

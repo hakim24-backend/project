@@ -1,3 +1,12 @@
+<?php
+use App\Models\Category;
+
+$menu1 = Category::where('name1', 'МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ')->get();
+$menu2 = Category::where('name1', 'ПЛИТНЫЕ МАТЕРИАЛЫ')->get();
+$menu3 = Category::where('name1', 'СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ')->get();
+$menu4 = Category::where('name1', 'ИЗДЕЛИЯ ИЗ ДРЕВЕСИНЫ')->get();
+$menu5 = Category::where('name1', 'КОМПАНИЯ')->get();
+?>
 <header class="header-bg">
     <div class="container-fluid">
       <div class="row">
@@ -18,33 +27,29 @@
             -->
               <li class="nav-item"><a href="#" class="nav-link">Мебельные комплектующие</a>
                 <ul class="dropdown">
-                  <li><a href="{{route('frontend.category', 'Столешницы')}}">Столешницы</a></li>
-                  <li><a href="#">Мебельные детали</a></li>
-                 
-
+                  @foreach ($menu1 as $item1)
+                    <li><a href="{{route('frontend.category', $item1->name)}}">{{$item1->name}}</a></li>
+                  @endforeach
                 </ul>
               </li>
 
               <li class="nav-item"><a href="#" class="nav-link">Плитные материалы</a>
                 <ul class="dropdown">
-                  <li><a href="{{route('frontend.category', 'ЛДСП')}}">ЛДСП</a></li>
-                  <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ДСП &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-                  <li><a href="#">ЛМДФ</a></li>
-                  <li><a href="#">МДФ</a></li>
-                  <li><a href="#">ДВПО</a></li>
-                  <li><a href="#">ДВП</a></li>
+                  @foreach ($menu2 as $item2)
+                    @if ($item2->name == 'ЛДСП')
+                      <li><a href="{{route('frontend.category', $item2->name)}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{$item2->name}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    @else
+                      <li><a href="{{route('frontend.category', $item2->name)}}">{{$item2->name}}</a></li>
+                    @endif
+                  @endforeach
                 </ul>
               </li>
 
               <li class="nav-item"><a href="#" class="nav-link">Строительные материалы</a>
                 <ul class="dropdown">
-                  <li><a href="{{route('frontend.category', 'Стеновые панели')}}">Стеновые панели</a>
-                  </li>
-                  <li><a href="#">Пиломатериалы</a></li>
-                  <li><a href="#">Строганные изделия</a></li>
-                  <li><a href="#">Огнестойкие панели</a></li>
-                  <li><a href="#">Шпунтованная ДСП</a></li>
-                  <li><a href="#">Шпунтованная МДФ</a></li>
+                  @foreach ($menu3 as $item3)
+                    <li><a href="{{route('frontend.category', $item3->name)}}">{{$item3->name}}</a></li>
+                  @endforeach
 
 
                 </ul>
@@ -52,14 +57,9 @@
 
               <li class="nav-item"><a href="#" class="nav-link">Изделия из древесины</a>
                 <ul class="dropdown">
-                  <li><a href="#">Пеллеты</a></li>
-                  <li><a href="#">Мульча</a></li>
-                  <li><a href="#">Тара</a></li>
-                  <li><a href="#">Палеты</a></li>
-                  <li><a href="#">Поддоны</a></li>
-                  <li><a href="#">Прокладочные листы</a></li>
-                  <li><a href="#">Прокладочные бруски</a></li>
-                  <li><a href="#">Комплекты изделий из древесины</a></li>
+                  @foreach ($menu4 as $item4)
+                    <li><a href="{{route('frontend.category', $item4->name)}}">{{$item4->name}}</a></li>
+                  @endforeach
                 </ul>
               </li>
 

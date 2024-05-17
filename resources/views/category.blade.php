@@ -11,15 +11,7 @@ use \Statickidz\GoogleTranslate;
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>
     @if ($category != null)
-      @if ($category->name == 'Столешницы')
-      Столешницы
-      @elseif($category->name == 'ЛДСП')
-      ЛДСП
-      @elseif($category->name == 'СТЕНОВЫЕ ПАНЕЛИ')
-      Стеновые Панели Мдф
-      @elseif($category->name == 'МЕЖКОМНАТНЫЕ ДВЕРИ')
-      МЕЖКОМНАТНЫЕ ДВЕРИ
-      @endif
+      {{$category->name}}
     @endif
   </title>
   <link rel="stylesheet" type="text/css" media="screen" href="{{asset('/css/normalize.css')}}" />
@@ -54,15 +46,7 @@ use \Statickidz\GoogleTranslate;
 
     <span> 
       @if ($category != null)
-        @if ($category->name == 'Столешницы')
-        Столешницы
-        @elseif($category->name == 'ЛДСП')
-        ЛДСП
-        @elseif($category->name == 'СТЕНОВЫЕ ПАНЕЛИ')
-        Стеновые Панели Мдф
-        @elseif($category->name == 'МЕЖКОМНАТНЫЕ ДВЕРИ')
-        МЕЖКОМНАТНЫЕ ДВЕРИ
-        @endif
+        {{$category->name}}
       @endif  
     </span>
     <span>

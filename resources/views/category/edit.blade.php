@@ -20,8 +20,22 @@
                 
                     <div class="card-body">
                         <div class="form-group">
-                            <label>Name Category</label>
-                            <input name="name" type="input" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Name" value="{{ old('name', $item->name) }}" required>
+                            <label>Name Menu Category</label>
+                            <select name="name1" class="form-control @error('name1') is-invalid @enderror" required>
+                              <option value="" disabled {{ $item->name1 == null ? 'selected' : '' }}>Select Menu Category</option>
+                              <option value="МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ" {{ $item->name1 == 'МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ' ? 'selected' : '' }}>МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ</option>
+                              <option value="ПЛИТНЫЕ МАТЕРИАЛЫ" {{ $item->name1 == 'ПЛИТНЫЕ МАТЕРИАЛЫ' ? 'selected' : '' }}>ПЛИТНЫЕ МАТЕРИАЛЫ</option>
+                              <option value="СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ" {{ $item->name1 == 'СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ' ? 'selected' : '' }}>СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ</option>
+                              <option value="ИЗДЕЛИЯ ИЗ ДРЕВЕСИНЫ" {{ $item->name1 == 'ИЗДЕЛИЯ ИЗ ДРЕВЕСИНЫ' ? 'selected' : '' }}>ИЗДЕЛИЯ ИЗ ДРЕВЕСИНЫ</option>
+                              <option value="КОМПАНИЯ" {{ $item->name1 == 'КОМПАНИЯ' ? 'selected' : '' }}>КОМПАНИЯ</option>
+                            </select>
+                            @error('name1')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>Name Submenu Category</label>
+                            <input name="name" type="input" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Submenu" value="{{ old('name', $item->name) }}" required>
                             @error('name')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
