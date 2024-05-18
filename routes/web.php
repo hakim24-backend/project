@@ -75,6 +75,7 @@ Route::middleware('auth')->group(function(){
     Route::put('/product/deleteImageView/{id}', [ProductController::class, 'deleteImageView'])->name('product.deleteImageView');
     Route::put('/product/addFile/{id}', [ProductController::class, 'storeFile'])->name('product.storeFile');
     Route::put('/product/deleteFile/{id}', [ProductController::class, 'deleteFile'])->name('product.deleteFile');
+    Route::post('/product/storeWithCategory', [ProductController::class, 'storeWithCategory'])->name('product.storeWithCategory');
 
     //career
     Route::get('/careerier/add-detail/{id}', [CareerController::class, 'addDetail'])->name('career.addDetail');

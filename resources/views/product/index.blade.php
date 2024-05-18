@@ -38,7 +38,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <button type="button" class="btn bg-gradient-success" data-toggle="modal" data-target="#create-product">
+                        <button type="button" class="btn bg-gradient-success" data-toggle="modal" data-target="#create">
                             <span><i class="fa fa-plus"></i></span> Create
                         </button>
                     </div>
@@ -143,11 +143,11 @@
         </div>
   </div>
 
-  <div class="modal fade" id="create-product">
+  <div class="modal fade" id="create-with-collection">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Create Product</h4>
+          <h4 class="modal-title">Create Product With Collection</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -226,6 +226,132 @@
     </div>
     <!-- /.modal-dialog -->
   </div>
+
+  <div class="modal fade" id="create-with-category">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Create Product With Category</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <!-- general form elements -->
+            <div class="card card-success">
+                <div class="card-header">
+                    {{-- <h3 class="card-title">Quick Example</h3> --}}
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form action="{{ route('product.storeWithCategory') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Category</label>
+                                <select required id="select_category" name="id_category" class="form-control select2 select2-success" data-dropdown-css-class="select2-success">
+                                {{-- <select required id="select_category" name="category" class="form-control select2bs4" style="width: 100%;"> --}}
+                                    
+                                </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Name Product</label>
+                                    <input name="name" type="input" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Name" value="{{ old('name') }}" required>
+                                    @error('name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Upload Image</label>
+                                        <input required style="padding: 3px" name="filename" type="file" class="form-control @error('filename') is-invalid @enderror" placeholder="Enter Name" value="{{ old('filename') }}" required>
+                                        @error('filename')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                        <p style="font-size: 14px;"><i>*JPG/JPEG/PNG</i></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <table class="table table-bordered" id="table1">
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Value</th>
+                                                <th>Action</th>
+                                            </tr>
+                                            <tr>
+                                                <td><input required type="text" name="inputs[0][name]" placeholder="Enter description" class="form-control"></td>
+                                                <td><input required type="text" name="inputs[0][value]" placeholder="Enter value" class="form-control"></td>
+                                                <td><button type="button" name="add" id="add1" class="btn btn-success">Add Description</button></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+
+                    <div class="card-footer">
+                    <button type="submit" class="btn btn-success">Save</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+                </div>
+                <!-- /.card -->
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+  <div class="modal fade" id="create">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Create Product</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <!-- general form elements -->
+            <div class="card card-success">
+                <div class="card-header">
+                    {{-- <h3 class="card-title">Quick Example</h3> --}}
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a type="button" class="btn btn-info form-control create-with-collection" data-dismiss="modal" data-toggle="modal" href="#create-with-collection">Create With Collection</a>
+                            </div>
+                            <div class="col-md-6">
+                                <a type="button" class="btn btn-danger form-control create-with-category" data-dismiss="modal" data-toggle="modal" href="#create-with-category">Crete With Category</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+
+                    <div class="card-footer">
+                    </div>
+                </div>
+                <!-- /.card -->
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+  
 
   <!-- /.content -->
 </div>
@@ -317,6 +443,27 @@
             });
             }
 
+            // Select2 Single  with Placeholder
+            $('#select_category').select2({
+                allowClear: true,
+                ajax: {
+                    url: "{{ route('ajax-category') }}",
+                    dataType: 'json',
+                    delay: 250,
+                    processResults: function(data) {
+                        return {
+                            results: $.map(data, function(item) {
+                                return {
+                                text: item.name,
+                                id: item.id
+                                }
+                            })
+                        };
+                    },
+                    cache: true
+                }
+            });
+
         });
 
         var i = 0;
@@ -336,7 +483,28 @@
             `);
         });
 
+        var indeks = 0;
+        $('#add1').click(function(){
+            ++indeks;
+            $('#table1').append(
+                `<tr>
+                    <td>
+                        <input required type="text" name="inputs[`+indeks+`][name]" placeholder="Enter description" class="form-control">
+                    </td>
+                    <td>
+                        <input required type="text" name="inputs[`+indeks+`][value]" placeholder="Enter value" class="form-control">
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger remove-table-row-1">Remove</button>
+                    </td>
+            `);
+        });
+
         $(document).on('click','.remove-table-row', function(){
+            $(this).parents('tr').remove();
+        });
+
+        $(document).on('click','.remove-table-row-1', function(){
             $(this).parents('tr').remove();
         });
 

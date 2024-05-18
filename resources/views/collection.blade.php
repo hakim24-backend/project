@@ -96,10 +96,8 @@
       <span> 
         @if ($collection->category->name == 'Столешницы')
           Столешницы {{$collection->name}}
-        @elseif($collection->category->name == 'ЛДСП')
-          ЛДСП {{$collection->name}} COLLECTION
         @else
-          {{$collection->name}}
+          {{$collection->category->name}}
         @endif
       </span>
       <span> <p>

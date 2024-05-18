@@ -1,5 +1,6 @@
 <?php
 use App\Models\Category;
+use App\Models\Collection;
 
 $menu1 = Category::where('name1', 'МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ')->get();
 $menu2 = Category::where('name1', 'ПЛИТНЫЕ МАТЕРИАЛЫ')->get();
@@ -36,10 +37,18 @@ $menu5 = Category::where('name1', 'КОМПАНИЯ')->get();
               <li class="nav-item"><a href="#" class="nav-link">Плитные материалы</a>
                 <ul class="dropdown">
                   @foreach ($menu2 as $item2)
-                    @if ($item2->name == 'ЛДСП')
-                      <li><a href="{{route('frontend.category', $item2->name)}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{$item2->name}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-                    @else
-                      <li><a href="{{route('frontend.category', $item2->name)}}">{{$item2->name}}</a></li>
+
+                    @php
+                        //cek collection or product
+                        $cekCollection = Collection::where('id_category', $item2->id)->count();
+                    @endphp
+                    
+                    @if ($cekCollection !== 0)
+                      @if ($item2->name == 'ЛДСП')
+                        <li><a href="{{route('frontend.category', $item2->name)}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{$item2->name}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                      @else
+                        <li><a href="{{route('frontend.category', $item2->name)}}">{{$item2->name}}</a></li>
+                      @endif                        
                     @endif
                   @endforeach
                 </ul>

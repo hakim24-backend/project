@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Product;
+use App\Models\Category;
+use App\Models\Collection;
 use App\Models\Description;
 
 use Illuminate\Http\Request;
@@ -48,6 +50,48 @@ class ProductController extends Controller
 
         $product = Product::create([
             'id_collection' => $request->id_collection,
+            'name' => $request->name,
+            'filename' => $nameFile
+        ]);
+
+        foreach ($request->inputs as $key => $value) {
+            Description::create([
+                'name' => $value['name'],
+                'value' => $value['value'],
+                'id_product' => $product->id
+            ]);
+        }
+
+        return redirect()->route('product.index');
+    }
+
+    public function storeWithCategory(Request $request)
+    {
+        $nameFile = $request->filename->getClientOriginalName();
+        $folderGambar = 'upload/product';
+        $request->filename->move($folderGambar, $nameFile);
+
+        //cek data collection
+        $cekCollection = Collection::where('id_category', $request->id_category)->first();
+
+        //get data category
+        $category = Category::where('id', $request->id_category)->first();
+
+        if ($cekCollection == null) {
+            //create collection automatically
+            $collection = Collection::create([
+                'id_category' => $request->id_category,
+                'name' => $category->name,
+                'description' => "-",
+                'filename' => "-"
+            ]);
+            $idCollection = $collection->id;
+        } else {
+            $idCollection = $cekCollection->id;
+        }
+
+        $product = Product::create([
+            'id_collection' => $idCollection,
             'name' => $request->name,
             'filename' => $nameFile
         ]);

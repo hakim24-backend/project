@@ -41,6 +41,12 @@ class FrontendController extends Controller
             ->where('categories.name', 'Межкомнатные двери')
             ->get();
             return view('category_door', compact('product', 'category'));
+        } elseif ($category->name1 == 'ПЛИТНЫЕ МАТЕРИАЛЫ' || $category->name1 == 'СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ') {
+
+            //get collection
+            $getCollection = Collection::where('id_category', $category->id)->first();
+            return redirect()->route('frontend.collection', $getCollection->id);
+
         } else {
             return view('category', compact('collection'), compact('category'));
         }
@@ -48,6 +54,7 @@ class FrontendController extends Controller
 
     public function categoryEn($name) {
         $category = Category::where('name', $name)->first();
+
 
         if ($category == null) {
             $collection = null;
