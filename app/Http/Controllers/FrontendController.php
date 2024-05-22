@@ -41,7 +41,7 @@ class FrontendController extends Controller
             ->where('categories.name', 'Межкомнатные двери')
             ->get();
             return view('category_door', compact('product', 'category'));
-        } elseif ($category->name1 == 'ПЛИТНЫЕ МАТЕРИАЛЫ' || $category->name1 == 'СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ') {
+        } elseif (($category->name1 == 'ПЛИТНЫЕ МАТЕРИАЛЫ' && $category->name !== 'ЛДСП') || ($category->name1 == 'СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ' && $category->name !== 'СТЕНОВЫЕ ПАНЕЛИ')) {
 
             //get collection
             $getCollection = Collection::where('id_category', $category->id)->first();
