@@ -10,6 +10,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\AjaxFrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,8 @@ Route::get('/category/{name}/en', [FrontendController::class, 'categoryEn'])->na
 Route::get('/collection/{id}', [FrontendController::class, 'collection'])->name('frontend.collection');
 Route::get('/collection/{id}/en', [FrontendController::class, 'collectionEn'])->name('frontend.collectionEn');
 Route::get('/product/{id}', [FrontendController::class, 'product'])->name('frontend.product');
+Route::get('/allProduct', [FrontendController::class, 'allProduct'])->name('frontend.allProduct');
+Route::post('/filterProduct', [FrontendController::class, 'filterProduct'])->name('frontend.filterProduct');
 Route::get('/product/{id}/en', [FrontendController::class, 'productEn'])->name('frontend.productEn');
 Route::get('/visualizer', [FrontendController::class, 'visualizer'])->name('frontend.visualizer');
 Route::get('/contacts', [FrontendController::class, 'contact'])->name('frontend.contact');
@@ -51,6 +54,12 @@ Route::get('/careers', [FrontendController::class, 'career'])->name('frontend.ca
 Route::get('/careers/en', [FrontendController::class, 'careerEn'])->name('frontend.careerEn');
 Route::get('/careerDetail/{id}', [FrontendController::class, 'careerDetail'])->name('frontend.careerDetail');
 Route::get('/careerDetail/{id}/en', [FrontendController::class, 'careerDetailEn'])->name('frontend.careerDetailEn');
+
+//ajax frontend
+Route::get('/ajax-frontend-series', [AjaxFrontendController::class, 'selectSeries'])->name('ajax-frontend-series');
+Route::get('/ajax-frontend-texture', [AjaxFrontendController::class, 'selectTexture'])->name('ajax-frontend-texture');
+Route::get('/ajax-frontend-category', [AjaxFrontendController::class, 'selectCategory'])->name('ajax-frontend-category');
+Route::get('/ajax-frontend-collection', [AjaxFrontendController::class, 'selectCollection'])->name('ajax-frontend-collection');
 
 Auth::routes();
 

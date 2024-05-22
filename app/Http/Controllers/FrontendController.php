@@ -403,4 +403,17 @@ class FrontendController extends Controller
             'careerDetail' => $careerDetail
         ]);
     }
+
+    public function allProduct(Request $request)
+    {   
+        $product = Product::all();
+        return view('filter_product', [
+            'product' => $product
+        ]);
+    }
+
+    public function filterProduct(Request $request)
+    {
+        dd($request->series);
+    }
 }

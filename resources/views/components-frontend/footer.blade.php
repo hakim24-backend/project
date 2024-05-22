@@ -8,7 +8,7 @@
             <div class="footer-nav">
 
               <ul>
-                <li><a href="#" class="nav-link">ПРОДУКТЫ</a></li>
+                <li><a href="{{route('frontend.allProduct')}}" class="nav-link">ПРОДУКТЫ</a></li>
                 <li><a href="#" class="nav-link">КОЛЛЕКЦИИ</a></li>
                 <li><a href="{{route('frontend.visualizer')}}" class="nav-link">ВИЗУАЛИЗАТОР</a></li>
                 <li><a href="{{route('frontend.contact')}}" class="nav-link">ЗАДАТЬ ВОПРОС</a></li>
