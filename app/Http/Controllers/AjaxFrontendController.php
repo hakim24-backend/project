@@ -71,4 +71,18 @@ class AjaxFrontendController extends Controller
         }
         return response()->json($collection);
     }
+
+    public function selectName(Request $request)
+    {
+        $request->has('q');
+        $search = $request->q;
+        $nameProduct = Product::select('id', 'name')
+                ->where('name', 'LIKE', "%$search%")
+                ->get();
+        foreach ($nameProduct as $key => $value) {
+            $nameProduct[$key]['id'] = $value->id;
+            $nameProduct[$key]['name'] = $value->name;
+        }
+        return response()->json($nameProduct);
+    }
 }

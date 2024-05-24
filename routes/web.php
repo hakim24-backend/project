@@ -60,6 +60,7 @@ Route::get('/ajax-frontend-series', [AjaxFrontendController::class, 'selectSerie
 Route::get('/ajax-frontend-texture', [AjaxFrontendController::class, 'selectTexture'])->name('ajax-frontend-texture');
 Route::get('/ajax-frontend-category', [AjaxFrontendController::class, 'selectCategory'])->name('ajax-frontend-category');
 Route::get('/ajax-frontend-collection', [AjaxFrontendController::class, 'selectCollection'])->name('ajax-frontend-collection');
+Route::get('/ajax-frontend-name', [AjaxFrontendController::class, 'selectName'])->name('ajax-frontend-name');
 
 Auth::routes();
 

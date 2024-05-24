@@ -406,7 +406,7 @@ class FrontendController extends Controller
 
     public function allProduct(Request $request)
     {   
-        $product = Product::all();
+        $product = null;
         return view('filter_product', [
             'product' => $product
         ]);
@@ -414,6 +414,52 @@ class FrontendController extends Controller
 
     public function filterProduct(Request $request)
     {
-        dd($request->series);
+        $name = $request->name; 
+        $collection = $request->id_collection; 
+        $category = $request->id_category;
+        $series = $request->series; 
+        $texture = $request->texture;
+        $product = Product::select('products.*')
+        ->join('descriptions', 'products.id', '=', 'descriptions.id_product')
+        ->join('collections', 'collections.id', '=', 'products.id_collection')
+        ->join('categories', 'categories.id', '=', 'collections.id_category')
+        ->where(function ($query) {
+            $query->where('descriptions.name', '=', 'Серия')
+                  ->orWhere('descriptions.name', '=', 'Тексеура');
+        });
+
+        if ($name != null) {
+            $product = $product->whereIn('products.id', $name);
+        }
+
+        if ($series != null) {
+            $product = $product->orWhereIn('descriptions.value', $series);
+        }
+
+        if ($texture != null) {
+            $product = $product->orWhereIn('descriptions.value', $texture);
+        }
+
+        if ($category != null) {
+            $product = $product->orWhereIn('categories.id', $category);
+        }
+
+        if ($collection != null) {
+            $product = $product->orWhereIn('collections.id', $collection);
+        }
+
+        $product = $product->groupBy('products.id')->get();
+
+        // ->where(function ($query) use ($series, $texture) {
+        //     $query->whereIn('descriptions.value', $series)
+        //           ->orWhereIn('descriptions.value', $texture);
+        // })->orWhere(function ($query) use ($collection, $category) {
+        //     $query->whereIn('categories.id', $category)
+        //           ->orWhereIn('collections.id', $collection);
+        // })->groupBy('products.id')->get();
+        
+        return view('filter_product', [
+            'product' => $product
+        ]);
     }
 }

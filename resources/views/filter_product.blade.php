@@ -138,6 +138,14 @@
     @csrf
         <div class="container">
             <div class="row">
+              <div class="col-md-12">
+                <label for="" style="text-align: left">Name</label>
+                <select multiple id="select_name" name="name[]" class="form-control select2 select2-success" data-dropdown-css-class="select2-success">
+    
+                </select>
+              </div>
+            </div><br>
+            <div class="row">
                 <div class="col-md-6">
                     <label for="" style="text-align: left">Series</label>
                     <select multiple id="select_series" name="series[]" class="form-control select2 select2-success" data-dropdown-css-class="select2-success">
@@ -154,13 +162,13 @@
             <div class="row">
                 <div class="col-md-6">
                     <label for="" style="text-align: left">Category</label>
-                    <select multiple id="select_category" name="id_category" class="form-control select2 select2-success" data-dropdown-css-class="select2-success">
+                    <select multiple id="select_category" name="id_category[]" class="form-control select2 select2-success" data-dropdown-css-class="select2-success">
     
                     </select>
                 </div>
                 <div class="col-md-6">
                     <label for="" style="text-align: left">Collection</label>
-                    <select multiple id="select_collection" name="id_collection" class="form-control select2 select2-success  @error('id_selection') is-invalid @enderror" data-dropdown-css-class="select2-success">
+                    <select multiple id="select_collection" name="id_collection[]" class="form-control select2 select2-success  @error('id_selection') is-invalid @enderror" data-dropdown-css-class="select2-success">
                         
                     </select>
                 </div>
@@ -169,9 +177,32 @@
                 <button id="filter" class="btn btn-success" type="submit">фильтр</button> &nbsp; <a class="btn btn-info" href="{{route('frontend.allProduct')}}">сброс</a>
             </div>
         </div>
-    </form>
+    </form><br>
     <div class="gallery">
+      @if ($product != null)
+        @foreach ($product as $item)
+            <a href="{{route('frontend.product', $item->id)}}"><img src="{{asset('/upload/product/'.$item->filename)}}">
+                <h3>{{$item->name}}</h3>
 
+                @if ($item->collection->category->name == 'Столешницы')
+                  @php
+                      $series = Description::where('id_product', $item->id)->where('name', 'Серия')->first();
+                  @endphp
+                  <p>{{$series->value}}</p>
+                @elseif($item->collection->category->name == 'ЛДСП')
+                  @php
+                      $code = Description::where('id_product', $item->id)->where('name', 'Код')->first();
+                      $texture = Description::where('id_product', $item->id)->where('name', 'Тексеура')->first();
+                  @endphp
+                  <p>{{$code->value}}</p>
+                  <p>{{$texture->value}}</p>
+                @else
+                  <p>{{$item->collection->name}}</p>
+                @endif
+
+            </a>
+        @endforeach
+      @endif
     </div>
     <!-- End of Layout grid -->
     
@@ -266,6 +297,27 @@
                 allowClear: true,
                 ajax: {
                     url: "{{ route('ajax-frontend-collection') }}",
+                    dataType: 'json',
+                    delay: 250,
+                    processResults: function(data) {
+                        return {
+                            results: $.map(data, function(item) {
+                                return {
+                                text: item.name,
+                                id: item.id
+                                }
+                            })
+                        };
+                    },
+                    cache: true
+                }
+            });
+
+            // Select2 Single  with Placeholder
+            $('#select_name').select2({
+                allowClear: true,
+                ajax: {
+                    url: "{{ route('ajax-frontend-name') }}",
                     dataType: 'json',
                     delay: 250,
                     processResults: function(data) {
