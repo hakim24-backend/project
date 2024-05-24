@@ -414,49 +414,77 @@ class FrontendController extends Controller
 
     public function filterProduct(Request $request)
     {
-        $name = $request->name; 
-        $collection = $request->id_collection; 
-        $category = $request->id_category;
-        $series = $request->series; 
-        $texture = $request->texture;
+        if ($request->name == null) {
+            $name = array();
+        } else {
+            $name = $request->name;
+        }
+
+        if ($request->id_collection == null) {
+            $collection = array();
+        } else {
+            $collection = $request->id_collection;
+        }
+
+        if ($request->id_category == null) {
+            $category = array();
+        } else {
+            $category = $request->id_category;
+        }
+
+        if ($request->series == null) {
+            $series = array();
+        } else {
+            $series = $request->series;
+        }
+
+        if ($request->texture == null) {
+            $texture = array();
+        } else {
+            $texture = $request->texture;
+        }
+
         $product = Product::select('products.*')
         ->join('descriptions', 'products.id', '=', 'descriptions.id_product')
         ->join('collections', 'collections.id', '=', 'products.id_collection')
         ->join('categories', 'categories.id', '=', 'collections.id_category')
+        ->whereIn('products.id', $name)
         ->where(function ($query) {
             $query->where('descriptions.name', '=', 'Серия')
                   ->orWhere('descriptions.name', '=', 'Тексеура');
-        });
+        })
 
-        if ($name != null) {
-            $product = $product->whereIn('products.id', $name);
-        }
+        // if ($name != null) {
+        //     $product = $product->whereIn('products.id', $name);
+        // }
 
-        if ($series != null) {
-            $product = $product->orWhereIn('descriptions.value', $series);
-        }
+        // if ($series != null) {
+        //     $product = $product->whereIn('descriptions.value', $series);
+        // }
 
-        if ($texture != null) {
-            $product = $product->orWhereIn('descriptions.value', $texture);
-        }
+        // if ($texture != null) {
+        //     $product = $product->orWhereIn('descriptions.value', $texture);
+        // }
 
-        if ($category != null) {
-            $product = $product->orWhereIn('categories.id', $category);
-        }
+        // if ($category != null) {
+        //     $product = $product->whereIn('categories.id', $category);
+        // }
 
-        if ($collection != null) {
-            $product = $product->orWhereIn('collections.id', $collection);
-        }
+        // if ($collection != null) {
+        //     $product = $product->orWhereIn('collections.id', $collection);
+        // }
 
-        $product = $product->groupBy('products.id')->get();
+        // $product = $product->get();
 
-        // ->where(function ($query) use ($series, $texture) {
-        //     $query->whereIn('descriptions.value', $series)
-        //           ->orWhereIn('descriptions.value', $texture);
-        // })->orWhere(function ($query) use ($collection, $category) {
-        //     $query->whereIn('categories.id', $category)
-        //           ->orWhereIn('collections.id', $collection);
-        // })->groupBy('products.id')->get();
+        ->orWhere(function ($query) use ($series, $texture) {
+            $query->whereIn('descriptions.value', $series)
+                  ->orWhereIn('descriptions.value', $texture);
+        })
+        ->orWhere(function ($query) use ($collection, $category) {
+            $query->whereIn('categories.id', $category)
+                  ->orWhereIn('collections.id', $collection);
+        })
+        ->groupBy('products.id')->get();
         
         return view('filter_product', [
             'product' => $product
