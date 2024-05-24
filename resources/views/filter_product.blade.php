@@ -139,7 +139,7 @@
         <div class="container">
             <div class="row">
               <div class="col-md-12">
-                <label for="" style="text-align: left">Name</label>
+                <label for="" style="text-align: left">Имя</label>
                 <select multiple id="select_name" name="name[]" class="form-control select2 select2-success" data-dropdown-css-class="select2-success">
     
                 </select>
@@ -147,13 +147,13 @@
             </div><br>
             <div class="row">
                 <div class="col-md-6">
-                    <label for="" style="text-align: left">Series</label>
+                    <label for="" style="text-align: left">Cерия</label>
                     <select multiple id="select_series" name="series[]" class="form-control select2 select2-success" data-dropdown-css-class="select2-success">
     
                     </select>
                 </div>
                 <div class="col-md-6">
-                    <label for="" style="text-align: left">Texture</label>
+                    <label for="" style="text-align: left">Текстура</label>
                     <select multiple id="select_texture" name="texture[]" class="form-control select2 select2-success" data-dropdown-css-class="select2-success">
     
                     </select>
@@ -161,13 +161,13 @@
             </div><br>
             <div class="row">
                 <div class="col-md-6">
-                    <label for="" style="text-align: left">Category</label>
+                    <label for="" style="text-align: left">Категория</label>
                     <select multiple id="select_category" name="id_category[]" class="form-control select2 select2-success" data-dropdown-css-class="select2-success">
     
                     </select>
                 </div>
                 <div class="col-md-6">
-                    <label for="" style="text-align: left">Collection</label>
+                    <label for="" style="text-align: left">Коллекции</label>
                     <select multiple id="select_collection" name="id_collection[]" class="form-control select2 select2-success  @error('id_selection') is-invalid @enderror" data-dropdown-css-class="select2-success">
                         
                     </select>
