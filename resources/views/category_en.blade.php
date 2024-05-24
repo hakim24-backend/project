@@ -66,7 +66,6 @@ use \Statickidz\GoogleTranslate;
       @endif  
     </span>
     <span>
-      <p> 
         @if ($category != null)
         @php
             $source1 = 'ru';
@@ -76,9 +75,8 @@ use \Statickidz\GoogleTranslate;
             $trans1 = new GoogleTranslate();
             $result1 = $trans1->translate($source1, $target1, $text1);
         @endphp
-        {{$result1}}
+        {!!$result1!!}
         @endif
-        </p>
     </span>
   </div>
   <div class="gallery">

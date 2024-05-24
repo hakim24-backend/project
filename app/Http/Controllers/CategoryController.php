@@ -14,7 +14,13 @@ class CategoryController extends Controller
     public function index()
     {
         $category = Category::all();
-        return view('category.index', compact('category'));
+        $dataId = Category::select('id')->get()->toArray();
+        $dataSummernote = [];
+        foreach ($dataId as $key => $value) {
+            $dataSummernote[$key] = $value['id'];
+        }
+        $dataSummernote = implode(", ", $dataSummernote);
+        return view('category.index', compact('category', 'dataSummernote'));
     }
 
     /**
@@ -32,7 +38,8 @@ class CategoryController extends Controller
     {
         $validateData = $this->validate($request, [
             'name' => 'required||string',
-            'name1' => 'required||string'
+            'name1' => 'required||string',
+            'description' => 'string'
         ], [
             'name.required' => 'Form name cannot blank',
         ]);

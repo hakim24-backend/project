@@ -1,5 +1,5 @@
 <div class="modal fade" id="update-category{{$item->id}}">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Update Category</h4>
@@ -42,10 +42,7 @@
                         </div>
                         <div class="form-group">
                           <label>Description Collection</label>
-                          <textarea name="description" rows="5" class="form-control @error('description') is-invalid @enderror" placeholder="Enter Description">{{ old('description', $item->description) }}</textarea>
-                          @error('description')
-                              <span class="text-danger">{{ $message }}</span>
-                          @enderror
+                          <textarea id="summernote_update{{$item->id}}" name="description">{!! $item->description !!}</textarea>
                       </div>
                     </div>
                     <!-- /.card-body -->

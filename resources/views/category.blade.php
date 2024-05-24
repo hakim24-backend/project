@@ -49,11 +49,9 @@ use \Statickidz\GoogleTranslate;
       @endif  
     </span>
     <span>
-      <p> 
         @if ($category != null)
-        {{$category->description}}
+        {!!$category->description!!}
         @endif
-        </p>
     </span>
   </div>
   <div class="gallery">

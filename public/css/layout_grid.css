@@ -333,7 +333,7 @@ body .gallery {
   margin: 0;
   padding: 150px;
   background: #000000;
-  margin-top: -110px;
+  margin-top: -250px;
 }
 
 .gallerys {
@@ -365,7 +365,6 @@ body .gallery {
   font-size: 20px;
   
   color: #ffffff;
-  margin-bottom: -200px;
   font-weight: 400;
 }
 

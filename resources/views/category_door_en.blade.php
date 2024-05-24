@@ -65,6 +65,19 @@ use \Statickidz\GoogleTranslate;
         @endif
       @endif  
     </span>
+    <span>
+      @if ($category != null)
+      @php
+          $source1 = 'ru';
+          $target1 = 'en';
+          $text1 = $category->description;
+
+          $trans1 = new GoogleTranslate();
+          $result1 = $trans1->translate($source1, $target1, $text1);
+      @endphp
+      {!!$result1!!}
+      @endif
+  </span>
   </div>
   <div class="gallery">
     @if ($product != null)

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.min.css')}}">
 @endpush
 
 @section('content')
@@ -60,7 +61,7 @@
                                         @endif
                                     </td>
                                     <td>{{ $item->name }}</td>
-                                    <td width="30%">{{ $item->description }}</td>
+                                    <td width="30%">{!! $item->description !!}</td>
                                     <td style="text-align: center; vertical-align: middle;">
                                         @php
                                             $cekTypical = Typical::where('id_category', $item->id)->first();
@@ -99,7 +100,7 @@
   </div>
 
   <div class="modal fade" id="create-category">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Create Cateagory</h4>
@@ -141,10 +142,7 @@
                         </div>
                         <div class="form-group">
                             <label>Description Category</label>
-                            <textarea name="description" rows="5" class="form-control @error('description') is-invalid @enderror" placeholder="Enter Description">{{ old('description') }}</textarea>
-                            @error('description')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                            <textarea id="summernote" name="description"></textarea>
                         </div>
                     </div>
                     <!-- /.card-body -->
@@ -186,6 +184,8 @@
     <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+    <!-- Summernote -->
+    <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
 
     {{-- Page level custom scripts --}}
     <script>
@@ -215,6 +215,34 @@
                 }
             });
         });
+
+        $(function () {
+            
+            // Summernote
+            $('#summernote').summernote()
+
+            // CodeMirror
+            CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+            mode: "htmlmixed",
+            theme: "monokai"
+            });
+        })
+
+        const numbers = [<?= $dataSummernote ?>];
+            numbers.forEach(myFunction);
+            function myFunction(item) {
+                $(function () {
+            
+                    // Summernote
+                    $('#summernote_update'+item).summernote()
+
+                    // CodeMirror
+                    CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                    mode: "htmlmixed",
+                    theme: "monokai"
+                    });
+                })       
+        }
 
     </script>
 @endpush
