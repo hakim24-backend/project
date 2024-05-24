@@ -121,6 +121,29 @@
       label{
         color: aliceblue
       }
+
+      .btn-success{
+          background: linear-gradient(
+          120deg,
+          #9adee7 0%,
+          #9adee7 50%,
+          #7ec6cf 50%,
+          #7ec6cf 53%,
+          #63bac5 53%
+        );
+        background-size: 220%;
+        background-position: 0;
+        border-color: #9adee7;
+        color: black;
+      }
+
+      .btn-info {
+          background: #E5E4E2;
+          background-color: #E5E4E2;
+          border-color: gray;
+          color: black;
+      }
+
     </style>
 
   </head>
