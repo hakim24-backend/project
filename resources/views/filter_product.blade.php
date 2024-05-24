@@ -135,6 +135,7 @@
         background-position: 0;
         border-color: #9adee7;
         color: black;
+        border-radius: 0px;
       }
 
       .btn-info {
@@ -142,6 +143,7 @@
           background-color: #E5E4E2;
           border-color: gray;
           color: black;
+          border-radius: 0px;
       }
 
     </style>
