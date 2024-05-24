@@ -65,6 +65,13 @@ use \Statickidz\GoogleTranslate;
         @endif
       @endif  
     </span>
+    <span>
+      <p> 
+        @if ($category != null)
+        {{$category->description}}
+        @endif
+        </p>
+    </span>
   </div>
   <div class="gallery">
     @if ($product != null)

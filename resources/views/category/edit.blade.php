@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label>Name Menu Category</label>
-                            <select name="name1" class="form-control @error('name1') is-invalid @enderror" required>
+                            <select name="name1" class="form-control @error('name1') is-invalid @enderror">
                               <option value="" disabled {{ $item->name1 == null ? 'selected' : '' }}>Select Menu Category</option>
                               <option value="МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ" {{ $item->name1 == 'МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ' ? 'selected' : '' }}>МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ</option>
                               <option value="ПЛИТНЫЕ МАТЕРИАЛЫ" {{ $item->name1 == 'ПЛИТНЫЕ МАТЕРИАЛЫ' ? 'selected' : '' }}>ПЛИТНЫЕ МАТЕРИАЛЫ</option>
