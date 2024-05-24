@@ -1,3 +1,7 @@
+<?php 
+    use App\Models\Typical;
+?>
+
 @extends('layouts.app')
 
 @push('css')
@@ -40,6 +44,7 @@
                             <th>Menu</th>
                             <th>Sub Menu</th>
                             <th>Description</th>
+                            <th>Typical</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -55,7 +60,18 @@
                                         @endif
                                     </td>
                                     <td>{{ $item->name }}</td>
-                                    <td width="40%">{{ $item->description }}</td>
+                                    <td width="30%">{{ $item->description }}</td>
+                                    <td style="text-align: center; vertical-align: middle;">
+                                        @php
+                                            $cekTypical = Typical::where('id_category', $item->id)->first();
+                                        @endphp
+
+                                        @if ($cekTypical == null)
+                                            <a href="{{route('typical.addTypical', $item->id)}}" class="btn btn-success"><span><i class="fa fa-plus"></i></span> Add Typical</a>
+                                        @else
+                                            <a href="{{route('typical.addTypical', $item->id)}}" class="btn btn-info"><span><i class="fa fa-edit"></i></span> Update Typical</a>
+                                        @endif
+                                    </td>
                                     <td style="text-align: center">
                                         <form action="{{route('category.destroy', $item->id)}}" method="POST">
                                             @csrf

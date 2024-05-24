@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Typical;
 
 class CategoryController extends Controller
 {
@@ -82,5 +83,68 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         $category->delete();
         return redirect()->route('category.index');
+    }
+
+    public function addTypical($id)
+    {
+        $category = Category::findOrFail($id);
+        $typical = Typical::where('id_category', $category->id)->get();
+        return view('category.add_typical', compact('category', 'typical'));
+    }
+
+    public function storeTypical(Request $request, $id)
+    {
+        $category = Category::findOrFail($id);
+        $validateTypical = $this->validate($request, [
+            'name' => 'required|string',
+            'filename' => 'required|image'
+        ]);
+
+        $nameFile = $request->filename->getClientOriginalName();
+        $folderGambar = 'upload/typical';
+        $request->filename->move($folderGambar, $nameFile);
+
+        $validateTypical = Typical::create([
+            'name' => $request->name,
+            'filename' => $nameFile,
+            'id_category' => $category->id
+        ]);
+        if ($validateTypical) {
+            return redirect()->route('typical.addTypical', $category->id);
+        }
+    }
+
+    public function updateTypical(Request $request, $id)
+    {
+        $typical = Typical::findOrFail($id);
+        //cek image
+        $filename = $request->filename;
+        if ($filename == null) {
+
+            $typical->update([
+                'name' => $request->name
+            ]);
+            return redirect()->route('typical.addTypical', $typical->id_category);
+
+        } else {
+
+            $nameFile = $request->filename->getClientOriginalName();
+            $folderGambar = 'upload/typical';
+            $request->filename->move($folderGambar, $nameFile);
+
+            $typical->update([
+                'name' => $request->name,
+                'filename' => $nameFile
+            ]);
+            return redirect()->route('typical.addTypical', $typical->id_category);
+        }
+    }
+
+    public function deleteTypical($id, $id_category)
+    {
+        $category=Category::findOrFail($id_category);
+        $typical=Typical::findOrFail($id);
+        $typical->delete();
+        return redirect()->route('typical.addTypical', $category->id);
     }
 }

@@ -9,6 +9,7 @@ use App\Models\Slider;
 use App\Models\Contact;
 use App\Models\Career;
 use App\Models\CareerDetail;
+use App\Models\Typical;
 
 use \Statickidz\GoogleTranslate;
 use Illuminate\Http\Request;
@@ -32,6 +33,15 @@ class FrontendController extends Controller
             $collection = null;
         } else {
             $collection = Collection::where('id_category', $category->id)->get();
+            
+            //get typical
+            $cekTypical = Typical::where('id_category', $category->id)->get();
+            if ($cekTypical->isEmpty()) {
+                $typical = null;
+            } else {
+                $typical = $cekTypical;
+            }
+            
         }
 
         if ($name == 'Межкомнатные двери' || $name == 'МЕЖКОМНАТНЫЕ ДВЕРИ') {
@@ -48,7 +58,7 @@ class FrontendController extends Controller
             return redirect()->route('frontend.collection', $getCollection->id);
 
         } else {
-            return view('category', compact('collection'), compact('category'));
+            return view('category', compact('collection', 'category', 'typical'));
         }
     }
 
@@ -96,7 +106,7 @@ class FrontendController extends Controller
         } else {
             $description = array();
         }
-        
+
         return view('collection', [
             'collection' => $collection,
             'product' => $product,

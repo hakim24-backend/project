@@ -369,6 +369,48 @@ body .gallery {
   font-weight: 400;
 }
 
+.typical {
+  
+  padding: 150px;
+ 
+  text-align: center;
+  color: #ffffff;
+  /* background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0)),
+      color-stop(12%, rgba(0, 0, 0, 0.432)),
+      to(rgba(0, 0, 0, 0.144))
+    ), 
+    url(../img/image1/design-fond-moderne-3d-bois/design1.jpg);  */
+    margin-top: -215px;
+    margin-bottom: -75px;
+}
+
+.typical span{
+  font-weight: lighter;
+  font-size: 20px;
+  padding: 30px;
+  
+}
+
+.typical h4{
+  font-weight: lighter;
+  font-size: 50px;
+  padding: 30px;
+  
+}
+
+.typical span p {
+  padding: 30px;
+  font-size: 20px;
+  
+  color: #ffffff;
+  margin-bottom: -200px;
+  font-weight: 400;
+}
+
 .gallery {
   display:flex;
   flex-wrap: wrap;

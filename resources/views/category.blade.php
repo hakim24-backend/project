@@ -35,7 +35,6 @@ use \Statickidz\GoogleTranslate;
   <link rel="stylesheet" type="text/css" media="screen" href="{{asset('/css/responsive.css')}}" />
   <link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/search.css')}}">
 </head>
-
 <body data-spay="scroll" data-target=".nav" data-offset="100">
   
   {{-- Header --}}
@@ -65,7 +64,16 @@ use \Statickidz\GoogleTranslate;
           </a>
       @endforeach
     @endif
-    
+  </div>
+  <div class="typical">
+  @if ($typical != null)
+  <div class="typical">
+    <h4>ХАРАКТЕРИСТИКА</h4>
+    @foreach ($typical as $value)
+        <span class="typical"><img width="5%" src="{{asset('/upload/typical/'.$value->filename)}}"> {{$value->name}}</span>
+    @endforeach
+  </div>
+  @endif
   </div>
   <!-- End of Layout grid -->
 

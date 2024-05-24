@@ -11,6 +11,7 @@ use App\Http\Controllers\CareerController;
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\AjaxFrontendController;
+use App\Http\Controllers\TypicalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,6 +75,7 @@ Route::middleware('auth')->group(function(){
     Route::resource('product', ProductController::class);
     Route::resource('contact', ContactController::class);
     Route::resource('careerier', CareerController::class);
+    Route::resource('typical', TypicalController::class);
 
     //ajax select2
     Route::get('/ajax-category', [AjaxController::class, 'selectCategory'])->name('ajax-category');
@@ -92,4 +94,11 @@ Route::middleware('auth')->group(function(){
     Route::post('/careerier/store-detail/{id}', [CareerController::class, 'storeDetail'])->name('career.storeDetail');
     Route::get('/careerier/edit-detail/{id}', [CareerController::class, 'editDetail'])->name('career.editDetail');
     Route::put('/careerier/update-detail/{id}', [CareerController::class, 'updateDetail'])->name('career.updateDetail');
+
+    //category
+    Route::get('/typical/add/{id}', [CategoryController::class, 'addTypical'])->name('typical.addTypical');
+    Route::post('/typical/storeTypical/{id}', [CategoryController::class, 'storeTypical'])->name('typical.storeTypical');
+    Route::delete('/typical/deleteTypical/{id}/{id_category}', [CategoryController::class, 'deleteTypical'])->name('typical.deleteTypical');
+    Route::get('/typical/edit/{id}', [CategoryController::class, 'editTypical'])->name('typical.editTypical');
+    Route::put('/typical/updateTypical/{id}', [CategoryController::class, 'updateTypical'])->name('typical.updateTypical');
 });
