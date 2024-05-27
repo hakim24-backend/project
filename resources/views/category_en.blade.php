@@ -58,7 +58,7 @@ use \Statickidz\GoogleTranslate;
         Countertops
         @elseif($category->name == 'ЛДСП')
         Particleboard (LDSP)
-        @elseif($category->name == 'СТЕНОВЫЕ ПАНЕЛИ')
+        @elseif($category->name == 'СТЕНОВЫЕ ПАНЕЛИ МДФ')
         MDF Wall Panels
         @elseif($category->name == 'МЕЖКОМНАТНЫЕ ДВЕРИ')
         Interior Doors
