@@ -244,5 +244,17 @@
                 })       
         }
 
+        const numbers1 = [<?= $dataSummernote ?>];
+            numbers1.forEach(myFunctions);
+            function myFunctions(item) {
+                $(function () {
+                    $('#summernote_update'+item).next().on('focusout', ".note-codable", function() {
+                        if ($('#summernote_update'+item).summernote('codeview.isActivated')) {
+                            $('#summernote_update'+item).summernote('codeview.deactivate');
+                        }
+                    });
+                })       
+        }
+
     </script>
 @endpush

@@ -146,14 +146,26 @@
     <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
     <script>
         $(function () {
-            // Summernote
+            // // Summernote
             $('#summernote').summernote()
             $('#summernote1').summernote()
 
-            // CodeMirror
-            CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
-            mode: "htmlmixed",
-            theme: "monokai"
+            // // CodeMirror
+            // CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+            // mode: "htmlmixed",
+            // theme: "monokai"
+            // });
+
+            $('#summernote').next().on('focusout', ".note-codable", function() {
+                if ($('#summernote').summernote('codeview.isActivated')) {
+                    $('#summernote').summernote('codeview.deactivate');
+                }
+            });
+
+            $('#summernote1').next().on('focusout', ".note-codable", function() {
+                if ($('#summernote1').summernote('codeview.isActivated')) {
+                    $('#summernote1').summernote('codeview.deactivate');
+                }
             });
         })
     </script>
