@@ -50,7 +50,7 @@ use \Statickidz\GoogleTranslate;
   @include('components-frontend-en.header')
 
   <!-- Layout grid -->
-  <div class="gallerys">
+  <div class="gallerys-category">
 
     <span> 
       @if ($category != null)
