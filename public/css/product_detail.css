@@ -126,6 +126,13 @@ h5 {
     
 }
 
+h6 {
+  color: #ffffff;
+  font-size:32px;
+  font-family: "IBM Plex Sans", sans-serif;
+  
+}
+
 .calque {
     padding-top: 80px;
     /* border-radius: 0%; */

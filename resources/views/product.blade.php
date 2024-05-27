@@ -163,7 +163,11 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="project-info-box mt-0">
-                        <h5>{{$product->name}}</h5>
+                        @if ($product->name == 'ДРЕВЕСНОВОЛОКНИСТАЯ ПЛИТА ОБЛАГОРОЖЕННАЯ')
+                            <h6>ДРЕВЕСНОВОЛОКНИСТАЯ ПЛИТА ОБЛАГОРОЖЕННАЯ</h6>
+                        @else
+                            <h5>{{$product->name}}</h5>
+                        @endif
                         <!-- <p class="mb-0">Vivamus pellentesque, felis in aliquam ullamcorper, lorem tortor porttitor erat, hendrerit porta nunc tellus eu lectus. Ut vel imperdiet est. Pellentesque condimentum, dui et blandit laoreet, quam nisi tincidunt tortor.</p> -->
                     </div><!-- / project-info-box -->
         
