@@ -68,7 +68,7 @@ use \Statickidz\GoogleTranslate;
   <div class="typical">
     <h4>ХАРАКТЕРИСТИКА</h4>
     @foreach ($typical as $value)
-        <span class="typical"><img width="5%" src="{{asset('/upload/typical/'.$value->filename)}}"> {{$value->name}}</span><br>
+        <span class="typical"><img width="5%" src="{{asset('/upload/typical/'.$value->filename)}}"> {{$value->name}}</span>
     @endforeach
   </div>
   @endif
