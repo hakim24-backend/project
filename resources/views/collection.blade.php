@@ -122,31 +122,34 @@
         @endif
       </p> </span>
     </div>
-    <form action="{{route('frontend.filter', $collection->id)}}" method="post">
-    @csrf
-        <div class="checkbox-container">
-            @if ($collection->category->name == 'Столешницы')
-              @foreach ($description as $v)
+
+    @if ($collection->category->name !== 'СТЕНОВЫЕ ПАНЕЛИ МДФ')
+      <form action="{{route('frontend.filter', $collection->id)}}" method="post">
+      @csrf
+          <div class="checkbox-container">
+              @if ($collection->category->name == 'Столешницы')
+                @foreach ($description as $v)
+                  <div>
+                    <input id="{{$v->series}}" type="checkbox" name="series[]" value="{{$v->series}}">
+                    <label for="cb1">{{$v->series}}</label>
+                  </div>
+                @endforeach
+              @elseif($collection->category->name == 'ЛДСП')
+                @foreach ($description as $v)
+                  <div>
+                    <input id="{{$v->texture}}" type="checkbox" name="texture[]" value="{{$v->texture}}">
+                    <label for="cb1">{{$v->texture}}</label>
+                  </div>
+                @endforeach
+              @endif
+              @if (count($description))
                 <div>
-                  <input id="{{$v->series}}" type="checkbox" name="series[]" value="{{$v->series}}">
-                  <label for="cb1">{{$v->series}}</label>
+                  <button id="filter" class="btn btn-success" type="submit">фильтр</button> &nbsp; <a class="btn btn-info" href="{{route('frontend.collection', $collection->id)}}">сброс</a>
                 </div>
-              @endforeach
-            @elseif($collection->category->name == 'ЛДСП')
-              @foreach ($description as $v)
-                <div>
-                  <input id="{{$v->texture}}" type="checkbox" name="texture[]" value="{{$v->texture}}">
-                  <label for="cb1">{{$v->texture}}</label>
-                </div>
-              @endforeach
-            @endif
-            @if (count($description))
-              <div>
-                <button id="filter" class="btn btn-success" type="submit">фильтр</button> &nbsp; <a class="btn btn-info" href="{{route('frontend.collection', $collection->id)}}">сброс</a>
-              </div>
-            @endif
-        </div>
-      </form>
+              @endif
+          </div>
+        </form>
+    @endif
         <div class="gallery">
           @foreach ($product as $item)
               <a href="{{route('frontend.product', $item->id)}}"><img src="{{asset('/upload/product/'.$item->filename)}}">
