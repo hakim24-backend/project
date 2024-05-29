@@ -96,9 +96,9 @@
       <span> 
         @if ($collection->category->name == 'Столешницы')
           Столешницы {{$collection->name}}
-        @elseif($collection->category->name == 'СТЕНОВЫЕ ПАНЕЛИ МДФ')
-        ЛДСП {{$collection->name}} COLLECTION
         @elseif($collection->category->name == 'ЛДСП')
+        ЛДСП {{$collection->name}} COLLECTION
+        @elseif($collection->category->name == 'СТЕНОВЫЕ ПАНЕЛИ МДФ')
           {{$collection->name}}
         @else
           {{$collection->category->name}}
