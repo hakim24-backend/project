@@ -106,13 +106,7 @@
       </span>
       <span> <p>
         @if ($collection->category->name == 'СТЕНОВЫЕ ПАНЕЛИ МДФ')
-          @if ($collection->name == 'Перфект')
-          ГРЕЙКАСЛ
-          @elseif ($collection->name == 'Классик' || $collection->name == 'Медиум')
           МДФ-панели
-          @elseif ($collection->name == 'Модерн')
-          БЕЛЫЙ ГЛЯНЕЦ
-          @endif
         @else
           @if ($collection->description == "-")
             {{-- no action --}}

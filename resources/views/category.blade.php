@@ -55,7 +55,7 @@ use \Statickidz\GoogleTranslate;
         @endif
     </span>
   </div>
-  <div class="gallery">
+  <div class="gallery-category">
     @if ($collection != null)
       @foreach ($collection as $item)
           <a href="{{route('frontend.collection', $item->id )}}"><img src="{{asset('/upload/collection/'.$item->filename)}}">
