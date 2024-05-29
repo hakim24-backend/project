@@ -427,13 +427,13 @@ body .gallery {
       to(rgba(0, 0, 0, 0.144))
     ), 
     url(../img/image1/design-fond-moderne-3d-bois/design1.jpg);  */
-    margin-top: -215px;
-    margin-bottom: -75px;
+    margin-top: -250px;
+    /* margin-bottom: -75px; */
 }
 
 .typical span{
   font-weight: lighter;
-  font-size: 20px;
+  font-size: 17px;
   padding: 19px;
   
 }

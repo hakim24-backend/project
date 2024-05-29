@@ -66,12 +66,12 @@ use \Statickidz\GoogleTranslate;
   </div>
   <div class="typical">
   @if ($typical != null)
-  <div class="typical">
+  {{-- <div class="typical"> --}}
     <h4>ХАРАКТЕРИСТИКА</h4>
     @foreach ($typical as $value)
-        <span class="typical"><img width="5%" src="{{asset('/upload/typical/'.$value->filename)}}"> {{$value->name}}</span>
+        <span class="typical"><img width="45px" src="{{asset('/upload/typical/'.$value->filename)}}"> {{$value->name}}</span>
     @endforeach
-  </div>
+  {{-- </div> --}}
   @endif
   </div>
   <!-- End of Layout grid -->

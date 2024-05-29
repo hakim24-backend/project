@@ -96,12 +96,14 @@
       <span> 
         @if ($collection->category->name == 'Столешницы')
           Столешницы {{$collection->name}}
+        @elseif($collection->category->name == 'СТЕНОВЫЕ ПАНЕЛИ МДФ' || $collection->category->name == 'ЛДСП')
+        ЛДСП {{$collection->name}} COLLECTION
         @else
           {{$collection->category->name}}
         @endif
       </span>
       <span> <p>
-        @if ($collection->category->name == 'СТЕНОВЫЕ ПАНЕЛИ')
+        @if ($collection->category->name == 'СТЕНОВЫЕ ПАНЕЛИ МДФ')
           @if ($collection->name == 'Перфект')
           ГРЕЙКАСЛ
           @elseif ($collection->name == 'Классик' || $collection->name == 'Медиум')

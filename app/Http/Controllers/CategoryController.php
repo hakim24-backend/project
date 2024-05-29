@@ -107,7 +107,7 @@ class CategoryController extends Controller
             'filename' => 'required|image'
         ]);
 
-        $nameFile = $request->filename->getClientOriginalName();
+        $nameFile = 'typical_'.time().'.'.$request->filename->getClientOriginalExtension();
         $folderGambar = 'upload/typical';
         $request->filename->move($folderGambar, $nameFile);
 
@@ -135,7 +135,8 @@ class CategoryController extends Controller
 
         } else {
 
-            $nameFile = $request->filename->getClientOriginalName();
+            $nameFile = 'typical_'.time().'.'.$request->filename->getClientOriginalExtension();
+            // $namaFile = 'surat_usulan_'.time().'.'.$file->getClientOriginalExtension();
             $folderGambar = 'upload/typical';
             $request->filename->move($folderGambar, $nameFile);
 
