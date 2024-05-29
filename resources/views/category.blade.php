@@ -49,6 +49,7 @@ use \Statickidz\GoogleTranslate;
       @endif  
     </span>
     <span>
+        <br><br>
         @if ($category != null)
         {!!$category->description!!}
         @endif
