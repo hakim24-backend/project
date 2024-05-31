@@ -154,6 +154,7 @@ class FrontendController extends Controller
                 ->join('collections', 'collections.id', '=', 'typical_collections.id_collection')
                 ->join('products', 'collections.id', '=', 'products.id_collection')
                 ->where('products.id_collection', $product->id_collection)
+                ->groupBy('typical_collections.id')
                 ->get();
         // dd($product->collection->category->name);
         if ($product->collection->category->name == 'МЕЖКОМНАТНЫЕ ДВЕРИ') {
