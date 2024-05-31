@@ -107,6 +107,8 @@
       <span> <p>
         @if ($collection->category->name == 'СТЕНОВЫЕ ПАНЕЛИ МДФ')
           МДФ-панели
+          <br><br>
+          {{$collection->description}}
         @else
           @if ($collection->description == "-")
             {{-- no action --}}
