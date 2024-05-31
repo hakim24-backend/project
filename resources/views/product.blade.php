@@ -92,33 +92,6 @@
         box-shadow: none;
       }
 
-      .typical-product {
-        margin-top: -70px;
-        margin-right: -394px;
-      }
-
-      .typical-product .timg {
-        width: 45px;
-        margin-bottom:81px ;
-        /* margin-top: -80px; */
-        /* zoom:100%; */
-        /* margin-left: 25px; */
-        padding-top: 8%;
-        
-      } 
-      .typical-product img:hover {
-        transform: none ;
-        box-shadow: none;
-      }
-
-      .typical-product span {
-        font-size: 16px;
-        color: #ffffff;
-        /* margin-bottom: -200px; */
-        font-weight: 400;
-        padding: 5px;
-      }
-
       #magnifying_area {
         /* max-width: 500px;
         height: auto; */
