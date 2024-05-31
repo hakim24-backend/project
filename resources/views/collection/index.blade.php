@@ -1,3 +1,6 @@
+<?php 
+    use App\Models\TypicalCollection;
+?>
 @extends('layouts.app')
 
 @push('css')
@@ -51,6 +54,7 @@
                             <th>Name</th>
                             <th>Category</th>
                             <th>Description</th>
+                            <th>Typical</th>
                             <th>Image</th>
                             <th>Action</th>
                         </tr>
@@ -66,6 +70,17 @@
                                             {{-- no action --}}
                                         @else
                                             {{ $item->description }}
+                                        @endif
+                                    </td>
+                                    <td style="text-align: center; vertical-align: middle;">
+                                        @php
+                                            $cekTypical = TypicalCollection::where('id_collection', $item->id)->first();
+                                        @endphp
+
+                                        @if ($cekTypical == null)
+                                            <a href="{{route('typicalCollection.addTypical', $item->id)}}" class="btn btn-success"><span><i class="fa fa-plus"></i></span> Add Typical</a>
+                                        @else
+                                            <a href="{{route('typicalCollection.addTypical', $item->id)}}" class="btn btn-info"><span><i class="fa fa-edit"></i></span> Update Typical</a>
                                         @endif
                                     </td>
                                     <td style="text-align: center" width="50%">

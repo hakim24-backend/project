@@ -241,4 +241,14 @@ class ProductController extends Controller
         
         return redirect()->route('product.index');
     }
+
+    public function deleteDetailImage($id)
+    {
+        $product = Product::findOrFail($id);
+        $product->update([
+            'detail_filename' => null
+        ]);
+        
+        return redirect()->route('product.index');
+    }
 }

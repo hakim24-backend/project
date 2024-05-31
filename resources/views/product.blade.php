@@ -92,6 +92,33 @@
         box-shadow: none;
       }
 
+      .typical-product {
+        margin-top: -70px;
+        margin-right: -394px;
+      }
+
+      .typical-product .timg {
+        width: 45px;
+        margin-bottom:81px ;
+        /* margin-top: -80px; */
+        /* zoom:100%; */
+        /* margin-left: 25px; */
+        padding-top: 8%;
+        
+      } 
+      .typical-product img:hover {
+        transform: none ;
+        box-shadow: none;
+      }
+
+      .typical-product span {
+        font-size: 16px;
+        color: #ffffff;
+        /* margin-bottom: -200px; */
+        font-weight: 400;
+        padding: 5px;
+      }
+
       #magnifying_area {
         /* max-width: 500px;
         height: auto; */
@@ -129,6 +156,9 @@
         display: block;
         transition: opacity .2s;
       }
+
+
+
     </style>
 
   </head>
@@ -204,10 +234,11 @@
                     <img id="magnifying_img" src="{{asset('upload/product/'.$product->filename)}}" alt="project-image">
                     <div id="magnified_img"></div>
                   </div>
-                    <div class="project-info-box">
-                        <!-- <p><b>Категории:</b> Столешницы Серия Color</p>
-                        <p><b>Серия:</b> Color</p> -->
-                    </div><!-- / project-info-box -->
+                  <div class="typical-product">
+                    @foreach ($typical as $t)
+                      <span><img class="timg" src="{{asset('upload/typical_collection/'.$t->filename)}}" alt="project-image">{{$t->name}}</span>
+                    @endforeach
+                  </div>
                 </div><!-- / column -->
             </div>
             @if ($product->detail_filename == null || $product->detail_filename == ' ' || $product->detail_filename == '')

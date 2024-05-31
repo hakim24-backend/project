@@ -105,7 +105,7 @@
                                                 <img width="40%" src="{{ asset('upload/detail_product/'.$item->detail_filename) }}">
                                             </a><br><br>
                                             <a title="Update Image Viewer" data-toggle="modal" data-target="#update-image{{ $item->id }}" class="btn btn-success" href=""><span class="fa fa-edit"></span> Update Image</a>
-                                            <form action="{{route('product.deleteFile', $item->id)}}" method="POST">
+                                            <form action="{{route('product.deleteDetailImage', $item->id)}}" method="POST">
                                                 @csrf
                                                 @method('PUT')
                                                 <button type="submit" class="btn btn-danger show_confirm" data-toggle="tooltip" title='Delete Image Viewer'><span class="fa fa-trash"></span> Delete Image</button>

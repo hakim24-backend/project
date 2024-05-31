@@ -62,20 +62,20 @@
                                             @if ($item->filename == null)
                                                 -
                                             @else
-                                                <a href="{{ asset('upload/typical/'.$item->filename) }}" target="_blank">
-                                                    <img width="30%" src="{{ asset('upload/typical/'.$item->filename) }}">
+                                                <a href="{{ asset('upload/typical_collection/'.$item->filename) }}" target="_blank">
+                                                    <img width="30%" src="{{ asset('upload/typical_collection/'.$item->filename) }}">
                                                 </a>
                                             @endif
                                         </td>
                                         <td style="text-align: center">
-                                            <form action="{{route('typical.deleteTypical', ['id' => $item->id, 'id_category' => $category->id])}}" method="POST">
+                                            <form action="{{route('typicalCollection.deleteTypical', ['id' => $item->id, 'id_collection' => $collection->id])}}" method="POST">
                                                 @csrf
                                                 <a title="Update Category" data-toggle="modal" data-target="#update-typical{{ $item->id }}" class="btn btn-info" href=""><span class="fa fa-edit"></span></a>
                                                 <input name="_method" type="hidden" value="DELETE">
                                                 <button type="submit" class="btn btn-danger show_confirm" data-toggle="tooltip" title='Delete Typical'><span class="fa fa-trash"></span></button>
                                             </form>
                                         </td>
-                                        @include('category.edit_typical')
+                                        @include('collection.edit_typical')
                                     </tr>
                                 @empty
                                 <tr>
@@ -84,7 +84,7 @@
                                 @endforelse
                             </tbody>
                         </table><br>
-                        <a class="btn btn-danger" href="{{route('category.index')}}">Back</a>
+                        <a class="btn btn-danger" href="{{route('collection.index')}}">Back</a>
                     </div>
                     <!-- /.card-body -->
                     </div>
@@ -111,7 +111,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="{{ route('typical.storeTypical', $category->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('typicalCollection.storeTypical', $collection->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                     <div class="card-body">
                         <div class="form-group">

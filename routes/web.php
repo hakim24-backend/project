@@ -87,6 +87,7 @@ Route::middleware('auth')->group(function(){
     Route::put('/product/deleteImageView/{id}', [ProductController::class, 'deleteImageView'])->name('product.deleteImageView');
     Route::put('/product/addFile/{id}', [ProductController::class, 'storeFile'])->name('product.storeFile');
     Route::put('/product/deleteFile/{id}', [ProductController::class, 'deleteFile'])->name('product.deleteFile');
+    Route::put('/product/deleteDetailIamge/{id}', [ProductController::class, 'deleteDetailImage'])->name('product.deleteDetailImage');
     Route::post('/product/storeWithCategory', [ProductController::class, 'storeWithCategory'])->name('product.storeWithCategory');
 
     //career
@@ -101,4 +102,11 @@ Route::middleware('auth')->group(function(){
     Route::delete('/typical/deleteTypical/{id}/{id_category}', [CategoryController::class, 'deleteTypical'])->name('typical.deleteTypical');
     Route::get('/typical/edit/{id}', [CategoryController::class, 'editTypical'])->name('typical.editTypical');
     Route::put('/typical/updateTypical/{id}', [CategoryController::class, 'updateTypical'])->name('typical.updateTypical');
+
+    //collection
+    Route::get('/typical-collection/add/{id}', [CollectionController::class, 'addTypical'])->name('typicalCollection.addTypical');
+    Route::post('/typical-collection/storeTypical/{id}', [CollectionController::class, 'storeTypical'])->name('typicalCollection.storeTypical');
+    Route::delete('/typical-collection/deleteTypical/{id}/{id_collection}', [CollectionController::class, 'deleteTypical'])->name('typicalCollection.deleteTypical');
+    Route::get('/typical-collection/edit/{id}', [CollectionController::class, 'editTypical'])->name('typicalCollection.editTypical');
+    Route::put('/typical-collection/updateTypical/{id}', [CollectionController::class, 'updateTypical'])->name('typicalCollection.updateTypical');
 });

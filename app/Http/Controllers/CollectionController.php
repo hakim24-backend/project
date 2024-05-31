@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Collection;
+use App\Models\TypicalCollection;
 
 class CollectionController extends Controller
 {
@@ -138,5 +139,69 @@ class CollectionController extends Controller
         $collection = Collection::findOrFail($id);
         $collection->delete();
         return redirect()->route('collection.index');
+    }
+
+    public function addTypical($id)
+    {
+        $collection = Collection::findOrFail($id);
+        $typical = TypicalCollection::where('id_collection', $collection->id)->get();
+        return view('collection.add_typical', compact('collection', 'typical'));
+    }
+
+    public function storeTypical(Request $request, $id)
+    {
+        $collection = Collection::findOrFail($id);
+        $validateTypical = $this->validate($request, [
+            'name' => 'required|string',
+            'filename' => 'required|image'
+        ]);
+
+        $nameFile = 'typical_collection'.time().'.'.$request->filename->getClientOriginalExtension();
+        $folderGambar = 'upload/typical_collection';
+        $request->filename->move($folderGambar, $nameFile);
+
+        $validateTypical = TypicalCollection::create([
+            'name' => $request->name,
+            'filename' => $nameFile,
+            'id_collection' => $collection->id
+        ]);
+        if ($validateTypical) {
+            return redirect()->route('typicalCollection.addTypical', $collection->id);
+        }
+    }
+
+    public function updateTypical(Request $request, $id)
+    {
+        $typical = TypicalCollection::findOrFail($id);
+        //cek image
+        $filename = $request->filename;
+        if ($filename == null) {
+
+            $typical->update([
+                'name' => $request->name
+            ]);
+            return redirect()->route('typicalCollection.addTypical', $typical->id_collection);
+
+        } else {
+
+            $nameFile = 'typical_collection'.time().'.'.$request->filename->getClientOriginalExtension();
+            // $namaFile = 'surat_usulan_'.time().'.'.$file->getClientOriginalExtension();
+            $folderGambar = 'upload/typical_collection';
+            $request->filename->move($folderGambar, $nameFile);
+
+            $typical->update([
+                'name' => $request->name,
+                'filename' => $nameFile
+            ]);
+            return redirect()->route('typicalCollection.addTypical', $typical->id_collection);
+        }
+    }
+
+    public function deleteTypical($id, $id_collection)
+    {
+        $collection=Collection::findOrFail($id_collection);
+        $typical=TypicalCollection::findOrFail($id);
+        $typical->delete();
+        return redirect()->route('typicalCollection.addTypical', $collection->id);
     }
 }

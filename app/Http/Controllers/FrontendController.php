@@ -10,6 +10,7 @@ use App\Models\Contact;
 use App\Models\Career;
 use App\Models\CareerDetail;
 use App\Models\Typical;
+use App\Models\TypicalCollection;
 
 use \Statickidz\GoogleTranslate;
 use Illuminate\Http\Request;
@@ -149,6 +150,11 @@ class FrontendController extends Controller
         $product = Product::where('id', $id)->first();
         $description = Description::where('id_product', $product->id)->get();
         $getValue = Description::where('id_product', $product->id)->count();
+        $typical = TypicalCollection::select('typical_collections.*')
+                ->join('collections', 'collections.id', '=', 'typical_collections.id_collection')
+                ->join('products', 'collections.id', '=', 'products.id_collection')
+                ->where('products.id_collection', $product->id_collection)
+                ->get();
         // dd($product->collection->category->name);
         if ($product->collection->category->name == 'МЕЖКОМНАТНЫЕ ДВЕРИ') {
             return view('product_door', compact('product', 'description'));
@@ -165,7 +171,7 @@ class FrontendController extends Controller
                 $imageView = 0;
             }
             
-            return view('product', compact('product', 'description', 'checkName', 'imageView'));
+            return view('product', compact('product', 'description', 'checkName', 'imageView', 'typical'));
         }
     }
 
