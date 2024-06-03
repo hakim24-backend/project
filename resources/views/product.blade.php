@@ -77,21 +77,6 @@
     <link rel="stylesheet" type="text/css" media="screen" href="{{asset('/css/zoom_img.css')}}"/>
     <style>
 
-      .secondImageNew .simg {
-        width: 500%;
-  height: 300px;
-  margin-bottom:80px ;
-  margin-top: -420px;
-  zoom:100%;
-  margin-left: 10px;
-  padding-top: 15%;
-      } 
-
-      .secondImageNew img:hover {
-        transform: none ;
-        box-shadow: none;
-      }
-
       #magnifying_area {
         /* max-width: 500px;
         height: auto; */
