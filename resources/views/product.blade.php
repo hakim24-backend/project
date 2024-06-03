@@ -77,6 +77,21 @@
     <link rel="stylesheet" type="text/css" media="screen" href="{{asset('/css/zoom_img.css')}}"/>
     <style>
 
+      .secondImageNew .simg {
+        width: 415px;
+        height: 300px;
+        margin-bottom: 80px;
+        margin-top: -95px;
+        zoom: 100%;
+        margin-left: 40px;
+        padding-top: 15%;
+      } 
+
+      .secondImageNew img:hover {
+        transform: none ;
+        box-shadow: none;
+      }
+
       #magnifying_area {
         /* max-width: 500px;
         height: auto; */
@@ -164,16 +179,14 @@
                           <p><b>{{$item->name}} :</b> {{$item->value}}</p>
                       @endforeach
                     </div>
-                    @if ($imageView == 0)
-                      @if ($product->detail_filename == null || $product->detail_filename == ' ' || $product->detail_filename == '')
+                    @if ($product->detail_filename == null || $product->detail_filename == ' ' || $product->detail_filename == '')
                         {{-- no action --}}
-                      @else
-                        <div class="secondImageNew">
-                          <a href="{{asset('/upload/detail_product/'.$product->detail_filename)}}"> <img class="simg" src="{{asset('/upload/detail_product/'.$product->detail_filename)}}"
-                          alt="project-image"></a>
-                        </div>
-                        
-                      @endif
+                    @else
+                      <div class="secondImageNew">
+                        <a href="{{asset('/upload/detail_product/'.$product->detail_filename)}}"> <img class="simg" src="{{asset('/upload/detail_product/'.$product->detail_filename)}}"
+                        alt="project-image"></a>
+                      </div>
+                      
                     @endif
                     <!-- / project-info-box -->
         
@@ -203,18 +216,6 @@
                   @endif
                 </div><!-- / column -->
             </div>
-            @if ($product->detail_filename == null || $product->detail_filename == ' ' || $product->detail_filename == '')
-              {{-- no action --}}
-            @else
-              @if ($imageView == 1)
-                <div class="col-md-5">
-                  <div class=" secondImg">
-                    <a href="{{asset('/upload/detail_product/'.$product->detail_filename)}}"> <img class="simg" src="{{asset('/upload/detail_product/'.$product->detail_filename)}}"
-                        alt="project-image"></a>
-                  </div>
-                </div>
-              @endif
-            @endif
               
             @if ($product->filename1 !== null)
             <div class="pdfdoc" >
