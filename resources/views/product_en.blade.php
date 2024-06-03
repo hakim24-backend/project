@@ -206,7 +206,6 @@
                           <p><b>{{$result2}} :</b> {{$result3}}</p>
                       @endforeach
                     </div>
-                    @if ($imageView == 0)
                       @if ($product->detail_filename == null || $product->detail_filename == ' ' || $product->detail_filename == '')
                         {{-- no action --}}
                       @else
@@ -216,7 +215,6 @@
                         </div>
                         
                       @endif
-                    @endif
                     <!-- / project-info-box -->
         
                     <div class="project-info-box mt-0 mb-0">
@@ -240,19 +238,10 @@
                     </div><!-- / project-info-box -->
                 </div><!-- / column -->
             </div>
-            @if ($product->detail_filename == null || $product->detail_filename == ' ' || $product->detail_filename == '')
-              {{-- no action --}}
-            @else
-              @if ($imageView == 1)
-                <div class="col-md-5">
-                  <div class=" secondImg">
-                    <a href="{{asset('/upload/detail_product/'.$product->detail_filename)}}"> <img class="simg" src="{{asset('/upload/detail_product/'.$product->detail_filename)}}"
-                        alt="project-image"></a>
-                  </div>
-                </div>
-              @endif
-            @endif
         </div>
+        @if ($product->detail_filename == null && $product->filename1 == null && $typical->isEmpty())
+          <br><br><br><br>
+        @endif
           
 
          
