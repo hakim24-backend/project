@@ -226,7 +226,10 @@
             </div>
             @endif
 
-        </div><br><br><br><br>
+        </div>
+        @if ($product->detail_filename == null && $product->filename1 == null && $typical->isEmpty())
+          <br><br><br><br>
+        @endif
           
 
          
