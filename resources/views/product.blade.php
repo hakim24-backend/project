@@ -78,13 +78,13 @@
     <style>
 
       .secondImageNew .simg {
-        width: 415px;
-        height: 300px;
-        margin-bottom: 80px;
-        margin-top: -95px;
-        zoom: 100%;
-        margin-left: 40px;
-        padding-top: 15%;
+        width: 500%;
+  height: 300px;
+  margin-bottom:80px ;
+  margin-top: -420px;
+  zoom:100%;
+  margin-left: 10px;
+  padding-top: 15%;
       } 
 
       .secondImageNew img:hover {
@@ -96,7 +96,7 @@
         /* max-width: 500px;
         height: auto; */
         position: relative;
-        margin: 10px auto;
+        margin: 50px auto;
       }
     
       #magnifying_img {
@@ -207,11 +207,15 @@
                     <img id="magnifying_img" src="{{asset('upload/product/'.$product->filename)}}" alt="project-image">
                     <div id="magnified_img"></div>
                   </div>
-                  <div class="typical-product">
-                    @foreach ($typical as $t)
-                      <span><img class="timg" src="{{asset('upload/typical_collection/'.$t->filename)}}" alt="project-image">{{$t->name}}</span>
-                    @endforeach
-                  </div>
+                  @if ($typical->isEmpty())
+                    {{-- no action --}}
+                  @else
+                    <div class="typical-product">
+                      @foreach ($typical as $t)
+                        <span><img class="timg" src="{{asset('upload/typical_collection/'.$t->filename)}}" alt="project-image">{{$t->name}}</span>
+                      @endforeach
+                    </div>
+                  @endif
                 </div><!-- / column -->
             </div>
             @if ($product->detail_filename == null || $product->detail_filename == ' ' || $product->detail_filename == '')

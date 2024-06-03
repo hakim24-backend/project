@@ -29,7 +29,7 @@ $menu5 = Category::where('name1', 'КОМПАНИЯ')->get();
               <li class="nav-item"><a href="#" class="nav-link">Мебельные комплектующие</a>
                 <ul class="dropdown">
                   @foreach ($menu1 as $item1)
-                    <li><a href="{{route('frontend.category', $item1->name)}}">{{$item1->name}}</a></li>
+                    <li class="header-menu"><a href="{{route('frontend.category', $item1->name)}}">{{$item1->name}}</a></li>
                   @endforeach
                 </ul>
               </li>
