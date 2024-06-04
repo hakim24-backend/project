@@ -17,15 +17,6 @@ $menu5 = Category::where('name1', 'КОМПАНИЯ')->get();
         <div class="desktop-nav col-6 col-sm-8 col-md-9 col-lg-10 col-xl-11 d-none d-lg-block">
           <nav class="nav">
             <ul class="menu">
-              <!-- Столешницы=stoleshnitsy
-              Мебельные детали=mebelnye-detali
-              ЛДСП=ldcp
-              ДСП=dcp
-              ЛМДФ=lmdf
-              МДФ=mlf
-              ДВПО=dvpo
-              ДВП =dvp
-            -->
               <li class="nav-item"><a href="#" class="nav-link">Мебельные комплектующие</a>
                 <ul class="dropdown">
                   @foreach ($menu1 as $item1)

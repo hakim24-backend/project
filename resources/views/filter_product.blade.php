@@ -174,7 +174,7 @@
                 <div class="col-md-6">
                     <label for="" style="text-align: left">Cерия</label>
                     <select multiple id="select_series" name="series[]" class="form-control select2 select2-success" data-dropdown-css-class="select2-success">
-    
+                      
                     </select>
                 </div>
                 <div class="col-md-6">
