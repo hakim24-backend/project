@@ -167,7 +167,7 @@
         <span itemprop="itemListElement"
           itemscope="" itemtype="http://schema.org/ListItem">
           <a class="first" itemprop="item" href="{{route('frontend.category', $product->collection->category->name)}}"
-            title="Главная"><span itemprop="name">{{$product->collection->category->name}}</span>
+            title="{{$product->collection->category->name}}"><span itemprop="name">{{$product->collection->category->name}}</span>
             <meta itemprop="position" content="0"> >
           </a>
         </span>
