@@ -172,12 +172,14 @@
           </a>
         </span>
         
-        <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-          <a
-            class="first" itemprop="item" href="{{route('frontend.collection', $product->collection->id)}}" title="{{$product->collection->name}}"><span itemprop="name">{{$product->collection->name}}</span>
-            <meta itemprop="position" content="1"> >
-          </a>
-        </span>
+        @if ($product->collection->name !== $product->collection->category->name)
+          <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+            <a
+              class="first" itemprop="item" href="{{route('frontend.collection', $product->collection->id)}}" title="{{$product->collection->name}}"><span itemprop="name">{{$product->collection->name}}</span>
+              <meta itemprop="position" content="1"> >
+            </a>
+          </span>
+        @endif
         
         <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name">{{$product->name}}</span>
           <meta itemprop="position" content="4">
