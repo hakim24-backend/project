@@ -203,3 +203,10 @@ h6 {
   font-weight: 400;
   padding: 5px;
 }
+
+.localisator .breadcrumbs{
+  margin-left: 20%;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 12px;
+
+}

@@ -161,6 +161,29 @@
         @endif
       </p></span>
     </div>
+
+    <div class="breadcrumbs">
+      <div itemscope="" itemtype="http://schema.org/BreadcrumbList" class="container">
+        <span itemprop="itemListElement"
+          itemscope="" itemtype="http://schema.org/ListItem">
+          <a class="first" itemprop="item" href="{{route('frontend.category', $product->collection->category->name)}}"
+            title="Главная"><span itemprop="name">{{$product->collection->category->name}}</span>
+            <meta itemprop="position" content="0"> >
+          </a>
+        </span>
+        
+        <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+          <a
+            class="first" itemprop="item" href="{{route('frontend.collection', $product->collection->id)}}" title="{{$product->collection->name}}"><span itemprop="name">{{$product->collection->name}}</span>
+            <meta itemprop="position" content="1"> >
+          </a>
+        </span>
+        
+        <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name">{{$product->name}}</span>
+          <meta itemprop="position" content="4">
+        </span>
+      </div>
+    </div>
         
           <div class="container">
             <div class="row">
