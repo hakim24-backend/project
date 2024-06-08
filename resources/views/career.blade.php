@@ -61,7 +61,8 @@
       <div class="container">
         <div class="row">
           <div class="col-md-3">
-             <div class="contact-form" style="color: white">
+               <br>
+             <div class="contact-form" style="color: rgb(0, 0, 0)">
                 <form action="#">
                  <h5 style="margin-bottom: 15px">Тип</h5>
                  <div>
@@ -166,6 +167,7 @@
                       </label>
                  </div>
             </form>
+            <br>
              </div>
           </div>
 

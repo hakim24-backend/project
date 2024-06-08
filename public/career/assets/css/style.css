@@ -71,7 +71,7 @@ a.filled-button:hover {
 .section-heading {
 	text-align: left;
 	margin-bottom: 60px;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #000000;
 }
 
 .section-heading h2 {
@@ -399,9 +399,10 @@ header .navbar {
 }
 
 .product-item {
-	border: 1px solid #eee;
+	border: 1px solid #000000;
 	margin-bottom: 30px;
-	color: white;
+	color: rgb(0, 0, 0);
+	margin-top: 30px;
 }
 
 .product-item .down-content {
@@ -410,20 +411,22 @@ header .navbar {
 }
 
 .product-item img {
-	width: 100%;
+	width: 30%;
 	overflow: hidden;
+	margin-left: 30px;
+	margin-top: 20px;
 }
 
 .product-item .down-content h4 {
 	font-size: 17px;
-	color: white;
+	color: rgb(0, 0, 0);
 	margin-bottom: 20px;
 }
 
 .product-item .down-content h6 {
 	font-size: 18px;
 	margin-bottom: 15px;
-	color: white;
+	color: rgb(0, 0, 0);
 }
 
 .product-item .down-content h6 small{
@@ -603,15 +606,15 @@ footer .inner-content p a {
 
 .products {
 	/* margin-top: 100px; */
-	background: #000000;
+	background: #ffffff;
 }
 
 .products p{
-	color: white;
+	color: rgb(0, 0, 0);
 }
 
 .products h5{
-	color: white;
+	color: rgb(0, 0, 0);
 }
 
 .products .filters {
@@ -801,7 +804,7 @@ footer .inner-content p a {
 }
 
 .service-item .down-content {
-	background-color: #fff;
+	background-color: #000000;
 	padding: 40px 30px;
 }
 
@@ -930,8 +933,8 @@ footer .inner-content p a {
 }
 
 .contact-form button.filled-button {
-	background-color: #f33f3f;
-	color: #fff;
+	background-color: #9adee7;
+	color: black;
 	font-size: 14px;
 	text-transform: capitalize;
 	font-weight: 300;
@@ -942,6 +945,7 @@ footer .inner-content p a {
 	border: none;
 	outline: none;
 	cursor: pointer;
+	border-radius: 0;
 }
 
 .contact-form button.filled-button:hover {
@@ -989,16 +993,16 @@ footer .inner-content p a {
 
 .section {
 	padding: 30px 0;
-	background: #000000;
+	background: #ffffff;
 }
 
 .section p {
 	margin-bottom: 15px;
-	color: white;
+	color: rgb(0, 0, 0);
 }
 
 .section h2{
-	color: white;
+	color: rgb(0, 0, 0);
 }
 
 .section .section-heading {

@@ -32,7 +32,11 @@
     <link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/search.css')}}">
 
   </head>
-
+  <style>
+    .left-content a {
+      color: black;
+    }
+  </style>
   <body>
 
     {{-- Header --}}
@@ -64,7 +68,8 @@
       <div class="container">
         <div class="row">
           <div class="col-md-9 col-sm-8">
-              <p class="lead" style="color: white">
+              <br><br>
+              <p class="lead" style="color: rgb(0, 0, 0)">
                    <i class="fa fa-map-marker"></i> {{$careerDetail->career->location}} &nbsp;&nbsp;
                    <i class="fa fa-calendar"></i> {{$careerDetail->career->date}} &nbsp;&nbsp;
                    <i class="fa fa-file"></i> {{$careerDetail->career->type}}
@@ -84,6 +89,7 @@
           </div>
 
           <div class="col-md-3 col-sm-4">
+            <br><br>
             <div class="contact-form">
               <div class="form-group">
                 <button type="submit" class="filled-button btn-block">Применить эту вакансию</button>
