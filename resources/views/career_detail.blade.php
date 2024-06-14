@@ -36,6 +36,76 @@
     .left-content a {
       color: black;
     }
+
+    button {
+        padding: 10px 20px;
+        background-color: #9adee7;
+        color: #010101;
+        border: none;
+        border-radius: 0px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #000000;
+        color: #ffff;
+    }
+
+    .modal {
+        display: none; 
+        position: fixed; 
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgb(0,0,0); 
+        background-color: rgba(0,0,0,0.4); 
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; 
+        padding: 50px;
+        border: 3px solid #9adee7;
+        width: 35%; 
+        border-radius: 0px;
+        text-align: center;
+    }
+
+    .close-button {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close-button:hover,
+    .close-button:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    #cvForm input[type="file"] {
+        margin-bottom: 20px;
+    }
+
+    #cvForm button {
+        padding: 10px 20px;
+        background-color: #9adee7;
+        color: #000000;
+        border: none;
+        border-radius: 0px;
+        cursor: pointer;
+    }
+
+    #cvForm button:hover {
+        background-color: #000000;
+        color: #ffff;
+    }
+
   </style>
   <body>
 
@@ -92,7 +162,7 @@
             <br><br>
             <div class="contact-form">
               <div class="form-group">
-                <button type="submit" class="filled-button btn-block">Применить эту вакансию</button>
+                <button id="openModalButton" class="filled-button btn-block">Отправить Резюме</button>
               </div>
             </div>
 
@@ -176,6 +246,17 @@
       </div>
     </div>
 
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span style="text-align: right" class="close-button">&times;</span>
+            <h1><b>Отправить Резюме</b></h1><br>
+            <form id="cvForm">
+                <input type="file" name="cv" accept=".pdf,.doc,.docx" required>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+
     {{-- Footer --}}
     @include('components-frontend.footer')
 
@@ -183,6 +264,41 @@
     <script src="{{asset('/career/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('/career/assets/js/custom.js')}}"></script>
     <script src="{{asset('/career/assets/js/owl.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+      var modal = document.getElementById("modal");
+        var openModalButton = document.getElementById("openModalButton");
+        var closeButton = document.querySelector(".close-button");
+
+        openModalButton.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        closeButton.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        document.getElementById('cvForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Резюме успешно отправлено!",
+              showConfirmButton: false,
+              timer: 1500
+            });
+            modal.style.display = "none";
+            // Here you can add the code to process the form and send the file to the server
+        });
+    </script>
+
   </body>
 
 </html>
