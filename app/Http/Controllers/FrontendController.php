@@ -45,14 +45,7 @@ class FrontendController extends Controller
             
         }
 
-        if ($name == 'Межкомнатные двери' || $name == 'МЕЖКОМНАТНЫЕ ДВЕРИ') {
-            $product = Product::select('products.*')
-            ->join('collections', 'collections.id', '=', 'products.id_collection')
-            ->join('categories', 'categories.id', '=', 'collections.id_category')
-            ->where('categories.name', 'Межкомнатные двери')
-            ->get();
-            return view('category_door', compact('product', 'category'));
-        } elseif (($category->name1 == 'ПЛИТНЫЕ МАТЕРИАЛЫ' && $category->name !== 'ЛДСП') || ($category->name1 == 'СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ' && $category->name !== 'СТЕНОВЫЕ ПАНЕЛИ МДФ')) {
+        if (($category->name1 == 'ПЛИТНЫЕ МАТЕРИАЛЫ' && $category->name !== 'ЛДСП') || ($category->name1 == 'СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ' && $category->name !== 'СТЕНОВЫЕ ПАНЕЛИ МДФ')) {
 
             //get collection
             $getCollection = Collection::where('id_category', $category->id)->first();
@@ -88,6 +81,7 @@ class FrontendController extends Controller
     public function collection($id) {
         $collection = Collection::where('id', $id)->first();
         $product = Product::where('id_collection', $id)->get();
+
         if ($collection->category->name == 'Столешницы') {
             //get series
             $description = Description::select('descriptions.value as series')
@@ -104,6 +98,13 @@ class FrontendController extends Controller
             ->where('descriptions.name', 'Тексеура')
             ->groupBy('descriptions.value')
             ->get();
+        } elseif ($collection->category->name == 'МЕЖКОМНАТНЫЕ ДВЕРИ') {
+            $description = array();
+            return view('collection_door_page', [
+                'collection' => $collection,
+                'product' => $product,
+                'description' => $description
+            ]);
         } else {
             $description = array();
         }

@@ -207,6 +207,7 @@ ul li ul.dropdown {
 
 .dropdown ul li a:hover {
   width: auto;
+  border-bottom: 3px solid #9adee7;
 }
 
 ul li:hover ul.dropdown {
