@@ -88,7 +88,9 @@
   <body data-spay="scroll" data-target=".nav" data-offset="100">
 
     {{-- Header --}}
-    @include('components-frontend.header')
+    @include('components-frontend.header', [
+      'active' => $active
+    ])
 
     <!-- Layout grid -->
     <div class="gallerys">

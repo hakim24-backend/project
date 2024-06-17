@@ -19,7 +19,8 @@ class FrontendController extends Controller
 {
     public function index(){
         $slider = Slider::all();
-        return view('index', compact('slider'));
+        $active = '';
+        return view('index', compact('slider', 'active'));
     }
 
     public function indexEn(){
@@ -46,13 +47,26 @@ class FrontendController extends Controller
         }
 
         if (($category->name1 == 'ПЛИТНЫЕ МАТЕРИАЛЫ' && $category->name !== 'ЛДСП') || ($category->name1 == 'СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ' && $category->name !== 'СТЕНОВЫЕ ПАНЕЛИ МДФ')) {
-
             //get collection
             $getCollection = Collection::where('id_category', $category->id)->first();
             return redirect()->route('frontend.collection', $getCollection->id);
 
         } else {
-            return view('category', compact('collection', 'category', 'typical'));
+            if($category->name1 == 'МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ') {
+                $active = 'МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ';
+            } elseif($category->name1 == 'ПЛИТНЫЕ МАТЕРИАЛЫ') {
+                $active = 'ПЛИТНЫЕ МАТЕРИАЛЫ';
+            } elseif($category->name1 == 'СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ') {
+                $active = 'СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ';
+            } elseif($category->name1 == 'ИЗДЕЛИЯ ИЗ ДРЕВЕСИНЫ') {
+                $active = 'ИЗДЕЛИЯ ИЗ ДРЕВЕСИНЫ';
+            } elseif($category->name == 'МЕЖКОМНАТНЫЕ ДВЕРИ') {
+                $active = 'МЕЖКОМНАТНЫЕ ДВЕРИ';
+            } else {
+                $active = '';
+            }
+            
+            return view('category', compact('collection', 'category', 'typical', 'active'));
         }
     }
 
@@ -100,19 +114,35 @@ class FrontendController extends Controller
             ->get();
         } elseif ($collection->category->name == 'МЕЖКОМНАТНЫЕ ДВЕРИ') {
             $description = array();
+            $active = 'МЕЖКОМНАТНЫЕ ДВЕРИ';
             return view('collection_door_page', [
                 'collection' => $collection,
                 'product' => $product,
-                'description' => $description
+                'description' => $description,
+                'active' => $active
             ]);
         } else {
             $description = array();
         }
 
+        if($collection->category->name1 == 'МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ') {
+            $active = 'МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ';
+        } elseif($collection->category->name1 == 'ПЛИТНЫЕ МАТЕРИАЛЫ') {
+            $active = 'ПЛИТНЫЕ МАТЕРИАЛЫ';
+        } elseif($collection->category->name1 == 'СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ') {
+            $active = 'СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ';
+        } elseif($collection->category->name1 == 'ИЗДЕЛИЯ ИЗ ДРЕВЕСИНЫ') {
+            $active = 'ИЗДЕЛИЯ ИЗ ДРЕВЕСИНЫ';
+        } elseif($collection->category->name == 'МЕЖКОМНАТНЫЕ ДВЕРИ') {
+            $active = 'МЕЖКОМНАТНЫЕ ДВЕРИ';
+        } else {
+            $active = '';
+        }
         return view('collection', [
             'collection' => $collection,
             'product' => $product,
-            'description' => $description
+            'description' => $description,
+            'active' => $active
         ]);
     }
 
@@ -159,7 +189,8 @@ class FrontendController extends Controller
                 ->get();
         // dd($product->collection->category->name);
         if ($product->collection->category->name == 'МЕЖКОМНАТНЫЕ ДВЕРИ') {
-            return view('product_door', compact('product', 'description'));
+            $active = 'МЕЖКОМНАТНЫЕ ДВЕРИ';
+            return view('product_door', compact('product', 'description', 'active'));
         } else {
             //get name by lenght
             // $checkName = substr_count($product->name, ' ');
@@ -172,8 +203,20 @@ class FrontendController extends Controller
             // } else {
             //     $imageView = 0;
             // }
-            
-            return view('product', compact('product', 'description', 'typical'));
+            if($product->collection->category->name1 == 'МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ') {
+                $active = 'МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ';
+            } elseif($product->collection->category->name1 == 'ПЛИТНЫЕ МАТЕРИАЛЫ') {
+                $active = 'ПЛИТНЫЕ МАТЕРИАЛЫ';
+            } elseif($product->collection->category->name1 == 'СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ') {
+                $active = 'СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ';
+            } elseif($product->collection->category->name1 == 'ИЗДЕЛИЯ ИЗ ДРЕВЕСИНЫ') {
+                $active = 'ИЗДЕЛИЯ ИЗ ДРЕВЕСИНЫ';
+            } elseif($product->collection->category->name == 'МЕЖКОМНАТНЫЕ ДВЕРИ') {
+                $active = 'МЕЖКОМНАТНЫЕ ДВЕРИ';
+            } else {
+                $active = '';
+            }
+            return view('product', compact('product', 'description', 'typical', 'active'));
         }
     }
 
@@ -369,7 +412,10 @@ class FrontendController extends Controller
 
     public function contact()
     {
-        return view('contact');
+        $active = 'contacts';
+        return view('contact', [
+            'active' => $active
+        ]);
     }
 
     public function contactEn()
@@ -401,8 +447,10 @@ class FrontendController extends Controller
     public function career()
     {
         $career = Career::all();
+        $active = 'careers';
         return view('career', [
-            'career' => $career
+            'career' => $career,
+            'active' => $active
         ]);
     }
 
@@ -418,9 +466,11 @@ class FrontendController extends Controller
     {   
         $careerDetail = CareerDetail::where('id_career', $id)->first();
         $idCareer = $id;
+        $active = 'careers';
         return view('career_detail', [
             'careerDetail' => $careerDetail,
-            'idCareer' => $idCareer
+            'idCareer' => $idCareer,
+            'active' => $active
         ]);
     }
 

@@ -88,6 +88,7 @@ a.filled-button:hover {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background: #000000;
+	margin-top: -49px;
 }
 
 .page-heading .text-content h4 {
@@ -650,6 +651,7 @@ footer .inner-content p a {
 
 .page-heading {
 	position:relative;
+	/* margin-top: -49px; */
 }
 .page-heading:before {
 	/* content:''; */

@@ -110,7 +110,9 @@
   <body>
 
     {{-- Header --}}
-    @include('components-frontend.header')
+    @include('components-frontend.header', [
+      'active' => $active
+    ])
 
     <!-- ***** Preloader Start ***** -->
     <div id="preloader">
@@ -131,9 +133,7 @@
       </div>
     </div>
 
-    <!-- Page Content -->
-    
-
+    <!-- Page Content --> 
     <div class="products">
       <div class="container">
         <div class="row">

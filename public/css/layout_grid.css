@@ -121,6 +121,7 @@ nav ul li {
 
 nav ul li a.active {
   color: #1f837e;
+  border-bottom: 5px solid #1f837e;
 }
 nav ul li a {
   text-transform: uppercase;

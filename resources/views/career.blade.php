@@ -38,7 +38,9 @@
   <body>
 
      {{-- Header --}}
-     @include('components-frontend.header')
+     @include('components-frontend.header', [
+          'active' => $active
+     ]);
 
     <!-- ***** Preloader Start ***** -->
     <div id="preloader">

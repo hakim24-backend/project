@@ -17,7 +17,7 @@ $menu5 = Category::where('name1', 'КОМПАНИЯ')->get();
         <div class="desktop-nav col-6 col-sm-8 col-md-9 col-lg-10 col-xl-11 d-none d-lg-block">
           <nav class="nav">
             <ul class="menu">
-              <li class="nav-item"><a href="#" class="nav-link">Мебельные комплектующие</a>
+              <li class="nav-item"><a href="#" class="nav-link {{ $active == 'МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ' ? 'active' : '' }}">Мебельные комплектующие</a>
                 <ul class="dropdown">
                   @foreach ($menu1 as $item1)
                     <li class="header-menu"><a href="{{route('frontend.category', $item1->name)}}">{{$item1->name}}</a></li>
@@ -25,7 +25,7 @@ $menu5 = Category::where('name1', 'КОМПАНИЯ')->get();
                 </ul>
               </li>
 
-              <li class="nav-item"><a href="#" class="nav-link">Плитные материалы</a>
+              <li class="nav-item"><a href="#" class="nav-link {{ $active == 'ПЛИТНЫЕ МАТЕРИАЛЫ' ? 'active' : '' }}">Плитные материалы</a>
                 <ul class="dropdown">
                   @foreach ($menu2 as $item2)
 
@@ -45,7 +45,7 @@ $menu5 = Category::where('name1', 'КОМПАНИЯ')->get();
                 </ul>
               </li>
 
-              <li class="nav-item"><a href="#" class="nav-link">Строительные материалы</a>
+              <li class="nav-item"><a href="#" class="nav-link {{ $active == 'СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ' ? 'active' : '' }}">Строительные материалы</a>
                 <ul class="dropdown">
                   @foreach ($menu3 as $item3)
                     <li><a href="{{route('frontend.category', $item3->name)}}">{{$item3->name}}</a></li>
@@ -55,7 +55,7 @@ $menu5 = Category::where('name1', 'КОМПАНИЯ')->get();
                 </ul>
               </li>
 
-              <li class="nav-item"><a href="#" class="nav-link">Изделия из древесины</a>
+              <li class="nav-item"><a href="#" class="nav-link {{ $active == 'ИЗДЕЛИЯ ИЗ ДРЕВЕСИНЫ' ? 'active' : '' }}">Изделия из древесины</a>
                 <ul class="dropdown">
                   @foreach ($menu4 as $item4)
                     <li><a href="{{route('frontend.category', $item4->name)}}">{{$item4->name}}</a></li>
@@ -63,15 +63,13 @@ $menu5 = Category::where('name1', 'КОМПАНИЯ')->get();
                 </ul>
               </li>
 
-              <li class="nav-item"><a href="{{route('frontend.category', 'Межкомнатные двери')}}" class="nav-link">Межкомнатные двери</a>
+              <li class="nav-item"><a href="{{route('frontend.category', 'Межкомнатные двери')}}" class="nav-link {{ $active == 'МЕЖКОМНАТНЫЕ ДВЕРИ' ? 'active' : '' }}">Межкомнатные двери</a>
                 <ul class="dropdown">
 
                 </ul>
               </li>
 
-
-
-              <li class="nav-item"><a href="#" class="nav-link">КОМПАНИЯ</a>
+              <li class="nav-item"><a href="#" class="nav-link {{ $active == 'careers' || $active == 'contacts' ? 'active' : '' }}">КОМПАНИЯ</a>
                 <ul class="dropdown">
                   <li><a href="#">ИСТОРИЯ ПРОФИЛЯ</a></li>
                   <li><a href="{{route('frontend.career')}}">Карьера</a></li>
