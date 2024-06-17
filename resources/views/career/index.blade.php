@@ -116,7 +116,7 @@
                                     </td>
                                     <td style="text-align: center; vertical-align: middle;">
                                         @php
-                                            $resume = Resume::count();
+                                            $resume = Resume::where('id_career', $item->id)->count();
                                         @endphp
                                         
                                         <a href="{{route('career.resume', $item->id)}}" class="btn btn-success"><span><i class="fa fa-file"></i></span> Resume <span class="badge badge-danger">{{$resume}}</span></a>
