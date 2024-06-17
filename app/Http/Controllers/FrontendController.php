@@ -485,8 +485,10 @@ class FrontendController extends Controller
     public function allProduct(Request $request)
     {   
         $product = null;
+        $active = '';
         return view('filter_product', [
-            'product' => $product
+            'product' => $product,
+            'active' => $active,
         ]);
     }
 
@@ -564,8 +566,10 @@ class FrontendController extends Controller
         })
         ->groupBy('products.id')->get();
         
+        $active = '';
         return view('filter_product', [
-            'product' => $product
+            'product' => $product,
+            'active' => $active
         ]);
     }
 }
