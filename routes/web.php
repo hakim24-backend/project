@@ -63,6 +63,9 @@ Route::get('/ajax-frontend-category', [AjaxFrontendController::class, 'selectCat
 Route::get('/ajax-frontend-collection', [AjaxFrontendController::class, 'selectCollection'])->name('ajax-frontend-collection');
 Route::get('/ajax-frontend-name', [AjaxFrontendController::class, 'selectName'])->name('ajax-frontend-name');
 
+//ajax form frontend
+Route::post('/ajax-resume', [AjaxFrontendController::class, 'storeResume'])->name('ajax-resume');
+
 Auth::routes();
 
 Route::middleware('auth')->group(function(){
@@ -95,6 +98,8 @@ Route::middleware('auth')->group(function(){
     Route::post('/careerier/store-detail/{id}', [CareerController::class, 'storeDetail'])->name('career.storeDetail');
     Route::get('/careerier/edit-detail/{id}', [CareerController::class, 'editDetail'])->name('career.editDetail');
     Route::put('/careerier/update-detail/{id}', [CareerController::class, 'updateDetail'])->name('career.updateDetail');
+    Route::get('/careerier/resume/{id}', [CareerController::class, 'resumeCareer'])->name('career.resume');
+    Route::delete('/careerier/deleteResume/{id}/{id_career}', [CareerController::class, 'deleteResume'])->name('career.deleteResume');
 
     //category
     Route::get('/typical/add/{id}', [CategoryController::class, 'addTypical'])->name('typical.addTypical');

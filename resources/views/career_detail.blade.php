@@ -250,8 +250,10 @@
         <div class="modal-content">
             <span style="text-align: right" class="close-button">&times;</span>
             <h1><b>Отправить Резюме</b></h1><br>
-            <form id="cvForm">
+            <form action="{{route('ajax-resume', $idCareer)}}" method="POST" id="cvForm" enctype="multipart/form-data">
+              @csrf
                 <input type="file" name="cv" accept=".pdf,.doc,.docx" required>
+                <input type="hidden" name="id_career" value="{{$idCareer}}">
                 <button type="submit">Отправить</button>
             </form>
         </div>
@@ -287,15 +289,26 @@
 
         document.getElementById('cvForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            Swal.fire({
-              position: "top-end",
-              icon: "success",
-              title: "Резюме успешно отправлено!",
-              showConfirmButton: false,
-              timer: 1500
+            jQuery.ajax({
+                url:"{{route('ajax-resume')}}",
+                type:'POST',
+                data:new FormData(this),
+                contentType:false,
+                processData:false,
+                allowClear: true,
+                success:function(result)
+                {
+                  Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Резюме успешно отправлено!",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                  modal.style.display = "none";
+                },
+                cache: true
             });
-            modal.style.display = "none";
-            // Here you can add the code to process the form and send the file to the server
         });
     </script>
 

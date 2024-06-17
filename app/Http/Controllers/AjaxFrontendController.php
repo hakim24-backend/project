@@ -5,6 +5,7 @@ use App\Models\Category;
 use App\Models\Collection;
 use App\Models\Product;
 use App\Models\Description;
+use App\Models\Resume;
 
 use Illuminate\Http\Request;
 
@@ -84,5 +85,22 @@ class AjaxFrontendController extends Controller
             $nameProduct[$key]['name'] = $value->name;
         }
         return response()->json($nameProduct);
+    }
+
+    function storeResume(Request $request)
+    {   
+        $countFile = Resume::where('id_career', $request->id_career)->count();
+        $numberFile = $countFile+1;
+        $nameFile = $numberFile.'_resume_'.time().'.'.$request->cv->getClientOriginalExtension();
+        $folderGambar = 'upload/resume';
+        $request->cv->move($folderGambar, $nameFile);
+
+        $resume = Resume::create([
+            'id_career' => $request->id_career,
+            'filename' => $nameFile
+        ]);
+
+        return response()->json(['success' => true]);
+
     }
 }

@@ -396,6 +396,8 @@ class FrontendController extends Controller
         }
     }
 
+    
+
     public function career()
     {
         $career = Career::all();
@@ -415,8 +417,10 @@ class FrontendController extends Controller
     public function careerDetail($id)
     {   
         $careerDetail = CareerDetail::where('id_career', $id)->first();
+        $idCareer = $id;
         return view('career_detail', [
-            'careerDetail' => $careerDetail
+            'careerDetail' => $careerDetail,
+            'idCareer' => $idCareer
         ]);
     }
 

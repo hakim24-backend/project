@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File; 
 use App\Models\Career;
 use App\Models\CareerDetail;
+use App\Models\Resume;
 
 class CareerController extends Controller
 {
@@ -180,5 +182,24 @@ class CareerController extends Controller
         if ($careerDetail) {
             return redirect()->route('careerier.index');
         }
+    }
+
+    function resumeCareer($id)
+    {
+        $resume = Resume::where('id_career', $id)->get();
+        $career = Career::findOrFail($id);
+        return view('career.resume', [
+            'resume' => $resume,
+            'career' => $career
+        ]);
+    }
+
+    function deleteResume($id, $id_career)
+    {
+        $resume = Resume::findOrFail($id);
+        $filePath = public_path('upload/resume/'.$resume->filename);
+        unlink($filePath);
+        $resume->delete();
+        return redirect()->route('career.resume', $id_career);
     }
 }

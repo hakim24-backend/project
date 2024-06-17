@@ -1,5 +1,6 @@
 <?php 
     use App\Models\CareerDetail;
+    use App\Models\Resume;
 ?>
 
 @extends('layouts.app')
@@ -43,6 +44,7 @@
                             <th width="5%">No</th>
                             <th width="25%">Info Career</th>
                             <th>Detail Career</th>
+                            <th>Resume</th>
                             <th width="25%">Image</th>
                             <th width="10%">Action</th>
                             {{-- <th>Job</th>
@@ -111,6 +113,14 @@
                                         @else
                                             <a href="{{route('career.editDetail', $cekDetail->id)}}" class="btn btn-info"><span><i class="fa fa-edit"></i></span> Update Detail</a>
                                         @endif
+                                    </td>
+                                    <td style="text-align: center; vertical-align: middle;">
+                                        @php
+                                            $resume = Resume::count();
+                                        @endphp
+                                        
+                                        <a href="{{route('career.resume', $item->id)}}" class="btn btn-success"><span><i class="fa fa-file"></i></span> Resume <span class="badge badge-danger">{{$resume}}</span></a>
+
                                     </td>
                                     <td style="text-align: center; vertical-align: middle;">
                                         @if ($item->filename == null)
