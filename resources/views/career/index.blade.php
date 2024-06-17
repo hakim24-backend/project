@@ -127,7 +127,7 @@
                                             -
                                         @else
                                             <a href="{{ asset('upload/career/'.$item->filename) }}" target="_blank">
-                                                <img src="{{ asset('upload/career/'.$item->filename) }}">
+                                                <img width="40%" src="{{ asset('upload/career/'.$item->filename) }}">
                                             </a>
                                         @endif
                                     </td>
