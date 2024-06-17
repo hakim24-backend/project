@@ -35,6 +35,17 @@
      <link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/search.css')}}">
 
   </head>
+  <style>
+     .page-headingg {
+          padding: 0px 0px 130px 0px;
+          text-align: center;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background: #000000;
+          margin-top: -76px;
+     }
+  </style>
   <body>
 
      {{-- Header --}}
@@ -54,7 +65,7 @@
 
   
     <!-- Page Content -->
-    <div class="page-heading about-heading header-text" style="background-image: url('{{asset('assets/images/heading-6-1920x500.jpg')}}');">
+    <div class="page-headingg about-heading header-text" style="background-image: url('{{asset('assets/images/heading-6-1920x500.jpg')}}');">
      <div class="container">
      </div>
    </div>
