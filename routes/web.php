@@ -55,6 +55,7 @@ Route::get('/careers', [FrontendController::class, 'career'])->name('frontend.ca
 Route::get('/careers/en', [FrontendController::class, 'careerEn'])->name('frontend.careerEn');
 Route::get('/careerDetail/{id}', [FrontendController::class, 'careerDetail'])->name('frontend.careerDetail');
 Route::get('/careerDetail/{id}/en', [FrontendController::class, 'careerDetailEn'])->name('frontend.careerDetailEn');
+Route::get('/digital-library', [FrontendController::class, 'library'])->name('frontend.library');
 
 //ajax frontend
 Route::get('/ajax-frontend-series', [AjaxFrontendController::class, 'selectSeries'])->name('ajax-frontend-series');

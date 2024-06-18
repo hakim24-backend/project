@@ -572,4 +572,12 @@ class FrontendController extends Controller
             'active' => $active
         ]);
     }
+
+    function library()
+    {
+        $active = '';
+        return view('digital_library', [
+            'active' => $active
+        ]);
+    }
 }
