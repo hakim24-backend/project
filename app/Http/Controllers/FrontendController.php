@@ -11,6 +11,7 @@ use App\Models\Career;
 use App\Models\CareerDetail;
 use App\Models\Typical;
 use App\Models\TypicalCollection;
+use App\Models\Digital;
 
 use \Statickidz\GoogleTranslate;
 use Illuminate\Http\Request;
@@ -576,8 +577,16 @@ class FrontendController extends Controller
     function library()
     {
         $active = '';
+        $resumeTab1 = Digital::where('category_file', 1)->get();
+        $resumeTab2 = Digital::where('category_file', 2)->get();
+        $resumeTab3 = Digital::where('category_file', 3)->get();
+        $resumeTab4 = Digital::where('category_file', 4)->get();
         return view('digital_library', [
-            'active' => $active
+            'active' => $active,
+            'resume1' => $resumeTab1,
+            'resume2' => $resumeTab2,
+            'resume3' => $resumeTab3,
+            'resume4' => $resumeTab4
         ]);
     }
 }

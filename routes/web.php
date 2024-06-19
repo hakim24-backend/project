@@ -12,6 +12,7 @@ use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\AjaxFrontendController;
 use App\Http\Controllers\TypicalController;
+use App\Http\Controllers\DigitalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,6 +81,7 @@ Route::middleware('auth')->group(function(){
     Route::resource('contact', ContactController::class);
     Route::resource('careerier', CareerController::class);
     Route::resource('typical', TypicalController::class);
+    Route::resource('digitals', DigitalController::class);
 
     //ajax select2
     Route::get('/ajax-category', [AjaxController::class, 'selectCategory'])->name('ajax-category');

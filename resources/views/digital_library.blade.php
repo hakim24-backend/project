@@ -80,604 +80,197 @@
                 </div>
                 <div class="list list_downloads list_downloads--in-tabs fixed download_section" id="tab_tab_3">
                     <ul>
-                        <li>
-                            <figure><a target="_blank"
-                                    href="{{asset('digital/_src/Certificates.Item/127_file/s2.pdf')}}"
-                                    title="Cертификат соответствия на ламинированные полы по ООО «Ультрадекор»"> <img
-                                        alt="Cертификат соответствия на ламинированные полы по ООО «Ультрадекор»"
-                                        height="600" src="{{asset('digital/_src/Certificates.Item/127_image/s2.png')}}"
-                                        width="600" loading="lazy"> </a></figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="{{asset('digital/_src/Certificates.Item/127_file/s2.pdf')}}"
-                                    title="Cертификат соответствия на ламинированные полы по ООО «Ультрадекор»"> </a>
-                                <h3><a target="_blank"
-                                        href="{{asset('digital/_src/Certificates.Item/127_file/s2.pdf')}}"
-                                        title="Cертификат соответствия на ламинированные полы по ООО «Ультрадекор»"></a><a
-                                        href="{{asset('digital/_src/Certificates.Item/127_file/s2.pdf')}}"
-                                        title="Cертификат соответствия на ламинированные полы по ООО «Ультрадекор»">Cертификат
-                                        соответствия на ламинированные полы по ООО «Ультрадекор»</a></h3>
-                                <div class="description"> <a
-                                        href="{{asset('digital/_src/Certificates.Item/127_file/s2.pdf')}}"
-                                        title="Cертификат соответствия на ламинированные полы по ООО «Ультрадекор»">
-                                        <p>Cертификат соответствия на ламинированные полы по ООО «Ультрадекор»</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p></p>
-                                </div> <a class="product_btn download"
-                                    href="{{asset('digital/_src/Certificates.Item/127_file/s2.pdf')}}" target="_blank"
-                                    title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
-                        <li>
-                            <figure><a target="_blank"
-                                    href="/_src/Certificates.Item/95_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BB%D0%B0%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%8B_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%20%D0%B5%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D1%81%D0%BA.pdf"
-                                    title="Пожарный сертификат Ламинированные полы Ультрадекор Егорьевск"> <img
-                                        alt="Пожарный сертификат Ламинированные полы Ультрадекор Егорьевск" height="600"
-                                        src="{{asset('digital/_src/Certificates.Item/127_image/s2.png')}}" width="600"
-                                        loading="lazy"> </a>
-                            </figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/95_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BB%D0%B0%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%8B_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%20%D0%B5%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D1%81%D0%BA.pdf"
-                                    title="Пожарный сертификат Ламинированные полы Ультрадекор Егорьевск"> </a>
-                                <h3><a target="_blank"
-                                        href="/_src/Certificates.Item/95_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BB%D0%B0%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%8B_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%20%D0%B5%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D1%81%D0%BA.pdf"
-                                        title="Пожарный сертификат Ламинированные полы Ультрадекор Егорьевск"></a><a
-                                        href="/_src/Certificates.Item/95_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BB%D0%B0%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%8B_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%20%D0%B5%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D1%81%D0%BA.pdf"
-                                        title="Пожарный сертификат Ламинированные полы Ультрадекор Егорьевск">Пожарный
-                                        сертификат Ламинированные полы Ультрадекор Егорьевск</a></h3>
-                                <div class="description"> <a
-                                        href="/_src/Certificates.Item/95_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BB%D0%B0%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%8B_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%20%D0%B5%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D1%81%D0%BA.pdf"
-                                        title="Пожарный сертификат Ламинированные полы Ультрадекор Егорьевск">
-                                        <p>Пожарный сертификат Ламинированные полы Ультрадекор Егорьевск</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p></p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/95_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BB%D0%B0%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%8B_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%20%D0%B5%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D1%81%D0%BA.pdf"
-                                    target="_blank" title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
-                        <li>
-                            <figure><a target="_blank"
-                                    href="/_src/Certificates.Item/96_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BB%D1%85%D0%B4%D1%84_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80.pdf"
-                                    title="Пожарный сертификат ЛХДФ Ультрадекор"> <img
-                                        alt="Пожарный сертификат ЛХДФ Ультрадекор" height="600"
-                                        src="{{asset('digital/_src/Certificates.Item/127_image/s2.png')}}" width="600"
-                                        loading="lazy"> </a>
-                            </figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/96_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BB%D1%85%D0%B4%D1%84_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80.pdf"
-                                    title="Пожарный сертификат ЛХДФ Ультрадекор"> </a>
-                                <h3><a target="_blank"
-                                        href="/_src/Certificates.Item/96_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BB%D1%85%D0%B4%D1%84_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80.pdf"
-                                        title="Пожарный сертификат ЛХДФ Ультрадекор"></a><a
-                                        href="/_src/Certificates.Item/96_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BB%D1%85%D0%B4%D1%84_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80.pdf"
-                                        title="Пожарный сертификат ЛХДФ Ультрадекор">Пожарный сертификат ЛХДФ
-                                        Ультрадекор</a></h3>
-                                <div class="description"> <a
-                                        href="/_src/Certificates.Item/96_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BB%D1%85%D0%B4%D1%84_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80.pdf"
-                                        title="Пожарный сертификат ЛХДФ Ультрадекор">
-                                        <p>Пожарный сертификат ЛХДФ Ультрадекор</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p></p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/96_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BB%D1%85%D0%B4%D1%84_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80.pdf"
-                                    target="_blank" title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
-                        <li>
-                            <figure><a target="_blank"
-                                    href="/_src/Certificates.Item/128_file/%D0%BF%D0%BE%D0%B6%20%D1%81%D0%B5%D1%80%D1%82%20%D0%BB%D0%B0%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%8B_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%20%D0%B5%D0%B3.pdf"
-                                    title="Пожарный сертификат на ламинированные полы по ООО «Ультрадекор»"> <img
-                                        alt="Пожарный сертификат на ламинированные полы по ООО «Ультрадекор»"
-                                        height="600" src="{{asset('digital/_src/Certificates.Item/127_image/s2.png')}}"
-                                        width="600" loading="lazy"> </a></figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/128_file/%D0%BF%D0%BE%D0%B6%20%D1%81%D0%B5%D1%80%D1%82%20%D0%BB%D0%B0%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%8B_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%20%D0%B5%D0%B3.pdf"
-                                    title="Пожарный сертификат на ламинированные полы по ООО «Ультрадекор»"> </a>
-                                <h3><a target="_blank"
-                                        href="/_src/Certificates.Item/128_file/%D0%BF%D0%BE%D0%B6%20%D1%81%D0%B5%D1%80%D1%82%20%D0%BB%D0%B0%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%8B_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%20%D0%B5%D0%B3.pdf"
-                                        title="Пожарный сертификат на ламинированные полы по ООО «Ультрадекор»"></a><a
-                                        href="/_src/Certificates.Item/128_file/%D0%BF%D0%BE%D0%B6%20%D1%81%D0%B5%D1%80%D1%82%20%D0%BB%D0%B0%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%8B_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%20%D0%B5%D0%B3.pdf"
-                                        title="Пожарный сертификат на ламинированные полы по ООО «Ультрадекор»">Пожарный
-                                        сертификат на ламинированные полы по ООО «Ультрадекор»</a></h3>
-                                <div class="description"> <a
-                                        href="/_src/Certificates.Item/128_file/%D0%BF%D0%BE%D0%B6%20%D1%81%D0%B5%D1%80%D1%82%20%D0%BB%D0%B0%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%8B_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%20%D0%B5%D0%B3.pdf"
-                                        title="Пожарный сертификат на ламинированные полы по ООО «Ультрадекор»">
-                                        <p>Пожарный сертификат на ламинированные полы по ООО «Ультрадекор»</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p></p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/128_file/%D0%BF%D0%BE%D0%B6%20%D1%81%D0%B5%D1%80%D1%82%20%D0%BB%D0%B0%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%8B_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%20%D0%B5%D0%B3.pdf"
-                                    target="_blank" title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
-                        <li>
-                            <figure><a target="_blank"
-                                    href="/_src/Certificates.Item/97_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BF-3%20%D0%B51%20%D0%B8%20%D0%B50%2C5.pdf"
-                                    title="Пожарный сертификат на ОСП-3 Е1 и Е0,5"> <img
-                                        alt="Пожарный сертификат на ОСП-3 Е1 и Е0,5" height="600"
-                                        src="{{asset('digital/_src/Certificates.Item/127_image/s2.png')}}" width="600"
-                                        loading="lazy"> </a>
-                            </figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/97_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BF-3%20%D0%B51%20%D0%B8%20%D0%B50%2C5.pdf"
-                                    title="Пожарный сертификат на ОСП-3 Е1 и Е0,5"> </a>
-                                <h3><a target="_blank"
-                                        href="/_src/Certificates.Item/97_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BF-3%20%D0%B51%20%D0%B8%20%D0%B50%2C5.pdf"
-                                        title="Пожарный сертификат на ОСП-3 Е1 и Е0,5"></a><a
-                                        href="/_src/Certificates.Item/97_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BF-3%20%D0%B51%20%D0%B8%20%D0%B50%2C5.pdf"
-                                        title="Пожарный сертификат на ОСП-3 Е1 и Е0,5">Пожарный сертификат на ОСП-3 Е1 и
-                                        Е0,5</a></h3>
-                                <div class="description"> <a
-                                        href="/_src/Certificates.Item/97_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BF-3%20%D0%B51%20%D0%B8%20%D0%B50%2C5.pdf"
-                                        title="Пожарный сертификат на ОСП-3 Е1 и Е0,5">
-                                        <p>Пожарный сертификат на ОСП-3 Е1 и Е0,5</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p></p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/97_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BD%D0%B0%20%D0%BE%D1%81%D0%BF-3%20%D0%B51%20%D0%B8%20%D0%B50%2C5.pdf"
-                                    target="_blank" title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
-                        <li>
-                            <figure><a target="_blank"
-                                    href="/_src/Certificates.Item/99_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BEsb-3_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%20%D0%B5%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D1%81%D0%BA.pdf"
-                                    title="Пожарный сертификат ОSB-3 Ультрадекор Егорьевск"> <img
-                                        alt="Пожарный сертификат ОSB-3 Ультрадекор Егорьевск" height="600"
-                                        src="{{asset('digital/_src/Certificates.Item/127_image/s2.png')}}" width="600"
-                                        loading="lazy"> </a>
-                            </figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/99_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BEsb-3_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%20%D0%B5%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D1%81%D0%BA.pdf"
-                                    title="Пожарный сертификат ОSB-3 Ультрадекор Егорьевск"> </a>
-                                <h3><a target="_blank"
-                                        href="/_src/Certificates.Item/99_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BEsb-3_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%20%D0%B5%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D1%81%D0%BA.pdf"
-                                        title="Пожарный сертификат ОSB-3 Ультрадекор Егорьевск"></a><a
-                                        href="/_src/Certificates.Item/99_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BEsb-3_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%20%D0%B5%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D1%81%D0%BA.pdf"
-                                        title="Пожарный сертификат ОSB-3 Ультрадекор Егорьевск">Пожарный сертификат
-                                        ОSB-3 Ультрадекор Егорьевск</a></h3>
-                                <div class="description"> <a
-                                        href="/_src/Certificates.Item/99_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BEsb-3_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%20%D0%B5%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D1%81%D0%BA.pdf"
-                                        title="Пожарный сертификат ОSB-3 Ультрадекор Егорьевск">
-                                        <p>Пожарный сертификат ОSB-3 Ультрадекор Егорьевск</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p></p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/99_file/%D0%BF%D0%BE%D0%B6%D0%B0%D1%80%D0%BD%D1%8B%D0%B8%CC%86%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BEsb-3_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%20%D0%B5%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D1%81%D0%BA.pdf"
-                                    target="_blank" title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
+                        @foreach ($resume1 as $item1)
+                            <li>
+                                <figure>
+                                    <a target="_blank"
+                                        href="{{asset('upload/digital_library/document/'.$item1->filename)}}"
+                                        title="{{$item1->name}}"> 
+                                        <img
+                                            alt="Пожарный сертификат ОSB-3 Ультрадекор Егорьевск" height="600"
+                                            src="{{asset('upload/digital_library/img/'.$item1->filename_img)}}" width="600"
+                                            loading="lazy"> 
+                                    </a>
+                                </figure>
+                                <div class="list_text"> 
+                                    <a target="_blank"
+                                        href="{{asset('upload/digital_library/document/'.$item1->filename)}}"
+                                        title="{{$item1->name}}"> 
+                                    </a>
+                                    <h3>
+                                        <a target="_blank"
+                                            href="{{asset('upload/digital_library/document/'.$item1->filename)}}"
+                                            title="{{$item1->name}}">
+                                        </a>
+                                        <a
+                                            href="{{asset('upload/digital_library/document/'.$item1->filename)}}"
+                                            title="{{$item1->name}}">{{$item1->name}}
+                                        </a>
+                                    </h3>
+                                    <div class="description"> 
+                                        <a
+                                            href="{{asset('upload/digital_library/document/'.$item1->filename)}}"
+                                            title="{{$item1->name}}">
+                                            <p>{{$item1->name}}</p>
+                                        </a> 
+                                    </div>
+                                    <div class="medium_description">
+                                        <p></p>
+                                    </div> 
+                                    <a class="product_btn download"
+                                        href="{{asset('upload/digital_library/document/'.$item1->filename)}}"
+                                        target="_blank" title="Загрузить" download="">Загрузить
+                                    </a>
+                                </div>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="list list_downloads list_downloads--in-tabs fixed download_section" id="tab_tab_4"
                     style="display: none;">
                     <ul>
-                        <li>
-                            <figure><a target="_blank" href="/_src/Certificates.Item/138_file/gtac_by_14.12.pdf"
-                                    title="Общие условия продаж, поставок и оплат"> <img
-                                        alt="Общие условия продаж, поставок и оплат" height="600"
-                                        src="/_src/Certificates.Item/138_image/sert-gtac.png" width="600"
-                                        loading="lazy"> </a></figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/138_file/gtac_by_14.12.pdf"
-                                    title="Общие условия продаж, поставок и оплат"> </a>
-                                <h3><a target="_blank" href="/_src/Certificates.Item/138_file/gtac_by_14.12.pdf"
-                                        title="Общие условия продаж, поставок и оплат"></a><a
-                                        href="/_src/Certificates.Item/138_file/gtac_by_14.12.pdf"
-                                        title="Общие условия продаж, поставок и оплат">Общие условия продаж, поставок и
-                                        оплат</a></h3>
-                                <div class="description"> <a href="/_src/Certificates.Item/138_file/gtac_by_14.12.pdf"
-                                        title="Общие условия продаж, поставок и оплат">
-                                        <p>Общие условия продаж, поставок и оплат</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p></p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/138_file/gtac_by_14.12.pdf" target="_blank"
-                                    title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
-                        <li>
-                            <figure><a target="_blank"
-                                    href="/_src/Certificates.Item/93_file/gtac_east_kg01_ru.en_red.15.12.2023%20%28ultrabuild%20mdf%29.pdf"
-                                    title="Общие условия продаж, поставок и оплаты ООО «Ультрабилд МДФ»"> <img
-                                        alt="Общие условия продаж, поставок и оплаты ООО «Ультрабилд МДФ»" height="150"
-                                        src="/_src/Certificates.Item/93_image/g2_bo_preview.jpg" width="150"
-                                        loading="lazy"> </a></figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/93_file/gtac_east_kg01_ru.en_red.15.12.2023%20%28ultrabuild%20mdf%29.pdf"
-                                    title="Общие условия продаж, поставок и оплаты ООО «Ультрабилд МДФ»"> </a>
-                                <h3><a target="_blank"
-                                        href="/_src/Certificates.Item/93_file/gtac_east_kg01_ru.en_red.15.12.2023%20%28ultrabuild%20mdf%29.pdf"
-                                        title="Общие условия продаж, поставок и оплаты ООО «Ультрабилд МДФ»"></a><a
-                                        href="/_src/Certificates.Item/93_file/gtac_east_kg01_ru.en_red.15.12.2023%20%28ultrabuild%20mdf%29.pdf"
-                                        title="Общие условия продаж, поставок и оплаты ООО «Ультрабилд МДФ»">Общие
-                                        условия продаж, поставок и оплаты ООО «Ультрабилд МДФ»</a></h3>
-                                <div class="description"> <a
-                                        href="/_src/Certificates.Item/93_file/gtac_east_kg01_ru.en_red.15.12.2023%20%28ultrabuild%20mdf%29.pdf"
-                                        title="Общие условия продаж, поставок и оплаты ООО «Ультрабилд МДФ»">
-                                        <p>Общие условия продаж, поставок и оплаты ООО «Ультрабилд МДФ»</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p></p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/93_file/gtac_east_kg01_ru.en_red.15.12.2023%20%28ultrabuild%20mdf%29.pdf"
-                                    target="_blank" title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
-                        <li>
-                            <figure><a target="_blank"
-                                    href="/_src/Certificates.Item/94_file/gtac_east_eg01_ru.en_red.15.12.2023%20%28ultradecor%29.pdf"
-                                    title="Общие условия продаж, поставок и оплаты ООО «Ультрадекор»"> <img
-                                        alt="Общие условия продаж, поставок и оплаты ООО «Ультрадекор»" height="150"
-                                        src="/_src/Certificates.Item/94_image/g2_bo_preview.jpg" width="150"
-                                        loading="lazy"> </a></figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/94_file/gtac_east_eg01_ru.en_red.15.12.2023%20%28ultradecor%29.pdf"
-                                    title="Общие условия продаж, поставок и оплаты ООО «Ультрадекор»"> </a>
-                                <h3><a target="_blank"
-                                        href="/_src/Certificates.Item/94_file/gtac_east_eg01_ru.en_red.15.12.2023%20%28ultradecor%29.pdf"
-                                        title="Общие условия продаж, поставок и оплаты ООО «Ультрадекор»"></a><a
-                                        href="/_src/Certificates.Item/94_file/gtac_east_eg01_ru.en_red.15.12.2023%20%28ultradecor%29.pdf"
-                                        title="Общие условия продаж, поставок и оплаты ООО «Ультрадекор»">Общие условия
-                                        продаж, поставок и оплаты ООО «Ультрадекор»</a></h3>
-                                <div class="description"> <a
-                                        href="/_src/Certificates.Item/94_file/gtac_east_eg01_ru.en_red.15.12.2023%20%28ultradecor%29.pdf"
-                                        title="Общие условия продаж, поставок и оплаты ООО «Ультрадекор»">
-                                        <p>Общие условия продаж, поставок и оплаты ООО «Ультрадекор»</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p></p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/94_file/gtac_east_eg01_ru.en_red.15.12.2023%20%28ultradecor%29.pdf"
-                                    target="_blank" title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
-                        <li>
-                            <figure><a target="_blank"
-                                    href="/_src/Certificates.Item/92_file/%D0%BE%D0%B1%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F_%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6_%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BE%D0%BA_%D0%B8_%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%8B_%D0%BE%D0%BE%D0%BE_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD.pdf"
-                                    title="Общие условия продаж, поставок и оплаты ООО «Ультрадизайн»"> <img
-                                        alt="Общие условия продаж, поставок и оплаты ООО «Ультрадизайн»" height="150"
-                                        src="/_src/Certificates.Item/92_image/g2_bo_preview.jpg" width="150"
-                                        loading="lazy"> </a></figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/92_file/%D0%BE%D0%B1%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F_%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6_%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BE%D0%BA_%D0%B8_%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%8B_%D0%BE%D0%BE%D0%BE_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD.pdf"
-                                    title="Общие условия продаж, поставок и оплаты ООО «Ультрадизайн»"> </a>
-                                <h3><a target="_blank"
-                                        href="/_src/Certificates.Item/92_file/%D0%BE%D0%B1%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F_%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6_%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BE%D0%BA_%D0%B8_%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%8B_%D0%BE%D0%BE%D0%BE_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD.pdf"
-                                        title="Общие условия продаж, поставок и оплаты ООО «Ультрадизайн»"></a><a
-                                        href="/_src/Certificates.Item/92_file/%D0%BE%D0%B1%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F_%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6_%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BE%D0%BA_%D0%B8_%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%8B_%D0%BE%D0%BE%D0%BE_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD.pdf"
-                                        title="Общие условия продаж, поставок и оплаты ООО «Ультрадизайн»">Общие условия
-                                        продаж, поставок и оплаты ООО «Ультрадизайн»</a></h3>
-                                <div class="description"> <a
-                                        href="/_src/Certificates.Item/92_file/%D0%BE%D0%B1%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F_%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6_%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BE%D0%BA_%D0%B8_%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%8B_%D0%BE%D0%BE%D0%BE_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD.pdf"
-                                        title="Общие условия продаж, поставок и оплаты ООО «Ультрадизайн»">
-                                        <p>Общие условия продаж, поставок и оплаты ООО «Ультрадизайн»</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p></p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/92_file/%D0%BE%D0%B1%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F_%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6_%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BE%D0%BA_%D0%B8_%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%8B_%D0%BE%D0%BE%D0%BE_%D1%83%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD.pdf"
-                                    target="_blank" title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
-                        <li>
-                            <figure><a target="_blank"
-                                    href="/_src/Certificates.Item/91_file/gtac_east_uf17_ru.en_red.15.12.2023%20%28ultra%29.pdf"
-                                    title="Общие условия продаж, поставок и оплаты ООО «Ультраплай»"> <img
-                                        alt="Общие условия продаж, поставок и оплаты ООО «Ультраплай»" height="150"
-                                        src="/_src/Certificates.Item/91_image/g2_bo_preview.jpg" width="150"
-                                        loading="lazy"> </a></figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/91_file/gtac_east_uf17_ru.en_red.15.12.2023%20%28ultra%29.pdf"
-                                    title="Общие условия продаж, поставок и оплаты ООО «Ультраплай»"> </a>
-                                <h3><a target="_blank"
-                                        href="/_src/Certificates.Item/91_file/gtac_east_uf17_ru.en_red.15.12.2023%20%28ultra%29.pdf"
-                                        title="Общие условия продаж, поставок и оплаты ООО «Ультраплай»"></a><a
-                                        href="/_src/Certificates.Item/91_file/gtac_east_uf17_ru.en_red.15.12.2023%20%28ultra%29.pdf"
-                                        title="Общие условия продаж, поставок и оплаты ООО «Ультраплай»">Общие условия
-                                        продаж, поставок и оплаты ООО «Ультраплай»</a></h3>
-                                <div class="description"> <a
-                                        href="/_src/Certificates.Item/91_file/gtac_east_uf17_ru.en_red.15.12.2023%20%28ultra%29.pdf"
-                                        title="Общие условия продаж, поставок и оплаты ООО «Ультраплай»">
-                                        <p>Общие условия продаж, поставок и оплаты ООО «Ультраплай»</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p></p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/91_file/gtac_east_uf17_ru.en_red.15.12.2023%20%28ultra%29.pdf"
-                                    target="_blank" title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
+                        @foreach ($resume2 as $item2)
+                            <li>
+                                <figure>
+                                    <a target="_blank"
+                                        href="{{asset('upload/digital_library/document/'.$item2->filename)}}"
+                                        title="{{$item2->name}}"> 
+                                        <img
+                                            alt="Пожарный сертификат ОSB-3 Ультрадекор Егорьевск" height="600"
+                                            src="{{asset('upload/digital_library/img/'.$item2->filename_img)}}" width="600"
+                                            loading="lazy"> 
+                                    </a>
+                                </figure>
+                                <div class="list_text"> 
+                                    <a target="_blank"
+                                        href="{{asset('upload/digital_library/document/'.$item2->filename)}}"
+                                        title="{{$item2->name}}"> 
+                                    </a>
+                                    <h3>
+                                        <a target="_blank"
+                                            href="{{asset('upload/digital_library/document/'.$item2->filename)}}"
+                                            title="{{$item2->name}}">
+                                        </a>
+                                        <a
+                                            href="{{asset('upload/digital_library/document/'.$item2->filename)}}"
+                                            title="{{$item2->name}}">{{$item2->name}}
+                                        </a>
+                                    </h3>
+                                    <div class="description"> 
+                                        <a
+                                            href="{{asset('upload/digital_library/document/'.$item2->filename)}}"
+                                            title="{{$item2->name}}">
+                                            <p>{{$item2->name}}</p>
+                                        </a> 
+                                    </div>
+                                    <div class="medium_description">
+                                        <p></p>
+                                    </div> 
+                                    <a class="product_btn download"
+                                        href="{{asset('upload/digital_library/document/'.$item2->filename)}}"
+                                        target="_blank" title="Загрузить" download="">Загрузить
+                                    </a>
+                                </div>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="list list_downloads list_downloads--in-tabs fixed download_section" id="tab_tab_2"
                     style="display: none;">
                     <ul>
-                        <li>
-                            <figure><a target="_blank"
-                                    href="/_src/Certificates.Item/14_file/politika-promyshlennoy-bezopasnosti-2021.pdf"
-                                    title="Политика в области промышленной безопасности"> <img
-                                        alt="Политика в области промышленной безопасности" height="600"
-                                        src="/_src/Certificates.Item/14_image/politika-promyshlennoy-bezopasnosti-2021.png"
-                                        width="600" loading="lazy"> </a></figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/14_file/politika-promyshlennoy-bezopasnosti-2021.pdf"
-                                    title="Политика в области промышленной безопасности"> </a>
-                                <h3><a target="_blank"
-                                        href="/_src/Certificates.Item/14_file/politika-promyshlennoy-bezopasnosti-2021.pdf"
-                                        title="Политика в области промышленной безопасности"></a><a
-                                        href="/_src/Certificates.Item/14_file/politika-promyshlennoy-bezopasnosti-2021.pdf"
-                                        title="Политика в области промышленной безопасности">Политика в области
-                                        промышленной безопасности</a></h3>
-                                <div class="description"> <a
-                                        href="/_src/Certificates.Item/14_file/politika-promyshlennoy-bezopasnosti-2021.pdf"
-                                        title="Политика в области промышленной безопасности">
-                                        <p>Политика в области промышленной безопасности</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p>Политика в области промышленной безопасности</p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/14_file/politika-promyshlennoy-bezopasnosti-2021.pdf"
-                                    target="_blank" title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
+                        @foreach ($resume3 as $item3)
+                            <li>
+                                <figure>
+                                    <a target="_blank"
+                                        href="{{asset('upload/digital_library/document/'.$item3->filename)}}"
+                                        title="{{$item3->name}}"> 
+                                        <img
+                                            alt="Пожарный сертификат ОSB-3 Ультрадекор Егорьевск" height="600"
+                                            src="{{asset('upload/digital_library/img/'.$item3->filename_img)}}" width="600"
+                                            loading="lazy"> 
+                                    </a>
+                                </figure>
+                                <div class="list_text"> 
+                                    <a target="_blank"
+                                        href="{{asset('upload/digital_library/document/'.$item3->filename)}}"
+                                        title="{{$item3->name}}"> 
+                                    </a>
+                                    <h3>
+                                        <a target="_blank"
+                                            href="{{asset('upload/digital_library/document/'.$item3->filename)}}"
+                                            title="{{$item3->name}}">
+                                        </a>
+                                        <a
+                                            href="{{asset('upload/digital_library/document/'.$item3->filename)}}"
+                                            title="{{$item3->name}}">{{$item3->name}}
+                                        </a>
+                                    </h3>
+                                    <div class="description"> 
+                                        <a
+                                            href="{{asset('upload/digital_library/document/'.$item3->filename)}}"
+                                            title="{{$item3->name}}">
+                                            <p>{{$item3->name}}</p>
+                                        </a> 
+                                    </div>
+                                    <div class="medium_description">
+                                        <p></p>
+                                    </div> 
+                                    <a class="product_btn download"
+                                        href="{{asset('upload/digital_library/document/'.$item3->filename)}}"
+                                        target="_blank" title="Загрузить" download="">Загрузить
+                                    </a>
+                                </div>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="list list_downloads list_downloads--in-tabs fixed download_section" id="tab_tab_1"
                     style="display: none;">
                     <ul>
-                        <li>
-                            <figure><a target="_blank"
-                                    href="/_src/Certificates.Item/4_file/pismo-pozharnom-sertifikate-23072019.pdf"
-                                    title="Информационное письмо о пожарном сертификате"> <img
-                                        alt="Информационное письмо о пожарном сертификате" height="600"
-                                        src="/_src/Certificates.Item/4_image/pismo-pozharnom-sertifikate-23072019.png"
-                                        width="600" loading="lazy"> </a></figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/4_file/pismo-pozharnom-sertifikate-23072019.pdf"
-                                    title="Информационное письмо о пожарном сертификате"> </a>
-                                <h3><a target="_blank"
-                                        href="/_src/Certificates.Item/4_file/pismo-pozharnom-sertifikate-23072019.pdf"
-                                        title="Информационное письмо о пожарном сертификате"></a><a
-                                        href="/_src/Certificates.Item/4_file/pismo-pozharnom-sertifikate-23072019.pdf"
-                                        title="Информационное письмо о пожарном сертификате">Информационное письмо о
-                                        пожарном сертификате</a></h3>
-                                <div class="description"> <a
-                                        href="/_src/Certificates.Item/4_file/pismo-pozharnom-sertifikate-23072019.pdf"
-                                        title="Информационное письмо о пожарном сертификате">
-                                        <p>Информационное письмо о пожарном сертификате</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p>Информационное письмо о пожарном сертификате</p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/4_file/pismo-pozharnom-sertifikate-23072019.pdf"
-                                    target="_blank" title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
-                        <li>
-                            <figure><a target="_blank"
-                                    href="/_src/Certificates.Item/1_file/obshchiye-usloviya-postavok-i-prodazh.pdf"
-                                    title="Общие условия поставок и продаж"> <img alt="Общие условия поставок и продаж"
-                                        height="600"
-                                        src="/_src/Certificates.Item/1_image/obshchiye-usloviya-postavok-i-prodazh.png"
-                                        width="600" loading="lazy"> </a></figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/1_file/obshchiye-usloviya-postavok-i-prodazh.pdf"
-                                    title="Общие условия поставок и продаж"> </a>
-                                <h3><a target="_blank"
-                                        href="/_src/Certificates.Item/1_file/obshchiye-usloviya-postavok-i-prodazh.pdf"
-                                        title="Общие условия поставок и продаж"></a><a
-                                        href="/_src/Certificates.Item/1_file/obshchiye-usloviya-postavok-i-prodazh.pdf"
-                                        title="Общие условия поставок и продаж">Общие условия поставок и продаж</a></h3>
-                                <div class="description"> <a
-                                        href="/_src/Certificates.Item/1_file/obshchiye-usloviya-postavok-i-prodazh.pdf"
-                                        title="Общие условия поставок и продаж">
-                                        <p>Общие условия поставок и продаж</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p>Уведомление ООО Кроношпан ОСБ</p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/1_file/obshchiye-usloviya-postavok-i-prodazh.pdf"
-                                    target="_blank" title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
-                        <li>
-                            <figure><a target="_blank"
-                                    href="/_src/Certificates.Item/137_file/%D1%81%D0%B0%D0%BC%D0%BE%D0%B4%D0%B5%D0%BA%D0%BB%D0%B0%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BC%D0%B5%D0%B3%D0%B0%D1%81%D1%82%D0%BE%D1%80_%D0%B4%D0%B0%D1%82%D0%B0.pdf"
-                                    title="Самодекларация в отношении ценностей системы «Лесной Эталон»"> <img
-                                        alt="Самодекларация в отношении ценностей системы «Лесной Эталон»" height="600"
-                                        src="/_src/Certificates.Item/137_image/sert-megastor.png" width="600"
-                                        loading="lazy"> </a></figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/137_file/%D1%81%D0%B0%D0%BC%D0%BE%D0%B4%D0%B5%D0%BA%D0%BB%D0%B0%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BC%D0%B5%D0%B3%D0%B0%D1%81%D1%82%D0%BE%D1%80_%D0%B4%D0%B0%D1%82%D0%B0.pdf"
-                                    title="Самодекларация в отношении ценностей системы «Лесной Эталон»"> </a>
-                                <h3><a target="_blank"
-                                        href="/_src/Certificates.Item/137_file/%D1%81%D0%B0%D0%BC%D0%BE%D0%B4%D0%B5%D0%BA%D0%BB%D0%B0%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BC%D0%B5%D0%B3%D0%B0%D1%81%D1%82%D0%BE%D1%80_%D0%B4%D0%B0%D1%82%D0%B0.pdf"
-                                        title="Самодекларация в отношении ценностей системы «Лесной Эталон»"></a><a
-                                        href="/_src/Certificates.Item/137_file/%D1%81%D0%B0%D0%BC%D0%BE%D0%B4%D0%B5%D0%BA%D0%BB%D0%B0%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BC%D0%B5%D0%B3%D0%B0%D1%81%D1%82%D0%BE%D1%80_%D0%B4%D0%B0%D1%82%D0%B0.pdf"
-                                        title="Самодекларация в отношении ценностей системы «Лесной Эталон»">Самодекларация
-                                        в отношении ценностей системы «Лесной Эталон»</a></h3>
-                                <div class="description"> <a
-                                        href="/_src/Certificates.Item/137_file/%D1%81%D0%B0%D0%BC%D0%BE%D0%B4%D0%B5%D0%BA%D0%BB%D0%B0%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BC%D0%B5%D0%B3%D0%B0%D1%81%D1%82%D0%BE%D1%80_%D0%B4%D0%B0%D1%82%D0%B0.pdf"
-                                        title="Самодекларация в отношении ценностей системы «Лесной Эталон»">
-                                        <p>Самодекларация в отношении ценностей системы «Лесной Эталон»</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p></p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/137_file/%D1%81%D0%B0%D0%BC%D0%BE%D0%B4%D0%B5%D0%BA%D0%BB%D0%B0%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BC%D0%B5%D0%B3%D0%B0%D1%81%D1%82%D0%BE%D1%80_%D0%B4%D0%B0%D1%82%D0%B0.pdf"
-                                    target="_blank" title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
-                        <li>
-                            <figure><a target="_blank" href="/_src/Certificates.Item/5_file/en-os-2-c-002719-2016.pdf"
-                                    title="Сертификат ОСП 3"> <img alt="Сертификат ОСП 3" height="600"
-                                        src="/_src/Certificates.Item/5_image/en-os-2-c-002719-2016.png" width="600"
-                                        loading="lazy"> </a></figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/5_file/en-os-2-c-002719-2016.pdf"
-                                    title="Сертификат ОСП 3"> </a>
-                                <h3><a target="_blank" href="/_src/Certificates.Item/5_file/en-os-2-c-002719-2016.pdf"
-                                        title="Сертификат ОСП 3"></a><a
-                                        href="/_src/Certificates.Item/5_file/en-os-2-c-002719-2016.pdf"
-                                        title="Сертификат ОСП 3">Сертификат ОСП 3</a></h3>
-                                <div class="description"> <a
-                                        href="/_src/Certificates.Item/5_file/en-os-2-c-002719-2016.pdf"
-                                        title="Сертификат ОСП 3">
-                                        <p>Сертификат ОСП 3</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p>Сертификат на поставку ОСП 3 в Евросоюз</p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/5_file/en-os-2-c-002719-2016.pdf" target="_blank"
-                                    title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
-                        <li>
-                            <figure><a target="_blank"
-                                    href="/_src/Certificates.Item/9_file/management-system-certificate-h00075.pdf"
-                                    title="Сертификат система менеджмента No: H00075"> <img
-                                        alt="Сертификат система менеджмента No: H00075" height="600"
-                                        src="/_src/Certificates.Item/9_image/management-system-certificate-h00075.png"
-                                        width="600" loading="lazy"> </a></figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/9_file/management-system-certificate-h00075.pdf"
-                                    title="Сертификат система менеджмента No: H00075"> </a>
-                                <h3><a target="_blank"
-                                        href="/_src/Certificates.Item/9_file/management-system-certificate-h00075.pdf"
-                                        title="Сертификат система менеджмента No: H00075"></a><a
-                                        href="/_src/Certificates.Item/9_file/management-system-certificate-h00075.pdf"
-                                        title="Сертификат система менеджмента No: H00075">Сертификат система менеджмента
-                                        No: H00075</a></h3>
-                                <div class="description"> <a
-                                        href="/_src/Certificates.Item/9_file/management-system-certificate-h00075.pdf"
-                                        title="Сертификат система менеджмента No: H00075">
-                                        <p>Сертификат система менеджмента No: H00075</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p>Сертификат система менеджмента No: H00075</p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/9_file/management-system-certificate-h00075.pdf"
-                                    target="_blank" title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
-                        <li>
-                            <figure><a target="_blank"
-                                    href="/_src/Certificates.Item/10_file/management-system-certificate-h00076.pdf"
-                                    title="Сертификат система менеджмента No: H00076"> <img
-                                        alt="Сертификат система менеджмента No: H00076" height="600"
-                                        src="/_src/Certificates.Item/10_image/management-system-certificate-h00076.png"
-                                        width="600" loading="lazy"> </a></figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/10_file/management-system-certificate-h00076.pdf"
-                                    title="Сертификат система менеджмента No: H00076"> </a>
-                                <h3><a target="_blank"
-                                        href="/_src/Certificates.Item/10_file/management-system-certificate-h00076.pdf"
-                                        title="Сертификат система менеджмента No: H00076"></a><a
-                                        href="/_src/Certificates.Item/10_file/management-system-certificate-h00076.pdf"
-                                        title="Сертификат система менеджмента No: H00076">Сертификат система менеджмента
-                                        No: H00076</a></h3>
-                                <div class="description"> <a
-                                        href="/_src/Certificates.Item/10_file/management-system-certificate-h00076.pdf"
-                                        title="Сертификат система менеджмента No: H00076">
-                                        <p>Сертификат система менеджмента No: H00076</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p>Сертификат система менеджмента No: H00076</p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/10_file/management-system-certificate-h00076.pdf"
-                                    target="_blank" title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
-                        <li>
-                            <figure><a target="_blank"
-                                    href="/_src/Certificates.Item/2_file/uvedomleniye-kronokhem-ufa.pdf"
-                                    title="Уведомление Кронохем Уфа"> <img alt="Уведомление Кронохем Уфа" height="600"
-                                        src="/_src/Certificates.Item/2_image/uvedomleniye-kronokhem-ufa.png" width="600"
-                                        loading="lazy"> </a></figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/2_file/uvedomleniye-kronokhem-ufa.pdf"
-                                    title="Уведомление Кронохем Уфа"> </a>
-                                <h3><a target="_blank"
-                                        href="/_src/Certificates.Item/2_file/uvedomleniye-kronokhem-ufa.pdf"
-                                        title="Уведомление Кронохем Уфа"></a><a
-                                        href="/_src/Certificates.Item/2_file/uvedomleniye-kronokhem-ufa.pdf"
-                                        title="Уведомление Кронохем Уфа">Уведомление Кронохем Уфа</a></h3>
-                                <div class="description"> <a
-                                        href="/_src/Certificates.Item/2_file/uvedomleniye-kronokhem-ufa.pdf"
-                                        title="Уведомление Кронохем Уфа">
-                                        <p>Уведомление Кронохем Уфа</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p>Уведомление Кронохем Уфа</p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/2_file/uvedomleniye-kronokhem-ufa.pdf" target="_blank"
-                                    title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
-                        <li>
-                            <figure><a target="_blank"
-                                    href="/_src/Certificates.Item/11_file/uvedomlenie-o-provedenii-os-proizvodstvo-svyazuyushtikh-materialov-15-06-2022.pdf"
-                                    title="Уведомление о проведении ОС Производство связующих материалов 15.06.2022">
-                                    <img alt="Уведомление о проведении ОС Производство связующих материалов 15.06.2022"
-                                        height="600"
-                                        src="/_src/Certificates.Item/11_image/uvedomlenie-o-provedenii-os-proizvodstvo-svyazuyushtikh-materialov-15-06-2022.png"
-                                        width="600" loading="lazy"> </a></figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/11_file/uvedomlenie-o-provedenii-os-proizvodstvo-svyazuyushtikh-materialov-15-06-2022.pdf"
-                                    title="Уведомление о проведении ОС Производство связующих материалов 15.06.2022">
-                                </a>
-                                <h3><a target="_blank"
-                                        href="/_src/Certificates.Item/11_file/uvedomlenie-o-provedenii-os-proizvodstvo-svyazuyushtikh-materialov-15-06-2022.pdf"
-                                        title="Уведомление о проведении ОС Производство связующих материалов 15.06.2022"></a><a
-                                        href="/_src/Certificates.Item/11_file/uvedomlenie-o-provedenii-os-proizvodstvo-svyazuyushtikh-materialov-15-06-2022.pdf"
-                                        title="Уведомление о проведении ОС Производство связующих материалов 15.06.2022">Уведомление
-                                        о проведении ОС Производство связующих материалов 15.06.2022</a></h3>
-                                <div class="description"> <a
-                                        href="/_src/Certificates.Item/11_file/uvedomlenie-o-provedenii-os-proizvodstvo-svyazuyushtikh-materialov-15-06-2022.pdf"
-                                        title="Уведомление о проведении ОС Производство связующих материалов 15.06.2022">
-                                        <p>Уведомление о проведении ОС Производство связующих материалов 15.06.2022</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p>Уведомление о проведении ОС Производство связующих материалов 15.06.2022</p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/11_file/uvedomlenie-o-provedenii-os-proizvodstvo-svyazuyushtikh-materialov-15-06-2022.pdf"
-                                    target="_blank" title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
-                        <li>
-                            <figure><a target="_blank"
-                                    href="/_src/Certificates.Item/3_file/uvedomlenie-ooo-kronoshpan-osb.pdf"
-                                    title="Уведомление ООО Кроношпан ОСБ"> <img alt="Уведомление ООО Кроношпан ОСБ"
-                                        height="600"
-                                        src="/_src/Certificates.Item/3_image/uvedomlenie-ooo-kronoshpan-osb.png"
-                                        width="600" loading="lazy"> </a></figure>
-                            <div class="list_text"> <a target="_blank"
-                                    href="/_src/Certificates.Item/3_file/uvedomlenie-ooo-kronoshpan-osb.pdf"
-                                    title="Уведомление ООО Кроношпан ОСБ"> </a>
-                                <h3><a target="_blank"
-                                        href="/_src/Certificates.Item/3_file/uvedomlenie-ooo-kronoshpan-osb.pdf"
-                                        title="Уведомление ООО Кроношпан ОСБ"></a><a
-                                        href="/_src/Certificates.Item/3_file/uvedomlenie-ooo-kronoshpan-osb.pdf"
-                                        title="Уведомление ООО Кроношпан ОСБ">Уведомление ООО Кроношпан ОСБ</a></h3>
-                                <div class="description"> <a
-                                        href="/_src/Certificates.Item/3_file/uvedomlenie-ooo-kronoshpan-osb.pdf"
-                                        title="Уведомление ООО Кроношпан ОСБ">
-                                        <p>Уведомление ООО Кроношпан ОСБ</p>
-                                    </a> </div>
-                                <div class="medium_description">
-                                    <p>Уведомление ООО Кроношпан ОСБ</p>
-                                </div> <a class="product_btn download"
-                                    href="/_src/Certificates.Item/3_file/uvedomlenie-ooo-kronoshpan-osb.pdf"
-                                    target="_blank" title="Загрузить" download="">Загрузить</a>
-                            </div>
-                        </li>
+                        @foreach ($resume4 as $item4)
+                            <li>
+                                <figure>
+                                    <a target="_blank"
+                                        href="{{asset('upload/digital_library/document/'.$item4->filename)}}"
+                                        title="{{$item4->name}}"> 
+                                        <img
+                                            alt="Пожарный сертификат ОSB-3 Ультрадекор Егорьевск" height="600"
+                                            src="{{asset('upload/digital_library/img/'.$item4->filename_img)}}" width="600"
+                                            loading="lazy"> 
+                                    </a>
+                                </figure>
+                                <div class="list_text"> 
+                                    <a target="_blank"
+                                        href="{{asset('upload/digital_library/document/'.$item4->filename)}}"
+                                        title="{{$item4->name}}"> 
+                                    </a>
+                                    <h3>
+                                        <a target="_blank"
+                                            href="{{asset('upload/digital_library/document/'.$item4->filename)}}"
+                                            title="{{$item4->name}}">
+                                        </a>
+                                        <a
+                                            href="{{asset('upload/digital_library/document/'.$item4->filename)}}"
+                                            title="{{$item4->name}}">{{$item4->name}}
+                                        </a>
+                                    </h3>
+                                    <div class="description"> 
+                                        <a
+                                            href="{{asset('upload/digital_library/document/'.$item4->filename)}}"
+                                            title="{{$item4->name}}">
+                                            <p>{{$item4->name}}</p>
+                                        </a> 
+                                    </div>
+                                    <div class="medium_description">
+                                        <p></p>
+                                    </div> 
+                                    <a class="product_btn download"
+                                        href="{{asset('upload/digital_library/document/'.$item4->filename)}}"
+                                        target="_blank" title="Загрузить" download="">Загрузить
+                                    </a>
+                                </div>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
                 <script type="text/javascript">

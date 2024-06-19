@@ -73,6 +73,14 @@
               </a>
             </li>
             <li class="nav-item">
+              <a href="{{ route('digitals.index') }}" class="nav-link {{ request()->is('digital') ? ' active' : ''}}">
+                <i class="nav-icon fa fa-file-pdf"></i>
+                <p>
+                  Digital Library
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
               <a href="{{route('frontend.index')}}" class="nav-link">
                 <i class="nav-icon fa fa-globe"></i>
                 <p>
