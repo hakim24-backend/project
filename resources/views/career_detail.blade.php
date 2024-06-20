@@ -198,12 +198,12 @@
 
           <div class="col-md-3">
             <div class="section-heading">
-              <h2>Контактная информация</h2>
+              <h2>Контакты</h2>
             </div>
             
             <div class="left-content">
               <p>
-                <span>Имя</span>
+                <span>Организация</span>
 
                 <br>
 
