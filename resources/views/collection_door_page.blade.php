@@ -61,7 +61,7 @@ use \Statickidz\GoogleTranslate;
         @elseif($collection->category->name == 'СТЕНОВЫЕ ПАНЕЛИ')
         Стеновые Панели Мдф
         @elseif($collection->category->name == 'МЕЖКОМНАТНЫЕ ДВЕРИ')
-        МЕЖКОМНАТНЫЕ ДВЕРИ
+          {{$collection->name}}
         @endif
       @endif  
     </span>
