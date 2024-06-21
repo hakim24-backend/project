@@ -198,7 +198,7 @@
 
           <div class="col-md-3">
             <div class="section-heading">
-              <h2>Контакты</h2>
+              <h2>Контакты a</h2>
             </div>
             
             <div class="left-content">
