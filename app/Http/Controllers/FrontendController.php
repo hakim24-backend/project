@@ -47,7 +47,7 @@ class FrontendController extends Controller
             
         }
 
-        if (($category->name1 == 'ПЛИТНЫЕ МАТЕРИАЛЫ' && $category->name !== 'ЛДСП') || ($category->name1 == 'СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ' && $category->name !== 'СТЕНОВЫЕ ПАНЕЛИ МДФ')) {
+        if (($category->name1 == 'МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ' && $category->name !== 'Столешницы') || ($category->name1 == 'ПЛИТНЫЕ МАТЕРИАЛЫ' && $category->name !== 'ЛДСП') || ($category->name1 == 'СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ' && $category->name !== 'СТЕНОВЫЕ ПАНЕЛИ МДФ')) {
             //get collection
             $getCollection = Collection::where('id_category', $category->id)->first();
             return redirect()->route('frontend.collection', $getCollection->id);
