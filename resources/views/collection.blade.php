@@ -147,6 +147,7 @@
               @endif
           </div>
         </form>
+        <br><br><br>
     @endif
         <div class="gallery">
           @foreach ($product as $item)
