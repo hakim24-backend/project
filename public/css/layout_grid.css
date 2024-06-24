@@ -378,7 +378,7 @@ body .gallery-category {
 .gallerys-category {
   
   padding: 150px;
- 
+  margin-bottom: -250px;
   text-align: center;
   color: #ffffff;
   /* background: -webkit-gradient(
