@@ -574,7 +574,7 @@ class FrontendController extends Controller
         ]);
     }
 
-    function library()
+    public function library()
     {
         $active = '';
         $resumeTab1 = Digital::where('category_file', 1)->get();
@@ -588,5 +588,10 @@ class FrontendController extends Controller
             'resume3' => $resumeTab3,
             'resume4' => $resumeTab4
         ]);
+    }
+
+    public function careerv2()
+    {
+        return view('career_v2');
     }
 }

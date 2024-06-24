@@ -1,0 +1,180 @@
+/*!
+ * Start Bootstrap - Shop Item HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+@font-face {
+	font-family: arial;
+	src: url(../fonts/arial.ttf);
+}
+@font-face {
+	font-family: century-gothic;
+	src: url(../fonts/century-gothic.ttf);
+}
+* {
+	font-family: arial;
+}
+body, html {
+	padding: 0px;
+	margin: 0px;
+	background: #000;
+}
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.upper{
+	text-transform: uppercase !important;
+}
+.capital{
+	text-transform: capitalize !important;
+}
+.m-0{
+	margin: 0px;
+}
+a {
+	text-decoration: none;
+}
+ul, ol {
+	margin: 0px;
+	padding: 0px;
+}
+.center {
+	width: 95%;
+	margin: auto;
+	position: relative;
+}
+.half{
+	width: 50%;
+}
+.left{
+	float: left !important;
+}
+.right{
+	float: right !important;
+}
+.bold{
+	font-weight: bold;
+}
+/*.container {
+	width: 100%;
+	max-width: 1080px;
+	margin: auto;
+	position: relative;
+}*/
+.container {
+	width: 100%;
+	float: left;
+	position: relative;
+	overflow: hidden;
+	/*left: 50%;
+	transform: translateX(-50%);
+	margin: 0px 0px 20px 0px;
+	overflow: hidden;*/
+}
+
+header, section, footer, .row {
+	width: 100%;
+	float: left;
+	position: relative;
+}
+.banner{
+	text-align: center;
+}
+.banner img{
+	width: 93%;
+	margin: auto;
+}
+.banner h1{
+	font-family: century-gothic;
+	font-size: 40px;
+	color: #1ed2ca;
+	
+}
+.banner p{
+	color: #fff;
+	font-family: century-gothic;
+	font-size: 18px;
+}
+
+.jobSec{
+	width: 1080px;
+	left: 50%;
+	transform: translateX(-50%);
+	margin: 30px 0px 20px 0px;
+	overflow: hidden;
+	background: #fff;
+}
+
+.contentRow{
+	display: flex;
+	justify-content: space-between;
+	align-items: top;
+}
+.leftBox{
+	width: 30%;
+}
+.leftBox a{
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;
+}
+.rightBox{
+	width: 65%;
+}
+.rightBox a{
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;
+}
+.imgBox{
+	text-align: center;
+}
+.bgRow{
+	background: #b3b3b3;
+}
+.pdtb{
+	padding: 10px 0px 10px 0px;
+}
+.border{
+	border-bottom: 1px solid #000;
+}
+.nomargin{
+	margin: 0px;
+}
+
+@media only screen and (max-width:645px) {
+.container {
+	max-width: 100%;
+	}
+	.center{
+		width: 95%;
+	}
+	.banner img{
+	
+	height: auto;
+}
+	.jobSec{
+		width: 100%;
+	}
+	.contentRow{
+		flex-direction: column;
+	}
+	.leftBox, .rightBox{
+		width: 100%;
+		text-align: center;
+	}
+	.logoBox img{
+		width: 70%;
+	}
+	.leftBox p{
+		font-weight: bold;
+	}
+	
+}
