@@ -48,69 +48,140 @@
                         <thead style="text-align: center">
                         <tr>
                             <th>No</th>
-                            <th>Name</th>
-                            <th>Category</th>
-                            <th>Collection</th>
-                            <th>Image</th>
-                            <th>Description</th>
-                            <th>Image Viewer</th>
-                            <th>Action</th>
+                            <th>Info Product</th>
+                            <th>Info Description Product</th>
+                            <th>View Documentation / Photo</th>
+                            <th>Action Documentation / Photo</th>
+                            <th>Action Product</th>
                         </tr>
                         </thead>
                         <tbody>
                             @forelse ($product as $item)
                                 <tr>
-                                    <td style="text-align: center" width="5%">{{ $loop->iteration }}</td>
-                                    <td width="5%">{{ $item->name }}</td>
-                                    <td width="5%">{{ $item->collection->category->name }}</td>
-                                    <td width="10%">{{ $item->collection->name }}</td>
-                                    <td width="24%" style="text-align: center; vertical-align: middle;">
-                                        @if ($item->filename == null && $item->filename1 == null)
-                                            -
-                                        @else
-                                            <a href="{{ asset('upload/product/'.$item->filename) }}" target="_blank">
-                                                <img width="25%" src="{{ asset('upload/product/'.$item->filename) }}">
-                                            </a>
-                                            <br><br><br>
-                                            @if ($item->filename1 == null)
-                                                <a title="Add File" data-toggle="modal" data-target="#add-file{{ $item->id }}" class="btn btn-warning" href=""><span class="fa fa-plus"></span> Add File</a>
-                                            @else
-                                                <a title="Update File" data-toggle="modal" data-target="#update-file{{ $item->id }}" class="btn btn-success" href=""><span class="fa fa-edit"></span> Update File</a>
-                                                <form action="{{route('product.deleteFile', $item->id)}}" method="POST">
-                                                    @csrf
-                                                    @method('PUT')
-                                                    <button type="submit" class="btn btn-danger show_confirm" data-toggle="tooltip" title='Delete File'><span class="fa fa-trash"></span> Delete File</button>
-                                                </form>
-                                            @endif
-                                        @endif
+                                    <td style="text-align: center; vertical-align: middle">{{$loop->iteration}}</td>
+                                    <td width="15%" style="vertical-align: middle;">
+                                        <table class="table table-bordered">
+                                            <tr>
+                                                <td width="5%">Name Product</td>
+                                                <td width="1%" style="text-align: center">:</td>
+                                                <td width="15%">{{ $item->name }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Category Product</td>
+                                                <td style="text-align: center">:</td>
+                                                <td>{{ $item->collection->category->name }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Collection Product</td>
+                                                <td style="text-align: center">:</td>
+                                                <td>{{ $item->collection->name }}</td>
+                                            </tr>
+                                        </table>
                                     </td>
-                                    <td width="15%" style="text-align: center">
+                                    <td width="20%" style="vertical-align: middle;">
                                         <table class="table table-bordered">
                                             <tbody>
                                                 @foreach ($item->description()->get() as $desc)
                                                 <tr>
-                                                    <td> {{$desc->name}} </td>
-                                                    <td> {{$desc->value}} </td>
+                                                    <td width="15%"> {{$desc->name}} </td>
+                                                    <td width="15%"> {{$desc->value}} </td>
                                                 </tr>
                                                @endforeach
+                                               <tr>
+                                                    <td style="text-align: center" colspan="2"><a title="Update Description" class="btn btn-info" href="{{route('product.edit', $item->id)}}"><span class="fa fa-edit"></span> Update Description</a></td>
+                                               </tr>
                                             </tbody>
-                                        </table><br>
-                                        <a title="Update Image Viewer" class="btn btn-success" href="{{route('product.edit', $item->id)}}"><span class="fa fa-edit"></span> Update Description</a>
+                                        </table>
                                     </td>
-                                    <td width="20%" style="text-align: center; vertical-align: middle">
-                                        @if ($item->detail_filename == null)
-                                            <a title="Add Image Viewer" data-toggle="modal" data-target="#add-image{{ $item->id }}" class="btn btn-warning" href=""><span class="fa fa-plus"></span> Add Image</a>
-                                        @else
-                                            <a href="{{ asset('upload/detail_product/'.$item->detail_filename) }}" target="_blank">
-                                                <img width="40%" src="{{ asset('upload/detail_product/'.$item->detail_filename) }}">
-                                            </a><br><br>
-                                            <a title="Update Image Viewer" data-toggle="modal" data-target="#update-image{{ $item->id }}" class="btn btn-success" href=""><span class="fa fa-edit"></span> Update Image</a>
-                                            <form action="{{route('product.deleteDetailImage', $item->id)}}" method="POST">
-                                                @csrf
-                                                @method('PUT')
-                                                <button type="submit" class="btn btn-danger show_confirm" data-toggle="tooltip" title='Delete Image Viewer'><span class="fa fa-trash"></span> Delete Image</button>
-                                            </form>
-                                        @endif
+                                    <td width="23%" style="vertical-align: middle;">
+                                        <table class="table table-bordered">
+                                            <tr>
+                                                <td>Image Product</td>
+                                                <td style="text-align: center">:</td>
+                                                <td style="text-align: center">
+                                                    @if ($item->filename == null)
+                                                        -
+                                                    @else
+                                                        <a href="{{ asset('upload/product/'.$item->filename) }}" target="_blank">
+                                                            <span class="btn btn-dark">View Product</span>
+                                                        </a>
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>File Product</td>
+                                                <td style="text-align: center">:</td>
+                                                <td style="text-align: center">
+                                                    @if ($item->filename1 == null)
+                                                        -
+                                                    @else
+                                                        <a href="{{ asset('upload/product_file/'.$item->filename1) }}" target="_blank">
+                                                            <span class="btn btn-dark">View File</span>
+                                                        </a>
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>File Image Viewer</td>
+                                                <td style="text-align: center">:</td>
+                                                <td style="text-align: center">
+                                                    @if ($item->detail_filename == null)
+                                                        -
+                                                    @else
+                                                        <a href="{{ asset('upload/detail_product/'.$item->detail_filename) }}" target="_blank">
+                                                            <span class="btn btn-dark">View Image Viewer</span>
+                                                        </a>
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td width="23%" style="vertical-align: middle;">
+                                        <table class="table table-bordered">
+                                            <tr>
+                                                <td>Image Product</td>
+                                                <td style="text-align: center">:</td>
+                                                <td style="text-align: center">
+                                                    @if ($item->filename == null)
+                                                        -
+                                                    @else
+                                                        <a title="Update Product" data-toggle="modal" data-target="#update-product{{ $item->id }}" class="btn btn-info" href=""><span class="fa fa-edit"></span> Update Image</a>
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>File Product</td>
+                                                <td style="text-align: center">:</td>
+                                                <td style="text-align: center">
+                                                    @if ($item->filename1 == null)
+                                                        <a title="Add File" data-toggle="modal" data-target="#add-file{{ $item->id }}" class="btn btn-success" href=""><span class="fa fa-plus"></span> Add File</a>
+                                                    @else
+                                                        <a title="Update File" data-toggle="modal" data-target="#update-file{{ $item->id }}" class="btn btn-success" href=""><span class="fa fa-edit"></span> Update File</a><br>
+                                                        <form action="{{route('product.deleteFile', $item->id)}}" method="POST">
+                                                            @csrf
+                                                            @method('PUT')
+                                                            <button type="submit" class="btn btn-danger show_confirm" data-toggle="tooltip" title='Delete File'><span class="fa fa-trash"></span> Delete File</button>
+                                                        </form>
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>File Image Viewer</td>
+                                                <td style="text-align: center">:</td>
+                                                <td style="text-align: center">
+                                                    @if ($item->detail_filename == null)
+                                                        <a title="Add Image Viewer" data-toggle="modal" data-target="#add-image{{ $item->id }}" class="btn btn-success" href=""><span class="fa fa-plus"></span> Add Image</a>
+                                                    @else
+                                                        <a title="Update Image Viewer" data-toggle="modal" data-target="#update-image{{ $item->id }}" class="btn btn-success" href=""><span class="fa fa-edit"></span> Update Image</a><br>
+                                                        <form action="{{route('product.deleteDetailImage', $item->id)}}" method="POST">
+                                                            @csrf
+                                                            @method('PUT')
+                                                            <button type="submit" class="btn btn-danger show_confirm" data-toggle="tooltip" title='Delete Image Viewer'><span class="fa fa-trash"></span> Delete Image</button>
+                                                        </form>
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </td>
                                     <td style="text-align: center; vertical-align: middle">
                                             <form action="{{route('product.destroy', $item->id)}}" method="POST">
