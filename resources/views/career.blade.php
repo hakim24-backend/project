@@ -215,6 +215,8 @@
                               <small>
                                    <strong title="Posted on"><i class="fa fa-calendar"></i> {{$item->date}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;
                                    <strong title="Type"><i class="fa fa-file"></i> {{$item->type}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                              </small><br>
+                              <small>
                                    <strong title="Location"><i class="fa fa-map-marker"></i> {{$item->location}}</strong>
                               </small>
                               </div>
