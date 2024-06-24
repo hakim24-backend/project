@@ -12,6 +12,12 @@
 </head>
 
 <body>
+
+	{{-- Header --}}
+	{{-- @include('components-frontend.header', [
+			'active' => $active
+	]); --}}
+
 <div class="container">
 	<div class="row banner">
 		<img src="{{asset('career2/images/banner2.png')}}" />
@@ -119,7 +125,7 @@
 		<div class="center">
 			<div class="row contentRow">
 				<div class="leftBox logoBox">
-					<a href="#"><img src="images/liehtp.png" alt="" /></a>
+					<a href="#"><img src="{{asset('career2/images/liehtp.png')}}" alt="" /></a>
 				</div>
 				<div class="rightBox contentBox">
 					<p class=""><strong><a href="#">ООО «СОЮЗ-ЦЕНТР»</a></strong></p>
@@ -172,7 +178,7 @@
 		<div class="center">
 			<div class="row contentRow">
 				<div class="leftBox logoBox">
-					<a href="#"><img src="images/hebct.png" alt="" /></a>
+					<a href="#"><img src="{{asset('career2/images/hebct.png')}}" alt="" /></a>
 				</div>
 				<div class="rightBox contentBox">
 					<p class=""><strong><a href="#">ОАО «ЛЕСПЛИТИНВЕСТ»</a></strong></p>
@@ -241,7 +247,7 @@
 		<div class="center">
 			<div class="row contentRow">
 				<div class="leftBox logoBox">
-					<a href="#"><img src="images/soyuz.png" alt="" /></a>
+					<a href="#"><img src="{{asset('career2/images/soyuz.png')}}" alt="" /></a>
 				</div>
 				<div class="rightBox contentBox">
 					<p class=""><strong><a href="#">ООО «SOYUZ GROUP»</a></strong></p>
@@ -288,5 +294,11 @@
 	</div>
 	</div>
 </div>
+
+{{-- Footer --}}
+{{-- @include('components-frontend.footer') --}}
+
+<script src="{{asset('/career/vendor/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('/career/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 </body>
 </html>
