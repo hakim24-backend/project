@@ -18,7 +18,7 @@
 body, html {
 	padding: 0px;
 	margin: 0px;
-	background: #000;
+	background: #000000;
 }
 .text-center {
 	text-align: center;
@@ -62,42 +62,43 @@ ul, ol {
 .bold{
 	font-weight: bold;
 }
-/*.container {
+/*.container-career {
 	width: 100%;
 	max-width: 1080px;
 	margin: auto;
 	position: relative;
 }*/
-.container {
+.container-career {
 	width: 100%;
 	float: left;
 	position: relative;
 	overflow: hidden;
+	margin-bottom: 50px;
 	/*left: 50%;
 	transform: translateX(-50%);
 	margin: 0px 0px 20px 0px;
 	overflow: hidden;*/
 }
 
-header, section, footer, .row {
+header, section, footer, .row-career {
 	width: 100%;
 	float: left;
 	position: relative;
 }
-.banner{
+.banner-career{
 	text-align: center;
 }
-.banner img{
+.banner-career .img-career{
 	width: 93%;
 	margin: auto;
 }
-.banner h1{
+.banner-career h1{
 	font-family: century-gothic;
 	font-size: 40px;
 	color: #1ed2ca;
 	
 }
-.banner p{
+.banner-career p{
 	color: #fff;
 	font-family: century-gothic;
 	font-size: 18px;
@@ -142,7 +143,7 @@ header, section, footer, .row {
 .pdtb{
 	padding: 10px 0px 10px 0px;
 }
-.border{
+.border-career{
 	border-bottom: 1px solid #000;
 }
 .nomargin{
@@ -150,13 +151,13 @@ header, section, footer, .row {
 }
 
 @media only screen and (max-width:645px) {
-.container {
+.container-career {
 	max-width: 100%;
 	}
 	.center{
 		width: 95%;
 	}
-	.banner img{
+	.banner-career .img-career{
 	
 	height: auto;
 }
@@ -170,7 +171,7 @@ header, section, footer, .row {
 		width: 100%;
 		text-align: center;
 	}
-	.logoBox img{
+	.logoBox .img-career{
 		width: 70%;
 	}
 	.leftBox p{

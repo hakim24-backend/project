@@ -592,7 +592,7 @@ class FrontendController extends Controller
 
     public function careerv2()
     {
-        $active = 'carrersv2';
+        $active = 'careersv2';
         return view('career_v2', [
             'active' => $active
         ]);
