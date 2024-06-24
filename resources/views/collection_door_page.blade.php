@@ -66,6 +66,7 @@ use \Statickidz\GoogleTranslate;
       @endif  
     </span>
     <span>
+        <br><br>
         @if ($collection->category != null)
         {!!$collection->description!!}
         @endif
