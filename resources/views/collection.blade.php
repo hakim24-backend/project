@@ -121,7 +121,7 @@
       </span>
     </div>
 
-    @if ($collection->category->name !== 'СТЕНОВЫЕ ПАНЕЛИ МДФ')
+    @if ($collection->category->name == 'Столешницы' || $collection->category->name == 'ЛДСП')
       <form action="{{route('frontend.filter', $collection->id)}}" method="post">
       @csrf
           <div class="checkbox-container">
