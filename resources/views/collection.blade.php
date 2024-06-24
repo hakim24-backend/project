@@ -93,7 +93,7 @@
     ])
 
     <!-- Layout grid -->
-    <div class="gallerys">
+    <div class="gallerys-category">
       
       <span> 
         @if ($collection->category->name == 'Столешницы')
@@ -106,19 +106,19 @@
           {{$collection->category->name}}
         @endif
       </span>
-      <span> <p>
+      <span>
+        <br><br>
         @if ($collection->category->name == 'СТЕНОВЫЕ ПАНЕЛИ МДФ')
           МДФ-панели
-          <br><br>
-          {{$collection->description}}
+          {!!$collection->description!!}
         @else
           @if ($collection->description == "-")
             {{-- no action --}}
           @else
-            {{$collection->description}}
+            {!!$collection->description!!}
           @endif
         @endif
-      </p> </span>
+      </span>
     </div>
 
     @if ($collection->category->name !== 'СТЕНОВЫЕ ПАНЕЛИ МДФ')

@@ -23,7 +23,14 @@ class CollectionController extends Controller
         }
         $dataSelect2 = implode(", ", $dataSelect2);
 
-        return view('collection.index', compact('collection', 'dataSelect2'));
+        $dataId = Collection::select('id')->get()->toArray();
+        $dataSummernote = [];
+        foreach ($dataId as $key => $value) {
+            $dataSummernote[$key] = $value['id'];
+        }
+        $dataSummernote = implode(", ", $dataSummernote);
+
+        return view('collection.index', compact('collection', 'dataSelect2', 'dataSummernote'));
     }
 
     /**

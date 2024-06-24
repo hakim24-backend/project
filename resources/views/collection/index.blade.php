@@ -11,6 +11,7 @@
     <!-- Select2 -->
     <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.min.css')}}">
 
     <style>
         .select2-container--default .select2-selection--single .select2-selection__rendered {
@@ -69,7 +70,7 @@
                                         @if ($item->description == "" || $item->description == null || $item->description == "-")
                                             {{-- no action --}}
                                         @else
-                                            {{ $item->description }}
+                                            {!! $item->description !!}
                                         @endif
                                     </td>
                                     <td style="text-align: center; vertical-align: middle;">
@@ -119,7 +120,7 @@
   </div>
 
   <div class="modal fade" id="create-collection">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Create Collection</h4>
@@ -160,12 +161,9 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Description Collection</label>
-                                        <textarea name="description" rows="5" class="form-control @error('description') is-invalid @enderror" placeholder="Enter Description">{{ old('description') }}</textarea>
-                                        @error('description')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                <div class="form-group">
+                                    <label>Description Collection</label>
+                                        <textarea id="summernote" name="description"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>Upload Image</label>
@@ -220,6 +218,7 @@
     <!-- bs-custom-file-input -->
     <script src=" {{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }} "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+    <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
 
     {{-- Page level custom scripts --}}
     <script>
@@ -306,6 +305,46 @@
                 }
             });
         });
+
+        $(function () {
+            
+            // Summernote
+            $('#summernote').summernote()
+
+            // CodeMirror
+            CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+            mode: "htmlmixed",
+            theme: "monokai"
+            });
+        })
+
+        const numbers = [<?= $dataSummernote ?>];
+            numbers.forEach(myFunction);
+            function myFunction(item) {
+                $(function () {
+            
+                    // Summernote
+                    $('#summernote_update'+item).summernote()
+
+                    // CodeMirror
+                    CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                    mode: "htmlmixed",
+                    theme: "monokai"
+                    });
+                })       
+        }
+
+        const numbers1 = [<?= $dataSummernote ?>];
+            numbers1.forEach(myFunctions);
+            function myFunctions(item) {
+                $(function () {
+                    $('#summernote_update'+item).next().on('focusout', ".note-codable", function() {
+                        if ($('#summernote_update'+item).summernote('codeview.isActivated')) {
+                            $('#summernote_update'+item).summernote('codeview.deactivate');
+                        }
+                    });
+                })       
+        }
 
     </script>
 @endpush

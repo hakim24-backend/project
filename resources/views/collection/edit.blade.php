@@ -41,10 +41,7 @@
                                 <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Description Collection</label>
-                                            <textarea name="description" rows="5" class="form-control @error('description') is-invalid @enderror" placeholder="Enter Description">{{ old('description', $item->description) }}</textarea>
-                                            @error('description')
-                                                <span class="text-danger">{{ $message }}</span>
-                                            @enderror
+                                            <textarea id="summernote_update{{$item->id}}" name="description">{!! $item->description !!}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label>Upload Image</label>
