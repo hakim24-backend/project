@@ -50,7 +50,7 @@ use \Statickidz\GoogleTranslate;
   @include('components-frontend.header')
 
   <!-- Layout grid -->
-  <div class="gallerys">
+  <div class="gallerys-category">
 
     <span> 
       @if ($collection->category != null)
@@ -65,11 +65,11 @@ use \Statickidz\GoogleTranslate;
         @endif
       @endif  
     </span>
-    <span> <p>
+    <span>
         @if ($collection->category != null)
         {!!$collection->description!!}
         @endif
-    </p> </span>
+    </span>
   </div>
   <div class="gallery">
     @if ($product != null)
