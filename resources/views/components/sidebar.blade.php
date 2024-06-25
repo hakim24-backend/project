@@ -73,7 +73,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ route('digitals.index') }}" class="nav-link {{ request()->is('digital') ? ' active' : ''}}">
+              <a href="{{ route('careertwo.index') }}" class="nav-link {{ request()->is('careertwo') ? ' active' : ''}}">
+                <i class="nav-icon fa fa-shopping-bag"></i>
+                <p>
+                  Career Model 2
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('digitals.index') }}" class="nav-link {{ request()->is('digitals') ? ' active' : ''}}">
                 <i class="nav-icon fa fa-file-pdf"></i>
                 <p>
                   Digital Library
