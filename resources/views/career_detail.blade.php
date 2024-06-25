@@ -194,6 +194,8 @@
             </p>
 
             {!! $careerDetail->desc_location !!}
+            <br>
+            <iframe src="https://yandex.ru/maps/org/1184371713" title="W3Schools Free Online Web Tutorials"></iframe>
           </div>
 
           <div class="col-md-3">
