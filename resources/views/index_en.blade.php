@@ -117,7 +117,7 @@
                       {{$result1}}
                     </p>
                     <div class="cta">
-                      <a href="{{route('frontend.category', $v->name)}}" class="button button-primary">More details</a>
+                      <a href="{{route('frontend.category', $v->category->name)}}" class="button button-primary">More details</a>
                     </div>
                   </div>
                 </div>
