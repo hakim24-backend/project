@@ -84,7 +84,7 @@ Route::middleware('auth')->group(function(){
     Route::resource('careerier', CareerController::class);
     Route::resource('typical', TypicalController::class);
     Route::resource('digitals', DigitalController::class);
-    Route::resource('careertwo', CareertwoController::class);
+    Route::resource('careeriertwo', CareertwoController::class);
 
     //ajax select2
     Route::get('/ajax-category', [AjaxController::class, 'selectCategory'])->name('ajax-category');
