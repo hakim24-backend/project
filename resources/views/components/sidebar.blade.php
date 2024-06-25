@@ -73,7 +73,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ route('careeriertwo.index') }}" class="nav-link {{ request()->is('careeriertwo') ? ' active' : ''}}">
+              <a href="{{ route('careertwo.index') }}" class="nav-link {{ request()->is('careertwo') ? ' active' : ''}}">
                 <i class="nav-icon fa fa-shopping-bag"></i>
                 <p>
                   Career Model 2
