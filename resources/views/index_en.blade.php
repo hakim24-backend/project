@@ -117,7 +117,11 @@
                       {{$result1}}
                     </p>
                     <div class="cta">
-                      <a href="{{route('frontend.categoryEn', $v->category->name)}}" class="button button-primary">More details</a>
+                      @if ($v->id_category == null)
+                        <a href="#" class="button button-primary">More details</a>
+                      @else
+                        <a href="{{route('frontend.categoryEn', $v->category->name)}}" class="button button-primary">More details</a>
+                      @endif
                     </div>
                   </div>
                 </div>

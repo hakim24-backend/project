@@ -26,4 +26,9 @@ class DetailCareertwo extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function careertwo()
+    {
+        return $this->belongsTo(Careertwo::class, 'id_careertwo');
+    }
 }

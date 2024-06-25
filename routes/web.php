@@ -55,6 +55,7 @@ Route::post('/filter/{id}', [FrontendController::class, 'filter'])->name('fronte
 Route::post('/filter/{id}/en', [FrontendController::class, 'filterEn'])->name('frontend.filterEn');
 Route::get('/careers', [FrontendController::class, 'career'])->name('frontend.career');
 Route::get('/careersv2', [FrontendController::class, 'careerv2'])->name('frontend.careerv2');
+Route::get('/careersDetailv2/{id}', [FrontendController::class, 'careerDetailv2'])->name('frontend.careerDetailv2');
 Route::get('/careers/en', [FrontendController::class, 'careerEn'])->name('frontend.careerEn');
 Route::get('/careerDetail/{id}', [FrontendController::class, 'careerDetail'])->name('frontend.careerDetail');
 Route::get('/careerDetail/{id}/en', [FrontendController::class, 'careerDetailEn'])->name('frontend.careerDetailEn');
@@ -120,4 +121,10 @@ Route::middleware('auth')->group(function(){
     Route::delete('/typical-collection/deleteTypical/{id}/{id_collection}', [CollectionController::class, 'deleteTypical'])->name('typicalCollection.deleteTypical');
     Route::get('/typical-collection/edit/{id}', [CollectionController::class, 'editTypical'])->name('typicalCollection.editTypical');
     Route::put('/typical-collection/updateTypical/{id}', [CollectionController::class, 'updateTypical'])->name('typicalCollection.updateTypical');
+
+    //career model 2
+    Route::get('/jobs/{id}', [CareertwoController::class, 'indexJob'])->name('job.index');
+    Route::post('/job/storeJob/{id}', [CareertwoController::class, 'storeJob'])->name('job.storeJob');
+    Route::delete('/job/deleteJob/{id}/{id_careertwo}', [CareertwoController::class, 'deleteJob'])->name('job.deleteJob');
+    Route::put('/job/updateJob/{id}', [CareertwoController::class, 'updateJob'])->name('job.updateJob');
 });

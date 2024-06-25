@@ -12,6 +12,8 @@ use App\Models\CareerDetail;
 use App\Models\Typical;
 use App\Models\TypicalCollection;
 use App\Models\Digital;
+use App\Models\Careertwo;
+use App\Models\DetailCareertwo;
 
 use \Statickidz\GoogleTranslate;
 use Illuminate\Http\Request;
@@ -592,8 +594,20 @@ class FrontendController extends Controller
 
     public function careerv2()
     {
+        $careertwo = Careertwo::all();
         $active = 'careersv2';
         return view('career_v2', [
+            'active' => $active,
+            'careertwo' => $careertwo
+        ]);
+    }
+
+    public function careerDetailv2($id)
+    {
+        $detailCareertwo = DetailCareertwo::findOrFail($id);
+        $active = 'careersv2';
+        return view('career_detail_v2', [
+            'detailCareertwo' => $detailCareertwo,
             'active' => $active
         ]);
     }

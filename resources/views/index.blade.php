@@ -94,7 +94,11 @@
                     <h1>{{$v->name}}<span class="primary-color">|</span></h1>
                     <p>{{$v->description}}</p>
                     <div class="cta">
-                      <a href="{{route('frontend.category', $v->category->name)}}" class="button button-primary">ПОДРОБНЕЕ</a>
+                      @if ($v->id_category == null)
+                        <a href="#" class="button button-primary">ПОДРОБНЕЕ</a>
+                      @else
+                        <a href="{{route('frontend.category', $v->category->name)}}" class="button button-primary">ПОДРОБНЕЕ</a>
+                      @endif
                     </div>
                   </div>
                 </div>

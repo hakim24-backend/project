@@ -1,6 +1,5 @@
 <?php 
-    use App\Models\CareerDetail;
-    use App\Models\Resume;
+    use App\Models\DetailCareertwo;
 ?>
 
 @extends('layouts.app')
@@ -33,7 +32,7 @@
                 <div class="card">
                     <div class="card-header">
                         <button type="button" class="btn bg-gradient-success" data-toggle="modal" data-target="#create-careertwo">
-                            <span><i class="fa fa-plus"></i></span> Create
+                            <span><i class="fa fa-plus"></i></span> Create Company
                         </button>
                     </div>
                     <!-- /.card-header -->
@@ -45,6 +44,7 @@
                             <th width="25%">Name Company</th>
                             <th>Info Company</th>
                             <th>Photo</th>
+                            <th width="10%">Action Job</th>
                             <th width="10%">Action</th>
                         </tr>
                         </thead>
@@ -52,8 +52,8 @@
                             @forelse ($careertwo as $item)
                                 <tr>
                                     <td style="text-align: center">{{ $loop->iteration }}</td>
-                                    <td style="text-align: center">{{$item->name_company}}</td>
-                                    <td style="text-align: center">{{$item->info_company}}</td>
+                                    <td style="text-align: left">{{$item->name_company}}</td>
+                                    <td style="text-align: left">{{$item->info_company}}</td>
                                     <td style="text-align: center; vertical-align: middle;">
                                         @if ($item->filename == null)
                                             -
@@ -64,18 +64,24 @@
                                         @endif
                                     </td>
                                     <td style="text-align: center; vertical-align: middle;">
-                                        <form action="{{route('careerier.destroy', $item->id)}}" method="POST">
+                                        @php
+                                            $job = DetailCareertwo::where('id_careertwo', $item->id)->count();
+                                        @endphp
+                                        <a href="{{route('job.index', $item->id)}}" class="btn btn-success"><span><i class="fa fa-briefcase"></i></span> Jobs <span class="badge badge-danger">{{$job}}</span></a>
+                                    </td>
+                                    <td style="text-align: center; vertical-align: middle;">
+                                        <form action="{{route('careertwo.destroy', $item->id)}}" method="POST">
                                             @csrf
-                                            <a title="Update careerier" data-toggle="modal" data-target="#update-careerier{{ $item->id }}" class="btn btn-info" href=""><span class="fa fa-edit"></span></a>
+                                            <a title="Update Career Model 2" data-toggle="modal" data-target="#update-careertwo{{ $item->id }}" class="btn btn-info" href=""><span class="fa fa-edit"></span></a>
                                             <input name="_method" type="hidden" value="DELETE">
-                                            <button type="submit" class="btn btn-danger show_confirm" data-toggle="tooltip" title='Delete careerier'><span class="fa fa-trash"></span></button>
+                                            <button type="submit" class="btn btn-danger show_confirm" data-toggle="tooltip" title='Delete Career Model 2'><span class="fa fa-trash"></span></button>
                                         </form>
                                     </td>
-                                    @include('career.edit')
+                                    @include('careertwo.edit')
                                 </tr>
                             @empty
                             <tr>
-                                <td class="text-center text-mute" colspan="6"><b>Data career is empty</b></td>
+                                <td class="text-center text-mute" colspan="6"><b>Data career model 2 is empty</b></td>
                             </tr>
                             @endforelse
                         </tbody>
@@ -90,7 +96,7 @@
   </div>
 
   <div class="modal fade" id="create-careertwo">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Create Career Model 2</h4>

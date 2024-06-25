@@ -1,3 +1,6 @@
+<?php
+    use App\Models\DetailCareertwo;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,276 +59,69 @@
             </p>
         </div>
         <div class="row-career jobSec">
-            <div class="row-career bgRow pdtb">
 
-                <div class="center">
-                    <div class="row-career contentRow">
-                        <div class="leftBox logoBox">
-                            <a href="#"><img src="{{asset('career2/images/coio.png')}}" alt="" /></a>
+            {{-- foreach company --}}
+            @foreach ($careertwo as $item)
+                <div class="row-career bgRow pdtb">
+                    <div class="center">
+                        
+                        <div class="row-career contentRow">
+                            <div class="leftBox logoBox">
+                                <img src="{{asset('upload/careertwo/'.$item->filename)}}" alt="" />
+                            </div>
+                            <div class="rightBox contentBox">
+                                <p class=""><strong>{{$item->name_company}}</strong></p>
+                                <p>
+                                    {{$item->info_company}}
+                                </p>
+                            </div>
                         </div>
-                        <div class="rightBox contentBox">
-                            <p class=""><strong><a href="#">ООО «СоюзБалтКомплект»</a></strong></p>
-                            <p>
-                                196643, г. Санкт-Петербург, п. Саперный, тер. Предприятия Балтика, д. 3,
-                                литера ЮА
-                            </p>
-                        </div>
+                        
                     </div>
                 </div>
 
-            </div>
-
-            <div class="row-career pdtb">
-                <div class="center">
-                    <div class="row-career contentRow border-career">
-                        <div class="leftBox">
-                            <p>
-                                <a href="#">Водитель погрузчика</a>
-                            </p>
-                        </div>
-                        <div class="rightBox contentBox">
-                            <p>
-                                <strong>требования:</strong> Мужчина, возраст от 18 лет, без вредных привычек,
-                                водительские права категории «В», «С».
-                            </p>
-                            <p>
-                                <strong>график работы:</strong> 2/2, выходной: суббота, воскресенье
-                            </p>
-                            <p>
-                                <strong>заработная плата:</strong> 80 000 руб
-                            </p>
-                            <p>
-                                <strong>место работы:</strong> г. Санкт-Петербург, п. Саперный, тер. Предприятия
-                                Балтика, д. 3
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="row-career contentRow border-career">
-                        <div class="leftBox">
-                            <p>
-                                <a href="#">Наладчик станков с ЧПУ</a>
-                            </p>
-                        </div>
-                        <div class="rightBox contentBox">
-                            <p>
-                                <strong>требования:</strong> Мужчина, возраст от 18 лет, образование не ниже
-                                среднего специального, с опытом работы
-                            </p>
-                            <p>
-                                <strong>график работы:</strong> 5/2, выходной: суббота, воскресенье
-                            </p>
-                            <p>
-                                <strong>заработная плата:</strong> 80 000 руб
-                            </p>
-                            <p>
-                                <strong>место работы:</strong> г. Санкт-Петербург, п. Саперный, тер. Предприятия
-                                Балтика, д. 3
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="row-career contentRow">
-                        <div class="leftBox">
-                            <p>
-                                <a href="#">Менеджер по продажам</a>
-                            </p>
-                        </div>
-                        <div class="rightBox contentBox">
-                            <p>
-                                <strong>требования:</strong> Высшее образование, опыт активных и пассивных продаж,
-                                стрессоустойчивость, коммуникабельность, грамотная устная
-                                и письменная речь, владение компьютерными прграммами 1С
-                            </p>
-                            <p>
-                                <strong>график работы:</strong> 5/2, выходной: суббота, воскресенье,
-                            </p>
-                            <p>
-                                <strong>заработная плата:</strong> 80 000 руб
-                            </p>
-                            <p>
-                                <strong>место работы:</strong> г. Санкт-Петербург, ул. Шпалерная, д.51А, БЦ
-                                «Таврический»
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row-career bgRow pdtb">
-
-                <div class="center">
-                    <div class="row-career contentRow">
-                        <div class="leftBox logoBox">
-                            <a href="#"><img src="{{asset('career2/images/liehtp.png')}}" alt="" /></a>
-                        </div>
-                        <div class="rightBox contentBox">
-                            <p class=""><strong><a href="#">ООО «СОЮЗ-ЦЕНТР»</a></strong></p>
-                            <p>
-                                <strong>Калужский многопрофильный деревоперерабатывающий
-                                    комбинат (КМДК)</strong> <br />
-                                Калужская обл, г. Балабаново, пл. 50 лет Октября, д.3
-                            </p>
-                        </div>
+                <div class="row-career pdtb">
+                    <div class="center">
+                        
+                        @php
+                            $detailCareertwo = DetailCareertwo::where('id_careertwo', $item->id)->get();
+                            $start=count($detailCareertwo);$end=0;
+                        @endphp
+                        @foreach ($detailCareertwo as $value)
+                            @php $end=$end+1; @endphp
+                            
+                            @if ($end < $start)
+                                <div class="row-career contentRow border-career">
+                            @else
+                                <div class="row-career contentRow">
+                            @endif
+                            
+                                <div class="leftBox">
+                                    <p>
+                                        <a href="{{route('frontend.careerDetailv2', $value->id)}}">{{$value->job}}</a>
+                                    </p>
+                                </div>
+                                <div class="rightBox contentBox">
+                                    <p>
+                                        <strong>требования:</strong> {{$value->requirment}}
+                                    </p>
+                                    <p>
+                                        <strong>график работы:</strong> {{$value->schedule}}, выходной: {{$value->day_of}}
+                                    </p>
+                                    <p>
+                                        <strong>заработная плата:</strong> @salary($value->salary)
+                                    </p>
+                                    <p>
+                                        <strong>место работы:</strong> {{$value->location}}
+                                    </p>
+                                </div>
+                            </div>
+                        @endforeach
+    
                     </div>
                 </div>
 
-            </div>
-
-            <div class="row-career pdtb">
-                <div class="center">
-                    <div class="row-career contentRow">
-                        <div class="leftBox">
-                            <p>
-                                <a href="#">Водитель погрузчика</a>
-                            </p>
-                        </div>
-                        <div class="rightBox contentBox">
-                            <p>
-                                <strong>требования:</strong> Мужчина, возраст от 18 лет, без вредных привычек,
-                                водительские права категории «В», «С».
-
-
-                            </p>
-                            <p>
-                                <strong>график работы:</strong> 2/2, выходной: суббота, воскресенье,
-
-                            </p>
-                            <p>
-
-                                <strong>заработная плата:</strong> 80 000 руб
-
-
-                            </p>
-                            <p>
-                                <strong>место работы:</strong> Калужская обл, г. Балабаново, пл. 50 лет Октября, д.3
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row-career bgRow pdtb">
-
-                <div class="center">
-                    <div class="row-career contentRow">
-                        <div class="leftBox logoBox">
-                            <a href="#"><img src="{{asset('career2/images/hebct.png')}}" alt="" /></a>
-                        </div>
-                        <div class="rightBox contentBox">
-                            <p class=""><strong><a href="#">ОАО «ЛЕСПЛИТИНВЕСТ»</a></strong></p>
-                            <p>
-                                Ленинградская обл, г. Приозерск, ул. Инженерная, д.13
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row-career pdtb">
-                <div class="center">
-                    <div class="row-career contentRow border-career">
-                        <div class="leftBox">
-                            <p>
-                                <a href="#">Водитель погрузчика</a>
-                            </p>
-                        </div>
-                        <div class="rightBox contentBox">
-                            <p>
-                                <strong>требования:</strong> Мужчина, возраст от 18 лет, без вредных привычек,
-                                водительские права категории «В», «С».
-                            </p>
-                            <p>
-                                <strong>график работы: 2/2, выходной:</strong> суббота, воскресенье,
-                            </p>
-                            <p>
-                                <strong>заработная плата:</strong> 80 000 руб
-                            </p>
-                            <p>
-                                <strong>место работы:</strong> Ленинградская обл, г. Приозерск, ул. Инженерная, д.13
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="row-career contentRow">
-                        <div class="leftBox">
-                            <p>
-                                <a href="#">Менеджер по продажам</a>
-                            </p>
-                        </div>
-                        <div class="rightBox contentBox">
-                            <p>
-                                <strong>требования:</strong> Высшее образование, опыт активных и пассивных продаж,
-                                стрессоустойчивость, коммуникабельность, грамотная устная
-                                и письменная речь, владение компьютерными прграммами 1С
-                            </p>
-                            <p>
-                                <strong>график работы: 5/2, выходной:</strong> суббота, воскресенье,
-                            </p>
-                            <p>
-                                <strong>заработная плата:</strong> 80 000 руб
-                            </p>
-                            <p>
-                                <strong>место работы:</strong> г. Санкт-Петербург, ул. Шпалерная, д.51А, БЦ
-                                «Таврический»
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row-career bgRow pdtb">
-
-                <div class="center">
-                    <div class="row-career contentRow">
-                        <div class="leftBox logoBox">
-                            <a href="#"><img src="{{asset('career2/images/soyuz.png')}}" alt="" /></a>
-                        </div>
-                        <div class="rightBox contentBox">
-                            <p class=""><strong><a href="#">ООО «SOYUZ GROUP»</a></strong></p>
-                            <p>
-                                91015, Россия, Санкт-Петербург, ул. Шпалерная, д. 51А
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row-career pdtb">
-                <div class="center">
-                    <div class="row-career contentRow">
-                        <div class="leftBox">
-                            <p>
-                                <a href="#">Менеджер по продажам</a>
-                            </p>
-                        </div>
-                        <div class="rightBox contentBox">
-                            <p>
-                                <strong>требования:</strong> Высшее образование, опыт активных и пассивных продаж,
-                                стрессоустойчивость, коммуникабельность, грамотная устная
-                                и письменная речь, владение компьютерными прграммами 1С
-
-                            </p>
-                            <p>
-                                <strong>график работы:</strong> 5/2, выходной: суббота, воскресенье,
-
-                            </p>
-                            <p>
-
-                                <strong>заработная плата:</strong> 80 000 руб
-
-
-                            </p>
-                            <p>
-                                <strong>место работы:</strong> г. Санкт-Петербург, ул. Шпалерная, д.51А, БЦ
-                                «Таврический»
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 	<br><br><br>
