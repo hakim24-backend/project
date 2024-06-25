@@ -94,7 +94,7 @@
                     <h1>{{$v->name}}<span class="primary-color">|</span></h1>
                     <p>{{$v->description}}</p>
                     <div class="cta">
-                      <a href="{{route('frontend.category', $v->name)}}" class="button button-primary">ПОДРОБНЕЕ</a>
+                      <a href="{{route('frontend.category', $v->category->name)}}" class="button button-primary">ПОДРОБНЕЕ</a>
                     </div>
                   </div>
                 </div>

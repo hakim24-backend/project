@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Slider;
+use App\Models\Category;
 
 class SliderController extends Controller
 {
@@ -15,6 +16,15 @@ class SliderController extends Controller
         $slider = Slider::all();
         $cekSlider = Slider::count();
 
+        $dataId = Slider::select('id')->get()->toArray();
+        // dd($dataId);
+        
+        $dataSelect2 = [];
+        foreach ($dataId as $key => $value) {
+            $dataSelect2[$key] = $value['id'];
+        }
+        $dataSelect2 = implode(", ", $dataSelect2);
+
         //cek database for name css
         if ($cekSlider == 0) {
             $lenght = 1;
@@ -23,7 +33,7 @@ class SliderController extends Controller
         }
 
         $name_css = 'slide'.$lenght;
-        return view('slider.index', compact('slider', 'name_css'));
+        return view('slider.index', compact('slider', 'name_css', 'dataSelect2'));
     }
 
     /**
@@ -42,6 +52,7 @@ class SliderController extends Controller
         $validateSlider = $this->validate($request, [
             'name' => 'required|string',
             'description' => 'required|string',
+            'id_category' => 'required|integer',
             'filename' => 'required|image'
         ]);
 
@@ -60,6 +71,7 @@ class SliderController extends Controller
         $validateSlider = Slider::create([
             'name' => $request->name,
             'name_css' => $request->name_css_hidden,
+            'id_category' => $request->id_category,
             'description' => $request->description,
             'status' => $status,
             'filename' => $nameFile
@@ -98,6 +110,7 @@ class SliderController extends Controller
 
             $slider->update([
                 'name' => $request->name,
+                'id_category' => $request->id_category_update,
                 'description' => $request->description
             ]);
             return redirect()->route('slider.index');
@@ -110,6 +123,7 @@ class SliderController extends Controller
 
             $slider->update([
                 'name' => $request->name,
+                'id_category' => $request->id_category_update,
                 'description' => $request->description,
                 'filename' => $nameFile
             ]);

@@ -16,7 +16,13 @@ class Slider extends Model
         'filename',
         'description',
         'status',
+        'id_category',
         'created_at',
         'updated_at'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'id_category');
+    }
 }

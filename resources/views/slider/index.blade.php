@@ -50,6 +50,7 @@
                             <th>No</th>
                             <th>Name</th>
                             <th>Name CSS</th>
+                            <th>Link Category</th>
                             <th>Description</th>
                             <th>Image</th>
                             <th>Action</th>
@@ -61,6 +62,13 @@
                                     <td style="text-align: center" width="5%">{{ $loop->iteration }}</td>
                                     <td width="20%">{{ $item->name }}</td>
                                     <td width="10%">{{ $item->name_css }}</td>
+                                    <td>
+                                        @if ($item->id_category == null)
+                                            -
+                                        @else
+                                            {{$item->category->name}}
+                                        @endif
+                                    </td>
                                     <td width="20%">{{ $item->description }}</td>
                                     <td style="text-align: center" width="50%">
                                         @if ($item->filename == null)
@@ -135,6 +143,23 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                     <input name="name_css_hidden" type="hidden" value="{{$name_css}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Link</label>
+                                    <input class="form-control" value="https://susu.maria-ladouce.fr/category/" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Category</label>
+                                    <select required id="select_category" name="id_category" class="form-control select2 select2-success  @error('id_category') is-invalid @enderror" data-dropdown-css-class="select2-success">
+                                    {{-- <select required id="select_category" name="category" class="form-control select2bs4" style="width: 100%;"> --}}
+                                        
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -215,6 +240,54 @@
             $('.select2bs4').select2({
                 theme: 'bootstrap4'
             })
+        });
+
+        $(document).ready(function () {
+
+            // Select2 Single  with Placeholder
+            $('#select_category').select2({
+                allowClear: true,
+                ajax: {
+                    url: "{{ route('ajax-category') }}",
+                    dataType: 'json',
+                    delay: 250,
+                    processResults: function(data) {
+                        return {
+                            results: $.map(data, function(item) {
+                                return {
+                                text: item.name,
+                                id: item.id
+                                }
+                            })
+                        };
+                    },
+                    cache: true
+                }
+            });
+
+            const numbers = [<?= $dataSelect2 ?>];
+            numbers.forEach(myFunction);
+            function myFunction(item) {
+                $('#select_category_update'+item).select2({
+                    allowClear: true,
+                    ajax: {
+                        url: "{{ route('ajax-category') }}",
+                        dataType: 'json',
+                        delay: 250,
+                        processResults: function(data) {
+                            return {
+                                results: $.map(data, function(item) {
+                                    return {
+                                    text: item.name,
+                                    id: item.id
+                                    }
+                                })
+                            };
+                        },
+                        cache: true
+                    }
+                });
+            }
         });
 
         $('.show_confirm').click(function(event) {

@@ -39,6 +39,26 @@
                                 </div>
                             </div>
                             <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Link</label>
+                                        <input class="form-control" value="https://susu.maria-ladouce.fr/category/" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Category</label>
+                                        <select required id="select_category_update{{$item->id}}" name="id_category_update" class="form-control select2 select2-success  @error('id_category_update') is-invalid @enderror" data-dropdown-css-class="select2-success">
+                                            @if ($item->id_category == null)
+                                                <option>Select Category</option>
+                                            @else
+                                                <option selected="selected" value="{{$item->category->id}}">{{$item->category->name}}</option>
+                                            @endif
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Description Collection</label>
