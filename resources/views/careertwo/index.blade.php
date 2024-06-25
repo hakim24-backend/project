@@ -52,7 +52,8 @@
                             @forelse ($careertwo as $item)
                                 <tr>
                                     <td style="text-align: center">{{ $loop->iteration }}</td>
-                                    <td style="text-align: center"></td>
+                                    <td style="text-align: center">{{$item->name_company}}</td>
+                                    <td style="text-align: center">{{$item->info_company}}</td>
                                     <td style="text-align: center; vertical-align: middle;">
                                         @if ($item->filename == null)
                                             -
@@ -88,7 +89,7 @@
         </div>
   </div>
 
-  <div class="modal fade" id="create-career">
+  <div class="modal fade" id="create-careertwo">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -105,54 +106,24 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="{{ route('careerier.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('careertwo.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Job</label>
-                                    <input name="job" type="input" class="form-control @error('job') is-invalid @enderror" placeholder="Enter job" value="{{ old('job') }}" required>
-                                    @error('job')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label>Office</label>
-                                    <input name="office" type="input" class="form-control @error('office') is-invalid @enderror" placeholder="Enter office" value="{{ old('office') }}" required>
-                                    @error('office')
+                                    <label>Name Company</label>
+                                    <input name="name_company" type="input" class="form-control @error('name_company') is-invalid @enderror" placeholder="Enter Name Company" value="{{ old('name_company') }}" required>
+                                    @error('name_company')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Salary</label>
-                                    <input name="salary" type="number" class="form-control @error('salary') is-invalid @enderror" placeholder="Enter salary" value="{{ old('salary') }}" required>
-                                    @error('salary')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label>Type</label>
-                                    <input name="type" type="input" class="form-control @error('type') is-invalid @enderror" placeholder="Enter type" value="{{ old('type') }}" required>
-                                    @error('type')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Exp (years)</label>
-                                    <input name="experience" type="number" class="form-control @error('experience') is-invalid @enderror" placeholder="Enter experience" value="{{ old('experience') }}" required>
-                                    @error('experience')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label>Location</label>
-                                    <input name="location" type="input" class="form-control @error('location') is-invalid @enderror" placeholder="Enter location" value="{{ old('location') }}" required>
-                                    @error('location')
+                                    <label>Info Company</label>
+                                    <input name="info_company" type="input" class="form-control @error('info_company') is-invalid @enderror" placeholder="Enter Info Company" value="{{ old('info_company') }}" required>
+                                    @error('info_company')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>

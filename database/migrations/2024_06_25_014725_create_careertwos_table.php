@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('careertwos', function (Blueprint $table) {
             $table->id();
-            $table->string('name_company');
-            $table->integer('info_company');
+            $table->longText('name_company');
+            $table->longText('info_company');
             $table->string('filename');
             $table->timestamps();
         });
