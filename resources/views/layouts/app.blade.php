@@ -15,6 +15,11 @@
   <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
   @stack('css')
 </head>
+<style>
+  body {
+    font-family: "IBM Plex Sans", sans-serif;
+  }
+</style>
 <!--
 `body` tag options:
 

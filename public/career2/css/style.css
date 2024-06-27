@@ -5,20 +5,21 @@
  */
 
 @font-face {
-	font-family: arial;
+	font-family: "IBM Plex Sans", sans-serif;;
 	src: url(../fonts/arial.ttf);
 }
 @font-face {
-	font-family: century-gothic;
+	font-family: "IBM Plex Sans", sans-serif;;
 	src: url(../fonts/century-gothic.ttf);
 }
 * {
-	font-family: arial;
+	font-family: "IBM Plex Sans", sans-serif;;
 }
 body, html {
 	padding: 0px;
 	margin: 0px;
 	background: #000000;
+	font-family: "IBM Plex Sans", sans-serif;
 }
 .text-center {
 	text-align: center;
@@ -93,14 +94,14 @@ header, section, footer, .row-career {
 	margin: auto;
 }
 .banner-career h1{
-	font-family: century-gothic;
+	font-family: "IBM Plex Sans", sans-serif;;
 	font-size: 40px;
 	color: #1ed2ca;
 	
 }
 .banner-career p{
 	color: #fff;
-	font-family: century-gothic;
+	font-family: "IBM Plex Sans", sans-serif;;
 	font-size: 18px;
 }
 

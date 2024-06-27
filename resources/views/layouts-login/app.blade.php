@@ -15,6 +15,11 @@
   <link rel="stylesheet" href="{{asset('/dist/css/adminlte.min.css')}}">
 </head>
 <body class="hold-transition login-page">
+  <style>
+    body {
+      font-family: "IBM Plex Sans", sans-serif;
+    }
+  </style>
 <div class="login-box">
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
