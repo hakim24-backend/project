@@ -31,6 +31,7 @@
 <style>
 	body {
 		background: #000000;
+        font-family: "IBM Plex Sans", sans-serif;
 	}
 
 	h1 {
