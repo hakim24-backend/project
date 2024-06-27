@@ -36,6 +36,9 @@
                         <button type="button" class="btn bg-gradient-success" data-toggle="modal" data-target="#create-job">
                             <span><i class="fa fa-plus"></i></span> Create Job
                         </button>
+                        <a class="btn bg-gradient-danger" href="{{route('careertwo.index')}}">
+                            <span><i class="fa fa-chevron-left"></i></span> Back
+                        </a>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
