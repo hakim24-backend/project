@@ -67,13 +67,16 @@
                                     </td>
                                     <td style="text-align: center; vertical-align: middle;">
                                         @php
-                                            $job = DetailCareertwo::where('id_careertwo', $item->id)->count();
+                                            $resume = Resumetwo::select('resumetwo.*')
+                                            ->join('detail_careertwos', 'detail_careertwos.id', '=', 'resumetwos.id_detail_careertwo')
+                                            ->where('id_careertwo', $item->id)
+                                            ->count();
                                         @endphp
-                                        <a href="{{route('job.index', $item->id)}}" class="btn btn-success"><span><i class="fa fa-briefcase"></i></span> Jobs <span class="badge badge-danger">{{$job}}</span></a>
+                                        <a href="{{route('job.resume', $item->id)}}" class="btn btn-info"><span><i class="fa fa-briefcase"></i></span> Resume <span class="badge badge-danger">{{$resume}}</span></a>
                                     </td>
                                     <td style="text-align: center; vertical-align: middle;">
                                         @php
-                                            $resume = Resumetwo::select("count");
+                                            $job = DetailCareertwo::where('id_careertwo', $item->id)->count();
                                         @endphp
                                         <a href="{{route('job.index', $item->id)}}" class="btn btn-success"><span><i class="fa fa-briefcase"></i></span> Jobs <span class="badge badge-danger">{{$job}}</span></a>
                                     </td>

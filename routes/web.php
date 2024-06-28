@@ -128,4 +128,6 @@ Route::middleware('auth')->group(function(){
     Route::post('/job/storeJob/{id}', [CareertwoController::class, 'storeJob'])->name('job.storeJob');
     Route::delete('/job/deleteJob/{id}/{id_careertwo}', [CareertwoController::class, 'deleteJob'])->name('job.deleteJob');
     Route::put('/job/updateJob/{id}', [CareertwoController::class, 'updateJob'])->name('job.updateJob');
+    Route::get('/job/resume/{id}', [CareertwoController::class, 'resume'])->name('job.resume');
+    Route::delete('/job/deleteResume/{id}/{id_careertwo}', [CareertwoController::class, 'deleteResume'])->name('job.deleteResume');
 });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Careertwo;
 use App\Models\DetailCareertwo;
+use App\Models\Resumetwo;
 
 class CareertwoController extends Controller
 {
@@ -176,5 +177,33 @@ class CareertwoController extends Controller
         $detailCareertwo = DetailCareertwo::findOrFail($id);
         $detailCareertwo->delete();
         return redirect()->route('job.index', $id_careertwo);
+    }
+
+    public function resume($id)
+    {
+        $resume = Resumetwo::select(
+            'resumetwos.id as id', 'resumetwos.filename as filename', 'resumetwos.id_detail_careertwo as id_detail_careertw0',
+            'resumetwos.created_at as created_at', 'detail_careertwos.job as job', 'detail_careertwos.salary as salary', 'detail_careertwos.schedule as schedule',
+            'detail_careertwos.day_of as day_of', 'detail_careertwos.location as location', 'detail_careertwos.requirment as requirment', 
+            'detail_careertwos.name_contact as name_contact', 'detail_careertwos.phone_contact as phone_contact', 'detail_careertwos.phone_contact as email_contact',
+            'detail_careertwos.website_contact as website_contact', 'detail_careertwos.id_careertwo as id_careertwo'
+            )
+        ->join('detail_careertwos', 'detail_careertwos.id', '=', 'resumetwos.id_detail_careertwo')
+        ->where('id_careertwo', $id)
+        ->get();
+        $careertwo = Careertwo::findOrFail($id);
+        return view('careertwo.resume', [
+            'resume' => $resume,
+            'careertwo' => $careertwo
+        ]);
+    }
+
+    public function deleteResume($id, $id_careertwo)
+    {
+        $resume = Resumetwo::findOrFail($id);
+        $filePath = public_path('upload/resumev2/'.$resume->filename);
+        unlink($filePath);
+        $resume->delete();
+        return redirect()->route('job.resume', $id_careertwo);
     }
 }
