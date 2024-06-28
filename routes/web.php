@@ -70,6 +70,7 @@ Route::get('/ajax-frontend-name', [AjaxFrontendController::class, 'selectName'])
 
 //ajax form frontend
 Route::post('/ajax-resume', [AjaxFrontendController::class, 'storeResume'])->name('ajax-resume');
+Route::post('/ajax-resume-two', [AjaxFrontendController::class, 'storeResumetwo'])->name('ajax-resume-two');
 
 Auth::routes();
 

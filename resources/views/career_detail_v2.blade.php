@@ -249,10 +249,10 @@
         <div class="modal-content">
             <span style="text-align: right" class="close-button">&times;</span>
             <h1><b>Отправить Резюме</b></h1><br>
-            <form action="{{route('ajax-resume', $detailCareertwo->id_careertwo)}}" method="POST" id="cvForm" enctype="multipart/form-data">
+            <form action="{{route('ajax-resume-two', $detailCareertwo->id)}}" method="POST" id="cvForm" enctype="multipart/form-data">
               @csrf
                 <input type="file" name="cv" accept=".pdf,.doc,.docx" required>
-                <input type="hidden" name="id_career" value="{{$detailCareertwo->id_careertwo}}">
+                <input type="hidden" name="id_detail_careertwo" value="{{$detailCareertwo->id}}">
                 <button type="submit">Отправить</button>
             </form>
         </div>
@@ -289,7 +289,7 @@
         document.getElementById('cvForm').addEventListener('submit', function(event) {
             event.preventDefault();
             jQuery.ajax({
-                url:"{{route('ajax-resume')}}",
+                url:"{{route('ajax-resume-two')}}",
                 type:'POST',
                 data:new FormData(this),
                 contentType:false,

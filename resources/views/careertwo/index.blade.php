@@ -1,5 +1,6 @@
 <?php 
     use App\Models\DetailCareertwo;
+    use App\Models\Resumetwo;
 ?>
 
 @extends('layouts.app')
@@ -44,6 +45,7 @@
                             <th width="25%">Name Company</th>
                             <th>Info Company</th>
                             <th>Photo</th>
+                            <th width="10%">Total Resume</th>
                             <th width="10%">Action Job</th>
                             <th width="10%">Action</th>
                         </tr>
@@ -66,6 +68,12 @@
                                     <td style="text-align: center; vertical-align: middle;">
                                         @php
                                             $job = DetailCareertwo::where('id_careertwo', $item->id)->count();
+                                        @endphp
+                                        <a href="{{route('job.index', $item->id)}}" class="btn btn-success"><span><i class="fa fa-briefcase"></i></span> Jobs <span class="badge badge-danger">{{$job}}</span></a>
+                                    </td>
+                                    <td style="text-align: center; vertical-align: middle;">
+                                        @php
+                                            $resume = Resumetwo::select("count");
                                         @endphp
                                         <a href="{{route('job.index', $item->id)}}" class="btn btn-success"><span><i class="fa fa-briefcase"></i></span> Jobs <span class="badge badge-danger">{{$job}}</span></a>
                                     </td>
