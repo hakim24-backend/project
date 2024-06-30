@@ -88,6 +88,21 @@ ul, ol {
 	margin: auto;
 }
 
+header {
+	position: fixed;
+	z-index: 200;
+	background-color: #000000;
+	padding-left: 40px;
+	padding-right: 40px;
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	color: #fff;
+	-webkit-transition: all 0.5s ease-in;
+	transition: all 0.5s ease-in;
+	box-shadow: 0 0 40px 0 rgba(255, 255, 255, 0.507);
+  }
+
 header, section, footer, .row {
 	width: 100%;
 	float: left;
