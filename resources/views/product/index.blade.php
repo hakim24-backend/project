@@ -1,3 +1,7 @@
+<?php 
+    use App\Models\Smalldoor;
+?>
+
 @extends('layouts.app')
 
 @push('css')
@@ -76,6 +80,18 @@
                                                 <td style="text-align: center">:</td>
                                                 <td>{{ $item->collection->name }}</td>
                                             </tr>
+                                            @if ($item->collection->category->name == 'МЕЖКОМНАТНЫЕ ДВЕРИ')
+                                            <tr>
+                                                <td>Other Decor</td>
+                                                <td style="text-align: center">:</td>
+                                                <td>
+                                                    @php
+                                                        $smalldoor = Smalldoor::where('id_product', $item->id)->count();
+                                                    @endphp
+                                                    <a href="{{route('smalldoor.show', $item->id)}}" class="btn btn-warning"><span><i class="fa fa-th-large"></i></span> Small <span class="badge badge-danger">{{$smalldoor}}</span></a>
+                                                </td>
+                                            </tr>
+                                            @endif
                                         </table>
                                     </td>
                                     <td width="20%" style="vertical-align: middle;">

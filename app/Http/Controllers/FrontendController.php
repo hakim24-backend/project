@@ -14,6 +14,7 @@ use App\Models\TypicalCollection;
 use App\Models\Digital;
 use App\Models\Careertwo;
 use App\Models\DetailCareertwo;
+use App\Models\Smalldoor;
 
 use \Statickidz\GoogleTranslate;
 use Illuminate\Http\Request;
@@ -193,7 +194,8 @@ class FrontendController extends Controller
         // dd($product->collection->category->name);
         if ($product->collection->category->name == 'МЕЖКОМНАТНЫЕ ДВЕРИ') {
             $active = 'МЕЖКОМНАТНЫЕ ДВЕРИ';
-            return view('product_door', compact('product', 'description', 'active'));
+            $smalldoor = Smalldoor::where('id_product', $product->id)->get();
+            return view('product_door', compact('product', 'description', 'active', 'smalldoor'));
         } else {
             //get name by lenght
             // $checkName = substr_count($product->name, ' ');

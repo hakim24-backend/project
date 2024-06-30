@@ -91,42 +91,25 @@
 
 
                         <!-- Thumbnail images -->
-                        <p class="noborder">другой декор:</p>
-                        <div class="thumbnailsRow">
-                            <div class="column">
-
-                                <img class="demo cursor" src="{{asset('door/images/slider/brown.png')}}"
-                                    onclick="openModal('{{asset('door/images/slider/brown.png')}}')" alt="The Woods" />
-
-                                <p>Door</p>
-
+                        @if ($smalldoor->isNotEmpty())
+                            <p class="noborder">другой декор:</p>
+                            <div class="thumbnailsRow">
+                                @foreach ($smalldoor as $sd)
+                                    <div class="column">
+                                        <img class="demo cursor" src="{{asset('upload/small_door/'.$sd->filename)}}"
+                                            onclick="openModal('{{asset('upload/small_door/'.$sd->filename)}}')" alt="The Woods" />
+                                        <p>{{$sd->name}}</p>
+                                    </div>
+                                @endforeach
+                                <div id="myModal" class="modal">
+                                    <span class="close" onclick="closeModal()">&times;</span>
+                                    <a href="" class="zoomHover2" id="zoomContainer">
+                                        <img class="modalZoom" id="modalImage">
+                                    </a>
+                                </div>
                             </div>
-                            <div class="column">
-                                <img class="demo cursor" src="{{asset('door/images/slider/dark-brown.png')}}"
-                                    onclick="openModal('{{asset('door/images/slider/dark-brown.png')}}')"
-                                    alt="Cinque Terre">
-                                <p>Door</p>
-                            </div>
-                            <div class="column">
-                                <img class="demo cursor" src="{{asset('door/images/slider/light-brown.png')}}"
-                                    onclick="openModal('{{asset('door/images/slider/light-brown.png')}}')"
-                                    alt="Mountains and fjords">
-                                <p>Door</p>
-                            </div>
-                            <div class="column">
-                                <img class="demo cursor" src="{{asset('door/images/slider/off-white.png')}}"
-                                    onclick="openModal('{{asset('door/images/slider/off-white.png')}}')"
-                                    alt="Northern Lights">
-                                <p>Door</p>
-                            </div>
-                            <div id="myModal" class="modal">
-                                <span class="close" onclick="closeModal()">&times;</span>
-                                <a href="" class="zoomHover2" id="zoomContainer">
-                                    <img class="modalZoom" id="modalImage">
-                                </a>
-                            </div>
-                        </div>
-                        <br>
+                            <br>
+                        @endif
                     </div>
                     <div class="productImg">
                         <a href="{{asset('upload/product/'.$product->filename)}}" class="zoomHover">

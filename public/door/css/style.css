@@ -218,7 +218,9 @@ header, section, footer, .row {
 }
 .thumbnailsRow{
 	display: flex;
-	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 35px;
+	/* justify-content: space-between; */
 }
 .thumbnailsRow p{
 	border: none;
