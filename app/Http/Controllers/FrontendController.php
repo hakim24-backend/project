@@ -613,4 +613,20 @@ class FrontendController extends Controller
             'active' => $active
         ]);
     }
+
+    public function profile()
+    {
+        $active = 'profile';
+        return view('profile', [
+            'active' => $active
+        ]);
+    }
+
+    public function policy()
+    {
+        $active = '';
+        return view('policy', [
+            'active' => $active
+        ]);
+    }
 }

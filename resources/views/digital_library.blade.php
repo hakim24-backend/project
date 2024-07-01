@@ -438,7 +438,7 @@
                   <div class="copyright">
                     <div class="container">
                       <p class="d-inline-block">© 2012-2024 SOYUZ GROUP </p>
-                      <a class="d-inline-block" href="#">Политика в отношении обработки персональных данных</a>
+                      <a class="d-inline-block" href="{{route('frontend.policy')}}">Политика в отношении обработки персональных данных</a>
                     </div>
                   </div>
                 </div>

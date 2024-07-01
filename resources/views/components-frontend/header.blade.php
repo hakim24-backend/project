@@ -69,9 +69,9 @@ $menu5 = Category::where('name1', 'КОМПАНИЯ')->get();
                 </ul>
               </li>
 
-              <li class="nav-item"><a href="#" class="nav-link {{ $active == 'careers' || $active == 'careersv2' || $active == 'contacts' ? 'active' : '' }}">КОМПАНИЯ</a>
+              <li class="nav-item"><a href="#" class="nav-link {{ $active == 'careers' || $active == 'careersv2' || $active == 'profile' || $active == 'contacts' ? 'active' : '' }}">КОМПАНИЯ</a>
                 <ul class="dropdown">
-                  <li><a href="#">ИСТОРИЯ ПРОФИЛЯ</a></li>
+                  <li><a href="{{route('frontend.profile')}}">ИСТОРИЯ ПРОФИЛЯ</a></li>
                   <li><a href="{{route('frontend.career')}}">Карьера</a></li>
                   <li><a href="{{route('frontend.careerv2')}}">Карьера 2</a></li>
                   <li><a href="#">КОЛЛЕКЦИИ</a></li>
