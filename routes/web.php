@@ -15,6 +15,7 @@ use App\Http\Controllers\TypicalController;
 use App\Http\Controllers\DigitalController;
 use App\Http\Controllers\CareertwoController;
 use App\Http\Controllers\SmalldoorController;
+use App\Http\Controllers\CompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,6 +92,7 @@ Route::middleware('auth')->group(function(){
     Route::resource('digitals', DigitalController::class);
     Route::resource('careertwo', CareertwoController::class);
     Route::resource('smalldoor', SmalldoorController::class);
+    Route::resource('company', CompanyController::class);
 
     //ajax select2
     Route::get('/ajax-category', [AjaxController::class, 'selectCategory'])->name('ajax-category');

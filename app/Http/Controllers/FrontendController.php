@@ -15,6 +15,7 @@ use App\Models\Digital;
 use App\Models\Careertwo;
 use App\Models\DetailCareertwo;
 use App\Models\Smalldoor;
+use App\Models\Company;
 
 use \Statickidz\GoogleTranslate;
 use Illuminate\Http\Request;
@@ -617,8 +618,10 @@ class FrontendController extends Controller
     public function profile()
     {
         $active = 'profile';
+        $company = Company::all();
         return view('profile', [
-            'active' => $active
+            'active' => $active,
+            'company' => $company
         ]);
     }
 

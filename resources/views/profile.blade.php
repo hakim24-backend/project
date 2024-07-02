@@ -55,126 +55,40 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 <div id="wrapper">
   <div class="main-slider-wrap">
     <div id="slider" class="main-slider">
-      <div class="main-company" style="background-image: url('{{asset('profile/images/10dcc007864f97a71c439a810598b14e.jpg')}}');">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-5">
-              <p class="title">ПРОМЫШЛЕННАЯ ГРУППА СОЮЗ</p>
-              <p>В состав холдинга входят три производственные предприятия и сеть региональных торговых домов</p>
-            </div>
-            <div class="col-lg-6">
-              <div class="row about-short">
-                <div class="item">
-                  <p class="h1">20 лет опыта</p>
-                  <p>Качество, проверенное годами </p>
+      @if ($company->isNotEmpty())
+        @foreach ($company as $item)
+          <div class="main-company" style="background-image: url('{{asset('upload/company/'.$item->filename)}}');">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-5">
+                  <p class="title">{{$item->tittle1}}</p>
+                  <p>{{$item->desc1}}</p>
                 </div>
-                <div class="item">
-                  <p class="h1">2650 человек</p>
-                  <p>Обеспечивают эффективную работу компании</p>
-                </div>
-                <div class="item">
-                  <p class="h1">90Га</p>
-                  <p>Производственные и складские площади холдинга </p>
-                </div>
-                <div class="item">
-                  <p class="h1">3000 позиций</p>
-                  <p>Широчайший ассортимент продукции </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="main-company" style="background-image: url('{{asset('profile/images/e3824d55ba07547c7d0d6633d67d5047.jpg')}}');">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-5">
-              <p class="title">ЛЕСПЛИТИНВЕСТ</p>
-              <p>Одно из ведущих российских предприятий по лесопилению, производству шлифованных и ламинированных МДФ плит, межкомнатных дверей и погонажных изделий Ладора</p>
-            </div>
-            <div class="col-lg-6">
-              <div class="row about-short">
-                <div class="item">
-                  <p class="h1">120 000 м3</p>
-                  <p>Плиты МДФ</p>
-                </div>
-                <div class="item">
-                  <p class="h1">42 000 м3</p>
-                  <p>Плиты ЛМДФ</p>
-                </div>
-                <div class="item">
-                  <p class="h1">110 000 м3</p>
-                  <p>Пиломатериалы</p>
-                </div>
-                <div class="item">
-                  <p class="h1">350 000</p>
-                  <p>Дверные полотна</p>
+                <div class="col-lg-6">
+                  <div class="row about-short">
+                    <div class="item">
+                      <p class="h1">{{$item->tittle2}}</p>
+                      <p>{{$item->desc2}}</p>
+                    </div>
+                    <div class="item">
+                      <p class="h1">{{$item->tittle3}}</p>
+                      <p>{{$item->desc3}}</p>
+                    </div>
+                    <div class="item">
+                      <p class="h1">{{$item->tittle4}}</p>
+                      <p>{{$item->desc4}}</p>
+                    </div>
+                    <div class="item">
+                      <p class="h1">{{$item->tittle5}}</p>
+                      <p>{{$item->desc5}}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="main-company" style="background-image: url('../upload/iblock/a03/a03584d10de451126d4a40305acc88ed.jpg');">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-5">
-              <p class="title">КМДК «СОЮЗ-ЦЕНТР»</p>
-              <p>Основные виды продукции: лесопиление, ДСП, ЛДСП и ДВП плиты, дома из клееного бруса и межкомнатные двери. </p>
-            </div>
-            <div class="col-lg-6">
-              <div class="row about-short">
-                <div class="item">
-                  <p class="h1">200 000 м3</p>
-                  <p>Плиты ДСП</p>
-                </div>
-                <div class="item">
-                  <p class="h1">1 500 000 м2</p>
-                  <p>Плиты ЛДСП</p>
-                </div>
-                <div class="item">
-                  <p class="h1">12 000 м3</p>
-                  <p>Клееные конструкционные материалы и погонаж</p>
-                </div>
-                <div class="item">
-                  <p class="h1">4 300 м3</p>
-                  <p>Домокомплекты из клееного бруса</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="main-company" style="background-image: url('../upload/iblock/26e/26eeea3d355fa6c2aa62352d5ffadbe4.jpg');">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-5">
-              <p class="title">ПРОМЫШЛЕННАЯ ГРУППА СОЮЗ</p>
-              <p>Флагман российского рынка мебельных комплектующих: единственная компания, работая с которой производители могут выпускать полный ассортимент корпусной мебели, отвечающей европейским стандартам.</p>
-            </div>
-            <div class="col-lg-6">
-              <div class="row about-short">
-                <div class="item">
-                  <p class="h1">1 300 000 шт.</p>
-                  <p>Столешницы и мебельные фартуки</p>
-                </div>
-                <div class="item">
-                  <p class="h1">8 500 000 п. м.</p>
-                  <p>Мебельный профиль</p>
-                </div>
-                <div class="item">
-                  <p class="h1">270 000 м2</p>
-                  <p>Мебельные фасады</p>
-                </div>
-                <div class="item">
-                  <p class="h1">8 400 000 м2</p>
-                  <p>Стеновые панели МДФ</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        @endforeach
+      @endif
     </div>
     <div class="slider-nav-wrap">
       <div class="container">

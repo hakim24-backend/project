@@ -41,6 +41,14 @@
               </a>
             </li>
             <li class="nav-item">
+              <a href="{{ route('company.index') }}" class="nav-link {{ request()->is('company') ? ' active' : ''}}">
+                <i class="nav-icon fa fa-building"></i>
+                <p>
+                  Company
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
               <a href="{{ route('collection.index') }}" class="nav-link {{ request()->is('collection') ? ' active' : ''}}">
                 <i class="nav-icon fa fa-folder-open"></i>
                 <p>
