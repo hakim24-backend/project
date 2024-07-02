@@ -57,7 +57,7 @@
                             @forelse ($company as $item)
                                 <tr>
                                     <td style="text-align: center" width="5%">{{ $loop->iteration }}</td>
-                                    <td>
+                                    <td width="30%">
                                         <table>
                                             <tr>
                                                 <td>Tittle 1</td>
@@ -86,7 +86,7 @@
                                             </tr>
                                         </table>
                                     </td>
-                                    <td>
+                                    <td width="30%">
                                         <table>
                                             <tr>
                                                 <td>Description 1</td>
@@ -120,7 +120,7 @@
                                             -
                                         @else
                                             <a href="{{ asset('upload/company/'.$item->filename) }}" target="_blank">
-                                                <img width="20%" src="{{ asset('upload/company/'.$item->filename) }}">
+                                                <img width="40%" src="{{ asset('upload/company/'.$item->filename) }}">
                                             </a>
                                         @endif
                                     </td>
