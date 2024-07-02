@@ -89,7 +89,7 @@
                                     <td width="30%">
                                         <table>
                                             <tr>
-                                                <td>Description 1</td>
+                                                <td width="30%">Description 1</td>
                                                 <td>:</td>
                                                 <td>{{$item->desc1}}</td>
                                             </tr>
