@@ -253,7 +253,10 @@ class FrontendController extends Controller
     {
         $product = Product::where('name', 'like', '%'.$request->search.'%')->first();
         if ($product == null) {
-            return view('not_found');
+            $active = '';
+            return view('not_found', [
+                'active' => $active
+            ]);
         } else {
             $description = Description::where('id_product', $product->id)->get();
             $getValue = Description::where('id_product', $product->id)->count();
@@ -276,7 +279,8 @@ class FrontendController extends Controller
             //     $imageView = 0;
             // }
 
-            return view('product', compact('product', 'description', 'typical'));
+            $active = '';
+            return view('product', compact('product', 'description', 'typical', 'active'));
         }
     }
 

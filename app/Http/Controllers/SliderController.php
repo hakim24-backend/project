@@ -137,6 +137,10 @@ class SliderController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $slider = Slider::findOrFail($id);
+        $filePath = public_path('upload/slider/'.$slider->filename);
+        unlink($filePath);
+        $slider->delete();
+        return redirect()->back();
     }
 }

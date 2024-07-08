@@ -76,23 +76,21 @@ $menu5 = Category::where('name1', 'КОМПАНИЯ')->get();
                   <li><a href="{{route('frontend.careerv2')}}">Карьера 2</a></li>
                   <li><a href="#">КОЛЛЕКЦИИ</a></li>
                   <li><a href="{{route('frontend.contact')}}">Задать вопрос</a></li>
-
                 </ul>
 
               </li>
-              <span>|</span>
               <li>
-                <form action="{{route('frontend.search')}}" method="post">
+                {{-- <form action="{{route('frontend.search')}}" method="post">
                 @csrf
                   <div class="search-box">
                     <input name="search" type="text" placeholder="Поиск " /><span></span>
                   </div>
-                </form>
+                </form> --}}
+                <a class="nav-link" data-toggle="modal" href="#myModal">поиск</a>
               </li>
 
-
-              <!-- ------------------------ langage section bar  -->
               <span>|</span>
+              <!-- ------------------------ langage section bar  -->
               <li class="current">
                 <a href="{{route('frontend.index')}}" style="color: white; text-decoration: none" rel="alternate" hreflang="ru-RU">RU</a>
                 <a href="{{route('frontend.en')}}" style="color: white; text-decoration: none" rel="alternate" hreflang="en-US">EN</a>
@@ -114,7 +112,6 @@ $menu5 = Category::where('name1', 'КОМПАНИЯ')->get();
         <div class="mobile-nav d-lg-none">
 
           <div class="nav-bg"></div>
-
           <div class="nav-icon">
             <div class="bars">
               <i class="bar"></i>
@@ -124,70 +121,74 @@ $menu5 = Category::where('name1', 'КОМПАНИЯ')->get();
           </div>
 
           <div class="nav">
-
             <ul>
-
-              <li class="nav-item"><a href="#" class="nav-link" onclick="setTimeout(mobile_nav_toggle, 800)">Мебельные
-                  комплектующие</a>
+              <li class="nav-item"><a href="#" class="nav-link">МЕБЕЛЬНЫЕ КОМПЛЕКТУЮЩИЕ</a>
                 <ul class="dropdown">
-                  <li><a href="{{route('frontend.category', 'Столешницы')}}" onclick="setTimeout(mobile_nav_toggle, 800)">Столешницы</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">МЕБЕЛЬНЫЕ ДЕТАЛИ</a></li>
+                  @foreach ($menu1 as $itemMobile1)
+                    <li style="background: #9adee7"><a style="color: black" href="{{route('frontend.category', $itemMobile1->name)}}">{{$itemMobile1->name}}</a></li>
+                  @endforeach
+                  {{-- <li><a href="{{route('frontend.category', 'Столешницы')}}" onclick="setTimeout(mobile_nav_toggle, 2000)">Столешницы</a></li>
+                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">МЕБЕЛЬНЫЕ ДЕТАЛИ</a></li>
                   <li><a href="{{route('frontend.category', 'ЛДСП')}}"
-                      onclick="setTimeout(mobile_nav_toggle, 800)">ЛДСП</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">ДСП</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">ЛМДФ</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">МДФ</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">ДВПО</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">ДВП</a></li>
+                      onclick="setTimeout(mobile_nav_toggle, 2000)">ЛДСП</a></li>
+                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">ДСП</a></li>
+                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">ЛМДФ</a></li>
+                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">МДФ</a></li>
+                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">ДВПО</a></li>
+                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">ДВП</a></li> --}}
                 </ul>
               </li>
 
-              <li class="nav-item"><a href="#" class="nav-link"
-                  onclick="setTimeout(mobile_nav_toggle, 800)">Строительные материалы</a>
+              <li class="nav-item"><a href="#" class="nav-link">Плитные материалы</a>
                 <ul class="dropdown">
-                  <li><a href="{{route('frontend.category', 'Стеновые панели')}}"
-                      onclick="setTimeout(mobile_nav_toggle, 800)">Стеновые панели</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Пиломатериалы</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Строганные изделия</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Огнестойкие панели</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Шпунтованная ДСП</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Шпунтованная МДФ</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Шпунтованная МДФ</a></li>
-
+                  @foreach ($menu2 as $itemMobile2)
+                    <li style="background: #9adee7"><a style="color: black" href="{{route('frontend.category', $itemMobile2->name)}}">{{$itemMobile2->name}}</a></li>
+                  @endforeach
+                  {{-- <li><a href="{{route('frontend.category', 'Стеновые панели')}}"
+                      onclick="setTimeout(mobile_nav_toggle, 2000)">Стеновые панели</a></li>
+                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">Пиломатериалы</a></li>
+                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">Строганные изделия</a></li>
+                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">Огнестойкие панели</a></li>
+                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">Шпунтованная ДСП</a></li>
+                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">Шпунтованная МДФ</a></li>
+                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">Шпунтованная МДФ</a></li> --}}
                 </ul>
               </li>
-
-              <li class="nav-item"><a href="#" class="nav-link" onclick="setTimeout(mobile_nav_toggle, 800)">Изделия из
-                  древесины</a>
+              <li class="nav-item"><a href="#" class="nav-link">Строительные материалы</a>
                 <ul class="dropdown">
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Пеллеты</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Мульча</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Тара</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Палеты</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Поддоны</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Прокладочные листы</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Прокладочные бруски</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Комплекты изделий из древесины</a></li>
+                  @foreach ($menu3 as $itemMobile3)
+                    <li style="background: #9adee7"><a style="color: black" href="{{route('frontend.category', $itemMobile3->name)}}">{{$itemMobile3->name}}</a></li>
+                  @endforeach
+                  {{-- <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">Пеллеты</a></li>
+                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">Мульча</a></li>
+                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">Тара</a></li>
+                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">Палеты</a></li>
+                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">Поддоны</a></li>
+                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">Прокладочные листы</a></li>
+                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">Прокладочные бруски</a></li>
+                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 2000)">Комплекты изделий из древесины</a></li> --}}
                 </ul>
               </li>
-
-              <li class="nav-item"><a href="#" class="nav-link"
-                  onclick="setTimeout(mobile_nav_toggle, 800)">Межкомнатные двери</a></li>
-              <li class="nav-item"><a href="#" class="nav-link"
-                  onclick="setTimeout(mobile_nav_toggle, 800)">КОМПАНИЯ</a>
+              <li class="nav-item"><a href="#" class="nav-link">Изделия из древесины</a>
                 <ul class="dropdown">
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">ИСТОРИЯ ПРОФИЛЯ</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">РАБОТАТЬ С НАМИ</a></li>
-                  <li><a href="#" onclick="setTimeout(mobile_nav_toggle, 800)">Задать вопрос</a></li>
-
+                  @foreach ($menu4 as $itemMobile4)
+                    <li style="background: #9adee7"><a style="color: black" href="{{route('frontend.category', $itemMobile4->name)}}">{{$itemMobile4->name}}</a></li>
+                  @endforeach
                 </ul>
-
               </li>
+              <li class="nav-item"><a href="{{route('frontend.category', 'Межкомнатные двери')}}" class="nav-link">Межкомнатные двери</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">КОМПАНИЯ</a>
+                <ul class="dropdown">
+                  <li style="background: #9adee7"><a style="color: black" href="{{route('frontend.profile')}}">ИСТОРИЯ ПРОФИЛЯ</a></li>
+                  <li style="background: #9adee7"><a style="color: black" href="{{route('frontend.career')}}">Карьера</a></li>
+                  <li style="background: #9adee7"><a style="color: black" href="{{route('frontend.careerv2')}}">Карьера 2</a></li>
+                  <li style="background: #9adee7"><a style="color: black" href="#">КОЛЛЕКЦИИ</a></li>
+                  <li style="background: #9adee7"><a style="color: black" href="{{route('frontend.contact')}}">Задать вопрос</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a data-toggle="modal" href="#myModal" class="nav-link">поиск</a></li>
             </ul>
-
           </div>
-
-
         </div>
       </div>
     </div>
