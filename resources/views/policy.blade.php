@@ -182,6 +182,7 @@
 
     {{-- Footer --}}
     @include('components-frontend.footer')
+	@include('components-frontend.modal-search')
 
 </body>
 

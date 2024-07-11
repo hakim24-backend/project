@@ -84,7 +84,9 @@
       href="{{asset('css/checkbox.css')}}"
     />
   </head>
-
+  <style>
+    
+  </style>
   <body data-spay="scroll" data-target=".nav" data-offset="100">
 
     {{-- Header --}}
@@ -177,6 +179,7 @@
     
     {{-- Footer --}}
     @include('components-frontend.footer')
+    @include('components-frontend.modal-search')
 
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>

@@ -123,6 +123,7 @@
 
     {{-- Footer --}}
     @include('components-frontend.footer')
+    @include('components-frontend.modal-search')
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>

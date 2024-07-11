@@ -137,6 +137,10 @@ nav ul li a:not(.social-link):hover {
 li.socials {
   padding-right: 0;
 }
+ul {
+  list-style-type: none;
+  padding: 0;
+}
 
 ul li a.dropdown {
   display: block;

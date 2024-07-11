@@ -445,6 +445,7 @@
               </footer>
         </div>
     </div>
+    @include('components-frontend.modal-search')
     <div id="modal" class="iziModal" data-keyboard="false" aria-hidden="true" aria-labelledby="modal" role="dialog"
         style="z-index: 9999; border-radius: 0px; max-width: 600px;">
         <div class="iziModal-wrap">

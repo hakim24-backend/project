@@ -193,6 +193,7 @@
       </div>
     </footer>
     <!-- Footer -->
+    @include('components-frontend.modal-search')
 
     <script src="{{asset('/js/zoom_img.js')}}"></script>
     <script src="{{asset('/js/jquery.min.js')}}"></script>

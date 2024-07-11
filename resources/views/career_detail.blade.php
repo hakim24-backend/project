@@ -263,6 +263,7 @@
 
     {{-- Footer --}}
     @include('components-frontend.footer')
+    @include('components-frontend.modal-search')
 
     <script src="{{asset('/career/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('/career/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

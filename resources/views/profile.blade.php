@@ -522,6 +522,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 {{-- Footer --}}
 @include('components-frontend.footer')
+@include('components-frontend.modal-search')
 
 <script type="text/javascript" src="{{asset('profile/js/jquery-3.6.1.min.js')}}"></script> 
 <script type="text/javascript" src="{{asset('profile/js/bootstrap.min.js')}}"></script> 
