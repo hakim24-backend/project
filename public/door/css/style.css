@@ -12,9 +12,9 @@
 	font-family: ibm-plex-sans;
 	src: url(../fonts/ibm.otf);
 }
-* {
+/* * {
 	font-family: ibm-plex-sans;
-}
+} */
 
 body, html {
 	padding: 0px;
