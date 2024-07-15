@@ -12,6 +12,7 @@
 	<meta name="robots" content="index, follow">
 	<meta name="keywords" content="Персональные данные">
 	<meta name="description" content="Персональные данные">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 	<link href="{{asset('policy/Персональные данные_files/template_c236486dc0f3929fc8c4684bdc1a5fa0_v1.css')}}" type="text/css"
 		data-template-style="true" rel="stylesheet">
 	<!-- Stylesheets -->

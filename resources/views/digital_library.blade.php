@@ -9,6 +9,7 @@
     <meta name="viewport"
         content="initial-scale=1.0,minimum-scale=1,maximum-scale=5,width=device-width, viewport-fit=cover">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="{{asset('digital/css/bootstrap.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('digital/css/temp-main.css?v17')}}">

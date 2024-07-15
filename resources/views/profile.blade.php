@@ -14,6 +14,7 @@
 <meta name="robots" content="index, follow" />
 <meta name="keywords" content="Компания" />
 <meta name="description" content="Компания" />
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
 {{-- css header and footer --}}
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
