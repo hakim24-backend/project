@@ -7,8 +7,8 @@
     <meta charset="utf-8" />
     <link rel="shortcut icon" type="x-icon" href="{{asset('/upload/img/SG_верт_оригин.png')}}">
     <!-- Select2 -->
-    <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="https://www.pgsouz.ru/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="https://www.pgsouz.ru/plugins/select2/css/select2.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
