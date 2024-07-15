@@ -67,7 +67,7 @@ li {
 
 /*  ---- Header ---- */
 header {
-  position: fixed;
+  position: absolute;
   
   z-index: 200;
   background-color: #000000;
@@ -418,8 +418,8 @@ body .gallery-category {
   color: #ffffff;
   /* margin-bottom: -200px; */
   font-weight: 400;
-  margin-right: 270px;
-  margin-left: 160px;
+  /* margin-right: 270px; */
+  /* margin-left: 160px; */
 }
 
 .typical {
