@@ -112,7 +112,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
           <div class="advantages-item">
             <div class="icon"><img src="{{asset('profile/images/navigation.png')}}" alt="Масштаб присутствия" title="Масштаб присутствия"></div>
             <p class="h2">Масштаб присутствия</p>
-            <p> Продукция ПГ «Союз» присутствует во всех регионах России, а также в Белоруссии, Казахстане, Украине, странах Балтии и Скандинавии. </p>
+            <p> Продукция ПГ «Союз» присутствует во всех регионах России, а также в Белоруссии, Казахстане, странах Балтии и Скандинавии. </p>
           </div>
         </div>
         <div class="col-lg-4 col-sm-6">
