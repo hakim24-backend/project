@@ -203,8 +203,8 @@
                 <button id="filter" class="btn btn-success" type="submit">фильтр</button> &nbsp; <a class="btn btn-info" href="{{route('frontend.allProduct')}}">сброс</a>
             </div>
         </div>
-    </form><br>
-    <div class="gallery">
+    </form><br><br><br><br><br>
+    <div class="gallery-category">
       @if ($product != null)
         @foreach ($product as $item)
             <a href="{{route('frontend.product', $item->id)}}"><img src="{{asset('/upload/product/'.$item->filename)}}">

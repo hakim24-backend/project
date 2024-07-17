@@ -4,7 +4,7 @@
           <div class="modal-content">
             <div class="container-try">
                 @csrf
-                <input name="search" type="text" placeholder="Search...">
+                <input name="search" type="text" placeholder="ПОИСК...">
               <div class="search-try"></div>
             </div>
           </div>
