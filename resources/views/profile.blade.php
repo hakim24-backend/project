@@ -112,7 +112,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
           <div class="advantages-item">
             <div class="icon"><img src="{{asset('profile/images/navigation.png')}}" alt="Масштаб присутствия" title="Масштаб присутствия"></div>
             <p class="h2">Масштаб присутствия</p>
-            <p> Продукция ПГ «Союз» присутствует во всех регионах России, а также в Белоруссии, Казахстане, странах Балтии и Скандинавии. </p>
+            <p> Продукция Промышленной группы «СОЮЗ» представлена во всех регионах России и странах ближнего и дальнего зарубежья.и. </p>
           </div>
         </div>
         <div class="col-lg-4 col-sm-6">
@@ -469,16 +469,17 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
       <div class="row">
         <div class="col-md-4">
           <div class="enterprise-item">
-            <p class="h2">ООО КМДК «Союз-центр»</p>
+            <p class="h2">ООО КМДК «СОЮЗ-Центр»</p>
             <div class="logo"><a href="http://www.soyuz-centre.ru/"><img src="{{asset('profile/images/232db6f183da2e4b5d9eb83c93d75b4f.png')}}" alt="ООО КМДК «Союз-центр»" title="ООО КМДК «Союз-центр»"></a></div>
+            <br>
             <p class="h3">Производство</p>
             <ul>
               <li>ДВП, ДСП</li>
-              <li>влагостойкие конструкционные плиты AquaGreen</li>
+            <li>влагостойкие конструкционные плиты</li>
               <li>огнестойкие плиты Hard flame</li>
-              <li>межкомнатнех двери Alleanza doors</li>
+              <li>межкомнатные двери</li>
               <li>пиломатериалы и погонаж</li>
-              <li>дома из клееного бруса</li>
+             
             </ul>
           </div>
         </div>
@@ -486,6 +487,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
           <div class="enterprise-item">
             <p class="h2">ОАО &quot;Лесплитинвест&quot;</p>
             <div class="logo"><a href="http://lplit.ru/"><img src="{{asset('profile/images/b22373de9816faf97f9be4f8481429ee.png')}}" alt="ОАО &quot;Лесплитинвест&quot;" title="ОАО &quot;Лесплитинвест&quot;"></a></div>
+            <br>
             <p class="h3">Производство</p>
             <ul>
               <li>МДФ плиты</li>
@@ -500,6 +502,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
           <div class="enterprise-item">
             <p class="h2">ООО &quot;Союзбалткомплект&quot;</p>
             <div class="logo"><a href="#"><img src="{{asset('profile/images/4057730eb9dd700ffec39c5099ac1a58.png')}}" alt="ООО &quot;Союзбалткомплект&quot;" title="ООО &quot;Союзбалткомплект&quot;"></a></div>
+            <br>
             <p class="h3">Мебельные комплектующие</p>
             <ul>
               <li>столешницы</li>
