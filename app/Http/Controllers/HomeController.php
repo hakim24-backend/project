@@ -27,6 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        activity()->log('Look mum, I logged something');
         $totalProduct = Product::count();
         $totalCategory = Category::count();
         $totalCollection = Collection::count();
