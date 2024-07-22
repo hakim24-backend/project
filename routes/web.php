@@ -32,9 +32,9 @@ Route::get('/', function () {
     return view('index');
 });
 
-// Route::get('/en', function () {
-//     return view('index_en');
-// })->name('frontend.en');
+Route::get('/maintenance', function () {
+    return view('maintenance');
+})->name('mode-maintenance');
 
 //frontend
 Route::get('/', [FrontendController::class, 'index'])->name('frontend.index');
@@ -97,6 +97,7 @@ Route::middleware('auth')->group(function(){
     //ajax select2
     Route::get('/ajax-category', [AjaxController::class, 'selectCategory'])->name('ajax-category');
     Route::get('/ajax-collection', [AjaxController::class, 'selectCollection'])->name('ajax-collection');
+    Route::put('/ajax-maintenance', [AjaxController::class, 'manageMaintenance'])->name('ajax-maintenance');
 
     //product
     Route::put('/product/add-detail/{id}', [ProductController::class, 'storeDetail'])->name('product.storeDetail');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Collection;
+use App\Models\Mode;
 
 use Illuminate\Http\Request;
 
@@ -34,5 +35,14 @@ class AjaxController extends Controller
             $collection[$key]['name'] = $value->name;
         }
         return response()->json($collection);
+    }
+
+    public function manageMaintenance(Request $request)
+    {
+        $mode = Mode::where('name', 'maintenance')->first();
+        $mode->update([
+            'value' => intval($request->maintenance)
+        ]);
+        return redirect()->route('admin');
     }
 }

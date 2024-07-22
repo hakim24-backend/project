@@ -16,6 +16,7 @@ use App\Models\Careertwo;
 use App\Models\DetailCareertwo;
 use App\Models\Smalldoor;
 use App\Models\Company;
+use App\Models\Mode;
 
 use \Statickidz\GoogleTranslate;
 use Illuminate\Http\Request;
@@ -23,17 +24,35 @@ use Illuminate\Http\Request;
 class FrontendController extends Controller
 {
     public function index(){
+
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $slider = Slider::all();
         $active = '';
         return view('index', compact('slider', 'active'));
     }
 
     public function indexEn(){
+
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $slider = Slider::all();
         return view('index_en', compact('slider'));
     }
 
     public function category($name) {
+
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $category = Category::where('name', $name)->first();
 
         if ($category == null) {
@@ -76,6 +95,12 @@ class FrontendController extends Controller
     }
 
     public function categoryEn($name) {
+
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $category = Category::where('name', $name)->first();
 
 
@@ -98,6 +123,12 @@ class FrontendController extends Controller
     }
 
     public function collection($id) {
+
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $collection = Collection::where('id', $id)->first();
         $product = Product::where('id_collection', $id)->get();
 
@@ -152,6 +183,12 @@ class FrontendController extends Controller
     }
 
     public function collectionEn($id) {
+
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $collection = Collection::where('id', $id)->first();
         $product = Product::where('id_collection', $id)->get();
 
@@ -183,6 +220,12 @@ class FrontendController extends Controller
     }
 
     public function product($id) {
+
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $product = Product::where('id', $id)->first();
         $description = Description::where('id_product', $product->id)->get();
         $getValue = Description::where('id_product', $product->id)->count();
@@ -227,6 +270,12 @@ class FrontendController extends Controller
     }
 
     public function productEn($id) {
+
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $product = Product::where('id', $id)->first();
         $description = Description::where('id_product', $product->id)->get();
         $getValue = Description::where('id_product', $product->id)->count();
@@ -251,6 +300,11 @@ class FrontendController extends Controller
 
     public function search(Request $request)
     {
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $product = Product::where('name', 'like', '%'.$request->search.'%')->first();
         if ($product == null) {
             $active = '';
@@ -286,6 +340,11 @@ class FrontendController extends Controller
 
     public function searchEn(Request $request)
     {
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         //cek product for category
         $cekCategory = Product::where('name', 'like', '%'.$request->search.'%')->first();
         if ($cekCategory == null) {
@@ -322,6 +381,11 @@ class FrontendController extends Controller
 
     public function filter(Request $request, $id)
     {
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $collection = Collection::where('id', $id)->first();
 
         if ($collection->category->name == 'Столешницы') {
@@ -368,6 +432,11 @@ class FrontendController extends Controller
 
     public function filterEn(Request $request, $id)
     {
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $collection = Collection::where('id', $id)->first();
 
         if ($collection->category->name == 'Столешницы') {
@@ -414,6 +483,11 @@ class FrontendController extends Controller
 
     public function visualizer()
     {
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $product = Product::all();
         return view('visualizer', [
             'product' => $product
@@ -422,6 +496,11 @@ class FrontendController extends Controller
 
     public function contact()
     {
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $active = 'contacts';
         return view('contact', [
             'active' => $active
@@ -430,11 +509,21 @@ class FrontendController extends Controller
 
     public function contactEn()
     {
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         return view('contact_en');
     }
 
     public function contactStore(Request $request, $id)
     {
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $validateData = $this->validate($request, [
             'name' => 'required||string',
             'email' => 'required||string',
@@ -456,6 +545,11 @@ class FrontendController extends Controller
 
     public function career()
     {
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $career = Career::all();
         $active = 'careers';
         return view('career', [
@@ -466,6 +560,11 @@ class FrontendController extends Controller
 
     public function careerEn()
     {
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $career = Career::all();
         return view('career_en', [
             'career' => $career
@@ -474,6 +573,11 @@ class FrontendController extends Controller
 
     public function careerDetail($id)
     {   
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $careerDetail = CareerDetail::where('id_career', $id)->first();
         $idCareer = $id;
         $active = 'careers';
@@ -486,6 +590,11 @@ class FrontendController extends Controller
 
     public function careerDetailEn($id)
     {   
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $careerDetail = CareerDetail::where('id_career', $id)->first();
         return view('career_detail_en', [
             'careerDetail' => $careerDetail
@@ -494,6 +603,11 @@ class FrontendController extends Controller
 
     public function allProduct(Request $request)
     {   
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $product = null;
         $active = '';
         return view('filter_product', [
@@ -504,6 +618,11 @@ class FrontendController extends Controller
 
     public function filterProduct(Request $request)
     {
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         if ($request->name == null) {
             $name = array();
         } else {
@@ -585,6 +704,11 @@ class FrontendController extends Controller
 
     public function library()
     {
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $active = '';
         $resumeTab1 = Digital::where('category_file', 1)->get();
         $resumeTab2 = Digital::where('category_file', 2)->get();
@@ -601,6 +725,11 @@ class FrontendController extends Controller
 
     public function careerv2()
     {
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $careertwo = Careertwo::all();
         $active = 'careersv2';
         return view('career_v2', [
@@ -611,6 +740,11 @@ class FrontendController extends Controller
 
     public function careerDetailv2($id)
     {
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $detailCareertwo = DetailCareertwo::findOrFail($id);
         $active = 'careersv2';
         return view('career_detail_v2', [
@@ -621,6 +755,11 @@ class FrontendController extends Controller
 
     public function profile()
     {
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+
         $active = 'profile';
         $company = Company::all();
         return view('profile', [
@@ -631,6 +770,11 @@ class FrontendController extends Controller
 
     public function policy()
     {
+        $mode = Mode::where('name', 'maintenance')->first();
+        if ($mode->value == 1) {
+            return view('maintenance');
+        }
+        
         $active = '';
         return view('policy', [
             'active' => $active

@@ -1,3 +1,8 @@
+@php
+use App\Models\Mode;
+$modeMaintenance = Mode::where('name', 'maintenance')->first();    
+@endphp
+
 <!-- Navbar -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
 
@@ -10,6 +15,16 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
+        <li>
+            <form id="form-maintenance" action="{{route('ajax-maintenance')}}" method="post">
+            @csrf
+            @method('PUT')
+                <label class="switch">
+                    <input type="checkbox" name="maintenance" onchange="$('#form-maintenance').submit();" value="1" {{  ($modeMaintenance->value == 1 ? ' checked' : '') }}>
+                    <span class="slider round"></span>
+                </label>
+            </form>
+        </li>
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
             <i class="fa fa-user"></i>
