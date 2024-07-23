@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Collection;
 use App\Models\Mode;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class AjaxController extends Controller
 {
@@ -40,9 +40,18 @@ class AjaxController extends Controller
     public function manageMaintenance(Request $request)
     {
         $mode = Mode::where('name', 'maintenance')->first();
+        if ($request->maintenance == 1) {
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Maintenance Mode ON');
+        } else {
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Maintenance Mode OFF');
+        }
         $mode->update([
             'value' => intval($request->maintenance)
         ]);
-        return redirect()->route('admin');
+        return redirect()->back(); 
     }
 }

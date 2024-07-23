@@ -63,6 +63,8 @@
                                     <span class="badge badge-danger">{{$item->event}}</span>
                                     @elseif ($item->event == 'update')
                                     <span class="badge badge-warning">{{$item->event}}</span>
+                                    @else
+                                    <span class="badge badge-primary">{{$item->event}}</span>
                                     @endif
                                 </td>
                                 <td>{{$item->created_at}}</td>
