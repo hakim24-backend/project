@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use Illuminate\Support\Facades\Route;
 
 class ContactController extends Controller
 {
@@ -63,6 +64,9 @@ class ContactController extends Controller
     {
         $contact = Contact::findOrFail($id);
         $contact->delete();
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Delete Data Contact');
         return redirect()->route('contact.index');
     }
 }

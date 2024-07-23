@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\File;
 use App\Models\Career;
 use App\Models\CareerDetail;
 use App\Models\Resume;
+use Illuminate\Support\Facades\Route;
 
 class CareerController extends Controller
 {
@@ -57,6 +58,9 @@ class CareerController extends Controller
             'filename' => $nameFile
         ]);
         if ($validateCareer) {
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Create Data Career');
             return redirect()->route('careerier.index');
         }
     }
@@ -97,6 +101,9 @@ class CareerController extends Controller
                 'experience' => $request->experience,
                 'date' => date('Y-m-d'),
             ]);
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Career');
             return redirect()->route('careerier.index');
 
         } else {
@@ -115,8 +122,10 @@ class CareerController extends Controller
                 'date' => date('Y-m-d'),
                 'filename' => $nameFile
             ]);
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Career');
             return redirect()->route('careerier.index');
-
         }
     }
 
@@ -127,6 +136,9 @@ class CareerController extends Controller
     {
         $career = Career::findOrFail($id);
         $career->delete();
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Delete Data Career');
         return redirect()->route('careerier.index');
     }
     
@@ -158,6 +170,9 @@ class CareerController extends Controller
             'id_career' => $career->id
         ]);
         if ($validateCareerDetail) {
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Create Data Detail Career');
             return redirect()->route('careerier.index');
         }
     }
@@ -180,6 +195,9 @@ class CareerController extends Controller
             'website_contact' => $request->website_contact
         ]);
         if ($careerDetail) {
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Update Data Detail Career');
             return redirect()->route('careerier.index');
         }
     }
@@ -200,6 +218,9 @@ class CareerController extends Controller
         $filePath = public_path('upload/resume/'.$resume->filename);
         unlink($filePath);
         $resume->delete();
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Delete Data Resume');
         return redirect()->route('career.resume', $id_career);
     }
 }

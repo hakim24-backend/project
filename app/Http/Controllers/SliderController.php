@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Slider;
 use App\Models\Category;
+use Illuminate\Support\Facades\Route;
 
 class SliderController extends Controller
 {
@@ -77,6 +78,9 @@ class SliderController extends Controller
             'filename' => $nameFile
         ]);
         if ($validateSlider) {
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Create Data Slider');
             return redirect()->route('slider.index');
         }
     }
@@ -113,6 +117,9 @@ class SliderController extends Controller
                 'id_category' => $request->id_category_update,
                 'description' => $request->description
             ]);
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Slider');
             return redirect()->route('slider.index');
 
         } else {
@@ -127,6 +134,9 @@ class SliderController extends Controller
                 'description' => $request->description,
                 'filename' => $nameFile
             ]);
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Slider');
             return redirect()->route('slider.index');
 
         }
@@ -141,6 +151,9 @@ class SliderController extends Controller
         $filePath = public_path('upload/slider/'.$slider->filename);
         unlink($filePath);
         $slider->delete();
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Edit Data Slider');
         return redirect()->back();
     }
 }

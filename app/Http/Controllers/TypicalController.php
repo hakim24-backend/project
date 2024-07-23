@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Typical;
+use Illuminate\Support\Facades\Route;
 
 class TypicalController extends Controller
 {

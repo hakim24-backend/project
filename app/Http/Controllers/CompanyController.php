@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Company;
+use Illuminate\Support\Facades\Route;
 
 class CompanyController extends Controller
 {
@@ -61,6 +62,9 @@ class CompanyController extends Controller
             'filename' => $nameFile
         ]);
         if ($validateSlider) {
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Create Data Company');
             return redirect()->route('company.index');
         }
     }
@@ -104,6 +108,9 @@ class CompanyController extends Controller
                 'desc4' => $request->description4,
                 'desc5' => $request->description5
             ]);
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Company');
             return redirect()->route('company.index');
 
         } else {
@@ -125,6 +132,9 @@ class CompanyController extends Controller
                 'desc5' => $request->description5,
                 'filename' => $nameFile
             ]);
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Company');
             return redirect()->route('company.index');
 
         }
@@ -139,6 +149,9 @@ class CompanyController extends Controller
         $filePath = public_path('upload/company/'.$company->filename);
         unlink($filePath);
         $company->delete();
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Delete Data Company');
         return redirect()->back();
     }
 }

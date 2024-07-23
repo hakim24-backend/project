@@ -5,8 +5,8 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Collection;
 use App\Models\Description;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class ProductController extends Controller
 {
@@ -61,7 +61,9 @@ class ProductController extends Controller
                 'id_product' => $product->id
             ]);
         }
-
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Create Data Product With Collection');
         return redirect()->route('product.index');
     }
 
@@ -103,7 +105,9 @@ class ProductController extends Controller
                 'id_product' => $product->id
             ]);
         }
-
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Create Data Product With Category');
         return redirect()->route('product.index');
     }
 
@@ -140,6 +144,9 @@ class ProductController extends Controller
                 'id_collection' => $request->id_collection_update,
                 'name' => $request->name
             ]);
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Product');
             return redirect()->route('product.index');
 
         } else {
@@ -153,6 +160,9 @@ class ProductController extends Controller
                 'name' => $request->name,
                 'filename' => $nameFile
             ]);
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Product');
             return redirect()->route('product.index');
 
         }
@@ -171,7 +181,9 @@ class ProductController extends Controller
         $product->update([
             'detail_filename' => $nameFile
         ]);
-
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Create Data Detail Product');
         return redirect()->route('product.index');
     }
 
@@ -191,7 +203,9 @@ class ProductController extends Controller
                 'id_product' => $id
             ]);
         }
-
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Create Data Description Product');
         return redirect()->route('product.index');
     }
 
@@ -201,7 +215,9 @@ class ProductController extends Controller
         $product->update([
             'detail_filename' => null
         ]);
-        
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Delete Data Image Viewer Product');
         return redirect()->route('product.index');
     }
 
@@ -212,6 +228,9 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $product->delete();
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Delete Data Product');
         return redirect()->route('product.index');
     }
 
@@ -228,7 +247,9 @@ class ProductController extends Controller
         $product->update([
             'filename1' => $nameFile
         ]);
-
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Create Data File Product');
         return redirect()->route('product.index');
     }
 
@@ -238,7 +259,9 @@ class ProductController extends Controller
         $product->update([
             'filename1' => null
         ]);
-        
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Delete Data File Product');
         return redirect()->route('product.index');
     }
 
@@ -248,7 +271,9 @@ class ProductController extends Controller
         $product->update([
             'detail_filename' => null
         ]);
-        
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Delete Data Image Viewer Product');
         return redirect()->route('product.index');
     }
 }

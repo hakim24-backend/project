@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Smalldoor;
 use App\Models\Product;
+use Illuminate\Support\Facades\Route;
 
 class SmalldoorController extends Controller
 {
@@ -45,6 +46,9 @@ class SmalldoorController extends Controller
             'id_product' => $product->id
         ]);
         if ($validateSmalldoor) {
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Create Data Small Door Product');
             return redirect()->route('smalldoor.show', $product->id);
         }
     }
@@ -80,6 +84,9 @@ class SmalldoorController extends Controller
             $smalldoor->update([
                 'name' => $request->name
             ]);
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Small Door Product');
             return redirect()->route('smalldoor.show', $smalldoor->id_product);
 
         } else {
@@ -93,6 +100,9 @@ class SmalldoorController extends Controller
                 'name' => $request->name,
                 'filename' => $nameFile
             ]);
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Small Door Product');
             return redirect()->route('smalldoor.show', $smalldoor->id_product);
         }
     }
@@ -106,6 +116,9 @@ class SmalldoorController extends Controller
         $filePath = public_path('upload/small_door/'.$smalldoor->filename);
         unlink($filePath);
         $smalldoor->delete();
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Delete Data Small Door Product');
         return redirect()->back();
     }
 }

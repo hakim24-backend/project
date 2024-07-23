@@ -80,6 +80,7 @@ Auth::routes();
 
 Route::middleware('auth')->group(function(){
     Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('admin');
+    Route::get('/log', [App\Http\Controllers\HomeController::class, 'log'])->name('log');
 
     //resource master
     Route::resource('slider', SliderController::class);

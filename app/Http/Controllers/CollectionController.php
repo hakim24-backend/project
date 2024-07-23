@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Collection;
 use App\Models\TypicalCollection;
+use Illuminate\Support\Facades\Route;
 
 class CollectionController extends Controller
 {
@@ -70,6 +71,9 @@ class CollectionController extends Controller
             'filename' => $nameFile
         ]);
         if ($validateCollection) {
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Create Data Collection');
             return redirect()->route('collection.index');
         }
     }
@@ -118,6 +122,9 @@ class CollectionController extends Controller
                 'name' => $request->name,
                 'description' => $description
             ]);
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Collection');
             return redirect()->route('collection.index');
 
         } else {
@@ -132,6 +139,9 @@ class CollectionController extends Controller
                 'description' => $description,
                 'filename' => $nameFile
             ]);
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Collection');
             return redirect()->route('collection.index');
 
         }
@@ -145,6 +155,9 @@ class CollectionController extends Controller
     {
         $collection = Collection::findOrFail($id);
         $collection->delete();
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Delete Data Collection');
         return redirect()->route('collection.index');
     }
 
@@ -173,6 +186,9 @@ class CollectionController extends Controller
             'id_collection' => $collection->id
         ]);
         if ($validateTypical) {
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Create Data Typical Collection');
             return redirect()->route('typicalCollection.addTypical', $collection->id);
         }
     }
@@ -187,6 +203,9 @@ class CollectionController extends Controller
             $typical->update([
                 'name' => $request->name
             ]);
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Typical Collection');
             return redirect()->route('typicalCollection.addTypical', $typical->id_collection);
 
         } else {
@@ -200,6 +219,9 @@ class CollectionController extends Controller
                 'name' => $request->name,
                 'filename' => $nameFile
             ]);
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Typical Collection');
             return redirect()->route('typicalCollection.addTypical', $typical->id_collection);
         }
     }
@@ -209,6 +231,9 @@ class CollectionController extends Controller
         $collection=Collection::findOrFail($id_collection);
         $typical=TypicalCollection::findOrFail($id);
         $typical->delete();
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Delete Data Typical Collection');
         return redirect()->route('typicalCollection.addTypical', $collection->id);
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Careertwo;
 use App\Models\DetailCareertwo;
 use App\Models\Resumetwo;
+use Illuminate\Support\Facades\Route;
 
 class CareertwoController extends Controller
 {
@@ -47,6 +48,9 @@ class CareertwoController extends Controller
             'filename' => $nameFile
         ]);
         if ($validateCareer) {
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Create Data Career V2');
             return redirect()->route('careertwo.index');
         }
     }
@@ -82,6 +86,9 @@ class CareertwoController extends Controller
                 'name_company' => $request->name_company,
                 'info_company' => $request->info_company
             ]);
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Career V2');
             return redirect()->route('careertwo.index');
 
         } else {
@@ -95,6 +102,9 @@ class CareertwoController extends Controller
                 'info_company' => $request->info_company,
                 'filename' => $nameFile
             ]);
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Career V2');
             return redirect()->route('careertwo.index');
         }
     }
@@ -108,6 +118,9 @@ class CareertwoController extends Controller
         $filePath = public_path('upload/careertwo/'.$careertwo->filename);
         unlink($filePath);
         $careertwo->delete();
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Delete Data Career V2');
         return redirect()->route('careertwo.index');
     }
 
@@ -150,6 +163,9 @@ class CareertwoController extends Controller
             'id_careertwo' => $id
         ]);
         if ($validateCareertwo) {
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Create Data Job Career V2');
             return redirect()->route('job.index', $id);
         }
     }
@@ -170,12 +186,18 @@ class CareertwoController extends Controller
             'email_contact' => $request->email_contact,
             'website_contact' => $request->website_contact
         ]);
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Edit Data Job Career V2');
         return redirect()->route('job.index', $detailCareertwo->id_careertwo);
     }
 
     public function deleteJob($id, $id_careertwo){
         $detailCareertwo = DetailCareertwo::findOrFail($id);
         $detailCareertwo->delete();
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Delete Data Job Career V2');
         return redirect()->route('job.index', $id_careertwo);
     }
 
@@ -204,6 +226,9 @@ class CareertwoController extends Controller
         $filePath = public_path('upload/resumev2/'.$resume->filename);
         unlink($filePath);
         $resume->delete();
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Delete Data Resume Career V2');
         return redirect()->route('job.resume', $id_careertwo);
     }
 }

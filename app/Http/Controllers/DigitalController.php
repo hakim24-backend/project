@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Digital;
+use Illuminate\Support\Facades\Route;
 
 class DigitalController extends Controller
 {
@@ -53,6 +54,9 @@ class DigitalController extends Controller
             'filename' => $nameFile1,
         ]);
         if ($validateDigital) {
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Create Data Digital Library');
             return redirect()->route('digitals.index');
         }
     }
@@ -83,7 +87,9 @@ class DigitalController extends Controller
             $digital->update([
                 'name' => $request->name,
                 'category_file' => $request->category_file,
-            ]);
+            ]);activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Digital Library');
             return redirect()->route('digitals.index');
         } else {
             if ($request->filename_img != null) {
@@ -126,7 +132,9 @@ class DigitalController extends Controller
                     'filename' => $nameFile1
                 ]);
             }
-            
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Digital Library');
             return redirect()->route('digitals.index');
         }
         
@@ -148,6 +156,9 @@ class DigitalController extends Controller
         unlink($filePath1);
 
         $digital->delete();
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Delete Data Digital Library');
         return redirect()->route('digitals.index');
     }
 }

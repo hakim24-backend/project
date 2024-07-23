@@ -7,6 +7,8 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Collection;
 use App\Models\User;
+use DB;
+use Illuminate\Support\Facades\Route;
 
 class HomeController extends Controller
 {
@@ -27,7 +29,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        activity()->log('Look mum, I logged something');
         $totalProduct = Product::count();
         $totalCategory = Category::count();
         $totalCollection = Collection::count();
@@ -37,6 +38,15 @@ class HomeController extends Controller
             'category' => $totalCategory,
             'collection' => $totalCollection,
             'user' => $totalUser
+        ]);
+    }
+
+    public function log()
+    {
+        $log = DB::table('activity_log')
+        ->get();
+        return view('log', [
+            'log' => $log
         ]);
     }
 }

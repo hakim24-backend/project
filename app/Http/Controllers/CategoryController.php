@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Typical;
+use Illuminate\Support\Facades\Route;
 
 class CategoryController extends Controller
 {
@@ -46,6 +47,9 @@ class CategoryController extends Controller
 
         $category = Category::create($validateData);
         if ($category) {
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Create Data Category');
             return redirect()->route('category.index');
         }
     }
@@ -78,6 +82,9 @@ class CategoryController extends Controller
             'description' => $request->description
         ]);
         if ($category) {
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Category');
             return redirect()->route('category.index');
         }
     }
@@ -89,6 +96,9 @@ class CategoryController extends Controller
     {
         $category = Category::findOrFail($id);
         $category->delete();
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Delete Data Category');
         return redirect()->route('category.index');
     }
 
@@ -117,6 +127,9 @@ class CategoryController extends Controller
             'id_category' => $category->id
         ]);
         if ($validateTypical) {
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Create Data Typical Category');
             return redirect()->route('typical.addTypical', $category->id);
         }
     }
@@ -131,6 +144,9 @@ class CategoryController extends Controller
             $typical->update([
                 'name' => $request->name
             ]);
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Typical Category');
             return redirect()->route('typical.addTypical', $typical->id_category);
 
         } else {
@@ -144,6 +160,9 @@ class CategoryController extends Controller
                 'name' => $request->name,
                 'filename' => $nameFile
             ]);
+            activity()
+            ->event(Route::getCurrentRoute()->getActionMethod())
+            ->log('Edit Data Typical Category');
             return redirect()->route('typical.addTypical', $typical->id_category);
         }
     }
@@ -153,6 +172,9 @@ class CategoryController extends Controller
         $category=Category::findOrFail($id_category);
         $typical=Typical::findOrFail($id);
         $typical->delete();
+        activity()
+        ->event(Route::getCurrentRoute()->getActionMethod())
+        ->log('Delete Data Typical Category');
         return redirect()->route('typical.addTypical', $category->id);
     }
 }
