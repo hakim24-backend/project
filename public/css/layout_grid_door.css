@@ -403,13 +403,12 @@ body .gallery {
   justify-content:space-evenly;
   flex-wrap: wrap;
   margin: 15px  0;
-  
 
 }
 
 .gallery img {
-  flex-wrap: wrap;
-  width: 299px;
+  /* flex-wrap: wrap; */
+  width: 268.8px;
   /* height: 100%; */
   margin: 15px 0;
   transition: all .3s ease-in;
@@ -544,4 +543,12 @@ footer div.socials {
 .copyright a {
   line-height: 50px;
   margin-bottom: 0 !important;
+}
+
+/* Languqge */
+
+.current a,
+.link a{
+  font-size: 10px;
+  margin: 5px;
 }

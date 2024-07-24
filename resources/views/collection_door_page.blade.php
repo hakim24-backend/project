@@ -76,7 +76,8 @@ use \Statickidz\GoogleTranslate;
   <div class="gallery">
     @if ($product != null)
       @foreach ($product as $item)
-          <a href="{{route('frontend.product', $item->id )}}"><img src="{{asset('/upload/product/'.$item->filename)}}">
+          <a href="{{route('frontend.product', $item->id )}}">
+              <img src="{{asset('/upload/product/'.$item->filename)}}">
               <h3>{{$item->name}}</h3>
           </a>
       @endforeach
