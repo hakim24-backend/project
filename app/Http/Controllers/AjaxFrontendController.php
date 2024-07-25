@@ -90,6 +90,10 @@ class AjaxFrontendController extends Controller
 
     function storeResume(Request $request)
     {   
+        $validateResume = $this->validate($request, [
+            'cv' => 'required|mimes:pdf',
+        ]);
+
         $countFile = Resume::where('id_career', $request->id_career)->count();
         $numberFile = $countFile+1;
         $nameFile = $numberFile.'_resume_'.time().'.'.$request->cv->getClientOriginalExtension();
@@ -107,6 +111,10 @@ class AjaxFrontendController extends Controller
 
     function storeResumetwo(Request $request)
     {   
+        $validateResume = $this->validate($request, [
+            'cv' => 'required|mimes:pdf',
+        ]);
+
         $countFile = Resumetwo::where('id_detail_careertwo', $request->id_detail_careertwo)->count();
         $numberFile = $countFile+1;
         $nameFile = $numberFile.'_resumev2_'.time().'.'.$request->cv->getClientOriginalExtension();

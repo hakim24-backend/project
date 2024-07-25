@@ -252,7 +252,7 @@
             <h1><b>Отправить Резюме</b></h1><br>
             <form action="{{route('ajax-resume-two', $detailCareertwo->id)}}" method="POST" id="cvForm" enctype="multipart/form-data">
               @csrf
-                <input type="file" name="cv" accept=".pdf,.doc,.docx" required>
+                <input type="file" name="cv" accept=".pdf" required>
                 <input type="hidden" name="id_detail_careertwo" value="{{$detailCareertwo->id}}">
                 <button type="submit">Отправить</button>
             </form>
@@ -309,6 +309,15 @@
                   modal.style.display = "none";
                 },
                 cache: true
+            }).fail(function (jqXHR, textStatus, error) {
+                Swal.fire({
+                  position: "top-end",
+                  icon: "error",
+                  title: "Файлы должны быть в формате pdf!",
+                  showConfirmButton: false,
+                  timer: 1500
+                });
+                modal.style.display = "none";
             });
         });
     </script>
