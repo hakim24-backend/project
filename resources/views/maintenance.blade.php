@@ -59,7 +59,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="{{asset('upload/img/SG_верт_оригин.png')}}" alt="Maintenance Image">
+        <img style="width: 50%" src="{{asset('upload/img/SG_верт_оригин.png')}}" alt="Maintenance Image">
         <div class="spinner"></div>
         <h1>Мы находимся на техническом обслуживании, зайдите позже.</h1>
         <p>Спасибо за ваше доверие!!</p>
