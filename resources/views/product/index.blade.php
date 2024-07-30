@@ -1,5 +1,6 @@
 <?php 
     use App\Models\Smalldoor;
+    use App\Models\Productoption;
 ?>
 
 @extends('layouts.app')
@@ -89,6 +90,17 @@
                                                         $smalldoor = Smalldoor::where('id_product', $item->id)->count();
                                                     @endphp
                                                     <a href="{{route('smalldoor.show', $item->id)}}" class="btn btn-warning"><span><i class="fa fa-th-large"></i></span> Small <span class="badge badge-danger">{{$smalldoor}}</span></a>
+                                                </td>
+                                            </tr>
+                                            @else
+                                            <tr>
+                                                <td>Other Option</td>
+                                                <td style="text-align: center">:</td>
+                                                <td>
+                                                    @php
+                                                        $productOption = Productoption::where('id_product', $item->id)->count();
+                                                    @endphp
+                                                    <a href="{{route('productoption.show', $item->id)}}" class="btn btn-warning"><span><i class="fa fa-th-large"></i></span> Option <span class="badge badge-danger">{{$productOption}}</span></a>
                                                 </td>
                                             </tr>
                                             @endif

@@ -17,6 +17,7 @@ use App\Models\DetailCareertwo;
 use App\Models\Smalldoor;
 use App\Models\Company;
 use App\Models\Mode;
+use App\Models\Productoption;
 
 use \Statickidz\GoogleTranslate;
 use Illuminate\Http\Request;
@@ -235,6 +236,7 @@ class FrontendController extends Controller
                 ->where('products.id_collection', $product->id_collection)
                 ->groupBy('typical_collections.id')
                 ->get();
+        $productOption = Productoption::where('id_product', $id)->get();
         // dd($product->collection->category->name);
         if ($product->collection->category->name == 'МЕЖКОМНАТНЫЕ ДВЕРИ') {
             $active = 'МЕЖКОМНАТНЫЕ ДВЕРИ';
@@ -265,7 +267,7 @@ class FrontendController extends Controller
             } else {
                 $active = '';
             }
-            return view('product', compact('product', 'description', 'typical', 'active'));
+            return view('product', compact('product', 'description', 'typical', 'active', 'productOption'));
         }
     }
 

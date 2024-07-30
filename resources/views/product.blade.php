@@ -131,7 +131,67 @@
         transition: opacity .2s;
       }
 
-
+      .thumbnailsRow{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: -30px;
+        /* justify-content: space-between; */
+      }
+      .thumbnailsRow p{
+        border: none;
+      }
+      .cursor {
+        cursor: pointer;
+      }
+      .column{
+        width: 18%;
+        text-align: center;
+      }
+      .column img{
+        width: 100%;
+      }
+      .demo {
+        opacity: 0.6;
+      }
+      .modal {
+        display: none;
+        position: absolute;
+        z-index: 1000;
+        padding-top: 50px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+          z-index: 9;
+          
+        }
+        .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 80%;
+        max-height: 80%;
+        }
+        .close {
+        color: #fff;
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        }
+        .zoomHover2:hover .modalZoom{
+          transform: scale(1.05);
+          box-shadow: 0 0 40px 0 rgba(255, 255, 255, 0.507);
+        }
+        .close:hover,
+        .close:focus {
+          color: #bbb;
+          text-decoration: none;
+          cursor: pointer;
+        }
 
     </style>
 
@@ -226,9 +286,26 @@
                     </div>
                     <!-- / project-info-box -->
                 </div><!-- / column -->
-        
-        
                 <div class="col-md-7">
+
+                  @if ($productOption->isNotEmpty())
+                    <div class="thumbnailsRow">
+                      @foreach ($productOption as $po)
+                        <div class="column">
+                          <img class="demo cursor" src="{{asset('upload/product_option/'.$po->filename)}}"
+                              onclick="openModal('{{asset('upload/product_option/'.$po->filename)}}')" alt="The Woods" />
+                        </div>
+                      @endforeach
+                        
+                      <div id="myModal" class="modal">
+                          <span class="close" onclick="closeModal()">&times;</span>
+                          <a href="" class="zoomHover2" id="zoomContainer">
+                              <img class="modalZoom" id="modalImage">
+                          </a>
+                      </div>
+                    </div>
+                  @endif
+
                   <div id="magnifying_area">
                     <img id="magnifying_img" src="{{asset('upload/product/'.$product->filename)}}" alt="project-image">
                     <div id="magnified_img"></div>
@@ -274,6 +351,7 @@
     <script src="{{asset('/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('/js/slick.min.js')}}"></script>
     <script src="{{asset('/js/main.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       let zoomer = function () {
           document.querySelector('#magnifying_area').addEventListener('mousemove', function (e) {
@@ -307,5 +385,39 @@
             }, false);
         }();
     </script>
+    <script>
+        function modalMagnify() {
+            $(document).ready(function () {
+                $('.modalZoom').magnify();
+            });
+        }
+
+    </script>
+    <script>
+      // Function to open modal with selected image
+      function openModal(imageSrc) {
+          var modal = document.getElementById("myModal");
+          var modalImg = document.getElementById("modalImage");
+          modal.style.display = "block";
+          modalImg.src = imageSrc;
+          zoomContainer.href = imageSrc;
+          modalMagnify();
+      }
+
+      // Function to close modal
+      function closeModal() {
+          var modal = document.getElementById("myModal");
+          modal.style.display = "none";
+      }
+
+      // Close modal if user clicks outside the image
+      window.onclick = function (event) {
+          var modal = document.getElementById("myModal");
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+
+  </script>
   </body>
 </html>
