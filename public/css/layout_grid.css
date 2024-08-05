@@ -67,7 +67,7 @@ li {
 
 /*  ---- Header ---- */
 header {
-  position: absolute;
+  position: fixed;
   
   z-index: 200;
   background-color: #000000;

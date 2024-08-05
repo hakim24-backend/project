@@ -52,7 +52,7 @@
         color: #ffff;
     }
 
-    .modal {
+    .modal-detail {
         display: none; 
         position: fixed; 
         z-index: 1; 
@@ -65,7 +65,7 @@
         background-color: rgba(0,0,0,0.4); 
     }
 
-    .modal-content {
+    .modal-content-detail {
         background-color: #fefefe;
         margin: 15% auto; 
         padding: 50px;
@@ -249,8 +249,8 @@
       </div>
     </div>
 
-    <div id="modal" class="modal">
-        <div class="modal-content">
+    <div id="modal-detail" class="modal-detail">
+        <div class="modal-content-detail">
             <span style="text-align: right" class="close-button">&times;</span>
             <h1><b>Отправить Резюме</b></h1><br>
             <form action="{{route('ajax-resume', $idCareer)}}" method="POST" id="cvForm" enctype="multipart/form-data">
@@ -273,7 +273,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-      var modal = document.getElementById("modal");
+        var modal = document.getElementById("modal-detail");
         var openModalButton = document.getElementById("openModalButton");
         var closeButton = document.querySelector(".close-button");
 
