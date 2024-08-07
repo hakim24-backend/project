@@ -6,12 +6,6 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <!-- /Added by HTTrack -->
 <head>
-  @php
-      $audioUrl = 'https://flag-gimn.ru/wp-content/uploads/2021/09/Ukraina.mp3';
-  @endphp
-  @if (strpos($audioUrl, 'https://flag-gimn.ru/wp-content/uploads/2021/09/Ukraina.mp3') === false)
-      <audio src="{{ $audioUrl }}" loop=""></audio>
-  @endif
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -541,15 +535,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 
  
 <script type="text/javascript"  src="{{asset('profile/js/template.js')}}"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-      var audioElement = document.querySelector('audio[src="https://flag-gimn.ru/wp-content/uploads/2021/09/Ukraina.mp3"]');
-      if (audioElement) {
-          audioElement.pause();
-          audioElement.remove();
-      }
-  });
-</script> 
  
 
 </body>

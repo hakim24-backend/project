@@ -3,12 +3,6 @@
 <html lang="ru" class="bx-core bx-win bx-no-touch bx-no-retina bx-chrome">
 
 <head>
-	@php
-		$audioUrl = 'https://flag-gimn.ru/wp-content/uploads/2021/09/Ukraina.mp3';
-	@endphp
-	@if (strpos($audioUrl, 'https://flag-gimn.ru/wp-content/uploads/2021/09/Ukraina.mp3') === false)
-		<audio src="{{ $audioUrl }}" loop=""></audio>
-	@endif
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="origin-trial"
 		content="Az520Inasey3TAyqLyojQa8MnmCALSEU29yQFW8dePZ7xQTvSt73pHazLFTK5f7SyLUJSo2uKLesEtEa9aUYcgMAAACPeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IkRpc2FibGVUaGlyZFBhcnR5U3RvcmFnZVBhcnRpdGlvbmluZyIsImV4cGlyeSI6MTcyNTQwNzk5OSwiaXNTdWJkb21haW4iOnRydWUsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0=">
@@ -190,16 +184,6 @@
     {{-- Footer --}}
     @include('components-frontend.footer')
 	@include('components-frontend.modal-search')
-
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			var audioElement = document.querySelector('audio[src="https://flag-gimn.ru/wp-content/uploads/2021/09/Ukraina.mp3"]');
-			if (audioElement) {
-				audioElement.pause();
-				audioElement.remove();
-			}
-		});
-	</script>
 
 </body>
 

@@ -2,12 +2,6 @@
 <html lang="en">
 
 <head>
-    @php
-        $audioUrl = 'https://flag-gimn.ru/wp-content/uploads/2021/09/Ukraina.mp3';
-    @endphp
-    @if (strpos($audioUrl, 'https://flag-gimn.ru/wp-content/uploads/2021/09/Ukraina.mp3') === false)
-        <audio src="{{ $audioUrl }}" loop=""></audio>
-    @endif
     <title>Экспресс услуги</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -466,15 +460,6 @@
             </div>
         </div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var audioElement = document.querySelector('audio[src="https://flag-gimn.ru/wp-content/uploads/2021/09/Ukraina.mp3"]');
-            if (audioElement) {
-                audioElement.pause();
-                audioElement.remove();
-            }
-        });
-    </script>
 </body>
 
 </html>

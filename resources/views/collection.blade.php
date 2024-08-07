@@ -4,12 +4,6 @@
 <!DOCTYPE html>
 <html lang="ru" dir="ltr">
   <head>
-    @php
-        $audioUrl = 'https://flag-gimn.ru/wp-content/uploads/2021/09/Ukraina.mp3';
-    @endphp
-    @if (strpos($audioUrl, 'https://flag-gimn.ru/wp-content/uploads/2021/09/Ukraina.mp3') === false)
-        <audio src="{{ $audioUrl }}" loop=""></audio>
-    @endif
     <meta charset="utf-8" />
     <link rel="shortcut icon" type="x-icon" href="{{asset('/upload/img/SG_верт_оригин.png')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -193,15 +187,6 @@
     <script src="{{asset('js/slick.min.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          var audioElement = document.querySelector('audio[src="https://flag-gimn.ru/wp-content/uploads/2021/09/Ukraina.mp3"]');
-          if (audioElement) {
-              audioElement.pause();
-              audioElement.remove();
-          }
-      });
-  </script>
   </body>
 </html>
 <script>
